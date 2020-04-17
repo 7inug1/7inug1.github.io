@@ -1,0 +1,326 @@
+/*width 1024 or less*/
+
+
+*{
+  box-sizing : border-box;
+}
+
+#heroroad{
+  background-image:url("./lab6image/windingroad.jpg");
+  background-size: 70%;
+  height: 250px;
+
+
+}
+
+#heromugs{
+  /* background-image: url("./lab6image/heromugs.jpg"); */
+  background-size: 130%;
+  height: 250px;
+
+}
+
+#heroguitar{
+  /* background-image: url("./lab6image/heroguitar.jpg"); */
+  background-size: 130%;
+  height: 250px;
+
+  /*C:\Users\jwshi\Desktop\2019Fall\
+  1030\lab\lab6,proj6\lab6\javajam6*/
+  /*file:///C:/Users/jwshi/Desktop/2019Fall/
+  1030/lab/lab6,proj6/lab6/javajam6/music.html*/
+}
+
+body{
+    background-color: black;
+    background-image: url("./lab6image/background.gif");
+    /* max-width: 100%
+    height:auto;
+    background-size: cover; */
+    color: #221811;
+    font-family: Verdana, Arial, sans-serif;
+}
+header{
+  background-color: #D2B48C;
+  height: 150px;
+  /* background-image: url("./lab6image/javajamlogo.jpg"); */
+  background-repeat: no-repeat;
+}
+h1{
+  padding-top: 40px;
+  padding-left: 220px;
+  font-size: 3em;
+}
+nav{
+
+  float: left;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding-top: 10px;
+
+}
+nav a{
+  text-decoration: none;
+}
+nav a:link{
+  color: #FEF6C2;
+}
+
+nav a:visited{
+  color: #D2B48C;
+}
+nav a:hover{
+  color: #CC9933;
+}
+
+nav ul{
+  list-style-type: none;
+  padding-left:0;
+}
+
+
+
+footer{
+  padding-bottom: 10px;
+  border-top: 2px solid #221811;
+  background-color: #D2B48C;
+  font-size: .60em;
+  font: italic;
+  text-align: center;
+}
+#wrapper{
+  background-color: #231814;
+  min-width: 900px;
+  max-width: 1280px;
+  box-shadow: 10px 5px 5px black;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* img{
+  align"right";
+} */
+h4{
+  text-transform: uppercase;
+  border-bottom: 2px solid black;
+  background-color: #D2B48C;
+  font-size: 1.2em;
+  padding-left: .5em;
+  padding-bottom: 0;
+  clear: left;
+}
+main{
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 2em;
+  padding-top: 0;
+  display: block;
+  margin-left:200px;
+  background-color: #FEF6C2;
+}
+main h2, main h3, main h4, main p, main div, main ul, main dl{
+  padding-left: 3em;
+  padding-right: 2em;
+}
+
+
+header, nav, main, footer{
+  display:block;
+
+}
+
+.details{
+  overflow: auto;/*similar to clear*/
+  padding-left: 20%;
+  padding-right: 20%;
+}
+img{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.floatleft{
+    float:left;
+    padding-right:2em;
+    padding-bottom:2em;
+}
+#mobile{
+  display: none;
+}
+
+#desktop{
+  display: inline;
+}
+table{
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border-spacing: 0;
+  background-color: 0;
+
+}
+td{
+  padding: 10px;
+
+}
+th{
+  padding: 10px;
+}
+tr:nth-child(odd){
+  background-color: #D2B48E;
+}
+form{
+  padding: 2em;
+}
+label{
+  float : left;
+  display: block;
+  text-align: right;
+  width: 8em;
+  padding-right : 1em;
+}
+input{
+  display: block;
+  margin-bottom: 1em;
+}
+textarea{
+  display: block;
+  margin-bottom: 1em;
+}
+#mysubmit{
+  margin-left: 9.5em;
+}
+#herojobs{
+  height: 250px;
+  /* background-image: url("lab6image/herojobs.jpg"); */
+  background-size: 100% 100%;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  body{
+    background-image: none;
+    margin: 0;
+
+
+  }
+  #wrapper{
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  header{
+    border-bottom: 5px solid #FEF6C2;
+  }
+  h1{
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 2.5em;
+  }
+  nav{
+    float: none;
+    width: auto;
+    padding-top: 0;
+    margin: 10px;
+    font-size: 1.3em;
+  }
+  nav li{
+    display: inline-block;
+  }
+  nav a{
+    padding: 1em;
+    width: 8em;
+    font-weight: bold;
+    border-style: none;
+  }
+  nav ul{
+    padding: 0;
+    margin: 0;
+  }
+  #heroroad{
+    padding: 0;
+    margin: 0;
+  }
+  #heromugs{
+    padding: 0;
+    margin: 0;
+  }
+  #heroguitar{
+    padding: 0;
+    margin: 0;
+  }
+  main{
+    margin: 0;
+    font-size: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header{
+    height: 128px;
+    /* background-image: url("./lab6image/javajammini.jpg"); */
+  }
+  h1{
+    font-size: 2em;
+    text-align: center;
+    padding-left:0;
+  }
+  nav{
+    margin: 0;
+  }
+  nav a{
+    display: block;
+    padding: 0.2em;
+    width: auto;
+    border-bottom: 1px;
+    border-bottom-color: #FEF6C2;
+  }
+  nav li{
+    display: block;
+  }
+  main{
+    padding-top: 1px;
+  }
+  h2{
+    padding-top: 0.5em;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0.5em;
+    margin-right: 0.5em;
+  }
+  .details{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  #heroroad{
+    background-image: none;
+    height: auto;
+  }
+  #heromugs{
+    background-image: none;
+    height: auto;
+  }
+  #heroguitar{
+    background-image: none;
+    height: auto;
+  }
+  .floatleft{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  #mobile{
+    display: inline;
+  }
+  #desktop{
+    display: none;
+  }
+  #herojobs{
+    diplay: none;
+  }
+}
