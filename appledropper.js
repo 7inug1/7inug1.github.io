@@ -12,7 +12,7 @@ let ctx=canvas.getContext("2d");
 let score=0;
 let timer;
 let time;
-let goal=2;
+let goal=5;
 //------------------------------------------------
 let background=new Image();
 background.src="room.jpg";
