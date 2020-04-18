@@ -99,14 +99,14 @@ footer{
 /* img{
   align"right";
 } */
-h4{
+h2{
   text-transform: uppercase;
   border-bottom: 2px solid black;
   background-color: #D2B48C;
   font-size: 1.2em;
   padding-left: .5em;
   padding-bottom: 0;
-  clear: left;
+  /* clear: left; */
 }
 main{
   padding-left: 0;
@@ -189,11 +189,11 @@ textarea{
 #mysubmit{
   margin-left: 9.5em;
 }
-#herojobs{
+/* #herojobs{
   height: 250px;
   /* background-image: url("lab6image/herojobs.jpg"); */
   background-size: 100% 100%;
-}
+} */
 
 
 @media only screen and (max-width: 1024px) {
