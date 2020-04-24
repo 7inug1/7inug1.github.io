@@ -1,0 +1,18 @@
+.status-bar {
+  /* column next to each other */
+  display: flex;
+  /* end to end */
+  justify-content: space-between;
+  margin-bottom: 30px;
+  /* how black you want it to be  */
+  opacity: 0.7;
+  /* position: fixed; */
+}
+
+.status-bar i {
+  font-size: 14px;
+}
+
+.status-bar .status-bar__battery-level {
+  margin-left: 5px;
+}
