@@ -5,26 +5,26 @@
   box-sizing : border-box;
 }
 
-/* #heroroad{
-  background-image:url("./lab6image/windingroad.jpg");
-  background-size: 70%;
-  height: 250px;
+.para{
+  padding-left: 5px;
+}
+.profile__column {
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+  
 
-
-} */
-
-/* #heromugs{
-  background-image: url("./lab6image/heromugs.jpg");
-  background-size: 130%;
-  height: 250px;
-
-} */
-
-/* #heroguitar{
-  background-image: url("./lab6image/heroguitar.jpg");
-  background-size: 130%;
-  height: 250px;
-} */
+  
+}
+.profile__content .profile__name {
+  font-size: 35px;
+  font-weight: bold;
+  display: block;
+  /* margin-bottom: 5px; */
+}
+.profile__desc {
+font-size: 13px;
+}
 
 body{
     background-color: #ecd9ba;
@@ -41,6 +41,7 @@ header{
   background-size: contain;
   background-image: url("./lab6image/pflogo1.png");
   background-repeat: no-repeat;
+  
 }
 h1{
   color: #D2B48C;
@@ -133,10 +134,10 @@ header, nav, main, footer{
   padding-left: 20%;
   padding-right: 20%;
 }
-img{
+/* img{
   padding-left:10px;
   padding-right:10px;
-}
+} */
 
 .floatleft{
     float:left;
@@ -240,18 +241,7 @@ textarea{
     padding: 0;
     margin: 0;
   }
-  #heroroad{
-    padding: 0;
-    margin: 0;
-  }
-  #heromugs{
-    padding: 0;
-    margin: 0;
-  }
-  #heroguitar{
-    padding: 0;
-    margin: 0;
-  }
+  
   main{
     margin: 0;
     font-size: 90%;
