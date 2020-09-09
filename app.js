@@ -1,7 +1,9 @@
+// 7inug1.github.io
+
 if ('serviceWorker' in navigator) {
   // Register a service worker hosted at the root of the
   // site using the default scope.
-  navigator.serviceWorker.register('./sw.js')
+  navigator.serviceWorker.register('/7inug1.github.io/sw.js', { scope: '/7inug1.github.io/' })
   .then(function(register) {
     if(register.installing) {
       console.log('Service worker installing');
