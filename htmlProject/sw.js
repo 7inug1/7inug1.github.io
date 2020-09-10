@@ -8,15 +8,15 @@ self.addEventListener('install', function(event) {
       // takes an array of origin-relative URLs 
       // to all the resources you want to cache.
       return cache.addAll([
-        // '/7inug1.github.io/',
-        // '/7inug1.github.io/htmlProject/app.js',
-        // '/7inug1.github.io/htmlProject/camera.js',
-        // '/7inug1.github.io/htmlProject/canvas.js',
-        // '/7inug1.github.io/htmlProject/letter.html',
-        // '/7inug1.github.io/htmlProject/myLittleVader.jpg',
-        // '/7inug1.github.io/htmlProject/onlineOffline.js',
-        // '/7inug1.github.io/htmlProject/style.css',
-        // '/7inug1.github.io/sw.js'
+        '/7inug1.github.io/',
+        '/7inug1.github.io/htmlProject/app.js',
+        '/7inug1.github.io/htmlProject/camera.js',
+        '/7inug1.github.io/htmlProject/canvas.js',
+        '/7inug1.github.io/htmlProject/letter.html',
+        '/7inug1.github.io/htmlProject/myLittleVader.jpg',
+        '/7inug1.github.io/htmlProject/onlineOffline.js',
+        '/7inug1.github.io/htmlProject/style.css',
+        '/7inug1.github.io/sw.js'
 
 
         
