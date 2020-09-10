@@ -1,14 +1,3 @@
-// https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
-  // https://github.com/mdn/7inug1.github.io
-  // https://mdn.github.io/7inug1.github.io/
-// https://css-tricks.com/serviceworker-for-offline/
-  // https://github.com/chriscoyier/Simple-Offline-Site
-// https://developers.google.com/web/fundamentals/primers/service-workers
-// https://developers.google.com/web/fundamentals/codelabs/offline#build_the_starter_app
-
-// https://stackoverflow.com/questions/34160509/options-for-testing-service-workers-via-http
-// https://gist.github.com/Rich-Harris/fd6c3c73e6e707e312d7c5d7d0f3b2f9
-
 self.addEventListener('install', function(event) {
   // this ensures that the service worker 
   // will not install until the code inside 
