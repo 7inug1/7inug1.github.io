@@ -3,7 +3,7 @@
 if ('serviceWorker' in navigator) {
   // Register a service worker hosted at the root of the
   // site using the default scope.
-  navigator.serviceWorker.register('./htmlProject/sw.js', { scope: './htmlProject' })
+  navigator.serviceWorker.register('/htmlProject/sw.js', { scope: '/htmlProject/' })
   .then(function(register) {
     if(register.installing) {
       console.log('Service worker installing');
