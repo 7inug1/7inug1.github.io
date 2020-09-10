@@ -19,6 +19,7 @@ self.addEventListener('install', function(event) {
       // takes an array of origin-relative URLs 
       // to all the resources you want to cache.
       return cache.addAll([
+        '/index.html',
         '/7inug1.github.io/',
         '/7inug1.github.io/index.html',
         '/7inug1.github.io/letter.html',
