@@ -8,17 +8,15 @@ self.addEventListener('install', function(event) {
       // takes an array of origin-relative URLs 
       // to all the resources you want to cache.
       return cache.addAll([
-        '/7inug1.github.io/',
-        '/7inug1.github.io/app.js',
-        '/7inug1.github.io/camera.js',
-        '/7inug1.github.io/canvas.js',
-        '/7inug1.github.io/index.html',
-        '/7inug1.github.io/myLittleVader.jpg',
-        '/7inug1.github.io/onlineOffline.js',
-        '/7inug1.github.io/style.css',
-        '/7inug1.github.io/sw.js'
-
-
+        '/sw-test/',
+        '/sw-test/app.js',
+        '/sw-test/camera.js',
+        '/sw-test/canvas.js',
+        '/sw-test/index.html',
+        '/sw-test/myLittleVader.jpg',
+        '/sw-test/onlineOffline.js',
+        '/sw-test/style.css',
+        '/sw-test/sw.js'
       ]);
     })
   );
@@ -59,7 +57,7 @@ self.addEventListener('install', function(event) {
 //         });
 //         return response;
 //       }).catch(function () {
-//         return caches.match('/7inug1.github.io/myLittleVader.jpg');
+//         return caches.match('/sw-test/myLittleVader.jpg');
 //       });
 //     }
 //   }));

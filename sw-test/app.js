@@ -23,7 +23,7 @@
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js', { scope: '/' })
+    navigator.serviceWorker.register('/sw-test/sw.js', { scope: '/sw-test/' })
     .then(registration => {
       console.log('Service Worker is registered', registration);
       if(registration.waiting) {
