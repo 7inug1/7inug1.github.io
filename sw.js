@@ -1,28 +1,28 @@
-// self.addEventListener('install', function(event) {
-//   // this ensures that the service worker 
-//   // will not install until the code inside 
-//   // waitUntil() has successfully occurred.
+self.addEventListener('install', function(event) {
+  // this ensures that the service worker 
+  // will not install until the code inside 
+  // waitUntil() has successfully occurred.
 
-//   event.waitUntil(
-//     caches.open('v1').then(function(cache) {
-//       // takes an array of origin-relative URLs 
-//       // to all the resources you want to cache.
-//       return cache.addAll([
-//         '/7inug1.github.io/',
-//         '/7inug1.github.io/app.js',
-//         '/7inug1.github.io/camera.js',
-//         '/7inug1.github.io/canvas.js',
-//         '/7inug1.github.io/index.html',
-//         '/7inug1.github.io/myLittleVader.jpg',
-//         '/7inug1.github.io/onlineOffline.js',
-//         '/7inug1.github.io/style.css',
-//         '/7inug1.github.io/sw.js'
+  event.waitUntil(
+    caches.open('v1').then(function(cache) {
+      // takes an array of origin-relative URLs 
+      // to all the resources you want to cache.
+      return cache.addAll([
+        '/7inug1.github.io/',
+        '/7inug1.github.io/app.js',
+        '/7inug1.github.io/camera.js',
+        '/7inug1.github.io/canvas.js',
+        '/7inug1.github.io/index.html',
+        '/7inug1.github.io/myLittleVader.jpg',
+        '/7inug1.github.io/onlineOffline.js',
+        '/7inug1.github.io/style.css',
+        '/7inug1.github.io/sw.js'
 
 
-//       ]);
-//     })
-//   );
-// });
+      ]);
+    })
+  );
+});
 
 
 
