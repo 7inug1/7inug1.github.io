@@ -3,7 +3,7 @@
 if ('serviceWorker' in navigator) {
   // Register a service worker hosted at the root of the
   // site using the default scope.
-  navigator.serviceWorker.register('/sw.js')
+  navigator.serviceWorker.register('/sw.js', { scope: '/' })
   .then(function(register) {
     if(register.installing) {
       console.log('Service worker installing');
@@ -23,7 +23,7 @@ if ('serviceWorker' in navigator) {
 
 // if ('serviceWorker' in navigator) {
 //   window.addEventListener('load', () => {
-//     navigator.serviceWorker.register('/sw.js', { scope: '/ })
+//     navigator.serviceWorker.register('/sw.js', { scope: '/' })
 //     .then(registration => {
 //       console.log('Service Worker is registered', registration);
 //     })
