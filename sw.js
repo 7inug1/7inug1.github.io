@@ -12,7 +12,7 @@ self.addEventListener('install', function(event) {
         '/7inug1.github.io/app.js',
         '/7inug1.github.io/camera.js',
         '/7inug1.github.io/canvas.js',
-        '/7inug1.github.io/letter.html',
+        '/7inug1.github.io/index.html',
         '/7inug1.github.io/myLittleVader.jpg',
         '/7inug1.github.io/onlineOffline.js',
         '/7inug1.github.io/style.css',
