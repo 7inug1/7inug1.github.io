@@ -77,6 +77,7 @@ function saveImage(){
 }
 
 function loadImage(){
+  console.log("loadImage");
   let retrievingData = localStorage.getItem(key);
   // imgNode.setAttribute('id', 'savedImage');
   // imgNode.setAttribute('alt', '');
