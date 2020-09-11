@@ -9,13 +9,13 @@ self.addEventListener('install', function(event) {
       // to all the resources you want to cache.
       return cache.addAll([
         '/7inug1.github.io/',
-        '/7inug1.github.io/htmlProject/app.js',
-        '/7inug1.github.io/htmlProject/camera.js',
-        '/7inug1.github.io/htmlProject/canvas.js',
-        '/7inug1.github.io/htmlProject/letter.html',
-        '/7inug1.github.io/htmlProject/myLittleVader.jpg',
-        '/7inug1.github.io/htmlProject/onlineOffline.js',
-        '/7inug1.github.io/htmlProject/style.css',
+        '/7inug1.github.io/app.js',
+        '/7inug1.github.io/camera.js',
+        '/7inug1.github.io/canvas.js',
+        '/7inug1.github.io/letter.html',
+        '/7inug1.github.io/myLittleVader.jpg',
+        '/7inug1.github.io/onlineOffline.js',
+        '/7inug1.github.io/style.css',
         '/7inug1.github.io/sw.js'
 
 
