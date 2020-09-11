@@ -1,64 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jinwook Shin's Website - Home</title>
-    <link rel="stylesheet" href="portfolio.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.js"
-      integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-      crossorigin="anonymous"
-    ></script>
-  </head>
 
-  <body>
-    <div id="wrapper">
-      <header><h1>Jinwook Shin's Website</h1></header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="camera.js" type="text/javascript" defer></script>
+  <script src="canvas.js" type="text/javascript" defer></script>
+  <script src="onlineOfflineEvent.js" type="text/javascript" defer></script>
+  <script src="app.js" type="text/javascript" defer></script>
+  <!-- <script src="sw.js" type="text/javascript" defer></script> -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <title>Document</title>
+</head>
 
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="project.html">Project</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="./htmlProject/letter.html">htmlProject</a></li>
-        </ul>
-      </nav>
+<body>
+  <img src="./myLittleVader.jpg" alt="test"></img>
 
-      <main>
-        <h2>Home</h2>
-        <div class="profile__column">
-          <img
-            src="./lab6image/jin.jpg"
-            alt="Profile Picture"
-            width="45%"
-            height="45%"
-          />
-          <div class="profile__content">
-            <span class="profile__name">Jinwook Shin</span><br />
-            <span class="profile__desc"
-              >Computer Studies student at Langara College</span
-            >
-          </div>
-        </div>
-        <!-- <span class="text1">Computer Studies student at Langara College</span> -->
-        <!-- &nbsp;&nbsp;<strong>Jinwook Shin</strong><br />
-        &nbsp;&nbsp;Computer Studies student at Langara College<br /> -->
-      </main>
+  <div id="statusBar">
+    You're currently connected:  <span id="onlineOfflineStatus">I am not sure of the status yet!</span>
+  </div>
 
-      <footer>
-        &copy; 2020 7inug1.github.io<br />
-        <a href="mailto:jwshin0397@gmail.com">jwshin0397@gmail.com</a>
+  <main>
+    <h1>WebCam</h1>
+    <div class="area">
+      <div id="cameraButtons">
+        <video id="video"></video>
+          
+        <button id="cameraOnButton">
+          <!-- <img src="./images/video.svg" alt=""></img> -->
+          On
+        </button>
 
-        <script>
-          $(document).ready(function () {
-            $("footer div").html(
-              "Page last modified on : " + document.lastModified
-            );
-          });
-        </script>
-      </footer>
-    </div>
-  </body>
+        <button id="cameraOffButton">
+          <!-- <img src="./images/video-off.svg" alt=""></img> -->
+          Off
+        </button>
+
+        <button id="cameraCaptureButton">
+          <!-- <img src="./images/camera.svg" alt=""></img> -->
+          Capture
+        </button>
+
+      </div> 
+      
+      <canvas id="canvasOne" width="320" height="240"></canvas>
+    </div> 
+  </main>
+</body>
 </html>
