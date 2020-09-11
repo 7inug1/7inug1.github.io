@@ -26,6 +26,11 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
     .then(registration => {
       console.log('Service Worker is registered', registration);
+      if(registration.waiting) {
+        console.log('Service worker installed');
+      } else if(registration.active) {
+        console.log('Service worker active');
+      }
     })
     .catch(err => {
       console.error('Registration failed:', err);
