@@ -6,6 +6,8 @@ let canvas = document.getElementById('canvasOne');
 let context = canvas.getContext('2d');
 let painting = false;
 
+
+
 canvas.addEventListener('mousedown', startPosition);
 canvas.addEventListener('mouseup', finishPosition);
 canvas.addEventListener('mousemove', draw);
@@ -24,7 +26,6 @@ function draw(event) {
   if (!painting) return;    
   context.lineWidth = 2; //drawing pen width
   context.lineCap = 'round';
-
 
   context.lineTo(event.offsetX, event.offsetY);  
   context.stroke();  

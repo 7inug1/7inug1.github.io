@@ -18,13 +18,14 @@
 }
 
 main{
-  margin-top: 70px; /* Add a top margin to avoid content overlay */
+  /* margin-top: 70px; Add a top margin to avoid content overlay */
 }
 
-/* .area{
-  display: flex;
-  justify-content: space-around;
-} */
+#area{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* justify-content: space-around; */
+}
 
 #video{
   border: 1px solid black;
@@ -68,7 +69,7 @@ button img{
   position: relative;
 }
 
-/* ----------------- */
+/* -------------------------------------------------------------------- */
 
 #canvasOne{
   border: 1px solid black;
@@ -76,31 +77,6 @@ button img{
   /* display: none; */
 }
 
-#canvasTwo{
-  border: 1px solid black;
-  box-shadow: 2px 2px 3px black;
-  /* Don't set canvas size on css. 
-  It will stretch the canvas and make the drawing points at undesignated place. */
-  /* width: 320px;
-  height: 240px; */
-}
 
-#canvasButton{
-  display: block;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  bottom: 32px;
-}
 
-#photoTwo{
-  /* width: 320px;
-  height: 240px;
-  border: 1px solid #aaaaaa; */
-}
-
-#galleryArea{
-  display: flex;
-  justify-content: space-around;
-}
 
