@@ -13,7 +13,6 @@ self.addEventListener('install', function(event) {
         '/sw-test/camera.js',
         '/sw-test/canvas.js',
         '/sw-test/index.html',
-        // '/sw-test/myLittleVader.jpg',
         '/sw-test/onlineOfflineEvent.js',
         '/sw-test/style.css',
         '/sw-test/sw.js'
