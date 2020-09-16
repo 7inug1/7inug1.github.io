@@ -36,63 +36,42 @@
 
       <div id="item2">
         <h1>Gallery</h1>
+        <img src="../images/sketchbook.jpg" alt="canvas frame" width="320" height="240">
         <canvas id="canvasOne" width="320" height="240"></canvas>
       </div> 
 
     </div> 
-    <h1>Everything about this page</h1>
     
-    <h2>Q. How do you use it?</h2>
-    <details>
-      <summary>Expand/Collapse</summary>
-      <h3>1. Turn on the web camera by clicking 'On' button</h3>
-      <p>You can also turn it off by clicking the 'Off' button.</p>
-      <h3>2. Click 'Capture' button to save the still image</h3>
-      <p>The image will be saved to the canvas on the right and local storage.</p>
-      <h3>3. Draw on the photo captured</h3>
-      <p>Click and hold to keep drawing. Short click to draw dots.</p>
-      <h3>4. Get yourself disconnected from the Internet and refresh the page!</h3>
-      <p>Service worker and Cache running at the back allows you to have offline experience.</p><br>
-    </details>
+    <div id="description">
+      <div id="instruction">
+      <h2>Instruction</h2>
+        <h3>1. Turn on the web camera by clicking 'On' button</h3>
+        <p>You can also turn it off by clicking the 'Off' button.</p>
+        <h3>2. Click 'Capture' button to save the still image</h3>
+        <p>The image will be saved to the canvas on the right and local storage.</p>
+        <h3>3. Draw on the photo captured</h3>
+        <p>Click and hold to keep drawing. Short click to draw dots.</p>
+        <h3>4. Get yourself disconnected from the Internet and refresh the page!</h3>
+        <p>Service worker and Cache running at the back allows you to have offline experience.</p><br>
+      </div>
 
-    <h2>Q. What is this page?</h2>
-    <details>
-      <summary>Expand/Collapse</summary>
-      <p>The following page is Jinwook Shin's very first project built with HTML5 Components to show his web development
-      capability. This HTML project will be followed by CSS and JavaScript projects to comprise a one big web development
-      portfolio.</p><br>
-    </details>
-
-
-    <h2>Q. Why did you make this page?</h2>
-    <details>
-      <summary>Expand/Collapse</summary>
-      <p>We use World Wide Web on daily basis. I also use it everyday. I made this webpage because I was interested in 
-      web technology and I wanted to show my capability to build a page using HTML.<br><br>
-    
-      First,
-        <br><br>
-      Second,
-    
-      </p><br>
-    </details>
-
-    
-    <h2>Q. What is it comprised of?</h2>
-    <details>
-      <summary>Expand/Collapse</summary>
-      <h3>1. Status Bar</h3> 
-      <p>Status Bar at the top of the page indicates whether there is an online connection or not.
-      When it's online, it is indicated with a green bar and when it's not, it is indicated with a red bar. </p>
-      <h3>2. Webcam & Canvas</h3>
-      <p>You will see two square boxes located in the middle of the page. The one on the left is a web camera. 
-      To your right is a canvas that works as an image holder, also as a drawing canvas. </p>
-      <h3>3. Service Worker</h3>
-      <p>The easy way to describe it is that it allows you to have an offline experience. In a more expert way,
-      it is one of the web workers that acts as a proxy server. Here is the reason why I am using it. </p>
-      <h3>4. Local Storage</h3>
-    </details>
-    
+      <div id="components">
+      <h2> HTML Components</h2>
+        <h3>1. On/Offline Eventlistener</h3> 
+        <p>Status Bar at the top of the page uses online/offline event listeners to 
+          indicates whether there is an online connection or not.</p>
+        <h3>2. Webcam & Canvas</h3>
+        <p>You will see two square boxes located in the middle of the page. On your left is a web camera. 
+        To your right is a canvas that works as an image holder. You can also draw on it. </p>
+        <h3>3. Service Worker</h3>
+        <p>The easy way to describe it is that it allows you to have an offline experience. In a more expert way,
+        it is one of the web workers that acts as a proxy server.  </p>
+        <h3>4. Local Storage</h3>
+        Local storage is in use to store data on your local browser. It is better than using cookie in a way that
+        it is more secure and larger amount of data (about 5MB) can be stored. 
+        <p></p>
+      </div>
+    </div>
   </main>
 </body>
 </html>
