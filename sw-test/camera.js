@@ -17,6 +17,8 @@ let cameraOnButton = document.getElementById('cameraOnButton');
 let cameraOffButton = document.getElementById('cameraOffButton');
 let cameraCaptureButton = document.getElementById('cameraCaptureButton');
 
+
+
 // TO BE USED AS LOCAL STORAGE
 // let capturedPhotoSaveButton = document.getElementById('capturedPhotoSaveButton');
 // data: containing a representation of the image in the format specified by the type parameter (defaults to PNG). 

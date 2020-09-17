@@ -36,19 +36,19 @@ main{
 
 #cameraOnButton, #cameraOffButton, #cameraCaptureButton{
   /* It starts on a new line, and takes up the whole width */
-  display: block;
+  /* display: block; */
   
   
   /* They go together */
-  bottom: 42px;
-  position: relative;
+  /* bottom: 42px;
+  position: relative; */
   
   /* Giving margin is to create a certain amount of space. It is like pushing. */
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
 
   font-size: 18px;
-  /* top: 5px; */
+  
   
   /* background-image: url("./images/video.svg"); */
 }
@@ -74,7 +74,8 @@ button img{
 #canvasOne{
   border: 1px solid black;
   box-shadow: 2px 2px 3px black;
-  /* display: none; */
+  /* background-image: url(../images/sketchbook.jpg); */
+  
 }
 
 #description{
@@ -82,6 +83,12 @@ button img{
   grid-template-columns: 1fr 1fr;
 }
 
+#canvasAndFrame{
+
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr; */
+}
 
 
 

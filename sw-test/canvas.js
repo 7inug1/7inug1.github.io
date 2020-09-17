@@ -6,6 +6,9 @@ let canvas = document.getElementById('canvasOne');
 let context = canvas.getContext('2d');
 let painting = false;
 
+let photoFrameImage = new Image();
+photoFrameImage.src = '../images/sketchbook.jpg';
+context.drawImage(photoFrameImage, 10, 20, 400, 400);
 
 
 canvas.addEventListener('mousedown', startPosition);
