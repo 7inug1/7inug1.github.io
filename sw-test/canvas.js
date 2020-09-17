@@ -6,9 +6,16 @@ let canvas = document.getElementById('canvasOne');
 let context = canvas.getContext('2d');
 let painting = false;
 
+let frame = document.getElementById('frame');
+let frameContext = frame.getContext('2d');
 let photoFrameImage = new Image();
-photoFrameImage.src = '../images/sketchbook.jpg';
-context.drawImage(photoFrameImage, 10, 20, 400, 400);
+photoFrameImage.src = '../images/photoFrameImage.png';
+
+photoFrameImage.addEventListener('load', function() {
+  // execute drawImage statements here
+  frameContext.drawImage(photoFrameImage, 0, 0, 399, 330);
+}, false);
+
 
 
 canvas.addEventListener('mousedown', startPosition);
@@ -30,9 +37,9 @@ function draw(event) {
   context.lineWidth = 2; //drawing pen width
   context.lineCap = 'round';
 
-  context.lineTo(event.offsetX, event.offsetY);  
+  context.lineTo(event.offsetX-40, event.offsetY-45);  
   context.stroke();  
   context.beginPath(); //starts a new path by emptying the list of sub-paths.  
-  context.moveTo(event.offsetX, event.offsetY);
+  context.moveTo(event.offsetX-40, event.offsetY-45);
   // console.log(event.offsetX+" "+event.offsetY) //for testing coordinates
 }
