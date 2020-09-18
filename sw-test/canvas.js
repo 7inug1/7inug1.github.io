@@ -9,7 +9,7 @@ let painting = false;
 let frame = document.getElementById('frame');
 let frameContext = frame.getContext('2d');
 let photoFrameImage = new Image();
-photoFrameImage.src = '../images/photoFrameImage.png';
+photoFrameImage.src = '../images/photoFrameImage.png'; //https://toppng.com/old-frame-border-png-old-photo-frames-PNG-free-PNG-Images_167585
 
 photoFrameImage.addEventListener('load', function() {
   // execute drawImage statements here
