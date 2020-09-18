@@ -20,9 +20,9 @@ let cameraCaptureButton = document.getElementById('cameraCaptureButton');
 
 
 // TO BE USED AS LOCAL STORAGE
-// let capturedPhotoSaveButton = document.getElementById('capturedPhotoSaveButton');
 // data: containing a representation of the image in the format specified by the type parameter (defaults to PNG). 
 let data;
+
 // https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
 // "constraints" parameters
 let constraints = (window.constraints = {
@@ -30,7 +30,6 @@ let constraints = (window.constraints = {
   video: true,
 });
 
-// let testPhoto = document.getElementById('hello');
 loadImage();
 
 cameraOnButton.addEventListener('click', turnCameraOn);

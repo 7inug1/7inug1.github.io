@@ -1,3 +1,5 @@
+let responseClone;
+
 self.addEventListener('install', function(event) {
   // this ensures that the service worker 
   // will not install until the code inside 
@@ -41,7 +43,7 @@ self.addEventListener('fetch', function(event) {
       return fetch(event.request)
       .then(function (response) {
 
-        let responseClone = response.clone();
+        responseClone = response.clone();
         
         caches.open('v1')
         .then(function (cache) {
@@ -49,7 +51,7 @@ self.addEventListener('fetch', function(event) {
         });
         return response;
       }).catch(function () {
-        return undefined;
+        return response;
       });
     }
   }));
