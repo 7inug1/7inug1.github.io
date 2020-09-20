@@ -22,9 +22,9 @@ let cameraCaptureButton = document.getElementById('cameraCaptureButton');
 // data: containing a representation of the image in the format specified by the type parameter (defaults to PNG). 
 let data;
 
-window.onload = function() {
+// window.onload = function() {
   loadImage();
-}
+// }
 
 cameraOnButton.addEventListener('click', turnCameraOn);
 cameraOffButton.addEventListener('click', turnCameraOff);
