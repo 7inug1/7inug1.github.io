@@ -1,3 +1,4 @@
+let test=document.getElementById('test');
 let width = 320;
 let height = 240;
 let video = document.getElementById('video');
@@ -75,8 +76,9 @@ function loadImage(){
   let retrievingData = localStorage.getItem(key);
   console.log("retrievingData: " + retrievingData);
   imgNode.setAttribute('src', retrievingData);
-  console.log("imgNode: " + imgNode);
-  contextOne.drawImage(imgNode, 0, 0, width, height);
+  test.appendChild(imgNode);
+  // console.log("imgNode: " + imgNode);
+  contextOne.drawImage(imgNode, 0, 0);
   // console.log("loadImage");
 }
 
