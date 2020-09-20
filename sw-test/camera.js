@@ -1,36 +1,30 @@
 let width = 320;
 let height = 240;
-
 let video = document.getElementById('video');
-let photo = document.createElement('img');
-
-let canvasOne = document.getElementById('canvasOne');
-let contextOne = canvasOne.getContext('2d');
-
-
-let streaming = false;
-
-let imgNode = document.createElement("img");
-let key = "photoKey";    
-
-let cameraOnButton = document.getElementById('cameraOnButton');
-let cameraOffButton = document.getElementById('cameraOffButton');
-let cameraCaptureButton = document.getElementById('cameraCaptureButton');
-
-
-
-// TO BE USED AS LOCAL STORAGE
-// data: containing a representation of the image in the format specified by the type parameter (defaults to PNG). 
-let data;
-
 // https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
 // "constraints" parameters
 let constraints = (window.constraints = {
   audio: false,
   video: true,
 });
+let streaming = false;
+let photo = document.createElement('img');
+let canvasOne = document.getElementById('canvasOne');
+let contextOne = canvasOne.getContext('2d');
 
-loadImage();
+let imgNode = document.createElement("img");
+let key = "photoKey";    
+let cameraOnButton = document.getElementById('cameraOnButton');
+let cameraOffButton = document.getElementById('cameraOffButton');
+let cameraCaptureButton = document.getElementById('cameraCaptureButton');
+
+// TO BE USED AS LOCAL STORAGE
+// data: containing a representation of the image in the format specified by the type parameter (defaults to PNG). 
+let data;
+
+window.onload = function() {
+  loadImage();
+}
 
 cameraOnButton.addEventListener('click', turnCameraOn);
 cameraOffButton.addEventListener('click', turnCameraOff);
@@ -78,12 +72,12 @@ function saveImage(){
 }
 
 function loadImage(){
-  console.log("loadImage");
   let retrievingData = localStorage.getItem(key);
   // imgNode.setAttribute('id', 'savedImage');
   // imgNode.setAttribute('alt', '');
   imgNode.setAttribute('src', retrievingData);
   // imgNode.setAttribute('ondragstart', 'drag(event)');
   contextOne.drawImage(imgNode, 0, 0, width, height);
+  console.log("loadImage");
 }
 
