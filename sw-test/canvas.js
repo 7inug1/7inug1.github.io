@@ -16,11 +16,18 @@ photoFrameImage.addEventListener('load', function() {
   frameContext.drawImage(photoFrameImage, 0, 0, 399, 330);
 }, false);
 
+let blackButton = document.getElementById('blackButton');
+let redButton = document.getElementById('redButton');
+let yellowButton = document.getElementById('yellowButton');
 
+blackButton.addEventListener('click', changePenColorToBlack);
+redButton.addEventListener('click', changePenColorToRed);
+yellowButton.addEventListener('click', changePenColorToYellow);
 
 canvas.addEventListener('mousedown', startPosition);
 canvas.addEventListener('mouseup', finishPosition);
 canvas.addEventListener('mousemove', draw);
+
 
 function startPosition(event) {
   painting = true;
@@ -32,11 +39,23 @@ function finishPosition() {
   context.beginPath(); //to start new lines after one another
 }
 // beginPath->moveTo->lineTo->stroke
+function changePenColorToBlack(){
+  context.strokeStyle = "black";
+}
+
+function changePenColorToYellow(){
+  context.strokeStyle = "yellow";
+}
+
+function changePenColorToRed(){
+  context.strokeStyle = "red";
+}
+
 function draw(event) {  
   if (!painting) return;    
   context.lineWidth = 2; //drawing pen width
   context.lineCap = 'round';
-
+  // context.strokeStyle = "black";
   context.lineTo(event.offsetX-40, event.offsetY-45);  
   context.stroke();  
   context.beginPath(); //starts a new path by emptying the list of sub-paths.  

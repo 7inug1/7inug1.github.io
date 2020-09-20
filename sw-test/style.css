@@ -60,7 +60,20 @@ button img{
   height: 20px;
 }
 
+#blackButton{
+  background-color: black;
+  padding: 10px 15px;
+}
 
+#redButton{
+  background-color: red;
+  padding: 10px 15px;
+}
+
+#yellowButton{
+  background-color: yellow;
+  padding: 10px 15px;
+}
 
 .photoContainer, #savedImageContainer{
   width: 320px;

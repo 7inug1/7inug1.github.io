@@ -73,11 +73,10 @@ function saveImage(){
 
 function loadImage(){
   let retrievingData = localStorage.getItem(key);
-  // imgNode.setAttribute('id', 'savedImage');
-  // imgNode.setAttribute('alt', '');
+  console.log("retrievingData: " + retrievingData);
   imgNode.setAttribute('src', retrievingData);
-  // imgNode.setAttribute('ondragstart', 'drag(event)');
+  console.log("imgNode: " + imgNode);
   contextOne.drawImage(imgNode, 0, 0, width, height);
-  console.log("loadImage");
+  // console.log("loadImage");
 }
 
