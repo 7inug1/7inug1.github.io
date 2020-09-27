@@ -75,10 +75,17 @@ function saveImage(){
 function loadImage(){
   let retrievingData = localStorage.getItem(key);
   console.log("retrievingData: " + retrievingData);
-  imgNode.setAttribute('src', retrievingData);
-  test.appendChild(imgNode);
-  // console.log("imgNode: " + imgNode);
-  contextOne.drawImage(imgNode, 0, 0);
-  // console.log("loadImage");
+  
+  let img = new Image();
+  img.onload = function(){
+    contextOne.drawImage(img, 0, 0);
+  }
+  img.src = retrievingData;
+
+  // imgNode.setAttribute('src', retrievingData);
+  // test.appendChild(imgNode);
+  // // console.log("imgNode: " + imgNode);
+  // contextOne.drawImage(imgNode, 0, 0);
+  // // console.log("loadImage");
 }
 
