@@ -1,36 +1,34 @@
-let test=document.getElementById('test');
-let width = 320;
-let height = 240;
+// <VARIABLES> - Related to web camera
 let video = document.getElementById('video');
+let streaming = false;
 // https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-// "constraints" parameters
 let constraints = (window.constraints = {
   audio: false,
   video: true,
 });
-let streaming = false;
-let photo = document.createElement('img');
+
+// <VARIABLES> - Related to the canvas in 'Gallery' section
+let width = 320;
+let height = 240;
 let canvasOne = document.getElementById('canvasOne');
 let contextOne = canvasOne.getContext('2d');
 
-let imgNode = document.createElement("img");
-let key = "photoKey";    
+// <VARIABLES> - Buttons on web camera
 let cameraOnButton = document.getElementById('cameraOnButton');
 let cameraOffButton = document.getElementById('cameraOffButton');
 let cameraCaptureButton = document.getElementById('cameraCaptureButton');
 
-// TO BE USED AS LOCAL STORAGE
+// <VARIABLES> - Related to 'local storage'
 // data: containing a representation of the image in the format specified by the type parameter (defaults to PNG). 
 let data;
+let key = "photoKey"; 
 
-// window.onload = function() {
-  loadImage();
-// }
-
+// <EVENTLISTENERS>
 cameraOnButton.addEventListener('click', turnCameraOn);
 cameraOffButton.addEventListener('click', turnCameraOff);
 cameraCaptureButton.addEventListener('click', captureImage);
 
+// <FUNCTIONS>
 function turnCameraOn(){
   navigator.mediaDevices.getUserMedia(constraints)
     .then(function (stream) {
@@ -71,21 +69,3 @@ function saveImage(){
   data = canvasOne.toDataURL('image/png');
   localStorage.setItem(key, data);
 }
-
-function loadImage(){
-  let retrievingData = localStorage.getItem(key);
-  console.log("retrievingData: " + retrievingData);
-  
-  let img = new Image();
-  img.onload = function(){
-    contextOne.drawImage(img, 0, 0);
-  }
-  img.src = retrievingData;
-
-  // imgNode.setAttribute('src', retrievingData);
-  // test.appendChild(imgNode);
-  // // console.log("imgNode: " + imgNode);
-  // contextOne.drawImage(imgNode, 0, 0);
-  // // console.log("loadImage");
-}
-
