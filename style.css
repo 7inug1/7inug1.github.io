@@ -1,0 +1,510 @@
+/* https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_box-shadow */
+
+@font-face {
+  font-family: 'PokemonSolid';
+  src: url('./fonts/PokemonSolidNormal.eot');
+  src: local('Pokemon Solid Normal'), local('PokemonSolidNormal'),
+      url('./fonts/PokemonSolidNormal.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/PokemonSolidNormal.woff2') format('woff2'),
+      url('./fonts/PokemonSolidNormal.woff') format('woff'),
+      url('./fonts/PokemonSolidNormal.ttf') format('truetype'),
+      url('./fonts/PokemonSolidNormal.svg#PokemonSolidNormal') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PokemonHollow';
+  src: url('./fonts/PokemonHollowNormal.eot');
+  src: local('Pokemon Hollow Normal'), local('PokemonHollowNormal'),
+      url('./fonts/PokemonHollowNormal.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/PokemonHollowNormal.woff2') format('woff2'),
+      url('./fonts/PokemonHollowNormal.woff') format('woff'),
+      url('./fonts/PokemonHollowNormal.ttf') format('truetype'),
+      url('./fonts/PokemonHollowNormal.svg#PokemonHollowNormal') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --pokemonYellow:  #FFCB05;
+  --pokemonDarkBlue: #003A70;
+  --pokemonLightBlue: #3D7DCA;
+}
+
+/* 1)Header */
+#pokemonHeading{
+  background-color: var(--pokemonDarkBlue);
+  height: 14vh;
+  color: var(--pokemonYellow);
+  
+  /* -webkit-scrollbar */
+  font-family: "PokemonSolid"; 
+  font-size: 7vh; 
+  text-align: center;
+  margin: 0rem 0rem;
+
+  /* Pokemon */
+  text-align: center;
+  margin: 0px 0px;
+  padding: 30px !important;
+  background-color: var(--pokemonDarkBlue);
+  color: var(--pokemonYellow);
+  text-shadow: 5px 5px var(--pokemonLightBlue),
+    5px 0 var(--pokemonLightBlue),
+    5px -5px var(--pokemonLightBlue),
+    0 -5px var(--pokemonLightBlue),
+    -5px -5px var(--pokemonLightBlue),
+    -5px 0 var(--pokemonLightBlue),
+    -5px 5px var(--pokemonLightBlue),
+    0 5px var(--pokemonLightBlue),
+    4px 5px var(--pokemonLightBlue),
+    3px 5px var(--pokemonLightBlue),
+    2px 5px var(--pokemonLightBlue),
+    1px 5px var(--pokemonLightBlue),
+    -1px 5px var(--pokemonLightBlue),
+    -2px 5px var(--pokemonLightBlue),
+    -3px 5px var(--pokemonLightBlue),
+    -4px 5px var(--pokemonLightBlue),
+    -4px -5px var(--pokemonLightBlue),
+    -3px -5px var(--pokemonLightBlue),
+    -2px -5px var(--pokemonLightBlue),
+    -1px -5px var(--pokemonLightBlue),
+    1px -5px var(--pokemonLightBlue),
+    2px -5px var(--pokemonLightBlue),
+    3px -5px var(--pokemonLightBlue),
+    4px -5px var(--pokemonLightBlue);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 32.1rem;
+}
+
+/* 2-1)item1 */
+#item1{
+  grid-column: 1 / 2;
+  padding-left: 0.9375rem;
+  /* padding-top: 1rem; */
+  /* height: 100vh;
+
+  width: 13vw; */
+
+  padding-left: 0rem; 
+  /* width: 25rem; change */
+  /* height: 80vh; */
+  height: auto;
+}
+#pokemonSubheading{
+  text-align: center;
+  height: 6.5vh;
+  padding-top: 0rem;
+}
+#pokemonSubheadingText{
+  font-family: "PokemonSolid"; 
+  color: black;
+  font-weight: bolder; 
+  font-size: 4vh;
+  /* line-height: 0rem; */
+  display: inline;
+  height: 7vh;
+}
+
+#pokemonSubheadingCounter{
+  font-family: "PokemonHollow"; 
+  font-weight:bolder; 
+  font-size: 3vh;
+  margin: 0rem 0rem 0.625rem 0rem;
+  display: inline;
+}
+
+#pokemonListContainer{
+
+  font: 16px Arial, Serif;
+  border: none;
+
+  overflow: scroll;
+  scrollbar-color: black white;
+  scrollbar-width: thin;
+  overflow-x: hidden;
+  /* overflow: auto; */
+
+  box-shadow:inset 0 0 20px #333;
+
+  width: 38vw;
+  height: 76vh;
+
+}
+
+.pokemonButton{
+  background-color: Transparent;
+
+  border: none;
+  padding: 0 2px;
+  font-size: 4rem; 
+  
+  cursor: pointer;
+}
+
+/* 2-2)item2 */
+#item2{
+  grid-column: 2 / -1;
+  background-image: url("pokemon_background.jpeg");
+  background-repeat: repeat;
+
+  background-size: contain;
+  /* background */
+  /* background-size: 93rem 33rem; */
+
+  /* width: 87vw;
+  height: 100vh; */
+
+  margin-left: 0px;
+  padding-left: 0px;
+
+  height: 86vh; /*change*/ 
+  width: 65vw;/*change*/
+  display:flex; 
+  align-items: center;
+}
+
+#pokemonDetailsCardContainer {
+  display: grid;
+  grid-template-areas: "title" "sprite" "info";
+  grid-template-rows: 35px 110px 180px;
+  /* grid-template-rows: 35px calc(110/325) calc(180/325); */
+
+  width: 250px; /*card width*/
+  border-radius: 8px;
+  background-color: var(--pokemonYellow);
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 7px 10px;
+  
+  position:relative; 
+  left:120px; 
+  top:40px;
+
+  margin: auto;
+  left: 0px;
+}
+
+#pokemonDetailsCardTitle {
+  grid-area: title;
+  background-color:var(--pokemonYellow);
+  
+  border: 1px solid;
+  padding-top: 4px;
+  margin-bottom: 5px;
+  box-shadow: 1px 2px;
+  
+  text-align: center;
+  font-size: 20px;
+}
+
+#pokemonDetailsCardSprite {
+  grid-area: sprite;
+  background-color: beige;
+  width: 250px;
+  border: 1px solid;
+  margin-bottom: 5px;
+}
+
+img{
+  height: 110px;
+  padding-left: 75px;
+  padding-bottom: 30px;
+}
+
+.questionMarkImage{
+  height: 100px;
+  padding-left: 107px;
+  padding-top: 2px;
+}
+
+#pokemonDetailsCardInfo {
+  grid-area: info;
+  background-color: #f1e3a9;
+  border: 1px solid;
+  padding-top: 5px;
+  padding-left: 9px;
+}
+
+.hr{
+  margin: 2px;
+  width: 95%;
+}
+
+/* 3)Footer */
+footer{
+  text-align: center;
+  background-color: var(--pokemonDarkBlue);
+
+  margin-top: 10px;
+  border-top: 2px solid #221811;
+  padding-bottom: 5px;
+
+  color: rgb(187, 187, 187);
+
+  
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3.5vh;
+}
+
+/* 2. Tablet - Portrait */
+/* desktop: 492px 30.75rem */
+/* viewport: 785.45px 49.090625rem*/
+@media screen and (orientation: Portrait) and (max-width: 64rem) and (max-height: 85.375rem) {
+  /* 1)header */
+  #pokemonHeading{
+    height: 11rem;
+    height: auto;
+    margin-top: -1.25rem;
+  }
+
+  .grid {
+    display: inline;
+    /* grid-template-columns: repeat(2, 1fr); */
+  }
+  /* 2-1)item1 */
+  #item1{
+
+    /* grid-column: 1 / 2;
+    padding-left: 15px; */
+    /* float: none; */
+    
+
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  #pokemonSubheading{
+    height: 3.5rem;
+  }
+
+  #pokemonSubheadingText{
+    text-align: center;
+  }
+  
+  #pokemonList{
+    text-align: center;
+  }
+
+  #pokemonListContainer{
+    width: auto;
+      /* https://stackoverflow.com/questions/6671375/css-box-shadow-top-and-bottom-only */
+    box-shadow: 
+    inset 0px 1px 10px 0px #CCC,
+    inset 0px 0px 0px 0px #CCC; 
+  }
+
+  .pokemonButton{
+    font-size: 50px; 
+  }
+
+  /* 2-2)item2 */
+  #item2{
+    background-size: cover;
+    background-repeat: repeat;
+    width: 100vw;
+    height: 80vh;
+  } 
+
+  #pokemonDetailsCardContainer {
+    /* display: grid;
+    grid-template-areas: "title" "sprite" "info";
+    grid-template-rows: 35px 110px 180px;
+  
+    width: 250px; 
+    border-radius: 8px;
+    background-color: var(--pokemonYellow);
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 7px 10px;
+    
+    position:relative; 
+    left:120px; 
+    top:40px; */
+    /* margin: auto;
+    left: 0px; */
+  } 
+}
+
+/* 2. Tablet: iPad pro 12.9 - Landscape */
+@media screen and (orientation: landscape) and (max-height: 64rem) and (max-width: 85.375rem) {
+  #pokemonHeading{
+    height: auto;
+    margin-top: -1.25rem;
+    /* font-size: 6em;  */
+    font-size: 9vh; 
+  }
+
+  /* 2-1)item1 */
+  #item1{
+    padding-left: 0rem; 
+    /* width: 25rem; change */
+    /* height: 80vh; */
+    height: auto;
+  }
+
+  #pokemonSubheading{
+    padding: 15px 0px;
+    text-align: center;
+  }
+
+  #pokemonSubheadingText{
+    font-size: 2.5em; /*change*/    
+  }
+
+  #pokemonSubheadingCounter{
+    font-size: 2em; /*change*/
+  }
+
+  #pokemonListContainer{
+    width: 38vw;
+    height: 61.9vh;
+    /* box-shadow:inset 0 0 20px #333; */
+  }
+
+  .pokemonButton{
+    font-size: 3.0rem; 
+  }
+
+  /* 2-2)item2 */
+  #item2{
+    height: 70vh; /*change*/ 
+    width: 65vw;/*change*/
+    display:flex; 
+    align-items: center;
+  }
+
+  #pokemonDetailsCardContainer {
+    top:-30px; /*change*/
+    margin: auto;
+    left: 0px;
+  }
+}
+
+/* 2. Tablet: iPad pro 10.5 - Landscape */
+@media screen and (orientation: landscape) and (max-height: 52.125rem) and (max-width: 69.5rem) {
+  #pokemonListContainer{
+    width: 38vw;
+    height: 59vh;
+    /* box-shadow:inset 0 0 20px #333; */
+  }
+
+  .pokemonButton{
+    font-size: 3.0rem; 
+  }
+
+  
+}
+
+/* 2. Tablet: iPad Mini - Landscape */
+@media screen and (orientation: landscape) and (max-height: 48.5rem) and (max-width: 64.5rem) {
+  #pokemonListContainer{
+    width: 38vw;
+    height: 59vh;
+    /* box-shadow:inset 0 0 20px #333; */
+  }
+
+  .pokemonButton{
+    font-size: 2.8rem; 
+  }
+
+  #item1{
+    text-align: left;
+  }
+  .button{
+    text-align: left;
+  }
+}
+
+/* 3. Mobile - Portrait */
+/* desktop: 492 */
+/* viewport: 475*/
+@media screen and (orientation: Portrait) and (max-width: 33.375rem) and (max-height: 62.5rem) {
+  #pokemonHeading{
+    height: 16rem;
+  }
+  
+  .grid {
+    display: inline;
+  }
+
+  #item1{
+    text-align: center;
+  }
+
+  #pokemonListContainer{
+    width: auto;
+    height: 30vh;
+  }
+
+  .pokemonButton{
+    font-size: 40px; 
+  }
+  /* ------------------------------------------ */
+
+  #pokemonSubheadingText{
+    text-align: center;
+  }
+
+  #pokemonList{
+    text-align: center;
+  }
+
+  #item2{
+    display:flex; 
+    align-items: center;
+  } 
+
+  #pokemonDetailsCardContainer {
+    top: -2.5rem;
+    left: 0px;
+  }
+}
+
+/* 3. Mobile - Landscape */
+@media screen and (orientation: landscape) and (max-height: 33.375rem) and (max-width: 62.5rem) {
+  #pokemonHeading{
+    height: 10.5rem; /*change*/
+    height: auto;
+    margin-top: -1.25rem;
+  }
+
+  /* 2-1)item1 */
+  #item1{
+    padding-left: 0rem; /*change*/
+    width: 35vw; /*change*/
+  }
+
+  #pokemonSubheadingText{
+    font-size: 1.5em; /*change*/    
+  }
+
+  #pokemonSubheadingCounter{
+    font-size: 1.3em; /*change*/
+  }
+
+  .pokemonButton{
+    font-size: 3rem; /*change*/
+  }
+
+  /* 2-2)item2 */
+  #item2{
+    height: auto; /*change*/ 
+    width: 65vw;/*change*/
+    display:flex; 
+    align-items: center;
+  }
+
+  #pokemonDetailsCardContainer {
+    top:-30px; /*change*/
+    margin: auto;
+    left: 0px;
+  }
+}
