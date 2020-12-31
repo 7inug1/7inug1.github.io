@@ -13,7 +13,6 @@ let pokemonDetailsCardInfo = document.getElementById('pokemonDetailsCardInfo');
 // <Function Calls>
 createPokemonList(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=100`);
 
-
 function createPokemonList(url){
   fetch(url)
   .then(response => response.json())
@@ -21,11 +20,8 @@ function createPokemonList(url){
     pokemonListContainer.onscroll = checkEndOfScroll; // When scrolling starts from the user
     nextPageResult = data.next;
     const pokemonsOfEachPage = data.results; 
-    //------------------------------------------------------------------------------------------------------------------------
     let offsetRegex = url.search("offset=");
     let limitRegex = url.search("limit=");
-
-    // let end = url.indexOf('&')
     let substring = url.substring(Number(offsetRegex+7), url.indexOf('&'));
     let offset = Number(substring);
     let limit = Number(url.slice((limitRegex+6)));
@@ -40,7 +36,6 @@ function createPokemonList(url){
     let counter = document.createTextNode("(" + (offset+limit) + "/" + data.count + ")");
     counter.className = "counter";
     pokemonSubheadingCounter.appendChild(counter);
-    //------------------------------------------------------------------------------------------------------------------------
 
     for(let i = 0; i < pokemonsOfEachPage.length; i++){
       pokemonButton = document.createElement("button"); // create button element
@@ -50,7 +45,7 @@ function createPokemonList(url){
       pokemonButton.addEventListener('click', function() {
         getPokemonInformation(pokemonsOfEachPage[i].url)
       }, false);
-
+      
       let br = document.createElement('br');
       pokemonButton.appendChild(br);
       pokemonListContainer.appendChild(pokemonButton);
