@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="statusBar">
+    You're currently connected:  <span id="onlineOfflineStatus">I am not sure of the status yet!</span>
+  </div><br>
+
+  <div class="split left-top">
+    <video id="video"></video>
+  </div>
+  <div class="split left-bottom">
+    <div id="cameraButtons">
+      <button id="cameraOnButton">On</button>
+      <button id="cameraOffButton">Off</button>
+      <button id="cameraCaptureButton">Capture</button>
+    </div>
+  </div>
+
+  <div class="split right-top">
+        <div id="canvasAndFrame">
+          <canvas id="frame" width="399" height="330"></canvas> <!-- Photo frame for the canvas -->
+          <canvas id="canvasOne" width="320" height="240"></canvas><br> <!-- Drawing canvas -->
+          
+
+        </div>
+  </div>
+  <div class="split right-bottom">
+    <button id="blackButton"></button>
+    <button id="redButton"></button>
+    <button id="yellowButton"></button>
+    <button id="saveButton">Save</button>
+  </div>
+
+  <script src="camera.js" type="text/javascript" defer></script>
+  <script src="canvas.js" type="text/javascript" defer></script>
+  <script src="onlineOfflineEvent.js" type="text/javascript" defer></script>
+  <!-- <script src="app.js" type="text/javascript" defer></script> -->
+
+</body>
+
+<!-- <body>
+<div class="split left">
+  <div class="centered">
+    <h2>Jane Flex</h2>
+    <p>Some text.</p>
+  </div>
+</div>
+
+<div class="split right">
+  <div class="centered">
+    <h2>John Doe</h2>
+    <p>Some text here too.</p>
+  </div>
+</div>
+</body> -->
+</html> 
