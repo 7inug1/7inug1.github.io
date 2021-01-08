@@ -11,8 +11,8 @@ let constraints = (window.constraints = {
 let width = 320;
 let height = 240;
 
-// let canvasOne = document.getElementById('canvasOne');
-// let contextOne = canvasOne.getContext('2d');
+let canvasOne = document.getElementById('canvasOne');
+let contextOne = canvasOne.getContext('2d');
 
 
 

@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 6.5vh;
+  height: 4vh;
   left: 0;
 
   text-align: center;
@@ -11,12 +11,18 @@
   /* floating on top of other elements/texts */
   z-index: 2; 
   color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-top {
   position:fixed; width:50%; height:80%; top:0;   left:0;
   background-color: white;
   object-fit: scale-down;
+  border-style:solid;
+  border-width: 2px;
 }
 
 #video{
@@ -27,12 +33,16 @@
 
 .left-bottom {
   position:fixed; width:50%; height:20%; top:80%;   left:0;
-  background-color: black;
+  border-style:solid;
+  /* border-color: black; */
+  border-width: 2px;
 }
 
 .right-top {
   position:fixed; width:50%; height:80%; top:0;   left:50%;
   /* background-color: white; */
+  /* border-style:solid;
+  border-width: 2px; */
 }
 
 #canvasAndFrame{
@@ -46,7 +56,7 @@
 
 #canvasOne{
 
-  cursor: url('../images/cursor.cur'), auto;
+  cursor: url('./images/cursor.cur'), auto;
 
   position:fixed; width:50%; height:80%; top:0;   left:50%;
 }
@@ -58,9 +68,37 @@
 .right-bottom {
   position:fixed; width:50%; height:20%; top:80%;   left:50%;
   background-color: yellow;
+  border-style:solid;
+  border-width: 2px;
 }
 
+button img{
+  /* top: 5px; */
+  padding-bottom: 0px;
+  width: 20px;
+  height: 20px;
+}
 
+#blackButton{
+  background-color: black;
+  padding: 10px 15px;
+}
+
+#redButton{
+  background-color: red;
+  padding: 10px 15px;
+}
+
+#yellowButton{
+  background-color: yellow;
+  padding: 10px 15px;
+}
+
+/* #saveButton{
+  position: absolute;
+  padding: 5px 10px;
+  margin-left: 237px;
+} */
 
 
 
