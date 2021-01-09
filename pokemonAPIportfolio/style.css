@@ -26,6 +26,14 @@
   font-style: normal;
 }
 
+html{
+  cursor: url('./maplestoryCursors/aero_arrow.cur'), auto;
+}
+
+html:active{
+  cursor: url('./maplestoryCursors/aero_move.cur'), auto;
+}
+
 :root {
   --pokemonYellow:  #FFCB05;
   --pokemonDarkBlue: #003A70;
@@ -130,7 +138,11 @@
     border: none;
     padding: 0 2px;
     font-size: 3vh;
-    cursor: pointer;
+    cursor: url('./maplestoryCursors/aero_helpsel.cur'), auto;
+  }
+
+  .pokemonButton:active{
+    cursor: url('./maplestoryCursors/aero_move.cur'), auto;
   }
 
   /* 2-2)item2 */
