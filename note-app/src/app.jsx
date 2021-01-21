@@ -6,9 +6,9 @@ class app extends Component {
     super(props);
     
     this.state = {
-      title: "",
-      tag: "",
-      content: "",
+      newNoteTitle: "",
+      newNoteTag: "",
+      newNoteContent: "",
 
       notes: [
         {"title": "How to make a soup", "tag": "recipe", "content": "Put the powder into the pot and boil it."},
@@ -17,168 +17,158 @@ class app extends Component {
         {"title": "How to save money", "tag": "lifehack", "content": "Just save it."},
         {"title": "What is life?", "tag": "philosophy", "content": "Life is something that has no meaning itself. You make of your own."}
       ],
-      filteringTag: "",
+      filteringTag: undefined,
       filteredNotes: [],
-      unduplicatedTagsArray: []
+      unduplicatedTagsArray: [],
+      currentlyClickedFilter: false
       
     }
-    this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleTagChange = this.handleTagChange.bind(this);
-    this.handleContentChange = this.handleContentChange.bind(this);
+    this.handleNewNoteTitleChange = this.handleNewNoteTitleChange.bind(this);
+    this.handleNewNoteTagChange = this.handleNewNoteTagChange.bind(this);
+    this.handleNewNoteContentChange = this.handleNewNoteContentChange.bind(this);
     this.getNotesByTag = this.getNotesByTag.bind(this);
-    this.getNotes = this.getNotes.bind(this);
     this.submitNewNote = this.submitNewNote.bind(this);
   }
   
   componentDidMount(){
     console.log("componentDidMount")
     const tempTagArray = this.state.notes.map((note)=>note.tag)
-    // console.log(tempTagArray);
 
     this.setState({
-      unduplicatedTagsArray: [...new Set(tempTagArray)]
+      unduplicatedTagsArray: [...new Set(tempTagArray)],
+      filteredNote: this.state.notes
     })
-
-
+    this.getNotesByTag();
   }
 
   componentDidUpdate(prevProps, prevState){
     console.log("componentDidUpdate")
-    if(prevProps.notes !== this.props.notes){
-      this.getNotesByTag(this.state.tag);
+    // console.log("prevProps.notes: " + JSON.stringify(prevState.notes))
+    // console.log("this.props.notes: " + JSON.stringify(this.state.notes))
+    if(prevState.notes !== this.state.notes){
+      const tempTagArray = this.state.notes.map((note)=>note.tag)
+      console.log("tempTagArray: " + tempTagArray)
+      this.setState({
+        unduplicatedTagsArray: [...new Set(tempTagArray)]
+      })
+
+      this.getNotesByTag(this.state.filteringTag);
+      
     }
-    // this.getNotesByTag();
+    console.log("componentDidUpdate finished")
   }
 
   getNotesByTag(tag){
     const tempNotesArray = [];
-    this.setState({
-      filteringTag: tag
-    })
-    
-    // console.log("tempNotesArray: " + tempNotesArray);
-    // console.log(tag + " is clicked.");
+    if(tag===undefined){
+      this.setState({
+        filteredNotes: this.state.notes
+      })
+    }
+    else{
+      this.setState({
+        filteringTag: tag
+      })
 
-    for(let i=0; i<this.state.notes.length; i++){
-      if(this.state.notes[i].tag === tag){
-        tempNotesArray.push(this.state.notes[i]);
+      for(let i=0; i<this.state.notes.length; i++){
+        if(this.state.notes[i].tag === tag){
+          tempNotesArray.push(this.state.notes[i]);
+        }
       }
+
+      // for(let i=0; i<tempNotesArray.length; i++){
+      //   console.log(tempNotesArray[i])
+      // }
+
+      this.setState({
+        filteredNotes: tempNotesArray
+      })
+      // console.log("set filteringTag: " + this.state.filteringTag)
     }
-
-    for(let i=0; i<tempNotesArray.length; i++){
-      console.log(tempNotesArray[i])
-    }
-
-    this.setState({
-      filteredNotes: tempNotesArray
-    })
-    console.log("set filteringTag: " + this.state.filteringTag)
   }
 
-  getNotes(){
-    {this.state.notes.map((note)=>
-      <div className="memo-individual">
-        <h3 key={note.title}> Title: {note.title} </h3>
-        <h3 key={note.tag}> Tag: {note.tag} </h3>
-        <h3 key={note.content}> Content: {note.content} </h3>
-      </div>
-    )}
-  }
-
-  handleTitleChange(event){
+  handleNewNoteTitleChange(event){
     this.setState({
-      title: event.target.value
+      newNoteTitle: event.target.value
     });
-    // console.log(this.state.title);
   }
 
-  handleTagChange(event){
+  handleNewNoteTagChange(event){
     this.setState({
-      tag: event.target.value
+      newNoteTag: event.target.value
     });
-    // console.log(this.state.tag);
   }
 
-  handleContentChange(event){
+  handleNewNoteContentChange(event){
     this.setState({
-      content: event.target.value
+      newNoteContent: event.target.value
     });
-    // console.log(this.state.content);
   }
 
   submitNewNote(event){
     event.preventDefault();
-    console.log(this.state.title);
-    console.log(this.state.tag);
-    console.log(this.state.content);
+    console.log(this.state.newNoteTitle);
+    console.log(this.state.newNoteTag);
+    console.log(this.state.newNoteContent);
+    if(this.state.newNoteTitle==="" || !this.state.newNoteTag==="" || !this.state.newNoteContent===""){
+      alert("Please fill out the form for all the sections.")
+    }
+    else{
+      this.setState({
+        notes: [...this.state.notes, { "title": this.state.newNoteTitle, "tag": this.state.newNoteTag, "content": this.state.newNoteContent}],
+        newNoteTitle: "",
+        newNoteTag: "",
+        newNoteContent: ""
+      });
+      event.target.reset();
+    }
 
-    this.setState({
-      notes: [...this.state.notes, { "title": this.state.title, "tag": this.state.tag, "content": this.state.content}]
-    });
-
-    this.getNotesByTag(this.state.tag);
+    // this.getNotesByTag(this.state.newNoteTag);
   }
 
   render() {
-    // listTags(){
-    //   <h1>hi</h1>
-    //   {this.state.notes.map(
-    //     (note)=>
-    //       <div id="tags">
-            
-    //         <button key={note.tag}> {note.tag}</button> 
-            
-    //       </div>
-    //   )}
-    // }
     return (
       <>
-
-        <form name="newMemoForm" onSubmit={this.submitNewNote}>
+      {/* 1. Adding new note form */}
+        <form name="newNoteForm" onSubmit={this.submitNewNote}>
           <fieldset>
-          <legend>New Memo</legend>
+          <legend>New Note</legend>
             <label>
             Title:
-              <input type="text" name="title" onChange={this.handleTitleChange}/>
+              <input type="text" name="title" onChange={this.handleNewNoteTitleChange}/>
             </label><br/>
 
             <label>
             Tag:
-              <input type="text" name="tag" onChange={this.handleTagChange}/>
+              <input type="text" name="tag" onChange={this.handleNewNoteTagChange}/>
             </label><br/>
 
             <label>
             Content:
-              <textarea type="text" name="content" onChange={this.handleContentChange}/>
+              <textarea type="text" name="content" onChange={this.handleNewNoteContentChange}/>
             </label><br/>
 
             <button >Submit</button>
             </fieldset>
         </form>
       <br/>
-      {/* <button onClick={this.getUnduplicatedTags}> button</button>  */}
+
+      {/* 2. Buttons - filters */}
+        <button onClick={() => this.getNotesByTag()}>All</button> 
+        
         {this.state.unduplicatedTagsArray.map((tag)=>
           <div id="tags">
-            <button onClick={() => this.getNotesByTag(tag)}> {tag}</button> 
+            <button onClick={() => this.getNotesByTag(tag)}>{tag}</button> 
           </div>
         )}
-        {/* {this.getUnduplicatedTags()} */}
         <br/>
-        {/* <button onClick={this.getNotes}> button</button> */}
-        
-        <h1>Entire Notes</h1>
-        {this.state.notes.map((note)=>
-          <div className="memo-individual">
-            
-            <h3 key={note.title}> Title: {note.title} </h3>
-            <h3 key={note.tag}> Tag: {note.tag} </h3>
-            <h3 key={note.content}> Content: {note.content} </h3>
-          </div>
-        )}
 
+        
+
+        {/* 3. Note section */}
         <h1>Filtered Notes</h1>
         {this.state.filteredNotes.map((filteredNote)=>
-          <div className="memo-individual">
+          <div className="note-individual">
             
             <h3 key={filteredNote.title}> Title: {filteredNote.title} </h3>
             <h3 key={filteredNote.tag}> Tag: {filteredNote.tag} </h3>
