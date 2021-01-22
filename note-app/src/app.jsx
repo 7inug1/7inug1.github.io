@@ -41,24 +41,9 @@ class app extends Component {
     this.getNotesByTag();
   }
 
-  componentDidUpdate(prevProps, prevState){
-    console.log("componentDidUpdate")
-    // console.log("prevProps.notes: " + JSON.stringify(prevState.notes))
-    // console.log("this.props.notes: " + JSON.stringify(this.state.notes))
-    if(prevState.notes !== this.state.notes){
-      const tempTagArray = this.state.notes.map((note)=>note.tag)
-      console.log("tempTagArray: " + tempTagArray)
-      this.setState({
-        unduplicatedTagsArray: [...new Set(tempTagArray)]
-      })
-
-      this.getNotesByTag(this.state.filteringTag);
-      
-    }
-    console.log("componentDidUpdate finished")
-  }
-
   getNotesByTag(tag){
+    console.log("getNotesByTag")
+
     const tempNotesArray = [];
     if(tag===undefined){
       this.setState({
@@ -76,15 +61,26 @@ class app extends Component {
         }
       }
 
-      // for(let i=0; i<tempNotesArray.length; i++){
-      //   console.log(tempNotesArray[i])
-      // }
-
       this.setState({
         filteredNotes: tempNotesArray
       })
-      // console.log("set filteringTag: " + this.state.filteringTag)
     }
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    console.log("componentDidUpdate")
+
+    if(prevState.notes !== this.state.notes){
+      const tempTagArray = this.state.notes.map((note)=>note.tag)
+      console.log("tempTagArray: " + tempTagArray)
+      this.setState({
+        unduplicatedTagsArray: [...new Set(tempTagArray)]
+      })
+
+      this.getNotesByTag(this.state.filteringTag);
+      
+    }
+    console.log("componentDidUpdate finished")
   }
 
   handleNewNoteTitleChange(event){
@@ -122,8 +118,6 @@ class app extends Component {
       });
       event.target.reset();
     }
-
-    // this.getNotesByTag(this.state.newNoteTag);
   }
 
   render() {
