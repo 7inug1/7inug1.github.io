@@ -1,48 +1,57 @@
 #statusBar{
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: 2vh;
+  width: 20%;
   height: 4vh;
-  left: 0;
+  left: 40%;
+  right: 40%;
 
+  border-radius: 25px;
+
+  border: 1.5px solid black;
   text-align: center;
   font-size: 1.25rem;
 
   /* floating on top of other elements/texts */
   z-index: 2; 
-  color: white;
+  color: black;
+  background-color: white;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding-top: 1.5px;
+  padding-bottom: 2.5px;
+
+  box-shadow: 3px 7px;
 }
 
 .left-top {
-  position:fixed; width:50%; height:80%; top:0;   left:0;
+  position:fixed; 
+  /* width:50%; 
+  height:80%;  */
+  top:0;   
+  left:0;
   background-color: white;
   object-fit: scale-down;
-  border-style:solid;
-  border-width: 2px;
+  /* border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black; */
 }
 
 #video{
-  /* width: 50vw;
-  height: 80vh; */
-  /* object-fit: scale-down; */
+
 }
 
 .left-bottom {
   position:fixed; width:50%; height:20%; top:80%;   left:0;
-  border-style:solid;
-  /* border-color: black; */
-  border-width: 2px;
+  border-right: 2px solid black;
 }
 
 .right-top {
   position:fixed; width:50%; height:80%; top:0;   left:50%;
-  /* background-color: white; */
-  /* border-style:solid;
-  border-width: 2px; */
+  /* border: 2px solid black; */
 }
 
 #canvasAndFrame{
@@ -55,10 +64,12 @@
 }
 
 #canvasOne{
-
   cursor: url('./images/cursor.cur'), auto;
-
-  position:fixed; width:50%; height:80%; top:0;   left:50%;
+  position:fixed; 
+  /* width:50%; 
+  height:80%;  */
+  top:0;   
+  left:50%;
 }
 
 #cameraOnButton, #cameraOffButton, #cameraCaptureButton{
@@ -67,9 +78,8 @@
 
 .right-bottom {
   position:fixed; width:50%; height:20%; top:80%;   left:50%;
-  background-color: yellow;
-  border-style:solid;
-  border-width: 2px;
+  background-color: white;
+  border-left: 2px solid black;
 }
 
 button img{

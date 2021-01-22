@@ -7,55 +7,58 @@ class app extends Component {
     
     this.state = {
       newNoteTitle: "",
-      newNoteTags: [],
+      newNoteTagOne: "",
+      newNoteTagTwo: "",
+      newNoteTagThree: "",
+      newNoteTag: [],
       newNoteContent: "",
 
       notes: [
         {"title": "How to make a soup", "tag": "recipe", "content": "Put the powder into the pot and boil it."},
         {"title": "How to study", "tag": "lifehack", "content": "Just do it."},
-        {"title": "How to make a katsu", "tag": "recipe", "content": "Fry chicken or pork."},
-        {"title": "How to save money", "tag": "lifehack", "content": "Just save it."},
-        {"title": "What is life?", "tag": "philosophy", "content": "Life is something that has no meaning itself. You make of your own."}
+        // {"title": "How to make a katsu", "tag": "recipe", "content": "Fry chicken or pork."},
+        // {"title": "How to save money", "tag": "lifehack", "content": "Just save it."},
+        // {"title": "What is life?", "tag": "philosophy", "content": "Life is something that has no meaning itself. You make of your own."}
       ],
-      filteringTag: undefined,
+      filteringTag: [],
       filteredNotes: [],
       unduplicatedTagsArray: [],
       currentlyClickedFilter: false
       
     }
     this.handleNewNoteTitleChange = this.handleNewNoteTitleChange.bind(this);
-    this.handleNewNoteTagChange = this.handleNewNoteTagChange.bind(this);
+    this.handleNewNoteTagChangeOne = this.handleNewNoteTagChangeOne.bind(this);
+    this.handleNewNoteTagChangeTwo = this.handleNewNoteTagChangeTwo.bind(this);
+    this.handleNewNoteTagChangeThree = this.handleNewNoteTagChangeThree.bind(this);
     this.handleNewNoteContentChange = this.handleNewNoteContentChange.bind(this);
     this.getNotesByTag = this.getNotesByTag.bind(this);
     this.submitNewNote = this.submitNewNote.bind(this);
-    this.addTags = this.addTags.bind(this);
-    this.removeTags = this.removeTags.bind(this);
-    
-    
   }
   
   componentDidMount(){
     console.log("componentDidMount")
-    const tempTagArray = this.state.notes.map((note)=>note.tag)
 
+    const tempTagArray = this.state.notes.map((note)=>note.tag)
+    console.log("componentDidMount - tempTagArray: " + tempTagArray)
     this.setState({
       unduplicatedTagsArray: [...new Set(tempTagArray)],
-      filteredNote: this.state.notes
+      filteredNotes: this.state.notes,
+      filteringTag: undefined
     })
     this.getNotesByTag();
   }
 
   getNotesByTag(tag){
     console.log("getNotesByTag")
-
+    // 1. get entire notes
+    const tempNotesArray = [];
     if(tag===undefined){
       this.setState({
         filteredNotes: this.state.notes
       })
     }
+    // 2. get filtered notes
     else{
-      const tempNotesArray = [];
-
       this.setState({
         filteringTag: tag
       })
@@ -76,16 +79,28 @@ class app extends Component {
     console.log("componentDidUpdate")
 
     if(prevState.notes !== this.state.notes){
-      const tempTagArray = this.state.notes.map((note)=>note.tag)
-      console.log("tempTagArray: " + tempTagArray)
+      const tempTagArray = (this.state.notes.map((note)=>note.tag)).flat();
+      console.log("componentDidUpdate - tempTagArray: " + tempTagArray)
+      const uniqueArray = [...tempTagArray]
+      console.log("componentDidUpdate - uniqueArray: " + uniqueArray)
+      // array에서 중복 item 빼기
+      for(let i = 0; i<tempTagArray.length; i++){
+        console.log(i + ": " + tempTagArray[i])
+      }
+      
       this.setState({
-        unduplicatedTagsArray: [...new Set(tempTagArray)]
+        unduplicatedTagsArray: uniqueArray
       })
+      console.log("unduplicatedTagsArray: " + this.state.unduplicatedTagsArray)
 
+      console.log("this.state.filteringTag: " + this.state.filteringTag)
       this.getNotesByTag(this.state.filteringTag);
+      
     }
     console.log("componentDidUpdate finished")
   }
+
+  
 
   handleNewNoteTitleChange(event){
     this.setState({
@@ -93,39 +108,20 @@ class app extends Component {
     });
   }
 
-  handleNewNoteTagChange(event){
+  handleNewNoteTagChangeOne(event){
     this.setState({
-      newNoteTags: event.target.value
+      newNoteTagOne: event.target.value
     });
   }
-
-  addTags(event){
-    event.preventDefault();
-    console.log("addTags -> newNoteTags: " + this.state.newNoteTags)
-    // if(event.key==="Shift"){
-    //   console.log("Shift")
-    // }
-    if(event.key==="Shift"&&event.target.value){
-      const tempArray = this.state.newNoteTags
-      tempArray.push(event.target.value)
-      console.log("tempArray: " + tempArray)
-      for(let i = 0; i< tempArray.length; i++){
-        console.log("tempArray[i]: " + tempArray[i])
-      }
-      this.setState({
-        newNoteTags: tempArray
-      });  
-      event.target.value = "";
-    } 
-  }
-
-  removeTags(key){
-    console.log("removeTags")
-    let tempTagArray = this.state.newNoteTags.splice(key, 1)
-    // console.log("removeTags -> tempTagArray: " + tempTagArray)
+  handleNewNoteTagChangeTwo(event){
     this.setState({
-      newNoteTags: tempTagArray
-    })
+      newNoteTagTwo: event.target.value
+    });
+  }
+  handleNewNoteTagChangeThree(event){
+    this.setState({
+      newNoteTagThree: event.target.value
+    });
   }
 
   handleNewNoteContentChange(event){
@@ -136,21 +132,32 @@ class app extends Component {
 
   submitNewNote(event){
     event.preventDefault();
-    // console.log(this.state.newNoteTitle);
-    console.log(this.state.newNoteTags);
-    // console.log(this.state.newNoteContent);
-    // if(this.state.newNoteTitle==="" || !this.state.newNoteTags==="" || !this.state.newNoteContent===""){
-    //   alert("Please fill out the form for all the sections.")
-    // }
-    // else{
+
+
+
+    if(this.state.newNoteTitle==="" || !this.state.newNoteTagOne==="" || !this.state.newNoteTagTwo==="" || !this.state.newNoteTagThree==="" || !this.state.newNoteContent===""){
+      alert("Please fill out the form for all the sections.")
+    }
+    else{
       this.setState({
-        notes: [...this.state.notes, { "title": this.state.newNoteTitle, "tag": this.state.newNoteTags, "content": this.state.newNoteContent}],
+        newNoteTag: this.state.newNoteTag.push(this.state.newNoteTagOne, this.state.newNoteTagTwo, this.state.newNoteTagThree),
+        notes: [...this.state.notes, { "title": this.state.newNoteTitle, "tag": this.state.newNoteTag, "content": this.state.newNoteContent}],
         newNoteTitle: "",
-        newNoteTags: "",
+        // newNoteTag: [...this.state.newNoteTag, this.state.newNoteTagOne, this.state.newNoteTagTwo, this.state.newNoteTagThree],
+        
+        // newNoteTag: [...this.state.newNoteTag, this.state.newNoteTagTwo],
+        // newNoteTag: [...this.state.newNoteTag, this.state.newNoteTagThree],
         newNoteContent: ""
       });
+      console.log("newNoteTitle: " + this.state.newNoteTitle);
+      console.log("newNoteTagOne: " + this.state.newNoteTagOne);
+      console.log("newNoteTagTwo: " + this.state.newNoteTagTwo);
+      console.log("newNoteTagThree: " + this.state.newNoteTagThree);
+      console.log("submitNewNote - newNoteTag: " + this.state.newNoteTag)
+      console.log("submitNewNote - newNoteTag len: " + this.state.newNoteTag.length)
+      console.log("newNoteContent: " + this.state.newNoteContent);
       event.target.reset();
-    // }
+    }
   }
 
   render() {
@@ -167,17 +174,16 @@ class app extends Component {
 
             <label>
             Tag:
-              <input type="text" name="tag" onKeyUp={this.addTags} placeholder="Press enter to add tags" size="80"/>
+              <input type="text" name="tag" onChange={this.handleNewNoteTagChangeOne}/>
             </label><br/>
-            <ul>
-              {this.state.newNoteTags.map((newNoteTag, key)=>
-                <li key={key}>
-                  <h1>key: {key}</h1>
-                  <span>{newNoteTag}</span>
-                  <button onClick={()=>this.removeTags(key)}>X</button>
-                </li>
-              )}
-            </ul>
+            <label>
+            Tag:
+              <input type="text" name="tag" onChange={this.handleNewNoteTagChangeTwo}/>
+            </label><br/>
+            <label>
+            Tag:
+              <input type="text" name="tag" onChange={this.handleNewNoteTagChangeThree}/>
+            </label><br/>
 
             <label>
             Content:
@@ -199,10 +205,13 @@ class app extends Component {
         )}
         <br/>
 
+        
+
         {/* 3. Note section */}
         <h1>Filtered Notes</h1>
         {this.state.filteredNotes.map((filteredNote)=>
           <div className="note-individual">
+            
             <h3 key={filteredNote.title}> Title: {filteredNote.title} </h3>
             <h3 key={filteredNote.tag}> Tag: {filteredNote.tag} </h3>
             <h3 key={filteredNote.content}> Content: {filteredNote.content} </h3>

@@ -8,8 +8,8 @@ let constraints = (window.constraints = {
 });
 
 // <VARIABLES> - Related to the canvas in 'Gallery' section
-let width = 320;
-let height = 240;
+let width = 641;
+let height = 462.933;
 
 let canvasOne = document.getElementById('canvasOne');
 let contextOne = canvasOne.getContext('2d');

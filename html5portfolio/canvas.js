@@ -47,6 +47,19 @@ function finishPosition() {
   context.beginPath(); //to start new lines after one another
 }
 // beginPath->moveTo->lineTo->stroke
+
+function draw(event) {  
+  if (!painting) return;    
+  context.lineWidth = 2; //drawing pen width
+  context.lineCap = 'round';
+  // context.strokeStyle = "black";
+  context.lineTo(event.offsetX, event.offsetY);  
+  context.stroke();  
+  context.beginPath(); //starts a new path by emptying the list of sub-paths.  
+  context.moveTo(event.offsetX, event.offsetY);
+  console.log(event.offsetX+" "+event.offsetY) //for testing coordinates
+}
+
 function changePenColorToBlack(){
   context.strokeStyle = "black";
 }
@@ -59,24 +72,13 @@ function changePenColorToRed(){
   context.strokeStyle = "red";
 }
 
-function draw(event) {  
-  if (!painting) return;    
-  context.lineWidth = 2; //drawing pen width
-  context.lineCap = 'round';
-  // context.strokeStyle = "black";
-  context.lineTo(event.offsetX-40, event.offsetY-45);  
-  context.stroke();  
-  context.beginPath(); //starts a new path by emptying the list of sub-paths.  
-  context.moveTo(event.offsetX-40, event.offsetY-45);
-  // console.log(event.offsetX+" "+event.offsetY) //for testing coordinates
-}
-
 function savePhotoWithDrawing(){
   saveImage();
 }
 
 function saveImage(){
   // https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL
+  alert("saved")
   let key = "photoKey"; 
   data = canvasOne.toDataURL('image/png');
   localStorage.setItem(key, data);
