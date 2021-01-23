@@ -15,29 +15,40 @@
   </div><br>
 
   <div class="split left-top">
-    <video id="video" width="641" height="462.933"></video>
+    <video id="video" width="637" height="462.933"></video>
   </div>
-  <div class="split left-bottom">
+
+  <div class="split left-bottom" >
     <div id="cameraButtons">
-      <button id="cameraOnButton">On</button>
-      <button id="cameraOffButton">Off</button>
-      <button id="cameraCaptureButton">Capture</button>
+      <!-- <button id="cameraOnButton">On</button> -->
+      <!-- <button id="cameraOffButton">Off</button> -->
+      <label class="switch">
+        <input id="checkbox" type="checkbox" type="hidden">
+        <span class="slider round"></span>
+      </label>
+      <!-- <img src="./images/photoFrameImage.png" width="100" height="100"/> -->
+      <button id="cameraCaptureButton"></button>
     </div>
+
+    
+
   </div>
 
   <div class="split right-top">
         <div id="canvasAndFrame" width="641" height="462.933">
-          <canvas id="frame" width="641" height="462.933"></canvas> <!-- Photo frame for the canvas -->
-          <canvas id="canvasOne" width="641" height="462.933"></canvas><br> <!-- Drawing canvas -->
+          <canvas id="frame" width="681" height="462.933"></canvas> <!-- Photo frame for the canvas -->
+          <canvas id="canvasOne" width="681" height="462.933"></canvas><br> <!-- Drawing canvas -->
           
 
         </div>
   </div>
   <div class="split right-bottom">
-    <button id="blackButton"></button>
-    <button id="redButton"></button>
-    <button id="yellowButton"></button>
-    <button id="saveButton">Save</button>
+    <div class="pens">
+      <button id="blackButton"></button>
+      <button id="redButton"></button>
+      <button id="yellowButton"></button>
+    </div>
+    <button id="saveButton"></button>
   </div>
 
   <script src="camera.js" type="text/javascript" defer></script>

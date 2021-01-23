@@ -13,7 +13,7 @@ class app extends Component {
       notes: [
         {"title": "How to make a soup", "tag": ["recipe", "soup"], "content": "Put the powder into the pot and boil it."},
         {"title": "계란밥 만드는 법", "tag": ["recipe", "lifehack"], "content": "계란에 밥 비비기"},
-        {"title": "How to study", "tag": ["lifehack"], "content": "Just do it."},
+        {"title": "How to study", "tag": ["recipe", "soup", "lifehack"], "content": "Just do it."},
         {"title": "How to make a katsu", "tag": ["recipe"], "content": "Fry chicken or pork."},
         {"title": "How to save money", "tag": ["lifehack"], "content": "Just save it."},
         {"title": "What is life?", "tag": ["philosophy"], "content": "Life is something that has no meaning itself. You make of your own."}
@@ -59,10 +59,6 @@ class app extends Component {
     else{
       const tempFilteredNotesArray = [];
 
-      this.setState({
-        filteringTag: tag
-      })
-
       for(let i=0; i<this.state.notes.length; i++){
         for(let j=0; j<this.state.notes[i].tag.length; j++){
           if(this.state.notes[i].tag[j] === tag){
@@ -72,6 +68,7 @@ class app extends Component {
       }
 
       this.setState({
+        filteringTag: tag,
         filteredNotes: tempFilteredNotesArray
       })
     }
@@ -201,8 +198,8 @@ class app extends Component {
       {/* 2. Buttons - filters */}
         <button onClick={() => this.getNotesByTag()}>All</button> 
         
-        {this.state.unduplicatedTagsArray.map((tag)=>
-          <div id="tags">
+        {this.state.unduplicatedTagsArray.map((tag, key)=>
+          <div key={key} id="tags">
             <button onClick={() => this.getNotesByTag(tag)}>{tag}</button> 
           </div>
         )}
@@ -211,19 +208,19 @@ class app extends Component {
         {/* 3. Note section */}
         <h1>Filtered Notes</h1>
         {this.state.filteredNotes.map((filteredNote, key)=>
-          <div className="note-individual">
-            <h3 key={filteredNote.title}> 
+          <div className="note-individual" key={key}>
+            <h3> 
               Title: {filteredNote.title} 
             </h3>
 
-            <h3 key={filteredNote.tag}> 
+            <h3> 
               Tag: 
               {filteredNote.tag.map((tag, key)=>
                 <li key={key}>{key+1}. {tag}</li>
               )} 
             </h3>
 
-            <h3 key={filteredNote.content}> 
+            <h3> 
               Content: {filteredNote.content} 
             </h3>
           </div>
