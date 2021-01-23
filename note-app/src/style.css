@@ -8,3 +8,7 @@
 #tags{
   display: inline-block;
 }
+
+li{
+  list-style: none;
+}
