@@ -23,8 +23,8 @@ export default class App extends Component {
         // {"title": "What is life?", "tag": ["philosophy"], "content": "Life is something that has no meaning itself. You make of your own."}
       ],
 
-      filteringTag: "",
-      filteredTags: [],
+      filteringTag: "", //하나
+      filteredTags: [], //깔게 되는 것
       filteredNotes: [],
       
       unduplicatedTagsArray: [],
@@ -54,7 +54,6 @@ export default class App extends Component {
 
   // getNotesByTags(tag)에서 불리는 것
   getFilteredTags(tag){
-    
     const tempFilteredTags = [];
     console.log("tag: " + tag)
     tempFilteredTags.push(tag)
@@ -67,14 +66,10 @@ export default class App extends Component {
       filteredTags: finalTags3
       // 여기에 
     })
-
-
   }
 
   getNotesByTags(tag){
     // console.log("getNotesByTags")
-    
-
     // 1. get entire notes
     if(tag===undefined){
       this.setState({
@@ -219,8 +214,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-      {/* 1. Adding new note form */}
-
+        {/* 1. Form */}
         <Form 
           newNoteTags={this.state.newNoteTags}
           submitNewNote={this.submitNewNote} 
@@ -230,23 +224,18 @@ export default class App extends Component {
           removeTags={this.removeTags}
         />
 
-        
-      <Tag
-        filteredTags={this.state.filteredTags}
-        unduplicatedTagsArray={this.state.unduplicatedTagsArray}
-        getNotesByTags={this.getNotesByTags}
-        removeFilteredTags={this.removeFilteredTags}
-      />
-      {/* 2. Buttons - filters */}
-      
+        {/* 2. Tag */}
+        <Tag
+          filteredTags={this.state.filteredTags}
+          unduplicatedTagsArray={this.state.unduplicatedTagsArray}
+          getNotesByTags={this.getNotesByTags}
+          removeFilteredTags={this.removeFilteredTags}
+        />
 
-      {/* 4. Note section */}
-      <Note 
-        filteredNotes={this.state.filteredNotes}
-      />
-
-
-      
+        {/* 3. Note section */}
+        <Note 
+          filteredNotes={this.state.filteredNotes}
+        />
       </>
     );
   }
