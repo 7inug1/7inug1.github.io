@@ -214,6 +214,16 @@ export default class App extends Component {
   render() {
     return (
       <>
+        {/* <div id="test">
+        {this.state.notes.map((note, key)=>
+          <div key={key}> 
+            <h3>note {key+1}</h3>
+            <li>Title: {note.title}</li>
+            <li>Tag: {note.tag}</li>
+            <li>Content: {note.content}</li>
+          </div>
+        )}
+        </div> */}
         {/* 1. Form */}
         <Form 
           newNoteTags={this.state.newNoteTags}
