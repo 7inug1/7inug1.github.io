@@ -12,7 +12,7 @@ export default class Tag extends React.Component {
             {/* Rest of the buttons */}
             {this.props.unduplicatedTagsArray.map((tag, key)=>
               <div key={key} id="tags">
-                <button onClick={() => this.props.getNotesByTags(tag)}>{tag}</button> 
+                <button onClick={() => this.props.getFilteredTags(tag)}>{tag}</button> 
               </div>
             )}
             <br/>

@@ -1,225 +1,279 @@
 import React, { Component } from 'react';
 import './style.css';
-
-class app extends Component {
+import Form from "./Form.jsx";
+import Note from "./Note.jsx";
+import Tag from "./Tag.jsx";
+//multi-tag 시도했던 건데 boolean array 만들어도 뭐 하는지 잘 모르겠어서 다시 만들기로 함.
+export default class App extends Component {
   constructor(props){
     super(props);
     
     this.state = {
       newNoteTitle: "",
-      newNoteTagOne: "",
-      newNoteTagTwo: "",
-      newNoteTagThree: "",
-      newNoteTag: [],
+      newNoteTags: [],
       newNoteContent: "",
 
+      // Note.jsx
       notes: [
-        {"title": "How to make a soup", "tag": "recipe", "content": "Put the powder into the pot and boil it."},
-        {"title": "How to study", "tag": "lifehack", "content": "Just do it."},
-        // {"title": "How to make a katsu", "tag": "recipe", "content": "Fry chicken or pork."},
-        // {"title": "How to save money", "tag": "lifehack", "content": "Just save it."},
-        // {"title": "What is life?", "tag": "philosophy", "content": "Life is something that has no meaning itself. You make of your own."}
+        {"title": "How to make a soup", "tag": ["recipe", "soup"], "content": "Put the powder into the pot and boil it."},
+        {"title": "계란밥 만드는 법", "tag": ["recipe", "lifehack"], "content": "계란에 밥 비비기"},
+        {"title": "How to study", "tag": ["recipe", "soup", "lifehack"], "content": "Just do it."},
+        {"title": "How to make a katsu", "tag": ["recipe"], "content": "Fry chicken or pork."},
+        {"title": "How to save money", "tag": ["lifehack"], "content": "Just save it."},
+        // {"title": "What is life?", "tag": ["philosophy"], "content": "Life is something that has no meaning itself. You make of your own."}
       ],
-      filteringTag: [],
+
+      filteringTag: [], //하나
+      filteredTags: [], //깔게 되는 것
       filteredNotes: [],
+      
       unduplicatedTagsArray: [],
       currentlyClickedFilter: false
       
     }
-    this.handleNewNoteTitleChange = this.handleNewNoteTitleChange.bind(this);
-    this.handleNewNoteTagChangeOne = this.handleNewNoteTagChangeOne.bind(this);
-    this.handleNewNoteTagChangeTwo = this.handleNewNoteTagChangeTwo.bind(this);
-    this.handleNewNoteTagChangeThree = this.handleNewNoteTagChangeThree.bind(this);
-    this.handleNewNoteContentChange = this.handleNewNoteContentChange.bind(this);
-    this.getNotesByTag = this.getNotesByTag.bind(this);
-    this.submitNewNote = this.submitNewNote.bind(this);
+    this.handleNewNoteTitleChange = this.handleNewNoteTitleChange.bind(this); //FORM.JSX
+    this.handleNewNoteContentChange = this.handleNewNoteContentChange.bind(this); //FORM.JSX
+    this.getFilteredTags = this.getFilteredTags.bind(this);
+    this.getNotesByTags = this.getNotesByTags.bind(this);
+    this.submitNewNote = this.submitNewNote.bind(this); //FORM.JSX
+    this.addTags = this.addTags.bind(this); //FORM.JSX
+    this.removeTags = this.removeTags.bind(this); //FORM.JSX
+    this.removeFilteredTags = this.removeFilteredTags.bind(this);
   }
   
   componentDidMount(){
-    console.log("componentDidMount")
-
-    const tempTagArray = this.state.notes.map((note)=>note.tag)
-    console.log("componentDidMount - tempTagArray: " + tempTagArray)
+    // console.log("componentDidMount")
+    const totalTagsArray = this.state.notes.map((note)=>note.tag)
+    const totalTagsArrayFlat = totalTagsArray.flat()
+    const tempFilteringTag = [undefined];
     this.setState({
-      unduplicatedTagsArray: [...new Set(tempTagArray)],
-      filteredNotes: this.state.notes,
-      filteringTag: undefined
+      filteringTag: tempFilteringTag,
+      unduplicatedTagsArray: [...new Set(totalTagsArrayFlat)],
     })
-    this.getNotesByTag();
+    this.getNotesByTags(); // getting entire notes by not passing any parameter
   }
 
-  getNotesByTag(tag){
-    console.log("getNotesByTag")
+  // getNotesByTags(tag)에서 불리는 것
+  getFilteredTags(tag){
+    const tempFilteredTags = [];
+    console.log("tag: " + tag)
+    tempFilteredTags.push(tag)
+    console.log("tempFilteredTags: " + tempFilteredTags)
+    let finalTags = [...this.state.filteredTags, tempFilteredTags]
+    let finalTags2 = finalTags.flat();
+    let finalTags3 = [...new Set(finalTags2)]
+    
+    this.setState({
+      filteredTags: finalTags3
+      // 여기에 
+    })
+  }
+
+  getNotesByTags(tag){
+    // console.log("getNotesByTags")
     // 1. get entire notes
-    const tempNotesArray = [];
     if(tag===undefined){
       this.setState({
-        filteredNotes: this.state.notes
+        filteredNotes: this.state.notes // showing entire notes at the beginning
       })
     }
-    // 2. get filtered notes
+    
+    // 2. get specific notes by 'filteringTag'
     else{
-      this.setState({
-        filteringTag: tag
-      })
+      this.getFilteredTags(tag);
+      const tempFilteredNotesArray = [];
+      // const tempFilteredTags = [];
 
+      
+      // console.log("tag: " + tag)
+      // tempFilteredTags.push(tag)
+      // console.log("tempFilteredTags: " + tempFilteredTags)
+      // let finalTags = [...this.state.filteredTags, tempFilteredTags]
+      // let finalTags2 = finalTags.flat();
+      // let finalTags3 = [...new Set(finalTags2)]
+      // this.setState({
+      //   filteredTags: finalTags3
+      // })
+
+
+      // const tempFilteredTags2 = [...this.state.filteredTags, tempFilteredTags]
+      // 전체 note 길이만큼 순회
+      
       for(let i=0; i<this.state.notes.length; i++){
-        if(this.state.notes[i].tag === tag){
-          tempNotesArray.push(this.state.notes[i]);
+        // 개별 note의 tag[]를 순회
+        
+        // 1. Check length 
+        // -> if length isn't the same, break the loop and go onto the next note in 'i'
+        if(this.state.notes[i].tag.length !== this.state.filteredTags.length){
+          continue;
         }
-      }
+        // -> if length is the same, start comparing to see whether both arrays contain the same items
+        else{
+          const booleanArray = []
+          booleanArray.fill(false)
+          for(let j=0; j<this.state.notes[i].tag.length; j++){
+            // this.state.notes[i].tag[j];
+            
+            
+            // <Checking whether to put the 'i' note into the 'tempFilteredNotesArray'
+            
+            
+            
+            let flag=false;
+            for(let k=0; k<this.state.filteredTags.length; k++){
+              
+              if(this.state.filteredTags[k]!==this.state.notes[i].tag[j]){
+                
+                continue;
+              }
+              else{
+                flag=true;
+                booleanArray[j]=flag;
+                break;
+              }
+              
+            }
+            console.log("k for-loop done");
+            // booleanArray.push(flag);
+            console.log("booleanArray: " + booleanArray)
 
-      this.setState({
-        filteredNotes: tempNotesArray
-      })
+            
+            // if(individualTag === this.state.filteredTags[k]){
+              // tempFilteredNotesArray.push(this.state.notes[i]);
+            
+            
+          }
+        }
+      
+        this.setState({
+          filteringTag: [...this.state.filteringTag, tag],
+          // filteredTags: tempFilteredTags2,
+          filteredNotes: tempFilteredNotesArray
+        })
+      }
     }
   }
 
   componentDidUpdate(prevProps, prevState){
-    console.log("componentDidUpdate")
-
+    // console.log("componentDidUpdate")
+    // 1. re-spread 'unduplicatedTagsArray' buttons
     if(prevState.notes !== this.state.notes){
-      const tempTagArray = (this.state.notes.map((note)=>note.tag)).flat();
-      console.log("componentDidUpdate - tempTagArray: " + tempTagArray)
-      const uniqueArray = [...tempTagArray]
-      console.log("componentDidUpdate - uniqueArray: " + uniqueArray)
-      // array에서 중복 item 빼기
-      for(let i = 0; i<tempTagArray.length; i++){
-        console.log(i + ": " + tempTagArray[i])
-      }
-      
-      this.setState({
-        unduplicatedTagsArray: uniqueArray
-      })
-      console.log("unduplicatedTagsArray: " + this.state.unduplicatedTagsArray)
+      const tempTagArray = this.state.notes.map((note)=>note.tag) // 1. get all notes' tag
+      const tempTagArrayFlat = tempTagArray.flat() // 2. make #1 flat
+      const tempTagArrayFlatUnduplicated = [...new Set(tempTagArrayFlat)] // 3. get #2 unduplicated
 
-      console.log("this.state.filteringTag: " + this.state.filteringTag)
-      this.getNotesByTag(this.state.filteringTag);
+      this.setState({
+        unduplicatedTagsArray: tempTagArrayFlatUnduplicated
+      })
       
+      // 2. re-spread the notes
+      this.getNotesByTags(this.state.filteringTag);
     }
-    console.log("componentDidUpdate finished")
   }
 
-  
-
+  //FORM.JSX
   handleNewNoteTitleChange(event){
     this.setState({
       newNoteTitle: event.target.value
     });
   }
 
-  handleNewNoteTagChangeOne(event){
-    this.setState({
-      newNoteTagOne: event.target.value
-    });
-  }
-  handleNewNoteTagChangeTwo(event){
-    this.setState({
-      newNoteTagTwo: event.target.value
-    });
-  }
-  handleNewNoteTagChangeThree(event){
-    this.setState({
-      newNoteTagThree: event.target.value
-    });
-  }
-
+  //FORM.JSX
   handleNewNoteContentChange(event){
     this.setState({
       newNoteContent: event.target.value
     });
   }
 
-  submitNewNote(event){
+  //FORM.JSX
+  addTags(event){
     event.preventDefault();
 
+    if(event.key==="Shift"&&event.target.value){
+      console.log("added")
+      const tempNewNoteTagsArray = this.state.newNoteTags
+      tempNewNoteTagsArray.push(event.target.value)
 
-
-    if(this.state.newNoteTitle==="" || !this.state.newNoteTagOne==="" || !this.state.newNoteTagTwo==="" || !this.state.newNoteTagThree==="" || !this.state.newNoteContent===""){
-      alert("Please fill out the form for all the sections.")
-    }
-    else{
       this.setState({
-        newNoteTag: this.state.newNoteTag.push(this.state.newNoteTagOne, this.state.newNoteTagTwo, this.state.newNoteTagThree),
-        notes: [...this.state.notes, { "title": this.state.newNoteTitle, "tag": this.state.newNoteTag, "content": this.state.newNoteContent}],
+        newNoteTags: tempNewNoteTagsArray
+      });  
+      console.log("newNoteTags: " + "["+this.state.newNoteTags+"]")
+      event.target.value = "";
+    } 
+  }
+
+  //FORM.JSX
+  removeTags(event, key){
+    event.preventDefault();
+
+    let tempNewNoteTagsArray = this.state.newNoteTags
+    tempNewNoteTagsArray.splice(key, 1)
+
+    this.setState({
+      newNoteTags: tempNewNoteTagsArray
+    })
+    console.log("newNoteTags: " + "["+this.state.newNoteTags+"]")
+  }
+
+  removeFilteredTags(key){
+    let tempFilteredTagsArray = this.state.filteredTags
+    tempFilteredTagsArray.splice(key, 1)
+
+    this.setState({
+      filteredTags: tempFilteredTagsArray
+    })
+  }
+
+  // FORM.JSX
+  submitNewNote(event){
+    event.preventDefault();
+    // console.log(this.state.newNoteTitle);
+    // console.log(this.state.newNoteTags);
+    // console.log(this.state.newNoteContent);
+    // if(this.state.newNoteTitle==="" || !this.state.newNoteTags==="" || !this.state.newNoteContent===""){
+    //   alert("Please fill out the form for all the sections.")
+    // }
+    // else{
+
+      this.setState({
+        notes: [...this.state.notes, { "title": this.state.newNoteTitle, "tag": this.state.newNoteTags, "content": this.state.newNoteContent}],
         newNoteTitle: "",
-        // newNoteTag: [...this.state.newNoteTag, this.state.newNoteTagOne, this.state.newNoteTagTwo, this.state.newNoteTagThree],
-        
-        // newNoteTag: [...this.state.newNoteTag, this.state.newNoteTagTwo],
-        // newNoteTag: [...this.state.newNoteTag, this.state.newNoteTagThree],
+        newNoteTags: [],
         newNoteContent: ""
       });
-      console.log("newNoteTitle: " + this.state.newNoteTitle);
-      console.log("newNoteTagOne: " + this.state.newNoteTagOne);
-      console.log("newNoteTagTwo: " + this.state.newNoteTagTwo);
-      console.log("newNoteTagThree: " + this.state.newNoteTagThree);
-      console.log("submitNewNote - newNoteTag: " + this.state.newNoteTag)
-      console.log("submitNewNote - newNoteTag len: " + this.state.newNoteTag.length)
-      console.log("newNoteContent: " + this.state.newNoteContent);
       event.target.reset();
-    }
+
+      console.log(this.state.notes)
+    // }
   }
 
   render() {
     return (
       <>
-      {/* 1. Adding new note form */}
-        <form name="newNoteForm" onSubmit={this.submitNewNote}>
-          <fieldset>
-          <legend>New Note</legend>
-            <label>
-            Title:
-              <input type="text" name="title" onChange={this.handleNewNoteTitleChange}/>
-            </label><br/>
+        {/* 1. Form */}
+        <Form 
+          newNoteTags={this.state.newNoteTags}
+          submitNewNote={this.submitNewNote} 
+          handleNewNoteTitleChange={this.handleNewNoteTitleChange}
+          addTags={this.addTags}
+          handleNewNoteContentChange={this.handleNewNoteContentChange}
+          removeTags={this.removeTags}
+        />
 
-            <label>
-            Tag:
-              <input type="text" name="tag" onChange={this.handleNewNoteTagChangeOne}/>
-            </label><br/>
-            <label>
-            Tag:
-              <input type="text" name="tag" onChange={this.handleNewNoteTagChangeTwo}/>
-            </label><br/>
-            <label>
-            Tag:
-              <input type="text" name="tag" onChange={this.handleNewNoteTagChangeThree}/>
-            </label><br/>
-
-            <label>
-            Content:
-              <textarea type="text" name="content" onChange={this.handleNewNoteContentChange}/>
-            </label><br/>
-
-            <button >Submit</button>
-            </fieldset>
-        </form>
-      <br/>
-
-      {/* 2. Buttons - filters */}
-        <button onClick={() => this.getNotesByTag()}>All</button> 
-        
-        {this.state.unduplicatedTagsArray.map((tag)=>
-          <div id="tags">
-            <button onClick={() => this.getNotesByTag(tag)}>{tag}</button> 
-          </div>
-        )}
-        <br/>
-
-        
+        {/* 2. Tag */}
+        <Tag
+          filteredTags={this.state.filteredTags}
+          unduplicatedTagsArray={this.state.unduplicatedTagsArray}
+          getNotesByTags={this.getNotesByTags}
+          removeFilteredTags={this.removeFilteredTags}
+        />
 
         {/* 3. Note section */}
-        <h1>Filtered Notes</h1>
-        {this.state.filteredNotes.map((filteredNote)=>
-          <div className="note-individual">
-            
-            <h3 key={filteredNote.title}> Title: {filteredNote.title} </h3>
-            <h3 key={filteredNote.tag}> Tag: {filteredNote.tag} </h3>
-            <h3 key={filteredNote.content}> Content: {filteredNote.content} </h3>
-          </div>
-        )}
+        <Note 
+          filteredNotes={this.state.filteredNotes}
+        />
       </>
     );
   }
 }
 
-export default app;

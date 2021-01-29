@@ -27,7 +27,7 @@ export default class Form extends React.Component{
 
             <label>
             Content:
-              <textarea type="text" name="content" onChange={this.handleNewNoteContentChange}/>
+              <textarea type="textarea" name="content" onChange={this.props.handleNewNoteContentChange}/>
             </label><br/>
 
             <button >Submit</button>

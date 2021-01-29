@@ -18,9 +18,9 @@ export default class App extends Component {
         {"title": "How to make a soup", "tag": ["recipe"], "content": "Put the powder into the pot and boil it."},
         {"title": "make a table", "tag": ["recipe"], "content": "Put table boil it."},
         {"title": "계란밥 만드는 법", "tag": ["recipe", "soup"], "content": "계란에 밥 비비기"},
-        {"title": "비빔밥 만드는 법", "tag": ["soup", "recipe"], "content": "밥 비비기"},
+        {"title": "비빔밥 만드는 법", "tag": ["recipe", "soup"], "content": "밥 비비기"},
         {"title": "How to study", "tag": ["recipe", "soup", "lifehack"], "content": "Just do it."},
-        {"title": "How to make a katsu", "tag": ["lifehack", "recipe", "soup"], "content": "Fry chicken or pork."},
+        {"title": "How to make a katsu", "tag": ["recipe", "soup", "lifehack"], "content": "Fry chicken or pork."},
         // {"title": "How to save money", "tag": ["lifehack"], "content": "Just save it."},
         // {"title": "What is life?", "tag": ["philosophy"], "content": "Life is something that has no meaning itself. You make of your own."}
       ],
@@ -39,6 +39,7 @@ export default class App extends Component {
     this.getNotesByTags = this.getNotesByTags.bind(this);
     this.submitNewNote = this.submitNewNote.bind(this); //FORM.JSX
     this.addTags = this.addTags.bind(this); //FORM.JSX
+    this.removeTags = this.removeTags.bind(this); //FORM.JSX
     this.removeFilteredTags = this.removeFilteredTags.bind(this);
   }
   
@@ -64,11 +65,14 @@ export default class App extends Component {
     let finalTags2 = finalTags.flat();
     let finalTags3 = [...new Set(finalTags2)]
     
-    this.setState({filteredTags: finalTags3})
-    this.getNotesByTags(tag)
+    this.setState({
+      filteredTags: finalTags3
+      // 여기에 
+    })
   }
 
   getNotesByTags(tag){
+    // console.log("getNotesByTags")
     // 1. get entire notes
     if(tag===undefined){
       this.setState({
@@ -76,26 +80,70 @@ export default class App extends Component {
       })
     }
     
+    // 2. get specific notes by 'filteringTag'
     else{
+      this.getFilteredTags(tag);
       const tempFilteredNotesArray = [];
-      let checker = (arr, target) => target.every(item => arr.includes(item));
-      for(let i = 0; i < this.state.notes.length; i++){
-        if (checker(this.state.notes[i].tag, this.state.filteredTags) === true ){
-          tempFilteredNotesArray.push(this.state.notes[i])
+
+      // const tempFilteredTags2 = [...this.state.filteredTags, tempFilteredTags]
+      // 전체 note 길이만큼 순회
+      for(let i=0; i<this.state.notes.length; i++){
+        console.log("i: " + i)
+        // 개별 note의 tag[]를 순회
+        
+        // 1. Check length 
+        // -> if length isn't the same, break the loop and go onto the next note in 'i'
+        if(this.state.notes[i].tag.length !== this.state.filteredTags.length){
+          console.log("current entire note's tagArray length and filteredTags' Array length isn't the same")
+          continue;
         }
-      }      
-      this.setState({
-        // filteringTag: [...this.state.filteringTag, tag],
-        filteredNotes: tempFilteredNotesArray
-      })
+        // -> if length is the same, start comparing to see whether both arrays contain the same items
+        else{
+          
+          for(let j=0; j<this.state.notes[i].tag.length; j++){
+            console.log("j: " + j)
+            // this.state.notes[i].tag[j];
+            // <Checking whether to put the 'i' note into the 'tempFilteredNotesArray'
+
+            let flag=false;
+            const booleanArray = new Array(this.state.filteredTags.length)
+            booleanArray.fill(false)
+              
+            for(let k=0; k<this.state.filteredTags.length; k++){
+              console.log("k: " + k)
+              
+              // go through 'filteredTags' Array's item one by one
+              if(this.state.filteredTags[k]!==this.state.notes[i].tag[j]){
+                console.log("filteredTags Array's " + k + " item !== notes' tag's " + j + "item")
+                continue;
+              }
+              else{
+                console.log("filteredTags Array's " + k + " item=== notes' tag's " + j + "item")
+                flag=true;
+                booleanArray[k]=flag;
+                break;
+              }
+            }
+            if(booleanArray.includes(true)){
+              tempFilteredNotesArray.push(this.state.notes[i])
+              continue;
+            }
+          }
+        }
       
+        this.setState({
+          filteringTag: [...this.state.filteringTag, tag],
+          // filteredTags: tempFilteredTags2,
+          filteredNotes: tempFilteredNotesArray
+        })
+      }
     }
   }
 
   componentDidUpdate(prevProps, prevState){
     // console.log("componentDidUpdate")
     // 1. re-spread 'unduplicatedTagsArray' buttons
-    if(prevState.notes !== this.state.notes || prevState.filteredTags !== this.state.filteredTags){
+    if(prevState.notes !== this.state.notes){
       const tempTagArray = this.state.notes.map((note)=>note.tag) // 1. get all notes' tag
       const tempTagArrayFlat = tempTagArray.flat() // 2. make #1 flat
       const tempTagArrayFlatUnduplicated = [...new Set(tempTagArrayFlat)] // 3. get #2 unduplicated
@@ -105,7 +153,7 @@ export default class App extends Component {
       })
       
       // 2. re-spread the notes
-      this.getNotesByTags(!undefined);
+      this.getNotesByTags(this.state.filteringTag);
     }
   }
 
@@ -140,25 +188,25 @@ export default class App extends Component {
     } 
   }
 
+  //FORM.JSX
+  removeTags(event, key){
+    event.preventDefault();
+
+    let tempNewNoteTagsArray = this.state.newNoteTags
+    tempNewNoteTagsArray.splice(key, 1)
+
+    this.setState({
+      newNoteTags: tempNewNoteTagsArray
+    })
+    console.log("newNoteTags: " + "["+this.state.newNoteTags+"]")
+  }
+
   removeFilteredTags(key){
     let tempFilteredTagsArray = this.state.filteredTags
     tempFilteredTagsArray.splice(key, 1)
 
-    
-
-
-    const tempFilteredNotesArray = [];
-    let checker = (arr, target) => target.every(item => arr.includes(item));
-    for(let i = 0; i < this.state.notes.length; i++){
-
-      if (checker(this.state.notes[i].tag, tempFilteredTagsArray) === true ){
-        tempFilteredNotesArray.push(this.state.notes[i])
-      }
-    }
-
     this.setState({
-      filteredTags: tempFilteredTagsArray,
-      filteredNotes: tempFilteredNotesArray
+      filteredTags: tempFilteredTagsArray
     })
   }
 
@@ -191,11 +239,11 @@ export default class App extends Component {
         {/* 1. Form */}
         <Form 
           newNoteTags={this.state.newNoteTags}
-          newNoteContent={this.state.newNoteContent}
           submitNewNote={this.submitNewNote} 
           handleNewNoteTitleChange={this.handleNewNoteTitleChange}
           addTags={this.addTags}
           handleNewNoteContentChange={this.handleNewNoteContentChange}
+          removeTags={this.removeTags}
         />
 
         {/* 2. Tag */}
@@ -204,7 +252,6 @@ export default class App extends Component {
           unduplicatedTagsArray={this.state.unduplicatedTagsArray}
           getNotesByTags={this.getNotesByTags}
           removeFilteredTags={this.removeFilteredTags}
-          getFilteredTags={this.getFilteredTags}
         />
 
         {/* 3. Note section */}

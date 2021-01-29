@@ -5,7 +5,7 @@ export default class Note extends React.Component {
     return <>
       <h1>Notes</h1>
       {this.props.filteredNotes.map((filteredNote, key)=>
-        <div className="note-individual" key={key}>
+        <div className="note-individual" key={key} onClick={()=>alert('Clicked')}>
           <h3> 
             Title: {filteredNote.title} 
           </h3>
