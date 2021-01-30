@@ -33,31 +33,59 @@ redButton.addEventListener('click', changePenColorToRed);
 yellowButton.addEventListener('click', changePenColorToYellow);
 saveButton.addEventListener('click', savePhotoWithDrawing);
 
-canvas.addEventListener('mousedown', startPosition);
-canvas.addEventListener('mouseup', finishPosition);
-canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mousedown', mouseStartPosition);
+canvas.addEventListener('mouseup', mouseFinishPosition);
+canvas.addEventListener('mousemove', mouseDraw);
 
-function startPosition(event) {
+canvas.addEventListener('touchstart', touchStartPosition);
+canvas.addEventListener('touchend', touchFinishPosition);
+canvas.addEventListener('touchmove', touchDraw);
+
+function mouseStartPosition(event) {
+  painting = true;
+  draw(event); //for drawing dots
+}
+
+function touchStartPosition(event) {
   painting = true;
   draw(event); //for drawing dots
 }
   
-function finishPosition() {
+function mouseFinishPosition() {
   painting = false;
   context.beginPath(); //to start new lines after one another
 }
-// beginPath->moveTo->lineTo->stroke
 
-function draw(event) {  
+function touchFinishPosition() {
+  painting = false;
+  context.beginPath(); //to start new lines after one another
+}
+
+function mouseDraw(event) {  
   if (!painting) return;    
   context.lineWidth = 2; //drawing pen width
   context.lineCap = 'round';
-  // context.strokeStyle = "black";
+
   context.lineTo(event.offsetX, event.offsetY);  
   context.stroke();  
   context.beginPath(); //starts a new path by emptying the list of sub-paths.  
   context.moveTo(event.offsetX, event.offsetY);
   console.log(event.offsetX+" "+event.offsetY) //for testing coordinates
+}
+
+function touchmove(event) {  
+  
+  
+  if (!painting) return;  
+  let touch = event.touches[0];  
+  context.lineWidth = 2; //drawing pen width
+  context.lineCap = 'round';
+
+  context.lineTo(touch.offsetX, touch.offsetY);  
+  context.stroke();  
+  context.beginPath(); //starts a new path by emptying the list of sub-paths.  
+  context.moveTo(touch.offsetX, touch.offsetY);
+
 }
 
 function changePenColorToBlack(){
