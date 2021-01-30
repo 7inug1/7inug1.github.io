@@ -86,7 +86,7 @@ function saveImage(){
 
 function loadImage(){
   let retrievingData = localStorage.getItem(key);
-  console.log("retrievingData: " + retrievingData);
+  console.log("retrievingData: " + (retrievingData));
   
   let img = new Image();
   img.onload = function(){
