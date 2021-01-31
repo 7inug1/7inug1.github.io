@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Form extends React.Component{
   render(){
     return <> 
-        <form name="newNoteForm" onSubmit={this.props.submitNewNote}>
+        <form id="form" name="form" onSubmit={this.props.submitNewNote}>
           <fieldset>
           <legend>New Note</legend>
             <label>

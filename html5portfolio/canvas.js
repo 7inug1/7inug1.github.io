@@ -85,7 +85,7 @@ function touchmove(event) {
   context.stroke();  
   context.beginPath(); //starts a new path by emptying the list of sub-paths.  
   context.moveTo(touch.offsetX, touch.offsetY);
-
+  console.log(touch.offsetX+" "+touch.offsetY) //for testing coordinates
 }
 
 function changePenColorToBlack(){
