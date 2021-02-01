@@ -9,7 +9,7 @@ export default class Form extends React.Component{
           <legend>New Note</legend>
             <label>
             Title:&nbsp; 
-              <input type="text" name="title" size="10" onChange={this.props.handleNewNoteTitleChange}/>
+              <input type="text" name="title" size="66" onChange={this.props.handleNewNoteTitleChange}/>
             </label><br/>
 
             <label>
