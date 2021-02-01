@@ -18,10 +18,11 @@ export default class App extends Component {
       setShow: false,
       
       newNoteTitle: "",
+      newNoteTag: "",
       newNoteTags: [],
       newNoteContent: "",
       notes: [
-        // {"title": "How to make a soup", "tag": ["recipe"], "content": "Put the powder into the pot and boil it."},
+        {"title": "How to make a new note", "tag": ["note"], "content": "Fill out the form above to make a new note!"}
         // {"title": "make a table", "tag": ["recipe"], "content": "Put table boil it."},
         // {"title": "계란밥 만드는 법", "tag": ["recipe", "soup"], "content": "계란에 밥 비비기"},
         // {"title": "비빔밥 만드는 법", "tag": ["soup", "recipe"], "content": "밥 비비기"},
@@ -37,13 +38,16 @@ export default class App extends Component {
       currentlyClickedFilter: false
     }
     this.handleNewNoteTitleChange = this.handleNewNoteTitleChange.bind(this); 
+    this.handleNewNoteTagChange = this.handleNewNoteTagChange.bind(this); 
+    
     this.handleNewNoteContentChange = this.handleNewNoteContentChange.bind(this); 
     this.getFilteredTags = this.getFilteredTags.bind(this);
     this.getNotesByTags = this.getNotesByTags.bind(this);
     this.submitNewNote = this.submitNewNote.bind(this); 
     this.addTags = this.addTags.bind(this); 
+    this.addTagsButton = this.addTagsButton.bind(this); 
     this.removeFilteredTags = this.removeFilteredTags.bind(this);
-  
+    this.removeTags = this.removeTags.bind(this);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
 
@@ -65,6 +69,10 @@ export default class App extends Component {
 
   retrieveNotesFromLocalStorage(){
     let tempNotes = [];
+    // let totalTagsArray = 
+    // this.state.notes.map((note)=>
+    //   tempNotes.push(note)
+    // )
     console.log("localStorage length: " + localStorage.length)
     for(let i = 0; i < localStorage.length; i++){
       let key = i;
@@ -79,6 +87,7 @@ export default class App extends Component {
   }
 
   componentDidMount(){
+    this.saveNotesToLocalStorage();
     this.retrieveNotesFromLocalStorage();
     let totalTagsArray = this.state.notes.map((note)=>note.tag)
     let totalTagsArrayFlat = totalTagsArray.flat()
@@ -134,7 +143,7 @@ export default class App extends Component {
       })
       
       this.getNotesByTags(!undefined);
-      this.saveNotesToLocalStorage();
+      // this.saveNotesToLocalStorage();
       // this.handleShow();
     }
   }
@@ -147,6 +156,9 @@ export default class App extends Component {
 
   addTags(event){
     event.preventDefault();
+    // if(event === "button"){
+      // alert("button clicked")
+    // }
     if(event.key === "Shift" && event.target.value){
       console.log("added")
       let tempNewNoteTagsArray = this.state.newNoteTags;
@@ -160,10 +172,40 @@ export default class App extends Component {
     } 
   }
 
+  addTagsButton(event){
+    event.preventDefault();
+
+    let tempNewNoteTagsArray = this.state.newNoteTags;
+    tempNewNoteTagsArray.push(this.state.newNoteTag);
+
+    this.setState({
+      newNoteTags: tempNewNoteTagsArray
+    });  
+    //   console.log("newNoteTags: " + "["+this.state.newNoteTags+"]")
+    
+    // event.target.value = "";
+    // } 
+  }
+
+  handleNewNoteTagChange(event){
+    this.setState({
+      newNoteTag: event.target.value
+    });
+  }
+
   handleNewNoteContentChange(event){
     this.setState({
-      newNoteContent: event.target.value
+      newNoteTag: event.target.value
     });
+  }
+
+  removeTags(event, key){
+    event.preventDefault();
+    let tempNewNoteTagsArray = this.state.newNoteTags;
+    tempNewNoteTagsArray.splice(key, 1)
+    this.setState({
+      newNoteTags: tempNewNoteTagsArray
+    })
   }
 
   removeFilteredTags(key){
@@ -231,7 +273,10 @@ export default class App extends Component {
             submitNewNote={this.submitNewNote} 
             handleNewNoteTitleChange={this.handleNewNoteTitleChange}
             addTags={this.addTags}
+            addTagsButton={this.addTagsButton}
+            handleNewNoteTagChange={this.handleNewNoteTagChange}
             handleNewNoteContentChange={this.handleNewNoteContentChange}
+            removeTags={this.removeTags}
           />
         
           {/* 2. Tag */}

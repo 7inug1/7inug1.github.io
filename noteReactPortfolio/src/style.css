@@ -5,7 +5,7 @@ body{
 
 li{
   list-style: none;
-  display: inline;
+  display: block;
 }
 
 #form{
@@ -22,9 +22,13 @@ li{
   border: 1px solid black;
 }
 
-/* #tags button{
+fieldset span{
   display: inline;
-} */
+}
+
+fieldset button{
+  /* display: block; */
+}
 
 #individualTag{
   display: inline;

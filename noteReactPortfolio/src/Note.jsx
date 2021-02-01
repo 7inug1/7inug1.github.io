@@ -10,7 +10,8 @@ export default class Note extends React.Component {
         <div id="notes-container">
         {/* <h1>Notes</h1> */}
         {this.props.filteredNotes.map((filteredNote, key)=>
-            <div className="individualNote" key={key} onClick={this.props.handleShow}>
+            <div className="individualNote" key={key}>
+            {/* <div className="individualNote" key={key} onClick={this.props.handleShow}> */}
               <h3 className="individualNoteTitle"> 
                 {filteredNote.title} 
               </h3>
