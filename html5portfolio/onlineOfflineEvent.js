@@ -7,7 +7,7 @@ window.addEventListener('offline', showOnlineOfflineStatus);
 showOnlineOfflineStatus();
 
 function showOnlineOfflineStatus() {
-    let status = navigator.onLine ? "🟢 TOnline" : "🔴 TOffline";
+    let status = navigator.onLine ? "🟢 Online" : "🔴 Offline";
     onlineOfflineStatus.innerHTML = status;
 
     // if(status == "Online") {statusBar.style.backgroundColor = "rgb(26, 138, 63)"} //green
