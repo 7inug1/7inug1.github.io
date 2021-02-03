@@ -31,11 +31,11 @@ let time;
 //------------------------------------------------
 //Calling image to use
 let background=new Image();
-background.src="room.jpg";
+background.src="./img/room.jpg";
 let doraemon=new Image();//basket
-doraemon.src="doraemon.png";
+doraemon.src="./img/doraemon.png";
 let dorayaki=new Image();//apple
-dorayaki.src='dorayaki.png';
+dorayaki.src='./img/dorayaki.png';
 //------------------------------------------------
 let dora=new Doraemon(-25, 300); //doraemon's starting position
 let yaki=new Dorayaki((Math.floor)(Math.random()*556), -15); //yaki being called at a random position at the top
