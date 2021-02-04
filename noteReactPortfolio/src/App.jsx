@@ -3,24 +3,23 @@ import './style.css';
 import Form from "./Form.jsx";
 import Note from "./Note.jsx";
 import Tag from "./Tag.jsx";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Modal } from 'react-bootstrap';
 
 export default class App extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      key: [],
-      data: [],
-
+      // bootstrap
       show: false,
       setShow: false,
       
+      // new note data
       newNoteTitle: "",
       newNoteTag: "",
       newNoteTags: [],
       newNoteContent: "",
+      
+      // notes array
       notes: [
         {"title": "How to make a new note", "tag": ["note"], "content": "Fill out the form above to make a new note!"}
         // {"title": "make a table", "tag": ["recipe"], "content": "Put table boil it."},
@@ -31,11 +30,14 @@ export default class App extends Component {
         // {"title": "How to save money", "tag": ["lifehack"], "content": "Just save it."},
         // {"title": "What is life?", "tag": ["philosophy"], "content": "Life is something that has no meaning itself. You make of your own."}
       ],
+
       filteringTag: [], 
       filteredTags: [], 
       filteredNotes: [],
+
+      // for creating buttons
       unduplicatedTagsArray: [],
-      currentlyClickedFilter: false
+      // currentlyClickedFilter: false
     }
     this.handleNewNoteTitleChange = this.handleNewNoteTitleChange.bind(this); 
     this.handleNewNoteTagChange = this.handleNewNoteTagChange.bind(this); 
@@ -195,7 +197,7 @@ export default class App extends Component {
 
   handleNewNoteContentChange(event){
     this.setState({
-      newNoteTag: event.target.value
+      newNoteContent: event.target.value
     });
   }
 
