@@ -1,3 +1,7 @@
+/* =================
+Typography
+================= */
+
 @font-face {
   font-family: "P3rman3nt-Book";
   src: url("./DINAMO_fonts/ABCP3rman3nt-Book-Trial.woff2") format("woff2"),
@@ -22,11 +26,100 @@
 
 h1{
   font-family: P3rman3nt-Bold;
+  text-align: left;
+  font-size: 2rem;
+  margin: 0;
+  /* clear: left */
+}
+
+.subtitle{
+  font-weight: 700;
+  font-size: .75rem;
+  margin: 0;
+}
+
+.portfolio-section-title{
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
   text-align: center;
 }
 
 body {
   font-family: P3rman3nt-Book;
+  margin: 0;
+}
+
+/* =================
+Layout
+================= */
+
+header{
+  background: #f8f8f8;
+  padding: 2em 0;
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.container-nav{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 675px) {
+  h1{
+    text-align: center;
+  }
+  header{
+    text-align: center;
+  }
+
+  .container-nav {
+    flex-direction: column;
+  }
+}
+
+/* navigation */
+nav ul{
+  list-style: none;
+  display: flex;
+  padding: 0; /* 기본 padding-left가 40 들어가있었음 */
+  justify-content: center; /* 수평 정렬 방식 */
+}
+
+nav li{
+  margin-left: 2em;
+}
+@media screen and (max-width: 675px) {
+  nav ul {
+      flex-direction: column;
+  }
+  
+  nav li {
+      margin: .5em 0;
+  }
+}
+nav a{
+  color: #707070;
+  font-weight: 700;
+}
+
+nav a:hover{
+  /* color: #3b3b3b; */
+  text-decoration: underline
+}
+
+nav a:focus{
+  color: #3b3b3b;
+  /* text-decoration: underline; */
 }
 
 hr {
