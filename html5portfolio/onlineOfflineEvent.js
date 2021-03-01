@@ -1,3 +1,4 @@
+'use strict';
 let onlineOfflineStatus = document.getElementById('onlineOfflineStatus');
 let statusBar = document.getElementById('statusBar');
 

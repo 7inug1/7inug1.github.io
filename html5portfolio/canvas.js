@@ -43,17 +43,18 @@ canvas.addEventListener('touchmove', touchDraw);
 
 function mouseStartPosition(event) {
   painting = true;
-  draw(event); //for drawing dots
+  mouseDraw(event); //for drawing dots
+}
+
+
+function mouseFinishPosition() {
+  painting = false;
+  context.beginPath(); //to start new lines after one another
 }
 
 function touchStartPosition(event) {
   painting = true;
   draw(event); //for drawing dots
-}
-  
-function mouseFinishPosition() {
-  painting = false;
-  context.beginPath(); //to start new lines after one another
 }
 
 function touchFinishPosition() {
