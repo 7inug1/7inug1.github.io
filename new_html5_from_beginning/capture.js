@@ -20,6 +20,88 @@ let startbutton = null;
 let streaming = false;
 
 
+
+
+let checkbox = document.getElementById('checkbox');
+checkbox.checked=false;
+let cameraIsOn = false;
+checkbox.addEventListener('click', toggleCamera);
+cameraCaptureButton.addEventListener('click', captureImage);
+
+function captureImage(){
+  takepicture();
+}
+
+function toggleCamera(){
+  console.log("toggleCamera()")
+  let constraints = {
+    audio: false,
+    video: true
+  };
+
+  if(cameraIsOn===false){
+    cameraIsOn=true;
+
+    video = document.querySelector('#video');
+    canvas = document.querySelector('#canvas');
+    photo = document.querySelector('#photo');
+    startbutton = document.querySelector('#startbutton');
+  
+    video.setAttribute('width', `${width}px`);
+    video.setAttribute('height', `${height}px`);
+    canvas.setAttribute('width', `${width}px`);
+    canvas.setAttribute('height', `${height}px`);
+    photo.setAttribute('width', `${width}px`);
+    photo.setAttribute('height', `${height}px`);
+
+    startup();
+
+    // navigator.mediaDevices.getUserMedia(constraints)
+    // .then(function(stream) {
+      // video.srcObject = stream;
+
+      /*Once the stream is linked to the <video> element, 
+      we start it playing by calling HTMLMediaElement.play().*/
+      // video.play();
+  // })
+  }
+  else{
+    cameraIsOn=false;
+
+
+  
+
+
+    let stream = video.srcObject;
+    let tracks = stream.getTracks();
+
+    tracks.forEach(function(track) {
+      video.srcObject = null;
+      track.stop();
+    });
+
+    
+
+    // <COMMENT OUT>
+    // navigator.mediaDevices.getUserMedia(constraints)
+    //   .then(function (stream) {
+    //     video.srcObject = stream;
+    //     let tracks = stream.getTracks();
+    //     tracks.forEach(function(track) {
+    //       track.stop();
+    //     });
+    //     // srcObject is set to null to sever the link to the MediaStream object so it can be released.
+    //     video.srcObject = null;
+    //   })
+    //   .catch(function (error) {
+    //     console.log('getUserMedia() error', error);
+    //   });
+      // video = null;
+      // canvas = null;
+      // photo = null;
+  }
+}
+
 /*
 This function's job is to request access to the user's webcam, 
 initialize the output <img> to a default state, 
@@ -31,22 +113,22 @@ clicked to capture an image.
 function startup() {
   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     // true for mobile device
-    console.log("mobile device");
+    // console.log("mobile device");
   }else{
     // false for not mobile device
-    console.log("not mobile device");
+    // console.log("not mobile device");
   }
 
   // If landscape
   if(innerWidth>=innerHeight){
-    console.log("landscape");
+    // console.log("landscape");
     width = window.innerWidth/2;   
     height = (width / 8) * 6;    
   }
   
   // If portrait
   else{
-    console.log("portrait");
+    // console.log("portrait");
     width = window.innerWidth;   
     height = (width / 8) * 6;  
   }
@@ -92,10 +174,28 @@ function startup() {
     console.log("An error occurred: " + err);
   });
 
+  video.addEventListener('loadstart', function(event){
+    console.log("1. loadstart")
+  })
+  video.addEventListener('durationchange', function(event){
+    console.log("2. durationchange")
+  })
+  video.addEventListener('loadedmetadata', function(event){
+    console.log("3. loadedmetadata")
+  })
+  video.addEventListener('loadeddata', function(event){
+    console.log("4. loadeddata")
+  })
+  video.addEventListener('progress', function(event){
+    console.log("5. progress")
+  })
 
   /*The canplay event is fired when the user agent can play the media, but estimates that not enough data has been loaded to play the media up to its end without having to stop for further buffering of content. */
-  video.addEventListener('canplay', function(ev){
-    console.log('Video can start, but not sure it will play through.');
+  video.addEventListener('canplay', function(event){
+    console.log("6. canplay");
+    video.setAttribute('height', 'auto');
+    photo.setAttribute('height', 'auto');
+    // console.log('Video can start, but not sure it will play through.');
     if (!streaming) {    
       // video.setAttribute('width', width);
       // video.setAttribute('height', height);
@@ -103,14 +203,19 @@ function startup() {
       // canvas.setAttribute('height', height);
       /*Finally, we set the streaming variable to true to prevent us from inadvertently running this setup code again. */
       streaming = true;
-      video.setAttribute('height', 'auto');
-      photo.setAttribute('height', 'auto');
+      console.log("inside of canplay")
+      // video.setAttribute('height', 'auto');
+      // photo.setAttribute('height', 'auto');
     }
   }, false);
 
-  startbutton.addEventListener('click', function(ev){
+  video.addEventListener('canplaythrough', function(event){
+    console.log("7. canplaythrough")
+  })
+
+  startbutton.addEventListener('click', function(event){
     takepicture();
-    ev.preventDefault();
+    event.preventDefault();
   }, false);
   
   clearphoto();
@@ -145,7 +250,9 @@ function takepicture() {
 
 // Set up our event listener to run the startup process
 // once loading is complete.
-window.addEventListener('load', startup, false);
+
+
+// window.addEventListener('load', startup, false);
 // ------------------------------------------------------------------------------------------------------------
 // (function() {
 //   // The width and height of the captured photo. We will set the
