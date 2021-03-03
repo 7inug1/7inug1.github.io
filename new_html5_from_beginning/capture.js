@@ -6,17 +6,18 @@ https://github.com/mdn/samples-server/tree/master/s/webrtc-capturestill
 
 'use strict';
 
-let width = window.innerWidth/2;
-// console.log('window.innerWidth' + width);
-// let width = 320;    
-let height = (width / 8) * 6;    
-// let height = height / 
-let streaming = false;
+let width;
+let height;
+let innerWidth = window.innerWidth;
+let innerHeight = window.innerHeight;
+
+
 
 let video = null;
 let canvas = null;
 let photo = null;
 let startbutton = null;
+let streaming = false;
 
 
 /*
@@ -28,7 +29,31 @@ clicked to capture an image.
 */
 
 function startup() {
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    // true for mobile device
+    console.log("mobile device");
+  }else{
+    // false for not mobile device
+    console.log("not mobile device");
+  }
+
+  // If landscape
+  if(innerWidth>=innerHeight){
+    console.log("landscape");
+    width = window.innerWidth/2;   
+    height = (width / 8) * 6;    
+  }
+  
+  // If portrait
+  else{
+    console.log("portrait");
+    width = window.innerWidth;   
+    height = (width / 8) * 6;  
+  }
+
+  
   video = document.querySelector('#video');
+  
   canvas = document.querySelector('#canvas');
   photo = document.querySelector('#photo');
   startbutton = document.querySelector('#startbutton');
@@ -38,6 +63,7 @@ function startup() {
   photo.setAttribute('height', `${height}px`);
   video.setAttribute('width', `${width}px`);
   video.setAttribute('height', `${height}px`);
+  
   canvas.setAttribute('width', `${width}px`);
   canvas.setAttribute('height', `${height}px`);
   /* Here, we're calling MediaDevices.getUserMedia() and 

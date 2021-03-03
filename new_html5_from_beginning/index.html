@@ -6,27 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <script src="./capture.js" defer></script>
+  <script src="./canvas.js" defer></script>
   <title>HTML5: WebRTC and Canvas Technology</title>
 </head>
 <body>
   <header>
-    <div class="site-title">
+    <div class="siteTitle">
       <h1>HTML5 Portfolio</h1>
       <p class="subtitle">WebRTC and Canvas API</p>
     </div>
   </header>
 
   <div class="container">
-    <div class="camera-container">
-      
-        <video id="video">Video stream not available.</video>
+    <div class="videoContainer">
+      <video id="video">Video stream not available.</video>
 
+      <div class="videoButtonsContainer">
+        <label class="switch">
+          <input id="checkbox" type="checkbox" type="hidden">
+          <span class="slider round"></span>
+        </label>
+        <button id="cameraCaptureButton"></button>
+      </div>
     </div>
     
-    <div class="canvas-container">
+    <div class="canvasContainer">
       <canvas id="canvas"></canvas>
       <div class="output">
         <img id="photo" alt="The screen capture will appear in this box."> 
+      </div>
+
+      <div class="canvasButtonsContainer">
+        <div class="canvasButtonPenContainer">
+          <button id="blackButtonPen"></button>
+          <button id="redButtonPen"></button>
+          <button id="yellowButtonPen"></button>
+        </div>
+        <button id="saveButton"></button>
       </div>
     </div>
     

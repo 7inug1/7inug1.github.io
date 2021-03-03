@@ -43,14 +43,112 @@ header{
   /* flex-direction: row; */
 }
 
-.camera-container{
+.videoContainer{
   /* border: 1px solid black; */
   width: 50vw;
 }
 
-.canvas-container{
+.videoButtonsContainer{
+  position: relative;
+  background-color: black;
+  margin-top: -5px;
+  border: 1px solid black;
+  height: 4rem;
+}
+
+#cameraCaptureButton{
+  /* margin: 0 auto; */
+  position: absolute;
+  transform: translateX(-50%);
+  left: 42.5%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background-image: url('./images/shutter_button.jpg');
+  background-size: contain;
+  height: 3rem;
+  width: 3rem;
+
+  border: none;
+  cursor: pointer;
+}
+
+.canvasContainer{
   /* border: 1px solid black; */
   width: 50vw;
+}
+
+.canvasButtonsContainer{
+  position: relative;
+
+  background-color: grey;
+  margin-top: -5px;
+  border: 1px solid black;
+  height: 4rem;
+}
+
+.canvasButtonPenContainer{
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  /* top: 50%;
+  transform: translateY(-50%); */
+  /* display: inline; */
+  top: 10%;
+  /* transform: translateY(-50%); */
+
+  display: flex;
+}
+
+#blackButtonPen{
+  background-color: black;
+  padding: 10px 15px;
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  /* margin-right: 5px; */
+}
+
+#redButtonPen{
+  background-color: red;
+  padding: 10px 15px;
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  /* margin-right: 5px; */
+}
+
+#yellowButtonPen{
+  background-color: yellow;
+  padding: 10px 15px;
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  /* margin-right: 5px; */
+}
+
+#saveButton{
+  position: absolute;
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+
+  background-image: url('./images/save_icon.png');
+  background-size: contain;
+  
+  border: none;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+  
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #canvas {
@@ -69,6 +167,7 @@ header{
 }
 
 #video {
+  /* margin: 0; */
   width: 50vw;
   border: 1px solid black;
   /* height: auto; */
@@ -81,11 +180,11 @@ header{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  
+  right: 1rem;
   width: 60px;
   height: 34px;
   
-  right: 1rem;
+  /* right: 1rem; */
   margin-left: 1em;
 }
 
@@ -144,27 +243,13 @@ input:checked + .slider:before {
 }
 /* switch - end */
 
-#cameraCaptureButton{
-  position: absolute;
-  top: 50%;
-  transform: translateX(-50%);
-  left: 42.5%;
-  transform: translateY(-50%);
-
-  background-image: url('./images/shutter_button.jpg');
-  background-size: contain;
-  height: 70px;
-  width: 70px;
-
-  border: none;
-  cursor: pointer;
-}
 
 
 @media screen and (orientation: portrait) {
   .container{
     display: block;
     /* flex-direction: row; */
+    /* width: 100vw; */
   }
   
   #photo {
@@ -177,5 +262,16 @@ input:checked + .slider:before {
     /* height: auto; */
     /* display: block; */
   }
+
+  .videoButtonsContainer{
+    width: 100vw;
+  }
+
+  .canvasContainer{
+    /* border: 1px solid black; */
+    width: 100vw;
+  }
+
+
 }
 
