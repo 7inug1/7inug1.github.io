@@ -9,23 +9,16 @@ let constraints = (window.constraints = {
 });
 
 // <VARIABLES> - Related to the canvas in 'Gallery' section
-// let rightTop = document.querySelector('.right-top');
-// let width = window.getComputedStyle(rightTop).getPropertyValue('width');
-// let height = window.getComputedStyle(rightTop).getPropertyValue('height');
-// let width = 641;
-// let height = 462.933;
-let width = window.innerWidth / 2;
-let height = window.innerHeight * 0.8;
+let width = 641;
+let height = 462.933;
 
 let canvasOne = document.getElementById('canvasOne');
 let contextOne = canvasOne.getContext('2d');
-let checkbox = document.getElementById('checkbox');
-let cameraIsOn = false;
 
 // <VARIABLES> - Buttons on web camera
-let cameraOnButton = document.getElementById('cameraOnButton');
-let cameraOffButton = document.getElementById('cameraOffButton');
-let cameraCaptureButton = document.getElementById('cameraCaptureButton');
+// let cameraOnButton = document.getElementById('cameraOnButton');
+// let cameraOffButton = document.getElementById('cameraOffButton');
+// let cameraCaptureButton = document.getElementById('cameraCaptureButton');
 
 // <VARIABLES> - Related to 'local storage'
 // data: containing a representation of the image in the format specified by the type parameter (defaults to PNG). 
@@ -37,12 +30,14 @@ let canvasAndFrame = document.getElementById('canvasAndFrame');
 // let canvasOne = document.getElementById('canvasOne');
 canvasAndFrame.style.width=`${width}px`;
 canvasAndFrame.style.height=`${height}px`;
-canvasOne.style.width=`681px`;
-canvasOne.style.height=`642px`;
+canvasOne.style.width=`${width}px`;
+canvasOne.style.height=`${height}px`;
 
 
 console.log("camera");
 // <EVENTLISTENERS>
+let cameraIsOn = false;
+let checkbox = document.getElementById('checkbox');
 checkbox.checked=false;
 checkbox.addEventListener('click', toggleCamera);
 
@@ -84,7 +79,7 @@ function captureImage(){
   if (cameraIsOn===true) {
     // alert("photo saved")
     // contextOne.drawImage(video, 0, 0, 641, 462.933);
-    contextOne.drawImage(video, 0, 0, width, height);
+    contextOne.drawImage(video, 0, 0);
     savePhoto();
   }
 }

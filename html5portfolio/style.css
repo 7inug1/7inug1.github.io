@@ -64,43 +64,19 @@
   color: red;
 }
 
-#canvasAndFrame{
-  position:fixed; 
+/* #canvasAndFrame{ */
+  /* position:fixed;  */
   /* width:50%; 
   height:80%;  */
-  top:0;   
-  left:50%;
+  /* top:0;   
+  left:50%; */
+/* } */
 
-  /* #canvasAndFrame{ */
-  /* position:fixed;  */
-  /* width:50vw;  */
-  /* height:80vh;  */
-  /* top:0; */
-  /* left:50vw; */
-}
-
-#frame{
-  /* position:fixed;  */
-  /* top:0;    */
-  /* width:50vw;  */
-  /* height:80vh;  */
-}
 
 #canvasOne{
   cursor: url('./images/cursor.cur'), auto;
   position:fixed; 
-  /* width:50%; 
-  height:80%;  */
-  top:0;   
-  left:50%;
 
-  /* cursor: url('./images/cursor.cur'), auto;
-  position:fixed; 
-  top:0;   
-  left:50vw;
-  width:50vw; 
-  height:80vh; 
-  object-fit: none; */
 }
 
 #cameraCaptureButton{

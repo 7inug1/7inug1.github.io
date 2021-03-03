@@ -11,16 +11,6 @@ let canvas = document.getElementById('canvasOne');
 let context = canvas.getContext('2d');
 let painting = false;
 
-let frame = document.getElementById('frame');
-let frameContext = frame.getContext('2d');
-let photoFrameImage = new Image();
-photoFrameImage.src = '../images/photoFrameImage.png'; //https://toppng.com/old-frame-border-png-old-photo-frames-PNG-free-PNG-Images_167585
-
-photoFrameImage.addEventListener('load', function() {
-  // execute drawImage statements here
-  frameContext.drawImage(photoFrameImage, 0, 0);
-}, false);
-
 let blackButton = document.getElementById('blackButton');
 let redButton = document.getElementById('redButton');
 let yellowButton = document.getElementById('yellowButton');
@@ -37,27 +27,12 @@ canvas.addEventListener('mousedown', mouseStartPosition);
 canvas.addEventListener('mouseup', mouseFinishPosition);
 canvas.addEventListener('mousemove', mouseDraw);
 
-canvas.addEventListener('touchstart', touchStartPosition);
-canvas.addEventListener('touchend', touchFinishPosition);
-canvas.addEventListener('touchmove', touchDraw);
-
 function mouseStartPosition(event) {
   painting = true;
   mouseDraw(event); //for drawing dots
 }
 
-
 function mouseFinishPosition() {
-  painting = false;
-  context.beginPath(); //to start new lines after one another
-}
-
-function touchStartPosition(event) {
-  painting = true;
-  draw(event); //for drawing dots
-}
-
-function touchFinishPosition() {
   painting = false;
   context.beginPath(); //to start new lines after one another
 }
@@ -72,21 +47,6 @@ function mouseDraw(event) {
   context.beginPath(); //starts a new path by emptying the list of sub-paths.  
   context.moveTo(event.offsetX, event.offsetY);
   console.log(event.offsetX+" "+event.offsetY) //for testing coordinates
-}
-
-function touchmove(event) {  
-  
-  
-  if (!painting) return;  
-  let touch = event.touches[0];  
-  context.lineWidth = 2; //drawing pen width
-  context.lineCap = 'round';
-
-  context.lineTo(touch.offsetX, touch.offsetY);  
-  context.stroke();  
-  context.beginPath(); //starts a new path by emptying the list of sub-paths.  
-  context.moveTo(touch.offsetX, touch.offsetY);
-  console.log(touch.offsetX+" "+touch.offsetY) //for testing coordinates
 }
 
 function changePenColorToBlack(){
@@ -121,6 +81,5 @@ function loadImage(){
   img.onload = function(){
     context.drawImage(img, 0, 0);
   }
-  // console.log("changed to canvas");
   img.src = retrievingData;
 }
