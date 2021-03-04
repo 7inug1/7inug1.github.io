@@ -1,10 +1,10 @@
 #statusBar{
   position: fixed;
   top: 2vh;
-  width: 20vw;
+  width: 20%;
   height: 4vh;
-  left: 40vw;
-  right: 40vw;
+  left: 40%;
+  right: 40%;
 
   border-radius: 25px;
 
@@ -29,63 +29,62 @@
 
 .left-top {
   position:fixed; 
+  /* width:50%; 
+  height:80%;  */
   top:0;   
   left:0;
   background-color: white;
   object-fit: scale-down;
-
+  /* border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black; */
   background-color: black;
-  width: 50vw;
-  height: 80vh;
 }
 
 #video{
-  width: 50vw;
-  height: 80vh;
+
 }
 
 .left-bottom {
-  /* display: block; */
   position:fixed; 
-  width: 50vw; 
-  height:20vh; 
-  top:80vh;
-  left:0;
+  width:49.8%; 
+  height:20%; 
+  top:80%;   left:0;
   /* border-right: 2px solid black; */
   background-color: black;
 }
 
 .right-top {
   position:fixed; 
-  width: 50vw;
-  top:0;   
-  left:50vw;
-  /* border: 2px solid black; */
-  color: red;
-}
-
-/* #canvasAndFrame{ */
-  /* position:fixed;  */
   /* width:50%; 
   height:80%;  */
-  /* top:0;   
-  left:50%; */
-/* } */
+  top:0;   left:50%;
+  /* border: 2px solid black; */
+}
 
+#canvasAndFrame{
+  position:fixed; width:50%; height:80%; top:0;   left:50%;
+  /* z-index:1; */
+  /* width:100%; */
+  /* height:300px; */
+  /* margin:0 auto; */
+  /* position: relative;  */
+}
 
 #canvasOne{
   cursor: url('./images/cursor.cur'), auto;
   position:fixed; 
-
+  /* width:50%; 
+  height:80%;  */
+  top:0;   
+  left:50%;
 }
 
 #cameraCaptureButton{
-  position: absolute;
-  top: 50%;
-  transform: translateX(-50%);
-  left: 42.5%;
-  transform: translateY(-50%);
-
+  position: fixed;
+  left: 21vw;
+  font-size: 18px;
+  bottom: 4vh;
   background-image: url('./images/shutter_button.jpg');
   background-size: contain;
   height: 70px;
@@ -97,12 +96,8 @@
 }
 
 .right-bottom {
-  position:fixed; 
-  width:50vw; 
-  height:20vh; 
-  top:80vh;   
-  left:50vw;
-  background-color: white;
+  position:fixed; width:50%; height:20%; top:80%;   left:50%;
+  background-color: grey;
   /* border-left: 2px solid black; */
 }
 
@@ -114,11 +109,9 @@ button img{
 }
 
 .pens{
-  position: absolute;
-  top: 50%;
-  transform: translateX(-50%);
-  left: 35%;
-  transform: translateY(-50%);
+  position: fixed;
+  right: 17vw;
+  bottom: 5vh;
 }
 
 #blackButton{
@@ -128,8 +121,6 @@ button img{
   height: 60px;
   border: none;
   cursor: pointer;
-  border-radius: 15px;
-  margin-right: 5px;
 }
 
 #redButton{
@@ -139,8 +130,6 @@ button img{
   height: 60px;
   border: none;
   cursor: pointer;
-  border-radius: 15px;
-  margin-right: 5px;
 }
 
 #yellowButton{
@@ -150,36 +139,42 @@ button img{
   height: 60px;
   border: none;
   cursor: pointer;
-  border-radius: 15px;
-  margin-right: 5px;
 }
 
 #saveButton{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-
+  /* position: absolute;
+  padding: 5px 10px;
+  margin-left: 237px; */
+  position: fixed;
   background-image: url('./images/save_icon.png');
   background-size: contain;
-  
   border: none;
+  /* background-color: black; */
   width: 60px;
   height: 60px;
   cursor: pointer;
-  
-  right: 1rem;
+  right: 1vw;
+  bottom: 6vh;
 }
 
-.switch {
+
+
+/* .centered {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+} */
+
+.switch {
+  position: fixed;
+  /* right: 10px; */
+  left: 43vw;
+  display: inline-block;
   width: 60px;
   height: 34px;
-  
-  right: 1rem;
-  margin-left: 1em;
+  bottom: 8vh;
 }
 
 .switch input { 

@@ -1,4 +1,3 @@
-'use strict';
 // <VARIABLES> - Related to web camera
 let video = document.getElementById('video');
 let streaming = false;
@@ -14,30 +13,21 @@ let height = 462.933;
 
 let canvasOne = document.getElementById('canvasOne');
 let contextOne = canvasOne.getContext('2d');
+let checkbox = document.getElementById('checkbox');
+let cameraIsOn = false;
 
 // <VARIABLES> - Buttons on web camera
-// let cameraOnButton = document.getElementById('cameraOnButton');
-// let cameraOffButton = document.getElementById('cameraOffButton');
-// let cameraCaptureButton = document.getElementById('cameraCaptureButton');
+let cameraOnButton = document.getElementById('cameraOnButton');
+let cameraOffButton = document.getElementById('cameraOffButton');
+let cameraCaptureButton = document.getElementById('cameraCaptureButton');
 
 // <VARIABLES> - Related to 'local storage'
 // data: containing a representation of the image in the format specified by the type parameter (defaults to PNG). 
 let data;
 let key = "photoKey"; 
 
-let canvasAndFrame = document.getElementById('canvasAndFrame');
-// let frame = document.getElementById('frame');
-// let canvasOne = document.getElementById('canvasOne');
-canvasAndFrame.style.width=`${width}px`;
-canvasAndFrame.style.height=`${height}px`;
-canvasOne.style.width=`${width}px`;
-canvasOne.style.height=`${height}px`;
-
-
-console.log("camera");
+console.log("camera")
 // <EVENTLISTENERS>
-let cameraIsOn = false;
-let checkbox = document.getElementById('checkbox');
 checkbox.checked=false;
 checkbox.addEventListener('click', toggleCamera);
 
@@ -75,11 +65,29 @@ function toggleCamera(){
   }
 }
 
+// reference: https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/stop
+// function turnCameraOff(){
+//   if(cameraIsOn===true)
+//     cameraIsOn=false;
+//     navigator.mediaDevices.getUserMedia(constraints)
+//       .then(function (stream) {
+//         video.srcObject = stream;
+//         let tracks = stream.getTracks();
+//         tracks.forEach(function(track) {
+//           track.stop();
+//         });
+//         // srcObject is set to null to sever the link to the MediaStream object so it can be released.
+//         video.srcObject = null;
+//       })
+//       .catch(function (error) {
+//         console.log('getUserMedia() error', error);
+//       });
+// }
+
 function captureImage(){
-  if (cameraIsOn===true) {
+  if (width && height && cameraIsOn===true) {
     // alert("photo saved")
-    // contextOne.drawImage(video, 0, 0, 641, 462.933);
-    contextOne.drawImage(video, 0, 0);
+    contextOne.drawImage(video, 0, 0, width, height);
     savePhoto();
   }
 }
