@@ -10,6 +10,10 @@
       url("../DINAMO_fonts/ABCP3rman3nt-Bold-Trial.woff") format("woff");
 }
 
+#startbutton{
+  display: none;
+}
+
 #Diatype{
   font-family: P3rman3nt;
 }
@@ -36,6 +40,23 @@ header{
   background-color: aquamarine;
   text-align: center;
   /* margin: 0px 0px; */
+}
+
+header{
+  /* background-color: aquamarine;
+  text-align: center; */
+
+  background:aquamarine;
+  text-align: center;
+  padding: 2em 0;
+  width: 100vw;
+}
+
+footer {
+  background:aquamarine;
+  text-align: center;
+  padding: 2em 0;
+  width: 100vw;
 }
 
 .container{
