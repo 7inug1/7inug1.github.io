@@ -62,6 +62,7 @@ function touchFinishPosition() {
 }
 
 function mouseDraw(event) {  
+  console.log("mouseDraw");
   if (!painting) return;    
   context.lineWidth = 2; //drawing pen width
   context.lineCap = 'round';

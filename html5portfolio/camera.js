@@ -86,8 +86,9 @@ function toggleCamera(){
 
 function captureImage(){
   if (width && height && cameraIsOn===true) {
-    // alert("photo saved")
+    alert("captureImage()")
     contextOne.drawImage(video, 0, 0, width, height);
+    alert("captureedImage()")
     savePhoto();
   }
 }

@@ -171,9 +171,17 @@ footer {
   transform: translateY(-50%);
 }
 
+#video {
+  /* margin: 0; */
+  width: 50vw;
+  /* border: 1px solid black; */
+  /* height: auto; */
+  /* display: block; */
+}
+
 #canvas {
-  display:none;
-  /* width: 50%; */
+  width: 50vw;
+  /* min-height: 80%; */
   height: auto;
 }
 
@@ -186,13 +194,6 @@ footer {
   /* height: auto; */
 }
 
-#video {
-  /* margin: 0; */
-  width: 50vw;
-  border: 1px solid black;
-  /* height: auto; */
-  /* display: block; */
-}
 
 
 /* switch */
@@ -288,8 +289,14 @@ input:checked + .slider:before {
   }
 
   .canvasContainer{
-    /* border: 1px solid black; */
     width: 100vw;
+    /* height: auto; */
+  }
+
+  #canvas {
+    width: 100vw;
+    /* min-height: 80%; */
+    height: auto;
   }
 
 

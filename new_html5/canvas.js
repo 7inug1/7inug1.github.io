@@ -10,7 +10,7 @@
 
 // <VARIABLES>
 // let canvas = document.querySelector('#canvas');
-let context = canvas.getContext('2d');
+// let context = canvas.getContext('2d');
 let painting = false;
 
 let blackButtonPen = document.querySelector('#blackButtonPen');
@@ -40,16 +40,19 @@ function changePenColorToRed(){
 }
 
 function mouseStartPosition(event) {
+  console.log("mouseStartPosition");
   painting = true;
-  draw(event); //for drawing dots
+  mouseDraw(event); //for drawing dots
 }
 
 function mouseFinishPosition() {
+  console.log("mouseFinishPosition");
   painting = false;
   context.beginPath(); //to start new lines after one another
 }
 
 function mouseDraw(event) {  
+  console.log("mouseDraw");
   if (!painting) return;    
   context.lineWidth = 2; //drawing pen width
   context.lineCap = 'round';
@@ -58,5 +61,5 @@ function mouseDraw(event) {
   context.stroke();  
   context.beginPath(); //starts a new path by emptying the list of sub-paths.  
   context.moveTo(event.offsetX, event.offsetY);
-  console.log(event.offsetX+" "+event.offsetY) //for testing coordinates
+  // console.log(event.offsetX+" "+event.offsetY) //for testing coordinates
 }

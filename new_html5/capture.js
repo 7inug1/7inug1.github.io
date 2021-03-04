@@ -8,7 +8,9 @@ https://github.com/mdn/samples-server/tree/master/s/webrtc-capturestill
 
 let video = document.querySelector('#video');
 let canvas = document.querySelector('#canvas');
-let photo = document.querySelector('#photo');
+// let canvas = document.getElementById('canvas');
+let context = canvas.getContext('2d');
+// let photo = document.querySelector('#photo');
 // let startbutton = document.querySelector('#startbutton');
 
 let width;
@@ -23,23 +25,45 @@ checkbox.checked=false;
 let cameraIsOn = false;
 
 
+window.addEventListener('load', initialize, false);
 checkbox.addEventListener('click', toggleCamera);
-cameraCaptureButton.addEventListener('click', captureImage);
+cameraCaptureButton.addEventListener('click', takepicture);
 
-function captureImage(){
-  takepicture();
+function initialize(){
+  // clearphoto();
+  // If landscape
+  if(window.innerWidth>=window.innerHeight){
+    // console.log("landscape");
+    width = window.innerWidth/2;   
+    height = (width / 8) * 6;    
+  }
+  
+  // If portrait
+  else{
+    // console.log("portrait");
+    width = window.innerWidth;   
+    height = (width / 8) * 6;  
+  }
+
+  // photo.setAttribute('width', `${width}px`);
+  // photo.setAttribute('height', `${height}px`);
+  video.setAttribute('width', `${width}px`);
+  video.setAttribute('height', `${height}px`);
+  canvas.setAttribute('width', `${width}px`);
+  canvas.setAttribute('height', `${height}px`);
+  console.log("initialize")
 }
 
 function toggleCamera(){
   initialize();
   console.log("toggleCamera()")
 
-  video.setAttribute('width', `${width}px`);
-  video.setAttribute('height', `${height}px`);
-  canvas.setAttribute('width', `${width}px`);
-  canvas.setAttribute('height', `${height}px`);
-  photo.setAttribute('width', `${width}px`);
-  photo.setAttribute('height', `${height}px`);
+  // video.setAttribute('width', `${width}px`);
+  // video.setAttribute('height', `${height}px`);
+  // canvas.setAttribute('width', `${width}px`);
+  // canvas.setAttribute('height', `${height}px`);
+  // photo.setAttribute('width', `${width}px`);
+  // photo.setAttribute('height', `${height}px`);
   
   let constraints = {
     audio: false,
@@ -71,29 +95,6 @@ and to establish the event listeners needed to receive each
 frame of video from the camera and react when the button is 
 clicked to capture an image.
 */
-
-function initialize(){
-  // If landscape
-  if(window.innerWidth>=window.innerHeight){
-    // console.log("landscape");
-    width = window.innerWidth/2;   
-    height = (width / 8) * 6;    
-  }
-  
-  // If portrait
-  else{
-    // console.log("portrait");
-    width = window.innerWidth;   
-    height = (width / 8) * 6;  
-  }
-
-  photo.setAttribute('width', `${width}px`);
-  photo.setAttribute('height', `${height}px`);
-  video.setAttribute('width', `${width}px`);
-  video.setAttribute('height', `${height}px`);
-  canvas.setAttribute('width', `${width}px`);
-  canvas.setAttribute('height', `${height}px`);
-}
 
 function startWebcamStreaming() {
   /* Here, we're calling MediaDevices.getUserMedia() and 
@@ -142,8 +143,9 @@ function startWebcamStreaming() {
   video.addEventListener('canplay', function(event){
     console.log("6. canplay");
     video.setAttribute('height', 'auto');
-    photo.setAttribute('height', 'auto');
-    canvas.setAttribute('height', 'auto');
+    // canvas.setAttribute('height', 'auto');
+    // canvas.setAttribute('min-height', `${height}px`);
+    // photo.setAttribute('height', 'auto');
     // console.log('Video can start, but not sure it will play through.');
     if (!streaming) {    
       // video.setAttribute('width', width);
@@ -160,7 +162,7 @@ function startWebcamStreaming() {
     console.log("7. canplaythrough")
   })
   
-  clearphoto();
+  // clearphoto();
 }
 
 // Fill the photo with an indication that none has been
@@ -168,8 +170,8 @@ function startWebcamStreaming() {
 
 function clearphoto() {
   var context = canvas.getContext('2d');
-  // context.fillStyle = 'red';
-  // context.fillRect(0, 0, 900, 900);
+  context.fillStyle = 'red';
+  // context.fillRect(0, 0, width, height);
 
   var data = canvas.toDataURL('image/png');
   photo.setAttribute('src', data);
@@ -177,21 +179,22 @@ function clearphoto() {
 
 
 function takepicture() {
-  var context = canvas.getContext('2d');
   if (width && height) {
-    canvas.width = width;
-    canvas.height = height;
+    console.log("take picture");
+    // canvas.width = width;
+    // canvas.height = height;
     context.drawImage(video, 0, 0, width, height);
+    
     // NOTICE!
-    var data = canvas.toDataURL('image/png');
-    photo.setAttribute('src', data);
-  } else {
-    clearphoto();
-  }
+    // var data = canvas.toDataURL('image/png');
+    // photo.setAttribute('src', data);
+  } 
+  // else {
+    // clearphoto();
+  // }
 }
 
 // Set up our event listener to run the startup process
 // once loading is complete.
 
 
-window.addEventListener('load', initialize, false);
