@@ -9,7 +9,7 @@ https://github.com/mdn/samples-server/tree/master/s/webrtc-capturestill
 let video = document.querySelector('#video');
 let canvas = document.querySelector('#canvas');
 let photo = document.querySelector('#photo');
-let startbutton = document.querySelector('#startbutton');
+// let startbutton = document.querySelector('#startbutton');
 
 let width;
 let height;
@@ -54,10 +54,6 @@ function toggleCamera(){
   else{
     cameraIsOn=false;
 
-    // photo.setAttribute('height', 'auto');
-    // video.setAttribute('height', 'auto');
-    // canvas.setAttribute('height', 'auto');
-
     let stream = video.srcObject;
     let tracks = stream.getTracks();
 
@@ -97,10 +93,6 @@ function initialize(){
   video.setAttribute('height', `${height}px`);
   canvas.setAttribute('width', `${width}px`);
   canvas.setAttribute('height', `${height}px`);
-
-  // photo.setAttribute('height', 'auto');
-  // video.setAttribute('height', 'auto');
-  // canvas.setAttribute('height', 'auto');
 }
 
 function startWebcamStreaming() {
@@ -161,19 +153,12 @@ function startWebcamStreaming() {
       /*Finally, we set the streaming variable to true to prevent us from inadvertently running this setup code again. */
       streaming = true;
       console.log("inside of canplay")
-      // video.setAttribute('height', 'auto');
-      // photo.setAttribute('height', 'auto');
     }
   }, false);
 
   video.addEventListener('canplaythrough', function(event){
     console.log("7. canplaythrough")
   })
-
-  startbutton.addEventListener('click', function(event){
-    takepicture();
-    event.preventDefault();
-  }, false);
   
   clearphoto();
 }
@@ -197,7 +182,7 @@ function takepicture() {
     canvas.width = width;
     canvas.height = height;
     context.drawImage(video, 0, 0, width, height);
-  
+    // NOTICE!
     var data = canvas.toDataURL('image/png');
     photo.setAttribute('src', data);
   } else {
