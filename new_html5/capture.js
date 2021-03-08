@@ -23,7 +23,7 @@ let streaming = false;
 let checkbox = document.getElementById('checkbox');
 checkbox.checked=false;
 let cameraIsOn = false;
-
+let key = "photoKey";
 
 window.addEventListener('load', initialize, false);
 checkbox.addEventListener('click', toggleCamera);
@@ -188,13 +188,21 @@ function takepicture() {
     // NOTICE!
     // var data = canvas.toDataURL('image/png');
     // photo.setAttribute('src', data);
+    // saveImage();
   } 
   // else {
     // clearphoto();
   // }
 }
 
-// Set up our event listener to run the startup process
-// once loading is complete.
+// export let key;
+
+// function saveImage(){
+//   console.log("saveImage()")
+//   let key = "photoKey";
+//   let data = canvas.toDataURL('image/png');
+//   localStorage.setItem(key, data);
+//   alert("Photo saved to local storage!")
+// }
 
 
