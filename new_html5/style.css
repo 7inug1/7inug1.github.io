@@ -13,10 +13,14 @@
 
 html{
   font-family: P3rman3nt-Bold;
+  height: 100%;
+  width: 100%;
 }
 
 body{
   margin: 0;
+  height: 100vh;
+  width: 100vw;
 }
 /* notice */
 #startbutton{
@@ -26,6 +30,8 @@ body{
 h1, h2, h3, h4, h5, h6{
   font-family: P3rman3nt-Bold;
 }
+
+/* ----------------------------------------------------------- */
 
 .statusBar{
   background-color: white;
@@ -85,6 +91,7 @@ p{
 
 .container{
   display: flex;
+  flex-direction: row;
 }
 
 /* ----------------------------------------------------------- */
@@ -103,9 +110,9 @@ p{
 .videoButtonsContainer{
   position: relative;
   background-color: black;
-  margin-top: -5px;
-  /* border: 1px solid black; */
+  /* margin-top: -5px; */
   height: 4rem;
+  margin-top: -0.35rem;
 }
 
 #cameraCaptureButton:hover{
@@ -114,10 +121,10 @@ p{
 
 #cameraCaptureButton{
   position: absolute;
+  left: 50%;
+  top: 12%;
   transform: translateX(-50%);
-  left: 42.5%;
-  top: 50%;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
 
   background-image: url('./images/shutter_button.jpg');
   background-size: contain;
@@ -128,145 +135,8 @@ p{
   cursor: pointer;
 }
 
-.canvasContainer{
-  /* border-right: 1px solid black; */
-  /* border-left: 1px solid black; */
-  width: 50vw;
-  /* border-top: 1px solid black; */
-}
-
-.canvasButtonsContainer{
-  position: relative;
-
-  background-color: black;
-  margin-top: -4.5px;
-  /* border: 1px solid black; */
-  height: 4rem;
-}
-
-.canvasButtonPenContainer{
-  /* cursor: url('./images/cursor.cur'), auto; */
-  position: absolute;
-  transform: translateX(-50%);
-  left: 50%;
-  /* top: 50%;
-  transform: translateY(-50%); */
-  /* display: inline; */
-  /* top: 10%; */
-  /* transform: translateY(-50%); */
-
-  display: flex;
-  background-color: rgb(228, 228, 228) ;
-  /* opacity: 0.7; */
-  border-radius: 15px;
-  /* padding: 1px; */
-}
-
-
-
-#whiteButtonPen{
-  display: none;
-  background-color: white;
-  padding: 10px 15px;
-  height: 4rem;
-  width: 4rem;
-  border: none;
-  cursor: url('./images/cursor.cur'), auto;
-  border-radius: 5px;
-  /* margin-right: 5px; */
-  /* scale: 1.1; */
-}
-
-#whiteButtonPen:hover, #blackButtonPen:hover, #redButtonPen:hover, #yellowButtonPen:hover{
-  scale: 1.1;
-}
-
-#blackButtonPen{
-  background-color: black;
-  padding: 10px 15px;
-  height: 4rem;
-  width: 4rem;
-  border: none;
-  cursor: url('./images/cursor.cur'), auto;
-  border-radius: 5px;
-  /* margin-right: 5px; */
-}
-
-/* #blackButtonPen:hover{
-
-} */
-
-#redButtonPen{
-  background-color: red;
-  height: 4rem;
-  width: 4rem;
-  border: none;
-  cursor: url('./images/cursor.cur'), auto;
-  border-radius: 5px;
-  /* margin-right: 5px; */
-  /* padding: 10px; */
-}
-
-#yellowButtonPen{
-  background-color: yellow;
-  border-radius: 5px;
-  height: 4rem;
-  width: 4rem;
-  border: none;
-  cursor: url('./images/cursor.cur'), auto;
-
-}
-
-#saveButton:hover{
-  scale: 1.1;
-}
-
-#saveButton{
-  position: absolute;
-  background-size: contain;
-  
-  border: none;
-  height: 3rem;
-  width: 3rem;
-  cursor: pointer;
-  
-  right: 0rem;
-  
-  top: 50%;
-  transform: translateY(-50%);
-
-  font-size: 2rem;
-  background-color: black;
-  color: white;
-}
-
-#video {
-  /* margin: 0; */
-  width: 50vw;
-  /* border-right: 1px solid black; */
-  /* height: auto; */
-  /* display: block; */
-}
-
-#canvas {
-  width: 50vw;
-  /* min-height: 80%; */
-  height: auto;
-  cursor: url('./images/cursor.cur'), auto;
-}
-
-#photo {
-  /* border: 1px solid black; */
-  /* box-shadow: 2px 2px 3px black; */
-  /* width:320px;
-  height:240px; */
-  width: 50vw;
-  /* height: auto; */
-}
-
-
-
 /* switch */
+/* source: https://www.w3schools.com/howto/howto_css_switch.asp */
 .switch {
   position: absolute;
   top: 50%;
@@ -315,8 +185,6 @@ input:checked + .slider {
   background-color: grey;
 }
 
-
-
 /*동그란 원 움직이는 이펙트*/
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
@@ -334,59 +202,121 @@ input:checked + .slider:before {
 }
 /* switch - end */
 
+/* ----------------------------------------------------- */
 
+.canvasContainer{
+  width: 50vw;
+}
+
+.canvasButtonsContainer{
+  position: relative;
+  background-color: black;
+  height: 4rem;
+  margin-top: -0.35rem;
+}
+
+.canvasButtonPenContainer{
+  display: flex;
+  background-color: rgb(228, 228, 228) ;
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  border-radius: 15px;
+}
+
+#whiteButtonPen:hover, #blackButtonPen:hover, #redButtonPen:hover, #yellowButtonPen:hover{
+  scale: 1.1;
+}
+
+#whiteButtonPen{
+  display: none;
+}
+
+
+#blackButtonPen{
+  background-color: black;
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  border-radius: 5px;
+  cursor: url('./images/cursor.cur'), auto;
+}
+
+#redButtonPen{
+  background-color: red;
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  border-radius: 5px;
+  cursor: url('./images/cursor.cur'), auto;
+}
+
+#yellowButtonPen{
+  background-color: yellow;
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  border-radius: 5px;
+  cursor: url('./images/cursor.cur'), auto;
+}
+
+#saveButton:hover{
+  scale: 1.1;
+}
+
+#saveButton{
+  background-color: black;
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  
+  height: 3rem;
+  width: 3rem;
+  
+  right: 0rem;
+  top: 50%;
+  
+  transform: translateY(-50%);
+
+  font-size: 2rem;
+  color: white;
+}
+
+#video {
+  width: 50vw;
+  /* height: 100%; */
+  /* width: 100%; */
+}
+
+#canvas {
+  width: 50vw;
+  /* min-height: 80%; */
+  height: auto;
+  cursor: url('./images/cursor.cur'), auto;
+}
 
 @media screen and (orientation: portrait) {
   .container{
     display: block;
-    /* flex-direction: row; */
-    /* width: 100vw; */
-  }
-  
-  #photo {
-    width: 100vw;
-    height: auto;
   }
   
   #video {
     width: 100vw;
-    /* height: auto; */
-    /* display: block; */
-    /* border-right: 1px solid black; */
-    /* border-right: 1px solid black; */
-  }
-
-  #cameraCaptureButton{
-    left: 46%;
   }
 
   .videoContainer{
-    width: 100vw;
-    
-  }
-
-  .videoTitleContainer{
-    width: 96.5vw;
-    /* border-right: 1px solid black; */
-    /* font-size: 3rem; */
-
-  }
-
-  .videoButtonsContainer{
     width: 100vw;
   }
 
   .canvasContainer{
     width: 100vw;
-    /* height: auto; */
   }
 
   #canvas {
     width: 100vw;
-    /* min-height: 80%; */
     height: auto;
   }
-
-
 }
 
