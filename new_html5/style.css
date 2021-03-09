@@ -92,6 +92,7 @@ p{
 .container{
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 
 /* ----------------------------------------------------------- */
@@ -105,6 +106,7 @@ p{
 
 .videoContainer{
   width: 50vw;
+  height: auto;
 }
 
 .videoButtonsContainer{
@@ -241,7 +243,7 @@ input:checked + .slider:before {
   width: 4rem;
   border: none;
   border-radius: 5px;
-  cursor: url('./images/cursor.cur'), auto;
+  cursor: url('./images/cursor.cur');
 }
 
 #redButtonPen{
@@ -250,7 +252,7 @@ input:checked + .slider:before {
   width: 4rem;
   border: none;
   border-radius: 5px;
-  cursor: url('./images/cursor.cur'), auto;
+  cursor: url('./images/cursor.cur');
 }
 
 #yellowButtonPen{
@@ -259,7 +261,7 @@ input:checked + .slider:before {
   width: 4rem;
   border: none;
   border-radius: 5px;
-  cursor: url('./images/cursor.cur'), auto;
+  cursor: url('./images/cursor.cur');
 }
 
 #saveButton:hover{
@@ -286,7 +288,7 @@ input:checked + .slider:before {
 
 #video {
   width: 50vw;
-  /* height: 100%; */
+  height: auto;
   /* width: 100%; */
 }
 
@@ -294,7 +296,7 @@ input:checked + .slider:before {
   width: 50vw;
   /* min-height: 80%; */
   height: auto;
-  cursor: url('./images/cursor.cur'), auto;
+  cursor: url('./images/cursor.cur');
 }
 
 @media screen and (orientation: portrait) {

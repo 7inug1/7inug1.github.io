@@ -20,7 +20,7 @@
 // height:400
 
 //Using canvas
-let canvas=document.getElementById("myCanvas");
+let canvas=document.querySelector("#canvas");
 let ctx=canvas.getContext("2d");
 //------------------------------------------------
 //Global variables

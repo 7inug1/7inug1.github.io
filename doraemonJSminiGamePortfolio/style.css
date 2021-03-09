@@ -1,0 +1,61 @@
+html, body{
+  margin: 0;
+}
+
+body{
+  background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title{
+  text-align: center;
+  /* font-size: xx-large; */
+  /* background-color: whitesmoke;
+  padding: 2rem;
+  margin-top: 0; */
+}
+
+.instruction{
+  text-align: center;
+  font-weight: 700;
+  border: 2px solid black;
+  padding: 1rem;
+  color: red;
+  min-width: 70vw;
+}
+
+.container{
+  /* border: 1px solid black; */
+  /* margin: 5px; */
+}
+
+.canvasContainer{
+  /* border: 1px solid black; */
+  margin: 0;
+  /* margin: 5px; */
+}
+
+#canvas{
+  display: block;
+  margin: 0 auto;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.scoreContainer{
+  /* border: 1px solid black; */
+  margin: 5px;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.scoreContent{
+  display: inline;
+}

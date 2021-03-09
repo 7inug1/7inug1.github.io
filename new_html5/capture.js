@@ -142,7 +142,7 @@ function startWebcamStreaming() {
   /*The canplay event is fired when the user agent can play the media, but estimates that not enough data has been loaded to play the media up to its end without having to stop for further buffering of content. */
   video.addEventListener('canplay', function(event){
     console.log("6. canplay");
-    video.setAttribute('height', 'auto');
+    // video.setAttribute('height', 'auto');
     // canvas.setAttribute('height', 'auto');
     // canvas.setAttribute('min-height', `${height}px`);
     // photo.setAttribute('height', 'auto');
