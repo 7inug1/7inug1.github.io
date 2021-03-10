@@ -31,31 +31,61 @@ body{
 }
 
 .canvasContainer{
-  /* border: 1px solid black; */
   margin: 0;
-  /* margin: 5px; */
 }
 
 #canvas{
   display: block;
   margin: 0 auto;
-  /* margin-left: auto;
-  margin-right: auto; */
 }
 
-.buttonContainer{
+.playButtonContainer{
   display: flex;
   justify-content: center;
   padding-bottom: 1rem;
 }
+
+.arrowButtonContainer{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+
+
 
 .scoreContainer{
   /* border: 1px solid black; */
   margin: 5px;
   text-align: center;
   padding-bottom: 1rem;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap */
 }
 
-.scoreContent{
-  display: inline;
+.scoreGoalContainer{
+  display: inline-flex;
+  flex-direction: column;
 }
+
+.scoreEarnedContainer{
+  display: inline-flex;
+  flex-direction: column;
+}
+/* .scoreHeadingContainer{
+  display: flex;
+  border: 1.5px solid white;
+  border-radius: 7%;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.scoreContentContainer{
+  display: flex;
+  border: 1.5px solid white;
+  border-radius: 7%;
+  margin: 1rem;
+  padding: 1rem;
+} */

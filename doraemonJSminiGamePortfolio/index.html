@@ -4,6 +4,7 @@
   <title>Doraemon CanvasJS Project</title>
   <meta charset="utf-8">
   <script src="doraemonJSminiGame.js" type="text/javascript" defer></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
   <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -14,8 +15,29 @@
   </header>
 
   <div class="scoreContainer">
-    <p class="scoreContent">Dorayaki goal: <strong><span id="goaldisplay"></span></strong>&nbsp;&nbsp;|</p>
-    <p class="scoreContent">Dorayaki caught:<strong><span id="output"></span></strong></p>
+    <div class="scoreGoalContainer">
+      <p>Goal: </p>
+      <p><strong><span id="goaldisplay"></span></strong></p>
+    </div>
+    <div class="scoreEarnedContainer">
+      <p>Earned: </p>
+      <strong><span id="output"></span></strong>
+    </div>
+    
+    <!-- <div class="scoreHeadingContainer">
+      <p class="scoreHeading goal">Goal: </p>
+      <p class="scoreHeading earned">Earned:</p>
+    </div>
+    <div class="scoreContentContainer">
+      <p class="scoreContent"><strong><span id="goaldisplay"></span></strong>&nbsp;&nbsp;|</p>
+      <p class="scoreContent"><strong><span id="output"></span></strong></p>
+    </div> -->
+
+  </div>
+
+  <div class="playButtonContainer">
+    <button type="button" onclick="startTimer()"><i class="fas fa-play-circle"></i></button>
+    <button type="button" onclick="stopTimer()"><i class="fas fa-stop-circle"></i></button><br><br>
   </div>
 
   <div class="container">
@@ -23,11 +45,10 @@
       <canvas id="canvas" style="border-style: solid" width="600px" height="400px"></canvas><br>
     </div>
 
-    <div class="buttonContainer">
-      <button type="button" onclick="moveLeft()">Left</button>
-      <button type="button" onclick="moveRight()">Right</button>
-      <button type="button" onclick="startTimer()">Start</button>
-      <button type="button" onclick="stopTimer()">Stop</button><br><br>
+    <div class="arrowButtonContainer">
+
+      <button type="button" onclick="moveLeft()"><i class="fas fa-chevron-circle-left"></i></button>
+      <button type="button" onclick="moveRight()"><i class="fas fa-chevron-circle-right"></i></button>
     </div>
 
   </div>
