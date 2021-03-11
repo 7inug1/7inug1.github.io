@@ -6,50 +6,43 @@
   <script src="doraemonJSminiGame.js" type="text/javascript" defer></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
   <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Press+Start+2P&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
   <header>
-    <h1 class="title">Doraemon CanvasJS Project</h1>
-    <p class="instruction">Instruction : Use the "arrow keys" or the "buttons" provided to achieve the desired score!</p>
+    <h1 class="title">Doraemon canvasAPI MiniGame</h1>
+    <!-- <p class="instruction">Instruction : Use the "arrow keys" or the "buttons" provided to achieve the desired score!</p> -->
   </header>
 
   <div class="scoreContainer">
     <div class="scoreGoalContainer">
-      <p>Goal: </p>
-      <p><strong><span id="goaldisplay"></span></strong></p>
+      <p id="scoreGoalHeading">GOAL</p>
+      <p><strong><span id="scoreGoal"></span></strong></p>
     </div>
     <div class="scoreEarnedContainer">
-      <p>Earned: </p>
-      <strong><span id="output"></span></strong>
+      <p id="scoreEarnedHeading">SCORE</p>
+      <p><strong><span id="scoreEarned"></span></strong></p>
     </div>
-    
-    <!-- <div class="scoreHeadingContainer">
-      <p class="scoreHeading goal">Goal: </p>
-      <p class="scoreHeading earned">Earned:</p>
-    </div>
-    <div class="scoreContentContainer">
-      <p class="scoreContent"><strong><span id="goaldisplay"></span></strong>&nbsp;&nbsp;|</p>
-      <p class="scoreContent"><strong><span id="output"></span></strong></p>
-    </div> -->
-
   </div>
 
-  <div class="playButtonContainer">
-    <button type="button" onclick="startTimer()"><i class="fas fa-play-circle"></i></button>
-    <button type="button" onclick="stopTimer()"><i class="fas fa-stop-circle"></i></button><br><br>
-  </div>
+
 
   <div class="container">
     <div class="canvasContainer">
       <canvas id="canvas" style="border-style: solid" width="600px" height="400px"></canvas><br>
     </div>
 
-    <div class="arrowButtonContainer">
+  <div class="buttonContainer"> 
 
-      <button type="button" onclick="moveLeft()"><i class="fas fa-chevron-circle-left"></i></button>
-      <button type="button" onclick="moveRight()"><i class="fas fa-chevron-circle-right"></i></button>
-    </div>
+    <button id="startButton" type="button" onclick="startTimer()"><i class="fas fa-play-circle"></i></button>
+    <button id="arrowLeftButton" type="button" onclick="moveLeft()"><i class="fas fa-chevron-circle-left"></i></button>
+    <button id="arrowRightButton" type="button" onclick="moveRight()"><i class="fas fa-chevron-circle-right"></i></button>
+    <button id="pauseButton" type="button" onclick="stopTimer()"><i class="fas fa-stop-circle"></i></button><br><br>
+
+  </div>
 
   </div>
 </body>

@@ -39,8 +39,14 @@ dorayaki.src='./img/dorayaki.png';
 //------------------------------------------------
 let dora=new Doraemon(-25, 300); //doraemon's starting position
 let yaki=new Dorayaki((Math.floor)(Math.random()*556), -15); //yaki being called at a random position at the top
+
+let arrowLeftButton = document.querySelector('#arrowLeftButton');
+let arrowRightButton = document.querySelector('#arrowRightButton');
+
+
 window.onload = redraw; //Upon loading the page, you redraw
-document.addEventListener("keydown", press); //can move doraemon using arrowleft and arrowright keyboard
+document.addEventListener("keydown", pressdown); //can move doraemon using arrowleft and arrowright keyboard
+document.addEventListener("keyup", pressup);
 displayGoal();
 //------------------------------------------------
 //Constructors
@@ -94,11 +100,23 @@ function moveRight(){
     redraw();
 }
 
-function press(){
+function pressdown(event){
   if(event.key=="ArrowLeft"){
     moveLeft();
+    arrowLeftButton.style.scale = "1.1";
   }else if(event.key=="ArrowRight"){
     moveRight();
+    arrowRightButton.style.scale = "1.1";
+  }
+}
+
+function pressup(event){
+  if(event.key=="ArrowLeft"){
+    // moveLeft();
+    arrowLeftButton.style.scale = "1.0";
+  }else if(event.key=="ArrowRight"){
+    // moveRight();
+    arrowRightButton.style.scale = "1.0";
   }
 }
 //------------------------------------------------
@@ -141,7 +159,7 @@ function reset(){
 //------------------------------------------------
 //running the function by each interval.
 function executeProgram(){
-  output.innerHTML=score;
+  scoreEarned.innerHTML=score;
   yaki.y+=10;
   redraw();
   //yaki not being caught into the basket (earning no score)
@@ -152,12 +170,13 @@ function executeProgram(){
   //yaki being caught into the basket (earning score)
   else if(yaki.y+50>dora.y && checkCollision()==true){
     score+=1;
-    output.innerHTML=score;
+    scoreEarned.innerHTML=score;
     yaki.x=(Math.floor)(Math.random()*556);
     yaki.y=0;
   }
 }
 
 function displayGoal(){
-  goaldisplay.innerHTML=goal;
+  scoreGoal.innerHTML=goal;
+  scoreEarned.innerHTML=score;
 }
