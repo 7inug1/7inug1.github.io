@@ -8,20 +8,16 @@ https://github.com/mdn/samples-server/tree/master/s/webrtc-capturestill
 
 let video = document.querySelector('#video');
 let canvas = document.querySelector('#canvas');
-// let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
-// let photo = document.querySelector('#photo');
-// let startbutton = document.querySelector('#startbutton');
 
 let width;
 let height;
 let innerWidth = window.innerWidth;
 let innerHeight = window.innerHeight;
 
-let streaming = false;
-
 let checkbox = document.getElementById('checkbox');
 checkbox.checked=false;
+let streaming = false;
 let cameraIsOn = false;
 let key = "photoKey";
 
@@ -30,17 +26,13 @@ checkbox.addEventListener('click', toggleCamera);
 cameraCaptureButton.addEventListener('click', takepicture);
 
 function initialize(){
-  // clearphoto();
-  // If landscape
   if(window.innerWidth>=window.innerHeight){
-    // console.log("landscape");
     width = window.innerWidth/2;   
     height = (width / 8) * 6;    
   }
   
   // If portrait
   else{
-    // console.log("portrait");
     width = window.innerWidth;   
     height = (width / 8) * 6;  
   }
@@ -57,13 +49,6 @@ function initialize(){
 function toggleCamera(){
   initialize();
   console.log("toggleCamera()")
-
-  // video.setAttribute('width', `${width}px`);
-  // video.setAttribute('height', `${height}px`);
-  // canvas.setAttribute('width', `${width}px`);
-  // canvas.setAttribute('height', `${height}px`);
-  // photo.setAttribute('width', `${width}px`);
-  // photo.setAttribute('height', `${height}px`);
   
   let constraints = {
     audio: false,
@@ -142,16 +127,7 @@ function startWebcamStreaming() {
   /*The canplay event is fired when the user agent can play the media, but estimates that not enough data has been loaded to play the media up to its end without having to stop for further buffering of content. */
   video.addEventListener('canplay', function(event){
     console.log("6. canplay");
-    // video.setAttribute('height', 'auto');
-    // canvas.setAttribute('height', 'auto');
-    // canvas.setAttribute('min-height', `${height}px`);
-    // photo.setAttribute('height', 'auto');
-    // console.log('Video can start, but not sure it will play through.');
     if (!streaming) {    
-      // video.setAttribute('width', width);
-      // video.setAttribute('height', height);
-      // canvas.setAttribute('width', width);
-      // canvas.setAttribute('height', height);
       /*Finally, we set the streaming variable to true to prevent us from inadvertently running this setup code again. */
       streaming = true;
       console.log("inside of canplay")
@@ -161,48 +137,24 @@ function startWebcamStreaming() {
   video.addEventListener('canplaythrough', function(event){
     console.log("7. canplaythrough")
   })
-  
-  // clearphoto();
 }
-
-// Fill the photo with an indication that none has been
-// captured.
-
-function clearphoto() {
-  var context = canvas.getContext('2d');
-  context.fillStyle = 'red';
-  // context.fillRect(0, 0, width, height);
-
-  var data = canvas.toDataURL('image/png');
-  photo.setAttribute('src', data);
-}
-
 
 function takepicture() {
   if (width && height) {
     console.log("take picture");
-    // canvas.width = width;
-    // canvas.height = height;
     context.drawImage(video, 0, 0, width, height);
     
     // NOTICE!
-    // var data = canvas.toDataURL('image/png');
-    // photo.setAttribute('src', data);
-    // saveImage();
+    saveImage();
   } 
-  // else {
-    // clearphoto();
-  // }
 }
 
-// export let key;
-
-// function saveImage(){
-//   console.log("saveImage()")
-//   let key = "photoKey";
-//   let data = canvas.toDataURL('image/png');
-//   localStorage.setItem(key, data);
-//   alert("Photo saved to local storage!")
-// }
+function saveImage(){
+  console.log("saveImage()")
+  let key = "photoKey";
+  let data = canvas.toDataURL('image/png');
+  localStorage.setItem(key, data);
+  alert("Photo saved to local storage!")
+}
 
 

@@ -1,75 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <title>Document</title>
-</head>
-
-<body>
-  <div id="statusBar">
-    <span id="onlineOfflineStatus">I am not sure of the status yet!</span>
-  </div><br>
-
-  <div class="split left-top">
-    <video id="video" width="637" height="462.933"></video>
-  </div>
-
-  <div class="split left-bottom" >
-    <div id="cameraButtons">
-      <!-- <button id="cameraOnButton">On</button> -->
-      <!-- <button id="cameraOffButton">Off</button> -->
-      <label class="switch">
-        <input id="checkbox" type="checkbox" type="hidden">
-        <span class="slider round"></span>
-      </label>
-      <!-- <img src="./images/photoFrameImage.png" width="100" height="100"/> -->
-      <button id="cameraCaptureButton"></button>
-    </div>
-
-    
-
-  </div>
-
-  <div class="split right-top">
-        <div id="canvasAndFrame" width="641" height="462.933">
-          <canvas id="frame" width="681" height="462.933"></canvas> <!-- Photo frame for the canvas -->
-          <canvas id="canvasOne" width="681" height="462.933"></canvas><br> <!-- Drawing canvas -->
-          
-
-        </div>
-  </div>
-  <div class="split right-bottom">
-    <div class="pens">
-      <button id="blackButton"></button>
-      <button id="redButton"></button>
-      <button id="yellowButton"></button>
-    </div>
-    <button id="saveButton"></button>
-  </div>
-
-  <script src="camera.js" type="text/javascript" defer></script>
-  <script src="canvas.js" type="text/javascript" defer></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+  
+  <script src="./capture.js" defer></script>
+  <script src="./canvas.js" defer></script>
   <script src="onlineOfflineEvent.js" type="text/javascript" defer></script>
-  <!-- <script src="app.js" type="text/javascript" defer></script> -->
+  <title>HTML5: WebRTC and Canvas Technology</title>
+</head>
+<body>
+  <header>
+    <div class="siteTitle">
+      <div class="statusBar">
+        <span id="onlineOfflineStatus">status</span>
+      </div><br>
+      <h1 class="title">HTML5 Portfolio</h1>
+      <p class="subtitle">WebRTC and Canvas API</p>
+    </div>
+  </header>
 
+  <div class="container">
+    <div class="videoContainer">
+      <div class="titleContainer videoTitleContainer">Webcam</div>
+      <video id="video">Video stream not available.</video>
+
+      <div class="videoButtonsContainer">
+        <label class="switch">
+          <input id="checkbox" type="checkbox" type="hidden">
+          <span class="slider round"></span>
+        </label>
+        <button id="cameraCaptureButton"></button>
+      </div>
+    </div>
+    
+    <div class="canvasContainer">
+      <div class="titleContainer canvasTitleContainer">Canvas</div>
+      <canvas id="canvas"></canvas>
+
+      <div class="canvasButtonsContainer">
+        <div class="canvasButtonPenContainer">
+          <button id="redButtonPen"></button>
+          <button id="blackButtonPen"></button>
+          <button id="yellowButtonPen"></button>
+        </div>
+        <button id="removeButton"><i class="fas fa-trash-alt"></i></button>
+        <button id="saveButton"><i class="fa fa-download"></i></button>
+      </div>
+    </div>
+    
+  </div>
+  <footer class="footer">
+    <p>&copy; 2021 Jinwook Shin</p>
+  </footer>
 </body>
-
-<!-- <body>
-<div class="split left">
-  <div class="centered">
-    <h2>Jane Flex</h2>
-    <p>Some text.</p>
-  </div>
-</div>
-
-<div class="split right">
-  <div class="centered">
-    <h2>John Doe</h2>
-    <p>Some text here too.</p>
-  </div>
-</div>
-</body> -->
-</html> 
+</html>

@@ -1,3 +1,4 @@
+'use strict';
 // <REFERENCES>
 // https://www.youtube.com/results?search_query=Learn+HTML5+Canvas+By+Creating+A+Drawing+App+%7C+HTML+Canvas+Tutorial
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event
@@ -7,86 +8,37 @@
 // mousedown: fired the moment the button is initially pressed.
 
 // <VARIABLES>
-let canvas = document.getElementById('canvasOne');
-let context = canvas.getContext('2d');
-let painting = false;
+// let painting = false;
+let blackButtonPen = document.querySelector('#blackButtonPen');
+let redButtonPen = document.querySelector('#redButtonPen');
+let yellowButtonPen = document.querySelector('#yellowButtonPen');
+let saveButton = document.querySelector('#saveButton');
+let drawing = false;
+let mousePosition = { x:0, y:0 };
+let lastPosition = mousePosition;
 
-let frame = document.getElementById('frame');
-let frameContext = frame.getContext('2d');
-let photoFrameImage = new Image();
-photoFrameImage.src = '../images/photoFrameImage.png'; //https://toppng.com/old-frame-border-png-old-photo-frames-PNG-free-PNG-Images_167585
-
-photoFrameImage.addEventListener('load', function() {
-  // execute drawImage statements here
-  frameContext.drawImage(photoFrameImage, 0, 0);
-}, false);
-
-let blackButton = document.getElementById('blackButton');
-let redButton = document.getElementById('redButton');
-let yellowButton = document.getElementById('yellowButton');
-let saveButton = document.getElementById('saveButton');
+blackButtonPen.addEventListener('click', changePenColorToBlack);
+redButtonPen.addEventListener('click', changePenColorToRed);
+yellowButtonPen.addEventListener('click', changePenColorToYellow);
 
 loadImage();
+window.addEventListener('load', () => loadImage());
+saveButton.addEventListener('click', saveImage);
 
-blackButton.addEventListener('click', changePenColorToBlack);
-redButton.addEventListener('click', changePenColorToRed);
-yellowButton.addEventListener('click', changePenColorToYellow);
-saveButton.addEventListener('click', savePhotoWithDrawing);
-
-canvas.addEventListener('mousedown', mouseStartPosition);
-canvas.addEventListener('mouseup', mouseFinishPosition);
-canvas.addEventListener('mousemove', mouseDraw);
-
-canvas.addEventListener('touchstart', touchStartPosition);
-canvas.addEventListener('touchend', touchFinishPosition);
-canvas.addEventListener('touchmove', touchDraw);
-
-function mouseStartPosition(event) {
-  painting = true;
-  draw(event); //for drawing dots
+function loadImage(){
+  let img = new Image();
+  let key = "photoKey";
+  let retrievingData = localStorage.getItem(key);
+  console.log("loadImage")
+  img.src = retrievingData;
+  context.drawImage(img, 0, 0);
 }
 
-function touchStartPosition(event) {
-  painting = true;
-  draw(event); //for drawing dots
-}
-  
-function mouseFinishPosition() {
-  painting = false;
-  context.beginPath(); //to start new lines after one another
-}
-
-function touchFinishPosition() {
-  painting = false;
-  context.beginPath(); //to start new lines after one another
-}
-
-function mouseDraw(event) {  
-  console.log("mouseDraw");
-  if (!painting) return;    
-  context.lineWidth = 2; //drawing pen width
-  context.lineCap = 'round';
-
-  context.lineTo(event.offsetX, event.offsetY);  
-  context.stroke();  
-  context.beginPath(); //starts a new path by emptying the list of sub-paths.  
-  context.moveTo(event.offsetX, event.offsetY);
-  console.log(event.offsetX+" "+event.offsetY) //for testing coordinates
-}
-
-function touchmove(event) {  
-  
-  
-  if (!painting) return;  
-  let touch = event.touches[0];  
-  context.lineWidth = 2; //drawing pen width
-  context.lineCap = 'round';
-
-  context.lineTo(touch.offsetX, touch.offsetY);  
-  context.stroke();  
-  context.beginPath(); //starts a new path by emptying the list of sub-paths.  
-  context.moveTo(touch.offsetX, touch.offsetY);
-  console.log(touch.offsetX+" "+touch.offsetY) //for testing coordinates
+function saveImage(){
+  let key = "photoKey";
+  let data = canvas.toDataURL('image/png');
+  localStorage.setItem(key, data);
+  alert("Photo saved to local storage!")
 }
 
 function changePenColorToBlack(){
@@ -100,27 +52,93 @@ function changePenColorToYellow(){
 function changePenColorToRed(){
   context.strokeStyle = "red";
 }
+// window.addEventListener('load', () => loadImage());
+canvas.addEventListener("mousedown", (event) => {
+  drawing = true;
+  lastPosition = getMousePosition(canvas, event);
+});
 
-function savePhotoWithDrawing(){
-  saveImage();
+canvas.addEventListener("mouseup", (event) => {
+  drawing = false;
+});
+
+canvas.addEventListener("mousemove", (event) => {
+  mousePosition = getMousePosition(canvas, event);
+});
+
+// Get the position of the mouse relative to the canvas
+function getMousePosition(canvas, event) {
+  let rectangle = canvas.getBoundingClientRect();
+  return {
+    x: event.clientX - rectangle.left,
+    y: event.clientY - rectangle.top
+  };
 }
 
-function saveImage(){
-  // https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL
-  alert("saved")
-  let key = "photoKey"; 
-  data = canvasOne.toDataURL('image/png');
-  localStorage.setItem(key, data);
+canvas.addEventListener("touchstart", (event) => {
+  event.preventDefault(); //prevent scrolling while touch-drawing
+  mousePosition = getTouchPos(canvas, event);
+  let touch = event.touches[0];
+  let mouseEvent = new MouseEvent("mousedown", {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+  canvas.dispatchEvent(mouseEvent);
+}, false);
+
+canvas.addEventListener("touchmove", (event) => {
+  event.preventDefault(); //prevent scrolling while touch-drawing
+  let touch = event.touches[0];
+  let mouseEvent = new MouseEvent("mousemove", {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+  canvas.dispatchEvent(mouseEvent);
+}, false);
+
+canvas.addEventListener("touchend", (event) => {
+  event.preventDefault(); //prevent scrolling while touch-drawing
+  let mouseEvent = new MouseEvent("mouseup", {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+  canvas.dispatchEvent(mouseEvent);
+}, false);
+
+// Get the position of a touch relative to the canvas
+function getTouchPos(canvas, touchEvent) {
+  let rectangle = canvas.getBoundingClientRect();
+  return {
+    x: touchEvent.touches[0].clientX - rectangle.left,
+    y: touchEvent.touches[0].clientY - rectangle.top
+  };
 }
 
-function loadImage(){
-  let retrievingData = localStorage.getItem(key);
-  console.log("retrievingData: " + (retrievingData));
-  
-  let img = new Image();
-  img.onload = function(){
-    context.drawImage(img, 0, 0);
+window.requestAnimationFrame = (function (callback) {
+  return window.requestAnimationFrame || 
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.oRequestAnimationFrame ||
+  window.msRequestAnimaitonFrame ||
+  function (callback) {
+    window.setTimeout(callback, 1000/60);
+  };
+})();
+
+// function for drawing the signature, connecting the previous and current mouse positions with a line (if drawing is enabled)
+function drawOnCanvas() {
+  if (drawing) {
+    context.lineWidth = 2; //drawing pen width
+    context.lineCap = 'round';
+    context.beginPath();
+    context.moveTo(lastPosition.x, lastPosition.y);
+    context.lineTo(mousePosition.x, mousePosition.y);
+    context.stroke();
+    lastPosition = mousePosition;
   }
-  // console.log("changed to canvas");
-  img.src = retrievingData;
 }
+
+(function drawLoop () {
+  requestAnimationFrame(drawLoop);
+  drawOnCanvas();
+})();
