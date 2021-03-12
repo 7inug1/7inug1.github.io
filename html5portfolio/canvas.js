@@ -38,14 +38,14 @@ function saveImage(){
   let key = "photoKey";
   let data = canvas.toDataURL('image/png');
   localStorage.setItem(key, data);
-  alert("Photo saved to local storage!");
+  alert("Photo saved to local storage. It still stays upon page refreshing!");
 }
 
 function removeImageFromLocalStorage(){
   if(localStorage.length !== 0){
     localStorage.clear();
     context.clearRect(0, 0, canvas.width, canvas.height);
-    alert("photo removed from local storage!");
+    alert("Photo removed from local storage!");
   }
 }
 

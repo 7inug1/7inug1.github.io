@@ -122,7 +122,7 @@ function saveImage(){
   let key = "photoKey"; // refers to the key of localStorage
   let data = canvas.toDataURL('image/png');
   localStorage.setItem(key, data);
-  alert("Photo saved to local storage!");
+  alert("Photo saved to local storage. It still stays upon page refreshing!");
 }
 
 
