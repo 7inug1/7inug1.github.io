@@ -5,6 +5,7 @@ html, body{
 body{
   background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
   margin: 0;
+  touch-action: manipulation;
 }
 
 .title{
@@ -41,7 +42,9 @@ body{
 }
 
 .canvasContainer{
+  display: block;
   margin: 0;
+  height: 400px;
 }
 
 #canvas{
@@ -163,4 +166,12 @@ body{
   border-radius: 10px;
   box-shadow: 5px 5px;
   font-size: 3rem;
+}
+
+
+
+@media screen and (max-width: 620px), (max-height: 550px){
+  body{
+    display: none;
+  }
 }
