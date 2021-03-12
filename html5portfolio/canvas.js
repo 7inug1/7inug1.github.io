@@ -8,7 +8,6 @@
 // mousedown: fired the moment the button is initially pressed.
 
 // <VARIABLES>
-// let painting = false;
 let blackButtonPen = document.querySelector('#blackButtonPen');
 let redButtonPen = document.querySelector('#redButtonPen');
 let yellowButtonPen = document.querySelector('#yellowButtonPen');
@@ -21,34 +20,32 @@ let lastPosition = mousePosition;
 blackButtonPen.addEventListener('click', changePenColorToBlack);
 redButtonPen.addEventListener('click', changePenColorToRed);
 yellowButtonPen.addEventListener('click', changePenColorToYellow);
-
-loadImage();
-window.addEventListener('load', () => loadImage());
 saveButton.addEventListener('click', saveImage);
 removeButton.addEventListener('click', removeImageFromLocalStorage);
+
+loadImage();
 
 function loadImage(){
   let img = new Image();
   let key = "photoKey";
   let retrievingData = localStorage.getItem(key);
-  console.log("loadImage")
   img.src = retrievingData;
   context.drawImage(img, 0, 0);
+  // console.log("loadImage");
 }
 
 function saveImage(){
   let key = "photoKey";
   let data = canvas.toDataURL('image/png');
   localStorage.setItem(key, data);
-  alert("Photo saved to local storage!")
+  alert("Photo saved to local storage!");
 }
 
 function removeImageFromLocalStorage(){
-
   if(localStorage.length !== 0){
     localStorage.clear();
     context.clearRect(0, 0, canvas.width, canvas.height);
-    alert("photo removed from local storage!")
+    alert("photo removed from local storage!");
   }
 }
 
@@ -63,7 +60,7 @@ function changePenColorToYellow(){
 function changePenColorToRed(){
   context.strokeStyle = "red";
 }
-// window.addEventListener('load', () => loadImage());
+
 canvas.addEventListener("mousedown", (event) => {
   drawing = true;
   lastPosition = getMousePosition(canvas, event);
@@ -77,7 +74,6 @@ canvas.addEventListener("mousemove", (event) => {
   mousePosition = getMousePosition(canvas, event);
 });
 
-// Get the position of the mouse relative to the canvas
 function getMousePosition(canvas, event) {
   let rectangle = canvas.getBoundingClientRect();
   return {
@@ -116,7 +112,6 @@ canvas.addEventListener("touchend", (event) => {
   canvas.dispatchEvent(mouseEvent);
 }, false);
 
-// Get the position of a touch relative to the canvas
 function getTouchPos(canvas, touchEvent) {
   let rectangle = canvas.getBoundingClientRect();
   return {
@@ -125,7 +120,7 @@ function getTouchPos(canvas, touchEvent) {
   };
 }
 
-window.requestAnimationFrame = (function (callback) {
+window.requestAnimationFrame = ((callback) => {
   return window.requestAnimationFrame || 
   window.webkitRequestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -136,10 +131,9 @@ window.requestAnimationFrame = (function (callback) {
   };
 })();
 
-// function for drawing the signature, connecting the previous and current mouse positions with a line (if drawing is enabled)
 function drawOnCanvas() {
   if (drawing) {
-    context.lineWidth = 2; //drawing pen width
+    context.lineWidth = 2; 
     context.lineCap = 'round';
     context.beginPath();
     context.moveTo(lastPosition.x, lastPosition.y);
