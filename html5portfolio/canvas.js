@@ -13,6 +13,7 @@ let blackButtonPen = document.querySelector('#blackButtonPen');
 let redButtonPen = document.querySelector('#redButtonPen');
 let yellowButtonPen = document.querySelector('#yellowButtonPen');
 let saveButton = document.querySelector('#saveButton');
+let removeButton = document.querySelector('#removeButton');
 let drawing = false;
 let mousePosition = { x:0, y:0 };
 let lastPosition = mousePosition;
@@ -24,6 +25,7 @@ yellowButtonPen.addEventListener('click', changePenColorToYellow);
 loadImage();
 window.addEventListener('load', () => loadImage());
 saveButton.addEventListener('click', saveImage);
+removeButton.addEventListener('click', removeImageFromLocalStorage);
 
 function loadImage(){
   let img = new Image();
@@ -39,6 +41,15 @@ function saveImage(){
   let data = canvas.toDataURL('image/png');
   localStorage.setItem(key, data);
   alert("Photo saved to local storage!")
+}
+
+function removeImageFromLocalStorage(){
+
+  if(localStorage.length !== 0){
+    localStorage.clear();
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    alert("photo removed from local storage!")
+  }
 }
 
 function changePenColorToBlack(){

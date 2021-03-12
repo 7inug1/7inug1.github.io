@@ -43,6 +43,7 @@ function initialize(){
   video.setAttribute('height', `${height}px`);
   canvas.setAttribute('width', `${width}px`);
   canvas.setAttribute('height', `${height}px`);
+  loadImage();
   console.log("initialize")
 }
 
@@ -140,9 +141,10 @@ function startWebcamStreaming() {
 }
 
 function takepicture() {
-  if (width && height) {
+  if (cameraIsOn) {
     console.log("take picture");
     context.drawImage(video, 0, 0, width, height);
+    
     
     // NOTICE!
     saveImage();
