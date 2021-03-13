@@ -12,38 +12,44 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="title">Doraemon canvasAPI MiniGame</h1>
-    <!-- <p class="instruction">Instruction : Use the "arrow keys" or the "buttons" provided to achieve the desired score!</p> -->
-  </header>
+  <div class="projectContainer">
+    <main>
+      <header>
+        <h1 class="title">Doraemon canvasAPI MiniGame</h1>
+      </header>
 
-  <div class="scoreContainer">
-    <div class="scoreGoalContainer">
-      <p id="scoreGoalHeading">GOAL</p>
-      <p><strong><span id="scoreGoal"></span></strong></p>
-    </div>
-    <div class="scoreEarnedContainer">
-      <p id="scoreEarnedHeading">SCORE</p>
-      <p><strong><span id="scoreEarned"></span></strong></p>
-    </div>
+      <div class="scoreContainer">
+        <div class="scoreGoalContainer">
+          <p id="scoreGoalHeading">GOAL</p>
+          <p><strong><span id="scoreGoal"></span></strong></p>
+        </div>
+        <div class="scoreEarnedContainer">
+          <p id="scoreEarnedHeading">SCORE</p>
+          <p><strong><span id="scoreEarned"></span></strong></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="canvasContainer">
+          <canvas id="canvas" style="border-style: solid" width="600px" height="400px"></canvas><br>
+        </div>
+
+      <div class="buttonContainer"> 
+        <button id="startButton" type="button" onclick="startTimer()"><i class="fas fa-play-circle"></i></button>
+        <button id="arrowLeftButton" type="button" onclick="moveLeft()"><i class="fas fa-chevron-circle-left"></i></button>
+        <button id="arrowRightButton" type="button" onclick="moveRight()"><i class="fas fa-chevron-circle-right"></i></button>
+        <button id="pauseButton" type="button" onclick="stopTimer()"><i class="fas fa-stop-circle"></i></button><br><br>
+      </div>
+    </main>
+    <footer>
+      <small>Copyright &copy; 2021 Jinwook Shin</small><br>
+    </footer>
   </div>
-
-
-
-  <div class="container">
-    <div class="canvasContainer">
-      <canvas id="canvas" style="border-style: solid" width="600px" height="400px"></canvas><br>
-    </div>
-
-  <div class="buttonContainer"> 
-
-    <button id="startButton" type="button" onclick="startTimer()"><i class="fas fa-play-circle"></i></button>
-    <button id="arrowLeftButton" type="button" onclick="moveLeft()"><i class="fas fa-chevron-circle-left"></i></button>
-    <button id="arrowRightButton" type="button" onclick="moveRight()"><i class="fas fa-chevron-circle-right"></i></button>
-    <button id="pauseButton" type="button" onclick="stopTimer()"><i class="fas fa-stop-circle"></i></button><br><br>
-
+    
   </div>
-
+  <div class="no-mobile">
+    <div id="no-mobile-title">Doraemon canvasAPI MiniGame</div>
+    <div id="no-mobile-alert"><p style="font-size: 3rem; margin-bottom:1.5rem; margin-top: 1.0rem">⚠️</p>Please view on a Tablet or Desktop to play this game. </div>
   </div>
 </body>
 </html>

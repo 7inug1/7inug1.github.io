@@ -43,7 +43,7 @@ html:active{
 
 /* 1. Desktop, Tablet */
 @media screen and (orientation: landscape) and (min-height: 495px){
-  #no-mobile{
+  .no-mobile{
     display: none;
   }
   
@@ -240,7 +240,7 @@ html:active{
 
 /* 2. Tablet */
 @media screen and (orientation: portrait) {
-  #no-mobile{
+  .no-mobile{
     display: none;
   }
   
@@ -535,7 +535,7 @@ html:active{
 
 /* 3. Mobile - Landscape */
 @media screen and (orientation: landscape) and (max-height: 495px)  {
-  #no-mobile{
+  .no-mobile{
     position: absolute;
     z-index: 99;
     background-color: #FFCB05;
@@ -550,7 +550,7 @@ html:active{
     line-height: 130%;
     
     display: grid;
-    grid-row-column: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .grid {
@@ -573,7 +573,7 @@ html:active{
 }
 
 @media screen and (orientation: landscape) and (max-width: 770px) {
-  #no-mobile{
+  .no-mobile{
     position: absolute;
     z-index: 99;
     background-color: #FFCB05;
@@ -588,7 +588,7 @@ html:active{
     line-height: 130%;
 
     display: grid;
-    grid-row-column: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .grid {
