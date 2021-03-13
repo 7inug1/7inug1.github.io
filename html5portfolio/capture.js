@@ -124,5 +124,3 @@ function saveImage(){
   localStorage.setItem(key, data);
   alert("Photo saved to local storage. It still stays upon page refreshing!");
 }
-
-
