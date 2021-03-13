@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Modal } from 'react-bootstrap';
+// import { Button, Modal } from 'react-bootstrap';
 
 export default class Note extends React.Component {
   render() {

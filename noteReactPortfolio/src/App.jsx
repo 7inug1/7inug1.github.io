@@ -169,7 +169,7 @@ export default class App extends Component {
       this.setState({
         newNoteTags: tempNewNoteTagsArray
       });  
-      console.log("newNoteTags: " + "["+this.state.newNoteTags+"]")
+      // console.log("newNoteTags: " + "["+this.state.newNoteTags+"]");
       event.target.value = "";
     } 
   }
@@ -266,7 +266,8 @@ export default class App extends Component {
   render() {
     return (
       <>  
-        <h1 id="mainHeading">Note App</h1>
+        <h1 id="nonDesktopMainHeading">React Note App</h1>
+        <h1 id="desktopMainHeading">React Note App Portfolio</h1>
         <div id="grid">
           {/* 1. Form */}
           <Form 
@@ -299,6 +300,9 @@ export default class App extends Component {
             handleClose={this.handleClose}
           />
         </div>
+        <footer className="footer">
+          <p>&copy; 2021 Jinwook Shin</p>
+        </footer>
       </>
     );
   }
