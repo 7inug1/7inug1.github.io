@@ -263,6 +263,10 @@ header {
   margin-bottom: 3em;
 }
 
+.about-me-heading{
+  font-size: 1.5rem;
+}
+
 @media (min-width: 675px) {
   header {
       text-align: left;
