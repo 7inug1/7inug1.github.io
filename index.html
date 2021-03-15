@@ -1,78 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css">
-  <title>Jinwook Shin's Portfolio Website</title>
-</head>
-<body>
-  <!-- <h1 id="Diatype">Jinwook Shin's Portfolio Website</h1>
-  <h1 id="DiatypeMono">Jinwook Shin's Portfolio Website</h1>
-  <h1 id="DiatypeSemiMono">Jinwook Shin's Portfolio Website</h1> -->
-  <header>
-    <div class="container container-nav">
-      <div class="site-title">
-        <h1>Jinwook Shin</h1>
-        <p class="subtitle">Portfolio website showcasing front-end projects</p>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Jinwook Shin's Portfolio Website</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container container-nav">
+        <div class="site-title">
+          <h1>Jinwook Shin</h1>
+          <p class="subtitle">Portfolio website showcasing front-end projects</p>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about-me.html">About me</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </nav>  
+      </div> 
+    </header>
+
+    <div id="contents">
+      <div class="portfolio-section-title">목차</div>
+      <div id="child-directory">
+        <span class="file-individual">
+          <i class="far fa-file-alt"></i><a href="./dogAPIreactPortfolio/build/index.html"> <i class="fab fa-react" style="color: rgb(18, 171, 241);"></i> Dog API portfolio </a>&nbsp;(Desktop ✅ | Mobile soon ⚠️)
+        </span>
+
+        <span class="file-individual">
+          <i class="far fa-file-alt"></i><a href="./noteReactPortfolio/build/index.html"> <i class="fab fa-react" style="color: rgb(18, 171, 241);"></i> Note App react portfolio </a>&nbsp;(Desktop ✅ | Mobile ✅)
+        </span>
+
+        <span class="file-individual">
+          <i class="far fa-file-alt"></i><a href="./pokemonAPIportfolio/index.html"> <i class="fab fa-js-square" style="color: rgb(255, 196, 0);"></i> pokemonAPI portfolio </a>&nbsp;(Desktop ✅ | Mobile ✅)
+        </span>
+        
+        <span class="file-individual">
+          <i class="far fa-file-alt"></i><a href="./html5portfolio/index.html""> <i class="fab fa-html5" style="color: rgb(250, 88, 59);"></i> HTML5 portfolio </a>&nbsp;(Desktop ✅ | Mobile soon ✅)
+        </span>
+        
+        <span class="file-individual">
+          <i class="far fa-file-alt"></i><a href="./doraemonJSminiGamePortfolio/index.html"> <i class="fab fa-js-square" style="color: rgb(255, 196, 0);"></i> Doraemon portfolio </a>&nbsp;(Desktop ✅ | Mobile soon ✅)
+        </span>
       </div>
-      <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About me</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>  
-    </div> <!--/ .container container-nav -->
-  </header>
-
-  <span id="subheading">
-    <h2 id="directory">Directory</h2> <h2 id="developing-duration">Developing Duration</h2>
-  </span>
-  <hr/>
-  <div id="contents">
-    
-    <div id="parent-directory">
-      <!-- <h3><i class="fab fa-github"></i> <a href="https://github.com/7inug1">github.com/7inug1</a></h3> -->
-      <!-- <br><br> -->
-      <!-- <i class="fas fa-file-pdf"></i> --><a href="/images/myw3schoolsimage.jpg" download></a>
-      <!-- <h3><i class="fas fa-file-pdf"></i> <a href="./downloads/_프론트엔드_이력서.pdf" download>&nbsp;Resume</a></h3> -->
-      <br><br>
-      <h3><i class="far fa-folder"></i> 7inug1.github.io/portfolio</h3>
-      <br>
     </div>
-    
-    <div id="child-directory">
-      <span class="file-individual">
-        <i class="far fa-file-alt"></i><a href="./dogAPIreactPortfolio/build/index.html"> <i class="fab fa-react" style="color: rgb(18, 171, 241);"></i> Dog API portfolio </a>&nbsp;(Desktop ✅ | Mobile soon ⚠️)
-      </span>
-      <span class="date-modified"><span id="dog-api">2021/01/01 - 2021/02/01</span></span><br>
+    <br>
+    <div class="portfolio-section-title">포트폴리오</div>
 
-      <span class="file-individual">
-        <i class="far fa-file-alt"></i><a href="./noteReactPortfolio/build/index.html"> <i class="fab fa-react" style="color: rgb(18, 171, 241);"></i> Note App react portfolio </a>&nbsp;(Chrome not supported currently | Desktop ✅ | Mobile soon ⚠️)
-      </span>
-      <span class="date-modified"><span id="note-app">2021/01/01 - 2021/02/01</span></span><br>
+    <div class="container container-flex">
+      <main role="main">
+        <article class="portfolio-container">
+          <h2 class="portfolio-title"><a href="./dogAPIreactPortfolio/build/index.html"> <i class="fab fa-react" style="color: rgb(18, 171, 241);"></i> Dog API 포트폴리오 </a></h2>
+          <div class="portfolio-image-container">
+            <img src="./img/reactDogApiPortfolio.png" alt="react dog api portfolio image">
+          </div>
+          <Details>
+            <summary><strong>👇 Keyword</strong>: React, Mongoose, MongoDB, Express, Axios</summary>
+            <p class="portfolio-body">
+              <p>•리액트와 백엔드 툴(Mongoose, mongoDB, express)을 이용하여 Dog API & Database 풀스택 어플리케이션을 제작함. </p>
+              <p>•상위 App 컴포넌트와 하위 Chooser, Details, DetailForms, DetailViews 컴포넌트를 제작하여 직관적이고 유지/보수하기 용이하게 프로그램을 제작함. state와 props를 이용하여 부모/자식 컴포넌트 사이의 변수 전달이 수월하게끔 함.</p>
+              <p>•두 개의 form에서 데이터가 잘 처리될 수 있게 알맞은 이벤트 메소드를 만들어 리액트에서는 사용자의 인풋을 state를 사용하여 어떻게 처리하는지 이해하게 됨.</p>
+              <p>•리액트의 Lifecycle 메소드(componentDidMount, componentDidUpdate)를 이용해 컴포넌트의 첫 생성과 컴포넌트가 업데이트될 때 수행할 행동을 작성하였고 리액트 컴포넌트의 구동 방식에 대해 이해를 깊이 하게 됨.</p>
+              <p>•Axios를 이용하여 dog API의 정보를 불러와 필요에 맞게 API를 사용할 수 있다는 걸 보여주고자 하였음. 해당 포트폴리오에서는 dog 리스트와 사진 데이터를 사용함.</p>
+              <p>•Mongoose, mongoDB, express와 같은 백엔드 툴을 이용하여 사용자가 등록하는 comment를 mongoDB에 저장할 수 있게 하였음. 프론트엔드 기술에 중점을 두고자 해당 코드는 유지하되 백엔드 comment 기능은 구동되지 않게 하였음.</p>
+              <p>•본 포트폴리오를 통해 리액트의 컴포넌트 작동 방식에 대한 이해를 깊이하게 되었고 일반적인 HTML/JavaScript 프로그램과 다르게 state가 변화하는 컴포넌트만 re-render 되는 구동방식을 직접 경험한 것이 인상깊었음.</p>
+            </p>
+          </Details>
+        </article>
+          
+        <article class="portfolio-container">
+          <h2 class="portfolio-title"><a href="./noteReactPortfolio/build/index.html"> <i class="fab fa-react" style="color: rgb(18, 171, 241);"></i> 노트 앱 포트폴리오</a></h2>
+          <div class="portfolio-image-container">
+            <img src="./img/reactNoteAppPortfolio.png" alt="react note app portfolio image">
+          </div>
+          <Details>
+            <summary><strong>👇 Keyword</strong>: React, CSS, Grid</summary>
+            <p class="portfolio-body">
+              <p>•리액트를 사용하여 동적 프로그램인 노트 관리 프로그램을 만들어 HTML/JavaScript로 만든 어플리케이션과 리액트 어플리케이션 간의 생산성과 유지/보수 차이를 경험하고자 하였음. </p>
+              <p>•상위의 App 컴포넌트에 state를, 하위의 Form, Note, Tag 컴포넌트에 props로 데이터를 전달하여 컴포넌트 구성의 직관성을 높이고 유지/보수를 용이하게 함.</p>
+              <p>•Form에 입력되는 여러 데이터를 처리하기 위한 여러 이벤트 메소드를 제작하여 사용자가 입력하는 값을 state로 어떻게 관리하는지 이해하게 됨.</p>
+              <p>•리액트의 componentDidMount, componentDidUpdate와 같은 Lifecycle 메소드를 이용해 컴포넌트의 첫 생성 시점에, 그리고 컴포넌트가 업데이트될 때 수행할 행동을 작성하였고 리액트의 컴포넌트 구동 방식에 대해 알게 됨.</p>
+              <p>•배열의 Map 함수를 이용하여 배열 안의 데이터를 쉽게 재가공하여 사용할 수 있게 프로그램을 작성함.</p>
+              <p>•LocalStorage API를 이용해 사용자가 작성한 개별 노트가 저장되게 하였고 자바스크립트와 HTML5에서 제공하는 기본적인 API를 리액트에 활용할 수 있게 됨.</p>
+              <p>•본 포트폴리오를 통해 노트 관리 어플리케이션에 필요한 컴포넌트를 세분화하고 직접 제작하여 코드의 직관성, 유지보수성, 그리고 프로그램의 효율성을 직접 경험하게 됨.</p>
+            </p>
+          </Details>
+        </article>
+          
+        <article class="portfolio-container">
+          <h2 class="portfolio-title"><a href="./pokemonAPIportfolio/index.html"> <i class="fab fa-js-square" style="color: rgb(255, 196, 0);"></i> Pokemon API 포트폴리오</a></h2>
+          <div class="portfolio-image-container">
+            <img src="./img/javascriptPokemonApiPortfolio.png" alt="javascript pokemon api portfolio image">
+          </div>
+          <Details>
+            <summary><strong>👇 Keyword</strong>: JavaScript, CSS, HTML, API fetching, eventListener, DOM manipulation, Grid, Responsive</summary>
+            <p class="portfolio-body">
+              <p>•외부 API의 가공되지 않은 데이터를 이용하여 완성도 있는 결과물을 보여줄 수 있다는 능력을 보여주고자 하였음.</p>
+              <p>•객체지향 프로그래밍 방식으로 자바스크립트의 api fetching, eventListener, DOM manipulation과 CSS의 viewport, grid system을 이용함.</p>
+              <p>•객체지향 프로그래밍 방식을 준수하여 직관적이고 재사용이 가능하게 프로그램을 작성함.</p>
+              <p>•Pokemon 외부 api를 이용하여 데이터를 fetching하고 응답을 필요에 맞게 사용함.</p>
+              <p>•무한 스크롤링 기능을 구현하여 사용자가 효율적으로 필요한 만큼만의 데이터를 받아올 수 있게 함. 구현을 위해 Event 인터페이스, eventListener, 그리고 수학적 계산을 통해 스크롤이 맨 아래에 다다를 때 새로운 아이템을 불러오도록 함.</p>
+              <p>•DOM manipulation을 통해 DOM 요소를 필요에 맞게 추가하고 제거하여 컴포넌트가 업데이트될 때 이전 요소를 제거하고 새로운 요소를 추가함.</p>
+              <p>•CSS의 viewport 를 이용해 mobile portrait 모드, tablet portrait/landscape 모드, 그리고 desktop 모드를 지원하게 함. 지원하지 않는 mobile landscape 모드는 경고창을 띄워 사용자에게 다른 스크린 모드를 이용하도록 권고함.</p>
+              <p>•CSS의 grid 방식을 이용해 효과적인 페이지 레이아웃과 포켓몬 카드 레이아웃을 구현함.</p>
+              <p>•본 프로젝트를 통해 자바스크립트의  api fetching, eventListener, DOM manipulation을 필요에 맞게 이용할 수 있는 능력, CSS의 viewport와 grid 방식으로 다양한 디바이스에 맞는 웹페이지를 보여줄 수 있는 능력을 배양함.</p>
+            </p>
+          </Details>
+        </article>
 
-      <span class="file-individual">
-        <i class="far fa-file-alt"></i><a href="./pokemonAPIportfolio/index.html"> <i class="fab fa-js-square" style="color: rgb(255, 196, 0);"></i> pokemonAPI portfolio </a>&nbsp;(Desktop ✅ | Mobile ✅)
-      </span>
-      <span class="date-modified"><span id="pokemon-app">2020/10/31 - 2020/12/31</span></span><br>
+        <article class="portfolio-container">
+          <h2 class="portfolio-title"><a href="./html5portfolio/index.html""> <i class="fab fa-html5" style="color: rgb(250, 88, 59);"></i> WebRTC & Canvas API 포트폴리오</a></h2>
+          <div class="portfolio-image-container">
+            <img src="./img/html5CanvasPortfolio.png" alt="html5 canvas portfolio image">
+          </div>
+          <Details>
+            <summary><strong>👇 Keyword</strong>: HTML5, JavaScript, CSS, WebRTC, Canvas, Online and offline events, eventListener, Flexbox, Responsive</summary>
+            <p class="portfolio-body">
+              <p>•MDN 웹사이트의 HTML5의 새 기술을 주체적으로 공부하고 조합하여 포트폴리오를 만듦. 프론트엔드에서 HTML 및 HTML5의 기능에 대한 이해를 심화시키고자 하였음.</p>
+              <p>•HTML5의 Camera(WebRTC API), Canvas, Online/Offline events, 그리고 local Storage API를 사용함.</p>
+              <p>•WebRTC(Web Real-Time Communication)기술을 이용하여 웹캠으로 사용자의 화면을 실시간 스트리밍하고 사진을 찍을 수 있는 컴포넌트를 제작함.</p>
+              <p>•Canvas 요소를 이용한 컴포넌트를 만듦. 사용자의 실시간 화면을 캡쳐하고 캡쳐한 사진 위에 그림 그릴 수 있게 하는 시각적이고 인터렉티브한 컴포넌트를 제작함.</p>
+              <p>•Local Storage를 통해 효과적인 오프라인 경험을 제공하고자 하였음. 인터넷에 연결되지 않아도 사용자가 캡쳐하고 그림 그린 데이터는 localStorage 객체 안에 담겨 언제든 불러올 수 있음.</p>
+              <p>•Online & Offline events를 사용해 상태바를 만들어 사용자의 인터넷 상태를 알려주는 편의성을 제공함.</p>
+              <p>•결론적으로, HTML5에 새로 발표된 기술을 포트폴리오의 필요에 맞게 구현해보며 다양한 HTML5 기술의 작동 방식을 깊이 이해할 수 있게 되었음.</p> 
+            </p>
+          </Details>
+        </article>
 
-      
-      <span class="file-individual">
-        <i class="far fa-file-alt"></i><a href="./html5portfolio/index.html""> <i class="fab fa-html5" style="color: rgb(250, 88, 59);"></i> HTML5 portfolio </a>&nbsp;(Desktop ✅ | Mobile soon ⚠️)
-      </span>
-      <span class="date-modified"><span id="html5-app">2020/08/15 - 2020/09/15</span></span><br>
-      
-      <span class="file-individual">
-        <i class="far fa-file-alt"></i><a href="./doraemonJSminiGamePortfolio/index.html"> <i class="fab fa-js-square" style="color: rgb(255, 196, 0);"></i> Doraemon portfolio </a>&nbsp;(Desktop ✅ | Mobile soon ⚠️)
-      </span>
-      <span class="date-modified"><span id="doraemon-app">2019/11/01 - 2019/12/01</span></span><br>
+        <article class="portfolio-container">
+          <h2 class="portfolio-title"><a href="./doraemonJSminiGamePortfolio/index.html"> <i class="fab fa-js-square" style="color: rgb(255, 196, 0);"></i> 도라에몽 미니게임 포트폴리오</a></h2>
+          <div class="portfolio-image-container">
+            <img src="./img/javascriptDoraemonMinigamePortfolio.jpg" alt="javascript doraemon minigame portfolio image">
+          </div>
+          <Details>
+            <summary><strong>👇 Keyword</strong>: JavaScript, CSS, HTML, Canvas, eventListener, Responsive</summary>
+            <p class="portfolio-body">
+              <p>•자바스크립트의 canvas를 중점적으로 이용해 도라에몽(캐릭터)을 움직여 목표 점수를 달성해야 하는 미니 게임을 만듦. 주요한 자바스크립트 사용 능력을 보여주고자 하였음.</p> 
+              <p>•자바스크립트의 canvas/context, Image, setInterval(), eventListener등을 여러 function에 알맞게 이용함.</p> 
+              <p>•백그라운드 이미지, 도라에몽, 그리고 도라야키(점수 획득용 아이템)를 객체화하고  렌더링하여 게임화하기 위한 설정을 마침.</p> 
+              <p>•키보드 눌림을 인식하는 eventListener를 부착해 좌/우 키보드 버튼이 눌릴 때마다 도라에몽 캐릭터를 특정 값만큼 이동하게끔 함. 새로운 좌표로 이동할 때마다 canvas에 새로 그림이 그려질 수 있게 redraw() function을 구성하였고 redraw() 작동방식에 대한 이해를 깊이 하게 됨.</p> 
+              <p>•도라야키가 하늘에서 떨어지는 모션을 구현하기 위해 100 milliseconds마다 아래로 이동하게끔 setInterval()를 이용함.</p> 
+              <p>•객체지향적 방식으로 각 기능을 함수로 나누어 직관적이고 재사용이 가능하도록 제작함.</p> 
+              <p>•본 포트폴리오를 완성하며 사용자의 입력을 감지하고, canvas를 사용해 그래픽 요소를 웹에 구현하고, 원하는 이미지를 이용, 객체화하여 수학적 계산을 통해 게임을 만들 수 있게 됨. </p>  
+            </p>
+          </Details> 
+        </article>
+      </main>    
     </div>
-  </div>
-  <br><hr>
-  <div class="portfolio-section-title">Portfolio</div>
-  <div id="portfolio-intro">Soon to be updated in March, 2021</div>
-</body>
+
+    <footer>
+      <small>Copyright &copy; 2021 Jinwook Shin</small><br>
+    </footer>
+  </body>
 </html>
