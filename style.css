@@ -277,6 +277,16 @@ header {
   .container-flex {
       flex-direction: row;
   }
+
+  .links-container{
+
+    display: flex;
+    justify-content: center;
+  }
+  #links{
+    /* display: flex;
+    justify-content: flex-start; */
+  }
 }
 
 /* navigation */
@@ -312,6 +322,18 @@ nav a:focus {
   nav li {
       margin: .5em 0;
   }
+
+  .links-container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+  }
+  #links{
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
 }
 
 /* contact.html */
@@ -319,3 +341,9 @@ nav a:focus {
   display: flex;
   justify-content: space-around;
 }
+
+/* .links-container{
+  text-align: center;
+} */
+
+
