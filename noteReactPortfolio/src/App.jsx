@@ -157,33 +157,31 @@ export default class App extends Component {
     this.getNotesByTags(tag)
   }
 
+  // TODO: 아래 코드
   getNotesByTags(tag){
-    // if (!tag) {
-    //   this.setState({
-    //     filteredNotes: this.state.notes 
-    //   })
-    //   this.setState({
-    //     filteredTags: []
-    //   })
-    //   return;
-    // }
+    if (tag === undefined) {
+      this.setState({
+        filteredNotes: this.state.notes 
+      })
+      this.setState({
+        filteredTags: []
+      })
+      return;
+    }
 
-    // after
-    this.state.notes.filter(note => {
-      console.log(note);
-    })
-
-    // before
-    // let tempFilteredNotesArray = [];
-    // let checker = (arr, target) => target.every(item => arr.includes(item));
-    // for(let i = 0; i < this.state.notes.length; i++){
-    //   if (checker(this.state.notes[i].tag, this.state.filteredTags) === true ){
-    //     tempFilteredNotesArray.push(this.state.notes[i])
-    //   }
-    // }      
-    // this.setState({
-    //   filteredNotes: tempFilteredNotesArray
-    // })
+      let tempFilteredNotesArray = [];
+      let checker = (arr, target) => target.every(item => arr.includes(item));
+      for(let i = 0; i < this.state.notes.length; i++){
+        if (checker(this.state.notes[i].tag, this.state.filteredTags) === true ){
+          tempFilteredNotesArray.push(this.state.notes[i])
+        }
+      }      
+      // this.state.notes.forEach(note => checker(note))
+      // for of
+      // for in
+      this.setState({
+        filteredNotes: tempFilteredNotesArray
+      })
   }
 
 
@@ -275,7 +273,14 @@ export default class App extends Component {
     // else{
 
     this.setState({
-      notes: [...this.state.notes, { "title": this.state.newNoteTitle, "tag": this.state.newNoteTags, "content": this.state.newNoteContent}],
+      notes: [
+        ...this.state.notes, 
+        { 
+          "title": this.state.newNoteTitle, 
+          "tag": this.state.newNoteTags, 
+          "content": this.state.newNoteContent
+        }
+      ],
       newNoteTitle: "",
       newNoteTags: [],
       newNoteContent: ""
