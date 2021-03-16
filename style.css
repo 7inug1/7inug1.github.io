@@ -129,11 +129,6 @@ nav a:focus{
   color: #3b3b3b;
 }
 
-hr {
-  width:100%;
-  margin-bottom:0 auto;
-}
-
 summary{
   cursor: pointer;
   background-color: rgba(128, 128, 128, 0.514);
@@ -143,7 +138,7 @@ summary{
   /* border-radius: 1rem; */
   box-shadow: 5px 5px 5px;
   /* display: none; */
-  list-style-type: none;
+  /* list-style-type: none; */
 }
 
 h3{
@@ -190,8 +185,9 @@ body {
 
 main{
   /* max-width: 80%; */
-  margin: 0 auto;
-  display: block;
+  /* margin: 0 auto; */
+  /* display: block; */
+  padding-bottom: 5rem;
 }
 
 img {
