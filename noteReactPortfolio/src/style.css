@@ -162,12 +162,29 @@ textarea{
   max-height: 10rem; */
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.836);
   background-color: rgb(250, 255, 205);
+  position: relative;
 }
 
 .individualNoteTitle{
   /* font-weight:bolder; */
   margin-top: 0px;
   margin-bottom: 0px;
+  display: inline;
+}
+
+.individualNoteDeleteButton{
+  color: white;
+  background-color: red;
+  border: none;
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  box-shadow: 3px 2px black;
+}
+
+.individualNoteDeleteButton:hover{
+  scale: 1.1;
+
 }
 
 .individualNoteContent{
