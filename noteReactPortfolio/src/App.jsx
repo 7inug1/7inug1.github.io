@@ -48,7 +48,8 @@ export default class App extends Component {
     this.getNotesByTags = this.getNotesByTags.bind(this);
     this.submitNewNote = this.submitNewNote.bind(this); 
     this.deleteIndividualNote = this.deleteIndividualNote.bind(this);
-    this.addTags = this.addTags.bind(this); 
+    // TODO: .bind()를 넣었을 때와 뺐을 때의 차이점을 학습(자바스크립트 this의 변화)
+    // this.addTags = this.addTags.bind(this); 
     this.addTagsButton = this.addTagsButton.bind(this); 
     this.removeFilteredTags = this.removeFilteredTags.bind(this);
     this.removeTags = this.removeTags.bind(this);
@@ -95,13 +96,13 @@ export default class App extends Component {
     let totalTagsArray = this.state.notes.map((note)=>note.tag);
     let totalTagsArrayFlat = totalTagsArray.flat();
     // let tempNotes = 
-    let tempFilteringTag = [undefined];
+    let tempFilteringTag = [];
     this.setState({
       filteringTag: tempFilteringTag,
       unduplicatedTagsArray: [...new Set(totalTagsArrayFlat)],
     })
     
-    this.getNotesByTags(!undefined); 
+    this.getNotesByTags(); 
     
   }
 
@@ -119,7 +120,7 @@ export default class App extends Component {
         unduplicatedTagsArray: tempTagArrayFlatUnduplicated
       })
       
-      this.getNotesByTags(!undefined); // 게시판에 노트 추가되는 것처럼 보이게
+      this.getNotesByTags(); // 게시판에 노트 추가되는 것처럼 보이게
     }
   }
 
@@ -143,7 +144,7 @@ export default class App extends Component {
         notes: notesCopy
       })
     } 
-    this.getNotesByTags(!undefined);
+    this.getNotesByTags();
   }
   getFilteredTags(tag){
     let tempFilteredTags = [];
@@ -157,30 +158,36 @@ export default class App extends Component {
   }
 
   getNotesByTags(tag){
-    if(tag===undefined){
-      this.setState({
-        filteredNotes: this.state.notes 
-      })
-      this.setState({
-        filteredTags: []
-      })
-    }else{
-      let tempFilteredNotesArray = [];
-      let checker = (arr, target) => target.every(item => arr.includes(item));
-      for(let i = 0; i < this.state.notes.length; i++){
-        if (checker(this.state.notes[i].tag, this.state.filteredTags) === true ){
-          tempFilteredNotesArray.push(this.state.notes[i])
-        }
-      }      
-      this.setState({
-        filteredNotes: tempFilteredNotesArray
-      })
-      
-    }
+    // if (!tag) {
+    //   this.setState({
+    //     filteredNotes: this.state.notes 
+    //   })
+    //   this.setState({
+    //     filteredTags: []
+    //   })
+    //   return;
+    // }
+
+    // after
+    this.state.notes.filter(note => {
+      console.log(note);
+    })
+
+    // before
+    // let tempFilteredNotesArray = [];
+    // let checker = (arr, target) => target.every(item => arr.includes(item));
+    // for(let i = 0; i < this.state.notes.length; i++){
+    //   if (checker(this.state.notes[i].tag, this.state.filteredTags) === true ){
+    //     tempFilteredNotesArray.push(this.state.notes[i])
+    //   }
+    // }      
+    // this.setState({
+    //   filteredNotes: tempFilteredNotesArray
+    // })
   }
 
 
-  handleNewNoteTitleChange(event){
+  handleNewNoteTitleChange(event) {
     this.setState({
       newNoteTitle: event.target.value
     });
