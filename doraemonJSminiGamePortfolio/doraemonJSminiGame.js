@@ -16,10 +16,10 @@
 let canvas=document.querySelector("#canvas");
 let ctx=canvas.getContext("2d");
 //------------------------------------------------
-let score=0;
-let goal=5;
-let timer = 0;
-let time = 0;
+let score = 0;
+let goal = 5;
+let timer;
+let time;
 //------------------------------------------------
 let background=new Image();
 background.src="./img/room.jpg";
@@ -119,9 +119,9 @@ function checkCollision(){
 //------------------------------------------------
 //Timer-related functions
 function startTimer(){
-  time=0;//convert a variable to a number
-  if(timer==undefined){
-      timer=setInterval(count, 100); //interval by 0.1 seconds || 100 milliseconds
+  time = 0; //convert a variable to a number
+  if(timer===undefined){
+      timer = setInterval(count, 100); //interval by 0.1 seconds || 100 milliseconds
   }
 }
 
