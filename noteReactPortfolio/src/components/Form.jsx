@@ -36,7 +36,7 @@ export default class Form extends React.Component{
             <button id="submitButton">Submit</button>
             {/* </fieldset> */}
         </form>
-      <br/>  
+      <br />
       </>;
     }
 }

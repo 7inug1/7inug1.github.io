@@ -1,55 +1,91 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Doraemon CanvasJS Project</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <script src="doraemonJSminiGame.js" type="text/javascript" defer></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Press+Start+2P&display=swap" rel="stylesheet"> 
-</head>
+  <head>
+    <title>Doraemon CanvasJS Project</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <script src="doraemonJSminiGame.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="./desktop.css" />
+    <link rel="stylesheet" href="./mobile.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-  <div class="projectContainer">
-    <main>
-      <header>
-        <h1 class="title">Doraemon canvasAPI MiniGame</h1>
-      </header>
+  <body>
+    <div class="container">
+      <main>
+        <header>
+          <h1 class="title">Doraemon canvasAPI MiniGame</h1>
+        </header>
 
-      <div class="scoreContainer">
-        <div class="scoreGoalContainer">
-          <p id="scoreGoalHeading">GOAL</p>
-          <p><strong><span id="scoreGoal"></span></strong></p>
+        <div class="scoreContainer">
+          <div class="scoreGoalContainer">
+            <p id="scoreGoalHeading">GOAL</p>
+            <p>
+              <strong><span id="scoreGoal"></span></strong>
+            </p>
+          </div>
+          <div class="scoreEarnedContainer">
+            <p id="scoreEarnedHeading">SCORE</p>
+            <p>
+              <strong><span id="scoreEarned"></span></strong>
+            </p>
+          </div>
         </div>
-        <div class="scoreEarnedContainer">
-          <p id="scoreEarnedHeading">SCORE</p>
-          <p><strong><span id="scoreEarned"></span></strong></p>
+
+        <div class="container">
+          <div class="canvasContainer">
+            <canvas
+              id="canvas"
+              style="border-style: solid"
+              width="600px"
+              height="400px"
+            ></canvas>
+            <br />
+          </div>
+
+          <div class="buttonContainer">
+            <button id="startButton" type="button" onclick="startTimer()">
+              <i class="fas fa-play-circle"></i>
+            </button>
+            <button id="arrowLeftButton" type="button" onclick="moveLeft()">
+              <i class="fas fa-chevron-circle-left"></i>
+            </button>
+            <button id="arrowRightButton" type="button" onclick="moveRight()">
+              <i class="fas fa-chevron-circle-right"></i>
+            </button>
+            <button id="pauseButton" type="button" onclick="stopTimer()">
+              <i class="fas fa-stop-circle"></i>
+            </button>
+            <br />
+            <br />
+          </div>
         </div>
+      </main>
+      <footer>
+        <small>Copyright &copy; 2021 Jinwook Shin</small>
+        <br />
+      </footer>
+    </div>
+
+    <div class="no-mobile">
+      <div id="no-mobile-title">Doraemon canvasAPI MiniGame</div>
+      <div id="no-mobile-alert">
+        <p style="font-size: 3rem; margin-bottom: 1.5rem; margin-top: 1rem">
+          ⚠️
+        </p>
+        Please view on a Tablet or Desktop to play this game.
       </div>
-
-      <div class="container">
-        <div class="canvasContainer">
-          <canvas id="canvas" style="border-style: solid" width="600px" height="400px"></canvas><br>
-        </div>
-
-      <div class="buttonContainer"> 
-        <button id="startButton" type="button" onclick="startTimer()"><i class="fas fa-play-circle"></i></button>
-        <button id="arrowLeftButton" type="button" onclick="moveLeft()"><i class="fas fa-chevron-circle-left"></i></button>
-        <button id="arrowRightButton" type="button" onclick="moveRight()"><i class="fas fa-chevron-circle-right"></i></button>
-        <button id="pauseButton" type="button" onclick="stopTimer()"><i class="fas fa-stop-circle"></i></button><br><br>
-      </div>
-    </main>
-    <footer>
-      <small>Copyright &copy; 2021 Jinwook Shin</small><br>
-    </footer>
-  </div>
-    
-  </div>
-  <div class="no-mobile">
-    <div id="no-mobile-title">Doraemon canvasAPI MiniGame</div>
-    <div id="no-mobile-alert"><p style="font-size: 3rem; margin-bottom:1.5rem; margin-top: 1.0rem">⚠️</p>Please view on a Tablet or Desktop to play this game. </div>
-  </div>
-</body>
+    </div>
+  </body>
 </html>

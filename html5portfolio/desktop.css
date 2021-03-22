@@ -1,51 +1,53 @@
-/* notice */
 @font-face {
-  font-family: "P3rman3nt-Book";
-  src: url("../DINAMO_fonts/ABCP3rman3nt-Book-Trial.woff2") format("woff2"),
-      url("../DINAMO_fonts/ABCP3rman3nt-Book-Trial.woff2") format("woff");
+  font-family: 'P3rman3nt-Book';
+  src: url('../DINAMO_fonts/ABCP3rman3nt-Book-Trial.woff2') format('woff2'),
+    url('../DINAMO_fonts/ABCP3rman3nt-Book-Trial.woff2') format('woff');
 }
 
 @font-face {
-  font-family: "P3rman3nt-Bold";
-  src: url("../DINAMO_fonts/ABCP3rman3nt-Bold-Trial.woff2") format("woff2"),
-      url("../DINAMO_fonts/ABCP3rman3nt-Bold-Trial.woff") format("woff");
+  font-family: 'P3rman3nt-Bold';
+  src: url('../DINAMO_fonts/ABCP3rman3nt-Bold-Trial.woff2') format('woff2'),
+    url('../DINAMO_fonts/ABCP3rman3nt-Bold-Trial.woff') format('woff');
 }
 
-html{
+html {
   font-family: P3rman3nt-Bold;
   height: 100%;
   width: 100%;
 }
 
-body{
+body {
   margin: 0;
   height: 100vh;
   width: 100vw;
 }
-/* notice */
-#startbutton{
+
+#startbutton {
   display: none;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: P3rman3nt-Bold;
 }
 
-/* ----------------------------------------------------------- */
-
-.statusBar{
+.statusBar {
   background-color: white;
   font-size: 1.1rem;
 
   justify-content: center;
   align-items: center;
-  
+
   display: flex;
   position: fixed;
   top: 3vh;
   left: 40%;
   right: 40%;
-  
+
   min-width: 6rem;
   min-height: 3vh;
 
@@ -54,26 +56,24 @@ h1, h2, h3, h4, h5, h6{
   box-shadow: 3px 7px;
 }
 
-header{
+header {
   background-color: #f3f3f3;
   width: 100vw;
 }
 
-.title{
+.title {
   text-align: center;
   font-size: 2.5rem;
   margin-top: 7vh;
-  /* padding-top: 3vh; */
-  margin-bottom: 0; 
-  /* padding-bottom: 1rem;  */
+  margin-bottom: 0;
 }
 
-.subtitle{
+.subtitle {
   text-align: center;
   font-weight: 400;
-  font-size: .75rem;
+  font-size: 0.75rem;
   margin: 0;
-  padding-bottom: 1vh; 
+  padding-bottom: 1vh;
 }
 
 footer {
@@ -85,48 +85,44 @@ footer {
   margin: 0;
 }
 
-p{
+p {
   margin: 0;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
 
-/* ----------------------------------------------------------- */
-
-.titleContainer{
+.titleContainer {
   text-align: center;
   padding: 0.5rem;
   background-color: rgba(255, 192, 203, 0.788);
   font-size: 1.6rem;
 }
 
-.videoContainer{
+.videoContainer {
   width: 50vw;
   height: auto;
 }
 
-.videoButtonsContainer{
+.videoButtonsContainer {
   position: relative;
   background-color: black;
-  /* margin-top: -5px; */
   height: 4rem;
   margin-top: -0.35rem;
 }
 
-#cameraCaptureButton:hover{
+#cameraCaptureButton:hover {
   scale: 1.1;
 }
 
-#cameraCaptureButton{
+#cameraCaptureButton {
   position: absolute;
   left: 50%;
   top: 12%;
   transform: translateX(-50%);
-  /* transform: translateY(-50%); */
 
   background-image: url('./images/shutter_button.jpg');
   background-size: contain;
@@ -137,7 +133,7 @@ p{
   cursor: pointer;
 }
 
-/* switch */
+/* switch button*/
 /* source: https://www.w3schools.com/howto/howto_css_switch.asp */
 .switch {
   position: absolute;
@@ -146,12 +142,10 @@ p{
   right: 1rem;
   width: 60px;
   height: 34px;
-  
-  /* right: 1rem; */
   margin-left: 1em;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -166,21 +160,21 @@ p{
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /*동그란원 - 이전*/
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 26px;
   width: 26px;
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 /*원 색깔*/
 input:checked + .slider {
@@ -204,39 +198,38 @@ input:checked + .slider:before {
 }
 /* switch - end */
 
-/* ----------------------------------------------------- */
-
-.canvasContainer{
+.canvasContainer {
   width: 50vw;
 }
 
-.canvasButtonsContainer{
+.canvasButtonsContainer {
   position: relative;
   background-color: black;
   height: 4rem;
   margin-top: -0.34rem;
 }
 
-.canvasButtonPenContainer{
+.canvasButtonPenContainer {
   display: flex;
-  background-color: rgb(228, 228, 228) ;
+  background-color: rgb(228, 228, 228);
   position: absolute;
-
   left: 50%;
   transform: translateX(-50%);
-
   border-radius: 15px;
 }
 
-#whiteButtonPen:hover, #blackButtonPen:hover, #redButtonPen:hover, #yellowButtonPen:hover{
+#whiteButtonPen:hover,
+#blackButtonPen:hover,
+#redButtonPen:hover,
+#yellowButtonPen:hover {
   scale: 1.1;
 }
 
-#whiteButtonPen{
+#whiteButtonPen {
   display: none;
 }
 
-#blackButtonPen{
+#blackButtonPen {
   background-color: black;
   height: 4rem;
   width: 4rem;
@@ -245,7 +238,7 @@ input:checked + .slider:before {
   cursor: url('./images/cursor.cur');
 }
 
-#redButtonPen{
+#redButtonPen {
   background-color: red;
   height: 4rem;
   width: 4rem;
@@ -254,7 +247,7 @@ input:checked + .slider:before {
   cursor: url('./images/cursor.cur');
 }
 
-#yellowButtonPen{
+#yellowButtonPen {
   background-color: yellow;
   height: 4rem;
   width: 4rem;
@@ -263,40 +256,38 @@ input:checked + .slider:before {
   cursor: url('./images/cursor.cur');
 }
 
-#saveButton:hover{
+#saveButton:hover {
   scale: 1.1;
 }
 
-#saveButton{
+#saveButton {
   background-color: black;
   position: absolute;
   cursor: pointer;
   border: none;
-  
+
   height: 3rem;
   width: 3rem;
-  
+
   right: 0rem;
   top: 50%;
-  
+
   transform: translateY(-50%);
 
   font-size: 2rem;
   color: white;
 }
 
-#removeButton{
+#removeButton {
   background-color: black;
   position: absolute;
   cursor: pointer;
   border: none;
-  
+
   height: 3rem;
   width: 3rem;
-  
-  /* right: 3rem; */
+
   top: 50%;
-  
   transform: translateY(-50%);
 
   font-size: 2rem;
@@ -310,30 +301,6 @@ input:checked + .slider:before {
 
 #canvas {
   width: 50vw;
-  /* min-height: 80%; */
   height: auto;
   cursor: url('./images/cursor.cur');
-}
-
-@media screen and (max-width: 592px), (orientation: portrait) {
-  .container{
-    display: block;
-  }
-  
-  #video {
-    width: 100vw;
-  }
-
-  .videoContainer{
-    width: 100vw;
-  }
-
-  .canvasContainer{
-    width: 100vw;
-  }
-
-  #canvas {
-    width: 100vw;
-    height: auto;
-  }
 }
