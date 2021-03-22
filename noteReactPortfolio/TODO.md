@@ -9,8 +9,8 @@
 
 ## 프런트엔드 개발환경 학습
 
-- (개발환경 설정) NPM & 웹팩 학습 -> 웹팩 강의
-- (개발환경 설정) ESLint & Prettier 학습 -> [개발환경 설명 자료](https://joshua1988.github.io/web-development/vuejs/boost-productivity/)
+- (개발환경 설정) NPM & 웹팩 학습 -> 웹팩 강의 (완료)
+- (개발환경 설정) ESLint & Prettier 학습 -> [개발환경 설명 자료](https://joshua1988.github.io/web-development/vuejs/boost-productivity/) (설치완료)
    - 학습 후 개인 프로젝트에 모두 적용
    - ESLint 규칙(개인적으로 선호하는 규칙 집합 1개 정도 생성)
 
