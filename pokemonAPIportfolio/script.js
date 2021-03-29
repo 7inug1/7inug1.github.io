@@ -1,6 +1,6 @@
 // 'use strict';
 // <Pokemon List> Variables - left-hand side
-let pokemonSubheadingCounter = document.querySelector(
+const pokemonSubheadingCounter = document.querySelector(
   '#pokemonSubheadingCounter'
 );
 let pokemonButton;
@@ -8,14 +8,16 @@ let nextPageResult = '';
 let endOfScroll = false;
 
 // <Pokemon Details> Variables - right-hand side
-let pokemonListContainer = document.querySelector('#pokemonListContainer');
-let pokemonDetailsCardTitle = document.querySelector(
+const pokemonListContainer = document.querySelector('#pokemonListContainer');
+const pokemonDetailsCardTitle = document.querySelector(
   '#pokemonDetailsCardTitle'
 );
-let pokemonDetailsCardSprite = document.querySelector(
+const pokemonDetailsCardSprite = document.querySelector(
   '#pokemonDetailsCardSprite'
 );
-let pokemonDetailsCardInfo = document.querySelector('#pokemonDetailsCardInfo');
+const pokemonDetailsCardInfo = document.querySelector(
+  '#pokemonDetailsCardInfo'
+);
 
 // <Function Calls>
 createPokemonList(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=100`);
@@ -27,11 +29,14 @@ function createPokemonList(url) {
       pokemonListContainer.onscroll = checkEndOfScroll; // When scrolling starts from the user
       nextPageResult = data.next;
       const pokemonsOfEachPage = data.results;
-      let offsetRegex = url.search('offset=');
-      let limitRegex = url.search('limit=');
-      let substring = url.substring(Number(offsetRegex + 7), url.indexOf('&'));
-      let offset = Number(substring);
-      let limit = Number(url.slice(limitRegex + 6));
+      const offsetRegex = url.search('offset=');
+      const limitRegex = url.search('limit=');
+      const substring = url.substring(
+        Number(offsetRegex + 7),
+        url.indexOf('&')
+      );
+      const offset = Number(substring);
+      const limit = Number(url.slice(limitRegex + 6));
 
       if (pokemonSubheadingCounter.hasChildNodes()) {
         // https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
@@ -42,38 +47,36 @@ function createPokemonList(url) {
         }
       }
 
-      let counter = document.createTextNode(
+      const counter = document.createTextNode(
         '(' + (offset + limit) + '/' + data.count + ')'
       );
       counter.className = 'counter';
       pokemonSubheadingCounter.appendChild(counter);
 
-      for (let i = 0; i < pokemonsOfEachPage.length; i++) {
+      pokemonsOfEachPage.forEach((pokemonOfEachPage) => {
         pokemonButton = document.createElement('button'); // create button element
-        pokemonButton.textContent = pokemonsOfEachPage[i].name; // put "name" as the button content
+        pokemonButton.textContent = pokemonOfEachPage.name; // put "name" as the button content
         pokemonButton.className = 'pokemonButton'; // change to materialUI button
-
         pokemonButton.addEventListener(
           'click',
-          function () {
-            getPokemonInformation(pokemonsOfEachPage[i].url);
+          () => {
+            getPokemonInformation(pokemonOfEachPage.url);
           },
           false
         );
-
-        let br = document.createElement('br');
+        const br = document.createElement('br');
         pokemonButton.appendChild(br);
         pokemonListContainer.appendChild(pokemonButton);
         pokemonListContainer.appendChild(br);
-      }
+      });
     });
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight
 function checkEndOfScroll(event) {
-  let scrollHeight = event.target.scrollHeight;
-  let scrollTop = event.target.scrollTop;
-  let clientHeight = event.target.clientHeight;
+  const scrollHeight = event.target.scrollHeight;
+  const scrollTop = event.target.scrollTop;
+  const clientHeight = event.target.clientHeight;
   console.log('scrollHeight - scrollTop: ' + (scrollHeight - scrollTop));
   console.log('clientHeight: ' + clientHeight);
   if (endOfScroll == false && scrollHeight - scrollTop <= clientHeight) {
@@ -116,7 +119,7 @@ function getPokemonFrontSprites(dataSprites) {
   while (pokemonDetailsCardSprite.firstChild) {
     pokemonDetailsCardSprite.removeChild(pokemonDetailsCardSprite.lastChild);
   }
-  let pokemonSprite = document.createElement('img');
+  const pokemonSprite = document.createElement('img');
   pokemonSprite.width = '100';
   pokemonSprite.height = '100';
   if (dataSprites.front_default != null) {
@@ -132,12 +135,12 @@ function getPokemonFrontSprites(dataSprites) {
 }
 
 function getPokemonId(dataId) {
-  let strongElement = document.createElement('strong');
+  const strongElement = document.createElement('strong');
   pokemonId = document.createTextNode(`ID: ${dataId}`);
   strongElement.appendChild(pokemonId);
   pokemonDetailsCardInfo.appendChild(strongElement);
 
-  let hr = document.createElement('hr');
+  const hr = document.createElement('hr');
   hr.className = 'hr';
   pokemonDetailsCardInfo.appendChild(hr);
 }
@@ -151,10 +154,10 @@ function getPokemonName(dataName) {
 }
 
 function getPokemonTypes(dataTypes) {
-  for (let i = 0; i < dataTypes.length; i++) {
-    pokemonTypes = document.createTextNode(`Type: ${dataTypes[i].type.name}`);
+  dataTypes.forEach((datatype) => {
+    pokemonTypes = document.createTextNode(`Type: ${datatype.type.name}`);
     pokemonDetailsCardInfo.appendChild(pokemonTypes);
-  }
+  });
 }
 
 function getPokemonBaseExperience(dataBaseExperience) {
@@ -166,11 +169,11 @@ function getPokemonBaseExperience(dataBaseExperience) {
 }
 
 function getPokemonAbilities(dataAbilities) {
-  for (let i = 0; i < dataAbilities.length; i++) {
+  dataAbilities.forEach((dataAbility) => {
     pokemonAbilities = document.createTextNode(
-      `Ability: ${dataAbilities[i].ability.name}`
+      `Ability: ${dataAbility.ability.name}`
     );
     pokemonDetailsCardInfo.appendChild(document.createElement('br'));
     pokemonDetailsCardInfo.appendChild(pokemonAbilities);
-  }
+  });
 }

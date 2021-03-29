@@ -5,20 +5,17 @@ https://www.w3schools.com/tags/av_event_loadstart.asp
 */
 'use strict';
 
-let video = document.querySelector('#video');
-let canvas = document.querySelector('#canvas');
-let context = canvas.getContext('2d');
+const video = document.querySelector('#video');
+const canvas = document.querySelector('#canvas');
+const context = canvas.getContext('2d');
+const toggleButton = document.getElementById('toggleButton');
 
 let width = 0;
 let height = 0;
-let innerWidth = window.innerWidth;
-let innerHeight = window.innerHeight;
-
-let checkbox = document.getElementById('checkbox');
 let cameraIsOn = false;
 
 window.addEventListener('load', initialize);
-checkbox.addEventListener('click', toggleCamera);
+toggleButton.addEventListener('click', toggleCamera);
 cameraCaptureButton.addEventListener('click', takepicture);
 
 function initialize() {
@@ -42,7 +39,7 @@ function initialize() {
 }
 
 function toggleCamera() {
-  let constraints = {
+  const constraints = {
     audio: false,
     video: true,
   };
@@ -54,10 +51,10 @@ function toggleCamera() {
   } else {
     cameraIsOn = false;
     /* Source: https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/stop */
-    let stream = video.srcObject;
-    let tracks = stream.getTracks();
+    const stream = video.srcObject;
+    const tracks = stream.getTracks();
 
-    tracks.forEach(function (track) {
+    tracks.forEach((track) => {
       video.srcObject = null;
       track.stop();
     });
@@ -65,7 +62,7 @@ function toggleCamera() {
 }
 
 function startWebcamStreaming() {
-  let constraints = {
+  const constraints = {
     audio: false,
     video: true,
   };
@@ -92,8 +89,8 @@ function takepicture() {
 }
 
 function saveImage() {
-  let key = 'photoKey'; // refers to the key of localStorage
-  let data = canvas.toDataURL('image/png');
+  const key = 'photoKey'; // refers to the key of localStorage
+  const data = canvas.toDataURL('image/png');
   localStorage.setItem(key, data);
   alert('Photo saved to local storage.');
 }

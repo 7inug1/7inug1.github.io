@@ -1,7 +1,7 @@
 'use strict';
 
-let onlineOfflineStatus = document.querySelector('#onlineOfflineStatus');
-let statusBar = document.querySelector('.statusBar');
+const onlineOfflineStatus = document.querySelector('#onlineOfflineStatus');
+const statusBar = document.querySelector('.statusBar');
 
 window.addEventListener('online', showOnlineOfflineStatus);
 window.addEventListener('offline', showOnlineOfflineStatus);

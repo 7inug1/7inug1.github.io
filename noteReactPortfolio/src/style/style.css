@@ -1,121 +1,119 @@
-/* https://hipwallpaper.com/view/NvWhsk */
+/* 
+<Source>
+https://hipwallpaper.com/view/NvWhsk 
+*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shippori+Mincho+B1:wght@800&display=swap');
 
-body{
+body {
   height: 100vh;
   font-family: 'Shippori Mincho B1', serif;
   background-color: white;
 }
 
-
-li{
-  /* list-style: none; */
+li {
   display: block;
   line-height: 1.3125rem;
 }
 
-#addTagButton{
+#addTagButton {
   margin-left: 1.3rem;
 }
 
-#tagRemoveButton{
+#tagRemoveButton {
   border: none;
 }
 
-/* .individualNote{
-  grid-column: auto;
-  display: inline;
-  border: 1px solid black;
-  padding: 10px;
-  margin: 5px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.836);
-  background-color: rgb(250, 255, 205);
-} */
-
-#form{
+#form {
   grid-area: form;
   margin-bottom: 1rem;
   /* background-color: white; */
   border: 1px solid black;
-  box-shadow: 3px 3px 6px rgba(0,0,0);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0);
   /* https://stripesgenerator.com/ */
-  background-image: linear-gradient(0deg, #ffffff 47.62%, #8c8c8c 47.62%, #8c8c8c 50%, #ffffff 50%, #ffffff 97.62%, #8c8c8c 97.62%, #8c8c8c 100%);
-  background-size: 42.00px 42.00px;
-  background-size: 42.00px 42.00px;
-  /* background-size: 80.00px 80.00px; */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+  background-image: linear-gradient(
+    0deg,
+    #ffffff 47.62%,
+    #8c8c8c 47.62%,
+    #8c8c8c 50%,
+    #ffffff 50%,
+    #ffffff 97.62%,
+    #8c8c8c 97.62%,
+    #8c8c8c 100%
+  );
+  background-size: 42px 42px;
+  background-size: 42px 42px;
   min-width: 500px;
 }
 
-label{
+label {
   padding-left: 1.5rem;
 }
 
-#formTitle, #formTag{
+#formTitle,
+#formTag {
   line-height: 0.1rem;
   height: 20px;
 }
 
-#labelTitle{
+#labelTitle {
   /* padding-top: 2rem; */
 }
 
-#labelTag{
-
+#labelTag {
 }
 
-#labelContent{
-
+#labelContent {
 }
 
-input{
+input {
   height: 0.7rem;
 }
 
-#inputTitle{
+#inputTitle {
   /* size: 66; */
   /* min-width: 24.6rem; */
   width: 60vw;
 }
 
-#inputTag{
+#inputTag {
   min-width: 60vw;
 }
 
-#textareaContent{
+#textareaContent {
   min-width: 60vw;
 }
 
-textarea{
+textarea {
   height: 2.3rem;
 }
 
-#submitButton{
+#submitButton {
   margin-left: 1.3rem;
   margin-bottom: 1rem;
 }
 
-#tags{
+#tags {
   grid-area: tags;
 
   margin-right: 0.8rem;
-  padding-left: 0.4rem; 
+  padding-left: 0.4rem;
 
   border: 1px solid black;
-  box-shadow: 3px 3px 6px rgba(0,0,0);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0);
   background-color: whitesmoke;
   /* height: 200px;
   min-height: 190px; */
   padding-bottom: 1rem;
 }
 
-#individualTag{
+#individualTag {
   display: inline;
 }
 
-#allTagButton, #individualTagButton, #filteredTagButton{
+#allTagButton,
+#individualTagButton,
+#filteredTagButton {
   border: 2.5px solid black;
   background-color: white;
   margin: 0.1rem;
@@ -123,36 +121,35 @@ textarea{
   box-shadow: 1px 2px 1px;
 }
 
-#notes{
+#notes {
   grid-area: notes;
   /* grid-column: 2 / 2; */
   /* display: flex;  
   flex-wrap: wrap; */
-  background-image: url("./img/corkboard.jpg");
+  background-image: url('./img/corkboard.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 3px 3px 6px rgba(0,0,0,.5);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
   border: 1px solid black;
-  box-shadow: 3px 3px 6px rgba(0,0,0);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0);
 }
 
-#notes-container{
-  display: flex;  
+#notes-container {
+  display: flex;
   flex-wrap: wrap;
 }
 
-#grid{
+#grid {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     'tags form'
     /* "tags" "notes" */
     'tags notes';
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 4fr;
-  
 }
 
-.individualNote{
+.individualNote {
   grid-column: auto;
   display: inline;
   border: 1px solid black;
@@ -165,14 +162,14 @@ textarea{
   position: relative;
 }
 
-.individualNoteTitle{
+.individualNoteTitle {
   /* font-weight:bolder; */
   margin-top: 0px;
   margin-bottom: 0px;
   display: inline;
 }
 
-.individualNoteDeleteButton{
+.individualNoteDeleteButton {
   color: white;
   background-color: red;
   border: none;
@@ -182,27 +179,25 @@ textarea{
   box-shadow: 3px 2px black;
 }
 
-.individualNoteDeleteButton:hover{
+.individualNoteDeleteButton:hover {
   scale: 1.1;
-
 }
 
-.individualNoteContent{
+.individualNoteContent {
   margin-top: 0px;
   margin-bottom: 3rem;
   font-size: medium;
 }
 
-.individualNoteTag{
+.individualNoteTag {
   /* position: absolute;  */
   bottom: 0;
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: small;
-  
 }
 
-.individualNoteTag li{
+.individualNoteTag li {
   display: inline;
   border: 1px solid grey;
   padding: 0rem 0.2rem;
@@ -210,25 +205,25 @@ textarea{
   background-color: rgb(211, 211, 211);
 }
 
-#desktopMainHeading{
+#desktopMainHeading {
   text-align: center;
-  box-shadow: 3px 3px 6px rgba(0,0,0,.5);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
   margin: 0rem 0rem;
   padding: 1rem 0rem;
   margin-bottom: 0.8rem;
   background-color: whitesmoke;
 }
 
-#nonDesktopMainHeading{
+#nonDesktopMainHeading {
   display: none;
 }
 
-#formHeading{
+#formHeading {
   margin: 0px 50px;
   text-align: center;
 }
 
-#notesHeading{
+#notesHeading {
   height: 40px;
 }
 
@@ -242,37 +237,37 @@ textarea{
   margin-top: 0.5rem;
 }
 
-@media screen and (orientation: portrait) and (max-width: 740px){
-  #desktopMainHeading{
+@media screen and (orientation: portrait) and (max-width: 740px) {
+  #desktopMainHeading {
     display: none;
   }
 
-  #nonDesktopMainHeading{
+  #nonDesktopMainHeading {
     display: block;
     text-align: center;
-    box-shadow: 3px 3px 6px rgba(0,0,0,.5);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     margin: 0rem 0rem;
     padding: 1rem 0rem;
     margin-bottom: 0.8rem;
     background-color: whitesmoke;
   }
 
-  #grid{
-  display: grid;
-  grid-template-areas: 
-    'form'
-    'tags'
-    'notes';
+  #grid {
+    display: grid;
+    grid-template-areas:
+      'form'
+      'tags'
+      'notes';
     grid-auto-flow: dense;
-  /* grid-template-columns: 1fr 4fr; */
-  grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 4fr; */
+    grid-template-rows: 1fr 1fr 1fr;
   }
 
-  #tags{
+  #tags {
     margin-bottom: 0.5rem;
   }
 
-  #form{
+  #form {
     margin-bottom: 0.5rem;
     width: 100vw;
   }

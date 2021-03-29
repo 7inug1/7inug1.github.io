@@ -20,25 +20,25 @@ height: 400
 */
 'use strict';
 
-let canvas = document.querySelector('#canvas');
-let ctx = canvas.getContext('2d');
+const canvas = document.querySelector('#canvas');
+const ctx = canvas.getContext('2d');
 //------------------------------------------------
+const goal = 3;
 let score = 0;
-let goal = 3;
 let timer;
 let time;
 //------------------------------------------------
-let backgroundImage = new Image();
+const backgroundImage = new Image();
 backgroundImage.src = './img/room.jpg';
-let doraemonImage = new Image();
+const doraemonImage = new Image();
 doraemonImage.src = './img/doraemon.png';
-let dorayakiImage = new Image();
+const dorayakiImage = new Image();
 dorayakiImage.src = './img/dorayaki.png';
 //------------------------------------------------
-let doraemon = new Doraemon(-25, 300); //doraemon's starting position in (x, y)
-let dorayaki = new Dorayaki(Math.floor(Math.random() * 556), -15); // dorayaki's starting position in (x, y)
-let arrowLeftButton = document.querySelector('#arrowLeftButton');
-let arrowRightButton = document.querySelector('#arrowRightButton');
+const doraemon = new Doraemon(-25, 300); //doraemon's starting position in (x, y)
+const dorayaki = new Dorayaki(Math.floor(Math.random() * 556), -15); // dorayaki's starting position in (x, y)
+const arrowLeftButton = document.querySelector('#arrowLeftButton');
+const arrowRightButton = document.querySelector('#arrowRightButton');
 
 document.addEventListener('keydown', keyPressDown);
 document.addEventListener('keyup', keyPressUp);
