@@ -76,14 +76,12 @@ function createPokemonList(url) {
 function checkEndOfScroll(event) {
   const scrollHeight = event.target.scrollHeight;
   const scrollTop = event.target.scrollTop;
-  const clientHeight = event.target.clientHeight;
-  console.log('scrollHeight - scrollTop: ' + (scrollHeight - scrollTop));
-  console.log('clientHeight: ' + clientHeight);
+  const clientHeight = event.target.clientHeight + 1;
+
   if (endOfScroll == false && scrollHeight - scrollTop <= clientHeight) {
     endOfScroll = true;
     createPokemonList(nextPageResult);
     endOfScroll = false;
-    console.log(endOfScroll);
   }
 }
 
