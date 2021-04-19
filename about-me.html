@@ -1,92 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css">
-  <title>Jinwook Shin's Portfolio Website</title>
-</head>
-<body>
-  <header>
-    <div class="container container-nav">
-      <div class="site-title">
-        <h1 class="nameHeading"><a href="./index.html">Jinwook Shin</a></h1>
-        <p class="subtitle">Portfolio website showcasing front-end projects</p>
-      </div>
-      <nav>
-        <ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Jinwook Shin's Portfolio Website</title>
+  </head>
+  <body>
+    <header>
+      <div class="container container-nav">
+        <div class="site-title">
+          <h1 class="nameHeading"><a href="./index.html">Jinwook Shin</a></h1>
+          <p class="subtitle">
+            Portfolio website showcasing front-end projects
+          </p>
+        </div>
+        <nav>
+          <ul>
             <li><a href="./index.html">Home</a></li>
             <li><a href="./about-me.html">About me</a></li>
             <li><a href="./contact.html">Contact</a></li>
-        </ul>
-      </nav>  
-    </div> 
-  </header>
-
-  <div class="container container-flex">
-    <main role="main">
-      <div class="portfolio-section-title">링크</div>
-      <div class="links-container">
-        <div id="links github-link"><h3><i class="fab fa-github"></i><a href="https://github.com/7inug1">&nbsp;github.com/7inug1</a></h3></div>&nbsp;&nbsp;&nbsp;&nbsp;
-        <div id="links resume-link"><h3><i class="fas fa-file-pdf"></i> <a href="./downloads/신진욱_프론트엔드_이력서.pdf" download>&nbsp;신진욱_프론트엔드_이력서.pdf</a></h3></div><br>
+          </ul>
+        </nav>
       </div>
-      
-      <div class="portfolio-section-title">자기소개</div>
-      <img src="./img/about-me.jpg" alt="신진욱 프로필 사진">
-      <h2>곧 프론트엔드 개발자가 될 신진욱입니다. </h2>
+    </header>
 
-      <p>
-        <strong class="about-me-heading">프론트엔드 직종에 흥미를 가지고 있습니다. </strong><br><br>
-        문과생이었던 저는 IT에 대한 관심으로 컴퓨터 과학 전공으로 전과를 결심했습니다. 
-        그리고 학교에서 수강한 웹 개발 수업은 항상 당연하게 사용하던 웹에 대한 작동 방식을 알려주었습니다. 
-        작동 원리를 모르는 채 사용하던 웹이 어떻게 구성되어 있고 돌아가는지 알게 됨에 희열을 느꼈습니다.<br><br>
-        저만의 웹사이트를 직접 만들어보기 시작했습니다. 생각한 것과는 다르게 잘 작동하지 않기도 하고 버그도 많이 발생했습니다. 
-        세상 대부분의 것엔 왕도가 없다는 마인드셋으로 묵묵히 문제를 잘게 쪼개어보고 앞에 직면한 문제를 하나 하나 해결해나가기 시작했습니다.
-        그러다보니 저만의 포트폴리오 웹사이트가 다섯 개나 모이게 되었습니다.  
-      </p>
+    <div class="container container-flex">
+      <main role="main">
+        <div class="contents">
+          <div class="portfolio-section-title">링크</div>
+          <div class="links-container">
+            <div id="links github-link">
+              <h3>
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/7inug1">&nbsp;github.com/7inug1</a>
+              </h3>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <div id="links resume-link">
+              <h3>
+                <i class="fas fa-file-pdf"></i>
+                <a href="./downloads/신진욱_프론트엔드_이력서.pdf" download>
+                  &nbsp;신진욱_프론트엔드_이력서.pdf
+                </a>
+              </h3>
+            </div>
+            <br />
+          </div>
+        </div>
+        <div class="portfolio-section-title">자기소개</div>
+        <img
+          id="profile-image"
+          src="./img/about-me.jpg"
+          alt="지원자 신진욱 프로필 사진"
+        />
+        <h2>곧 프론트엔드 개발자가 될 신진욱입니다.</h2>
 
-      <p>
-        <br><strong class="about-me-heading">전문적인 프론트엔드 개발자가 되려 합니다. </strong><br><br>
-        제 포트폴리오 웹사이트는 제가 프론트엔드 개발 능력이 있다는 것 또한 보여주고자 만들어졌습니다.
-        신입 프론트엔드 개발자로서 무엇을 알아야 하는지 고민했고 웹의 가장 토대가 되는 HTML, CSS, JavaScript를 포트폴리오 전반에 녹여내고자 했습니다. 
-        또한 JavaScript 프레임워크 중 가장 보편적으로 사용되는 페이스북의 React를 선택하여 컴포넌트 중심의 웹사이트 제작을 경험했습니다. 
-      </p>
+        <p>
+          <strong class="about-me-heading">
+            프론트엔드 직종에 흥미를 가지고 있습니다.
+          </strong>
+          <br />
+          <br />
+          문과생이었던 저는 IT에 대한 관심으로 컴퓨터 과학 전공으로 전과를
+          결심했습니다. 그리고 학교에서 수강한 웹 개발 수업은 항상 당연하게
+          사용하던 웹에 대한 작동 방식을 알려주었습니다. 작동 원리를 모르는 채
+          사용하던 웹이 어떻게 구성되어 있고 돌아가는지 알게 됨에 희열을
+          느꼈습니다.
+          <br />
+          <br />
+          저만의 웹사이트를 직접 만들어보기 시작했습니다. 생각한 것과는 다르게
+          잘 작동하지 않기도 하고 버그도 많이 발생했습니다. 세상 대부분의 것엔
+          왕도가 없다는 마인드셋으로 묵묵히 문제를 잘게 쪼개어보고 앞에 직면한
+          문제를 하나 하나 해결해나가기 시작했습니다. 그러다보니 저만의
+          포트폴리오 웹사이트가 다섯 개나 모이게 되었습니다.
+        </p>
 
-      <p>
-        <br><strong class="about-me-heading">바람직한 프론트엔드 웹 서비스가 무엇인지 고민중입니다.</strong><br><br>
-        바람직한 웹 서비스가 무엇인지 생각해봤습니다. 목표한대로 포트폴리오를 완성했지만 막상 만들어보니 아직 부족하다는 느낌을 지울 수 없었기 때문입니다. 
-        바람직한 웹 서비스는 무엇인지, 그리고 시장에 나와있는 웹 서비스는 내가 만든 것과 무엇이 다른지 생각해보게 되었습니다.  
-        '내 웹사이트 디자인이 부족한가?', '내가 사용한 기술 스택이 더 필요한가?'라는 의문이 들었습니다. <br><br>
-        생각해보니 제 포트폴리오 웹사이트는 단지 제 웹 프로그래밍 기술을 보여주기 위해 만들어졌다는 한계점을 가지고 있었습니다.
-        따라서 사용자가 얻을 수 있는 가치에 대한 고려가 부족하다는 것이었습니다.
-        인스타그램와 같은 웹/앱 서비스를 생각해보니 전세계 사람들과 소통할 수 있게 도와주고, 사진과 동영상을 쉽게 편집하고 업로딩할 수 있게 도와주는 편리한 툴이 내장되어 있었습니다. 
-        따라서 앞으로의 작업물에 있어선 우물 안 개구리로 남는 웹 서비스보단 세상과 더 상호작용하며 자신이 이 세상에 왜 나왔는지를 더욱 견고하게 깨달을 수 있는 작업물을 만들어내야겠다는 생각을 하게 되었습니다.
-      </p>
+        <p>
+          <br />
+          <strong class="about-me-heading">
+            전문적인 프론트엔드 개발자가 되려 합니다.
+          </strong>
+          <br />
+          <br />
+          제 포트폴리오 웹사이트는 제가 프론트엔드 개발 능력이 있다는 것 또한
+          보여주고자 만들어졌습니다. 신입 프론트엔드 개발자로서 무엇을 알아야
+          하는지 고민했고 웹의 가장 토대가 되는 HTML, CSS, JavaScript를
+          포트폴리오 전반에 녹여내고자 했습니다. 또한 JavaScript 프레임워크 중
+          가장 보편적으로 사용되는 페이스북의 React를 선택하여 컴포넌트 중심의
+          웹사이트 제작을 경험했습니다.
+        </p>
 
-      <p>
-        <br><strong class="about-me-heading">바람직한 프론트엔드 개발자가 무엇인지 고민중입니다.</strong><br><br>
-        바람직한 프론트엔드 개발자는 무엇인지 생각해봤습니다. 
-        명확한 답변을 내놓을 수 있다면 좋겠지만, 현재 내린 결론은 다음과 같습니다: "<u>바람직한 프론트엔드 개발자는 바람직한 웹 서비스를 만들 수 있는 개발자이다.</u>" <br><br>
-        위에서 말한대로, 바람직한 웹사이트는 자신의 수행 목표가 명확하고 그 목표를 수행하는 데에 어려움과 문제가 없습니다. 
-        이러한 서비스를 만드는 것은 개인과 개인들로 이루어진 조직입니다. 
-        무엇이 목표이고 무엇이 목표를 성취할 수 있게 돕는 도구인지 명확히 하려 합니다. 
-        목표는 때에 따라 달라지니 일반화하기 어렵겠지만, 지금까지 여러 과제와 프로젝트를 진행하며 간략하게나마 사용해본 Top-down, bottom-up, 그리고 Agile 접근이 도움이 되었습니다.
-        목표 완수를 돕는 도구가 있다면 시험해보고 채택해보고자 하는 마음을 갖고 있습니다. <br><br>
+        <p>
+          <br />
+          <strong class="about-me-heading">
+            바람직한 프론트엔드 웹 서비스가 무엇인지 고민중입니다.
+          </strong>
+          <br />
+          <br />
+          바람직한 웹 서비스가 무엇인지 생각해봤습니다. 목표한대로 포트폴리오를
+          완성했지만 막상 만들어보니 아직 부족하다는 느낌을 지울 수 없었기
+          때문입니다. 바람직한 웹 서비스는 무엇인지, 그리고 시장에 나와있는 웹
+          서비스는 내가 만든 것과 무엇이 다른지 생각해보게 되었습니다. '내
+          웹사이트 디자인이 부족한가?', '내가 사용한 기술 스택이 더
+          필요한가?'라는 의문이 들었습니다.
+          <br />
+          <br />
+          생각해보니 제 포트폴리오 웹사이트는 단지 제 웹 프로그래밍 기술을
+          보여주기 위해 만들어졌다는 한계점을 가지고 있었습니다. 따라서 사용자가
+          얻을 수 있는 가치에 대한 고려가 부족하다는 것이었습니다. 인스타그램와
+          같은 웹/앱 서비스를 생각해보니 전세계 사람들과 소통할 수 있게
+          도와주고, 사진과 동영상을 쉽게 편집하고 업로딩할 수 있게 도와주는
+          편리한 툴이 내장되어 있었습니다. 따라서 앞으로의 작업물에 있어선 우물
+          안 개구리로 남는 웹 서비스보단 세상과 더 상호작용하며 자신이 이 세상에
+          왜 나왔는지를 더욱 견고하게 깨달을 수 있는 작업물을 만들어내야겠다는
+          생각을 하게 되었습니다.
+        </p>
 
-        게임에서 캐릭터를 얼른 성장시키고자 하는 마음으로 체력과 지식을 견고히 쌓고자 합니다.
-        일주일에 4-5회 1시간씩 규칙적으로 운동하고, 질 좋은 숙면을 취하고, 최근엔 '모던 자바스크립트 Deep Dive'라는 책을 러버덕 형식으로 같이 공부하는 스터디를 시작했습니다.
-        더 성장하려 욕심부리되 기본기를 놓치지 않으려 합니다.
-        <br><br>
+        <p>
+          <br />
+          <strong class="about-me-heading">
+            바람직한 프론트엔드 개발자가 무엇인지 고민중입니다.
+          </strong>
+          <br />
+          <br />
+          바람직한 프론트엔드 개발자는 무엇인지 생각해봤습니다. 명확한 답변을
+          내놓을 수 있다면 좋겠지만, 현재 내린 결론은 다음과 같습니다: "
+          <u>
+            바람직한 프론트엔드 개발자는 바람직한 웹 서비스를 만들 수 있는
+            개발자이다.
+          </u>
+          "
+          <br />
+          <br />
+          위에서 말한대로, 바람직한 웹사이트는 자신의 수행 목표가 명확하고 그
+          목표를 수행하는 데에 어려움과 문제가 없습니다. 이러한 서비스를 만드는
+          것은 개인과 개인들로 이루어진 조직입니다. 무엇이 목표이고 무엇이
+          목표를 성취할 수 있게 돕는 도구인지 명확히 하려 합니다. 목표는 때에
+          따라 달라지니 일반화하기 어렵겠지만, 지금까지 여러 과제와 프로젝트를
+          진행하며 간략하게나마 사용해본 Top-down, bottom-up, 그리고 Agile
+          접근이 도움이 되었습니다. 목표 완수를 돕는 도구가 있다면 시험해보고
+          채택해보고자 하는 마음을 갖고 있습니다.
+          <br />
+          <br />
 
-        
-        추후에 직장을 잡고 전문적인 프론트엔드 개발을 시작하게 되면 주변 장비를 업그레이드하고자 하는 생각을 하고 있습니다.
-      </p>
-    </main>    
-  </div>
+          게임에서 캐릭터를 얼른 성장시키고자 하는 마음으로 체력과 지식을 견고히
+          쌓고자 합니다. 일주일에 4-5회 1시간씩 규칙적으로 운동하고, 질 좋은
+          숙면을 취하고, 최근엔 '모던 자바스크립트 Deep Dive'라는 책을 러버덕
+          형식으로 같이 공부하는 스터디를 시작했습니다. 더 성장하려 욕심부리되
+          기본기를 놓치지 않으려 합니다.
+          <br />
+          <br />
 
-  <footer>
-    <small>Copyright &copy; 2021 Jinwook Shin</small><br>
-  </footer>
-</body>
+          추후에 직장을 잡고 전문적인 프론트엔드 개발을 시작하게 되면 주변
+          장비를 업그레이드하고자 하는 생각을 하고 있습니다.
+        </p>
+      </main>
+    </div>
+
+    <footer>
+      <small>Copyright &copy; 2021 Jinwook Shin</small>
+      <br />
+    </footer>
+  </body>
 </html>
