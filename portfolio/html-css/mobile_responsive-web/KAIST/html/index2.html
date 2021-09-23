@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KAIST - Main p10</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="logo">
+        <a href="#">
+          <img src="../images/header_main-logo.png" alt="KAIST" />
+        </a>
+      </h1>
+      <h2 class="subtitle">
+        <a href="#">
+          <img src="../images/header_library-text.png" alt="LIBRARY" />
+        </a>
+      </h2>
+      <div class="button-container">
+        <button class="button00">
+          <span class="tail"><span class="body">로그아웃</span></span>
+        </button>
+      </div>
+    </div>
+    <div class="main">
+      <form action="" method="GET" class="search-section">
+        <div class="input-container">
+          <div class="input00">
+            <span class="tail">
+              <span class="body">
+                <input type="text" />
+              </span>
+            </span>
+          </div>
+          <button class="button01">
+            <span class="tail">
+              <span class="body">
+                <img
+                  src="../images/button01_search-icon.png"
+                  alt="카이스트 도서관 검색 버튼"
+                />
+              </span>
+            </span>
+          </button>
+        </div>
+      </form>
+      <div class="main-section index2">
+        <div class="tabs">
+          <button class="tab00 current">
+            <span class="tail">
+              <span class="body">
+                소장자료
+              </span>
+            </span>
+          </button>
+          <button class="tab00 noncurrent">
+            <span class="tail">
+              <span class="body">
+                Article(NoK)
+              </span>
+            </span>
+          </button>
+        </div>
+        <div class="tab-content">
+          <form action="" method="GET">
+            <div class="form-element-outer-container">
+              <div class="form-element-container">
+                <div class="select00 data-type">
+                  <select name="first-line_data-type" id="first-line_data-type" title="자료명을 골라주세요.">
+                    <option hidden disabled selected value="자료명">자료명</option>
+                    <option value="자료명1">자료명1</option>
+                    <option value="자료명2">자료명2</option>
+                  </select>
+                </div>
+                <div class="input01">
+                  <input type="text" />
+                </div>
+                <div class="select00 boolean">
+                  <select name="first-line_boolean" id="first-line_boolean" title="선택해주세요.">
+                    <option selected value="And">And</option>
+                    <option value="Or">Or</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-element-container">
+                <div class="select00 data-type">
+                  <select name="second-line_data-type" id="second-line_data-type" title="자료명을 골라주세요.">
+                    <option hidden disabled selected value="자료명">자료명</option>
+                    <option value="자료명1">자료명1</option>
+                    <option value="자료명2">자료명2</option>
+                  </select>
+                </div>
+                <div class="input01">
+                  <input type="text" />
+                </div>
+                <div class="select00 boolean">
+                  <select name="second-line_boolean" id="second-line_boolean" title="선택해주세요.">
+                    <option selected value="And">And</option>
+                    <option value="Or">Or</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-element-container">
+                <div class="select00 data-type">
+                  <select name="third-line_data-type" id="third-line_data-type" title="자료명을 골라주세요.">
+                    <option hidden disabled selected value="자료명">자료명</option>
+                    <option value="자료명1">자료명1</option>
+                    <option value="자료명2">자료명2</option>
+                  </select>
+                </div>
+                <div class="input01">
+                  <input type="text" />
+                </div>
+              </div>
+            </div>
+            <div class="button-container">
+              <button type="submit" class="button02">
+                <span class="tail">
+                  <span class="body">
+                    검색
+                  </span>
+                </span>
+              </button>
+            </div>
+          </form>
+          <div class="message-container">
+            <div class="border00">
+              소장자료는 도서관이 소장하고 있거나 라이선스를<br>보유한 단행본, 연속간행물, 학위논문, 보고서,<br> 비도서자료, e-Journal, e-Book등을 대상으로<br> 검색합니다.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="button-container index2">
+        <a href="#" class="button05">
+          <span class="tail">
+            <span class="body">이용문의</span>
+          </span>
+        </a>
+        <a href="#" class="button05">
+          <span class="tail">
+            <span class="body">어플리케이션 다운</span>
+          </span>
+        </a>
+      </div>
+      <p class="copyright">Copyright(c) 2011.KAIST All Rights Reserved.</p>
+    </div>
+  </body>
+</html>

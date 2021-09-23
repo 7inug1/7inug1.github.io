@@ -51,6 +51,27 @@ header {
   margin-bottom: 3em;
 }
 
+.notification {
+  display: block;
+  padding: 10px;
+  background: red;
+  text-align: center;
+}
+
+.notification > strong {
+  color: #ffffff;
+}
+
+.notification > strong > p:first-of-type {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.notification > strong > p + p {
+  font-size: 16px;
+  font-weight: normal;
+}
+
 .container-nav {
   display: flex;
   justify-content: space-between;

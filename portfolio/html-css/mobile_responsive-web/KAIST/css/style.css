@@ -1,0 +1,1693 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+@font-face {
+  font-family: 'kroeger0556';
+  src: url('../fonts/kroeger0556/kroeger0556.woff') format('woff'),
+    url('../fonts/kroeger0556/kroeger0556.woff2') format('woff2');
+
+  }
+
+@font-face {
+  font-family: 'MalgunGothic';
+  src: url('../fonts/MalgunGothic/malgun.woff') format('woff'),
+  url('../fonts/MalgunGothic/malgun.woff2') format('woff2');
+}
+
+body {
+  font-family: 'dotum', sans-serif;
+  min-width: 320px;
+}
+
+/* 
+    #    # ######   ##   #####  ###### #####  
+    #    # #       #  #  #    # #      #    # 
+    ###### #####  #    # #    # #####  #    # 
+### #    # #      ###### #    # #      #####  
+### #    # #      #    # #    # #      #   #  
+### #    # ###### #    # #####  ###### #    # 
+*/
+
+/* 방법1 */
+/* .header {
+  position: relative;
+  background: url('../images/header_whole-bar.png');
+  height: 34px;
+}
+
+.header > .logo {
+  position: absolute;
+  top: 9px;
+  left: 17px;
+}
+
+.header > .right-bar::before {
+  content: '';
+  position: absolute;
+  left: -47px;
+  background: url('../images/header_right-bar_left.png');
+  width: 47px;
+  height: 34px;
+}
+
+.header > .right-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url('../images/header_right-bar_right.png');
+  height: 34px;
+  width: 69%;
+  float: right;
+}
+
+.header > .right-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url('../images/header_shadow.png');
+  width: 97px;
+  height: 42px;
+} */
+
+/* 방법2 */
+/* .header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 80%;
+  background: url('../images/header_method2/header_middle-bar.png');
+  width: 47px;
+  height: 34px;
+} */
+
+body > .header {
+  position: relative;
+  background: url('../images/header_method2/header_left-bar2.png') left no-repeat;
+  height: 34px;
+}
+
+body > .header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url('../images/header_right-bar_right.png') repeat-x right;
+  height: 34px;
+  width: calc(100% - 94px);
+}
+
+body > .header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url('../images/header_shadow.png');
+  width: 97px;
+  height: 42px;
+}
+
+.header > .logo {
+  position: absolute;
+  top: 9px;
+  left: 11px;
+}
+
+.header > .subtitle {
+  position: absolute;
+  left: 86px;
+  top: 9px;
+}
+
+.header > .button-container {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  z-index: 1;
+}
+
+.header > .button-container > .button00 > .tail > .body {
+  padding-top: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #ffffff;
+}
+
+/* 
+    #    #   ##   # #    # 
+    ##  ##  #  #  # ##   # 
+    # ## # #    # # # #  # 
+### #    # ###### # #  # # 
+### #    # #    # # #   ## 
+### #    # #    # # #    # 
+*/
+
+.main {
+  position: relative;
+  margin-bottom: 1px;
+}
+
+.main .main-section::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  background: url('../images/search-section_line.png');
+  width: 100%;
+  height: 1px;
+}
+
+.main .main-section{
+  background: url('../images/main-section_background.png') bottom repeat-x;
+}
+
+.main .main-section.index1,
+.main .main-section.index2 {
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 15px;
+}
+
+.main .main-section.index2{
+  padding-bottom: 139px;
+
+}
+
+.main .main-section.index3,
+.main .main-section.index4 {
+  padding-top: 15px;
+}
+
+.main .main-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 270px;
+  z-index: -2;
+}
+
+/* 
+#                                                                                                      
+#            ####  ######   ##   #####   ####  #    #        ####  ######  ####  ##### #  ####  #    # 
+#           #      #       #  #  #    # #    # #    #       #      #      #    #   #   # #    # ##   # 
+#            ####  #####  #    # #    # #      ###### #####  ####  #####  #        #   # #    # # #  # 
+#       ###      # #      ###### #####  #      #    #            # #      #        #   # #    # #  # # 
+#       ### #    # #      #    # #   #  #    # #    #       #    # #      #    #   #   # #    # #   ## 
+####### ###  ####  ###### #    # #    #  ####  #    #        ####  ######  ####    #   #  ####  #    # 
+*/
+
+.main .search-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('../images/header_line.png');
+  width: 100%;
+  height: 1px;
+}
+
+.main .search-section {
+  position: relative;
+  background: #ededed;
+  padding-top: 7px;
+  padding-bottom: 9px;
+}
+
+.main .search-section .input-container {
+  position: relative;
+  padding-left: 10px;
+  padding-right: 45px;
+}
+
+.main .search-section .input-container .button01 {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.main .search-section .input-container .button01 > .tail > .body {
+  padding-top: 7px;
+  padding-left: 8px;
+  padding-right: 5px;
+}
+
+.main .search-section .input-container > .notification {
+  padding-left: 1px;
+  margin-top: 7px;
+  font-size: 11px;
+  line-height: 14px;
+  color: #5c7fb4;
+}
+
+/* 
+                                 #   
+# #    # #####  ###### #    #   ##   
+# ##   # #    # #       #  #   # #   
+# # #  # #    # #####    ##      #   
+# #  # # #    # #        ##      #   
+# #   ## #    # #       #  #     #   
+# #    # #####  ###### #    #  ##### 
+ */
+
+/* 
+                                             ###     ###   
+ ####  ######  ####  ##### #  ####  #    #  #   #   #   #  
+#      #      #    #   #   # #    # ##   # #     # #     # 
+ ####  #####  #        #   # #    # # #  # #     # #     # 
+     # #      #        #   # #    # #  # # #     # #     # 
+#    # #      #    #   #   # #    # #   ##  #   #   #   #  
+ ####  ######  ####    #   #  ####  #    #   ###     ###   
+*/
+
+.section00 {
+  position: relative;
+}
+
+.section00 > .title {
+  position: relative;
+  color: #1f419f;
+  font-size: 12px;
+  line-height: 14px;
+  padding-left: 8px;
+}
+
+.section00 > .utility {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.section00 > .utility > li {
+  display: inline-block;
+  position: relative;
+}
+
+/* 
+#                                                       
+#            ####  ###### #####  #    # #  ####  ###### 
+#           #      #      #    # #    # # #    # #      
+#            ####  #####  #    # #    # # #      #####  
+#       ###      # #      #####  #    # # #      #      
+#       ### #    # #      #   #   #  #  # #    # #      
+####### ###  ####  ###### #    #   ##   #  ####  ###### 
+*/
+
+.main .main-section .service > .title {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.main .main-section .service > .title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: url('../images/service_line.png');
+  width: 100%;
+  height: 1px;
+}
+
+.main .main-section .service .utility  {
+  padding-right: 8px;
+}
+
+.main .main-section .service .utility > li {
+  position: relative;
+}
+
+.main .main-section .service .utility  > li:not(:first-of-type)::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: -15px;
+  background: url('../images/service_utility_vertical-line.png');
+  width: 1px;
+  height: 16px;
+}
+
+.main .main-section .service .utility > li:not(:last-of-type) {
+  margin-right: 26px;
+}
+
+.main .main-section .service .utility  > li > .setting {
+  background: url('../images/service_setting_right-arrow.png') right no-repeat;
+  padding-right: 6px;
+  padding-top: 1px;
+  color: #35577c;
+}
+
+.main .main-section .service .utility  > li > .all-services {
+  background: url('../images/service_setting_down-arrow.png') right no-repeat;
+  padding-right: 8px;
+  color: #787878;
+}
+
+.main .main-section .service > .items {
+  font-size: 0;
+  margin-top:1px;
+}
+
+.main .main-section .service > .items::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.main .main-section .service > .items + .items {
+  margin-top: 15px;
+}
+
+.main .main-section .service > .items > li {
+  display: inline-block;
+  position: relative;
+  width: 59px;
+  height: 74px;
+  vertical-align: top;
+}
+
+.main .main-section .service > .items > .notice .title {
+  left: 8px;
+}
+.main .main-section .service > .items > .guide .title {
+  left: 3px;
+}
+.main .main-section .service > .items > .reservation .title {
+  left: 8px;
+}
+.main .main-section .service > .items > .ebook .title {
+  left: 7px;
+}
+.main .main-section .service > .items > .ejournal .title {
+  left: 8px;
+}
+.main .main-section .service > .items > .database .title {
+  left: -3px;
+}
+.main .main-section .service > .items > .apply .title {
+  left: -4px;
+}
+
+.main .main-section .service > .items li{
+  margin-left:9.5px;
+  margin-right:5.5px;
+  margin-top:15px;
+}
+
+.main .main-section .service > .items li .title {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: max-content;
+}
+
+.main .main-section .service .items li .image-container {
+  width: 59px;
+}
+
+.main .main-section .service .items li .title a {
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 14px;
+  color: #6b6b6b;
+}
+
+/* 
+#                                                                                       
+#           #####  ######  ####  #####  ####  ###### #      #      ###### #####   ####  
+#           #    # #      #        #   #      #      #      #      #      #    # #      
+#           #####  #####   ####    #    ####  #####  #      #      #####  #    #  ####  
+#       ### #    # #           #   #        # #      #      #      #      #####       # 
+#       ### #    # #      #    #   #   #    # #      #      #      #      #   #  #    # 
+####### ### #####  ######  ####    #    ####  ###### ###### ###### ###### #    #  ####  
+*/
+
+.main .main-section .bestsellers {
+  position: relative;
+  margin-top: 24px;
+  padding-bottom: 12px;
+}
+
+.main .main-section .bestsellers::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  background: url('../images/bestseller_line.png');
+  width: 100%;
+  height: 2px;
+  margin: 0 auto;
+}
+
+.main .main-section .bestsellers > .title {
+  padding-bottom: 5px;
+}
+
+.main .main-section .bestsellers > .title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: url('../images/bestseller_line.png');
+  width: 100%;
+  height: 2px;
+}
+
+.main .main-section .bestsellers .utility > ul {
+  padding-right: 10px;
+}
+
+.main .main-section .bestsellers .utility > ul > li > .more {
+  background: url('../images/bestseller_arrow-right.png') right no-repeat;
+  padding-top: 1px;
+  padding-right: 6px;
+  color: #787878;
+}
+
+.main .main-section .bestsellers .books {
+  position: relative;
+  padding-top: 14px;
+  padding-left: 10px;
+  background: url('../images/bestseller_shelf_middle.png') 0% 96px repeat-x;
+  font-size: 0;
+}
+
+.main .main-section .bestsellers .books::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  bottom: 13px;
+  background: url('../images/bestseller_shelf_left.png') left no-repeat;
+  width: 23px;
+  height: 30px;
+}
+
+.main .main-section .bestsellers .books::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: 17px;
+  background: url('../images/bestseller_shelf_right.png') right no-repeat;
+  width: 23px;
+  height: 30px;
+}
+
+.main .main-section .bestsellers .books li {
+  display: inline-block;
+  position: relative;
+  height: 125px;
+}
+
+.main .main-section .bestsellers .books li:not(:first-of-type) {
+  margin-left: 16px;
+}
+
+.main .main-section .bestsellers .books li .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 11px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.main .main-section .bestsellers .books li .title a {
+  color: #6b6b6b;
+  font-weight: normal;
+  line-height: 14px;
+}
+
+.main .main-section .bestsellers .books .my-cultural-heritage .title {
+  left: 3px;
+}
+
+.main .main-section .bestsellers .books .the-crusaders-story .title {
+  left: 6px;
+}
+
+.main .main-section .bestsellers .books .steve-jobs .title {
+  left: 10px;
+}
+
+.main .main-section .bestsellers .books .rural-doctor .title {
+  left: 2px;
+}
+
+.main .main-section .bestsellers .pagination00 {
+  margin-top: 13px;
+}
+
+.main .main-section .bestsellers .pagination00 .button04 > .tail > .body {
+  padding-top: 3px;
+  padding-left: 14px;
+  padding-right: 12px;
+}
+
+/* 
+                               #####  
+# #    # #####  ###### #    # #     # 
+# ##   # #    # #       #  #        # 
+# # #  # #    # #####    ##    #####  
+# #  # # #    # #        ##   #       
+# #   ## #    # #       #  #  #       
+# #    # #####  ###### #    # ####### 
+*/
+
+.tabs .tab00 > .tail > .body {
+  padding-top: 4px;
+}
+
+.main .main-section .tab-content {
+  margin-top: 13px;
+}
+
+.main
+  .main-section
+  .tab-content
+  .form-element-outer-container{
+    padding-left:4px;padding-right:6px;
+  }
+
+.main
+  .main-section
+  .tab-content
+  .form-element-container{
+    position: relative;
+    padding-left:85px;padding-right:69px;
+  }
+
+.main
+  .main-section
+  .tab-content
+  .form-element-container
+  + .form-element-container {
+  margin-top: 4px;
+}
+
+.main .main-section .tab-content .form-element-container::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.main .main-section .tab-content .form-element-container .select00.data-type{
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+.main .main-section .tab-content .form-element-container .select00.boolean{
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+.main .main-section .tab-content .button-container {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.main .main-section .tab-content .button-container .button02 > .tail > .body {
+  padding-top: 3px;
+  padding-left: 31px;
+  padding-right: 26px;
+}
+
+.main .main-section .tab-content .message-container {
+  text-align: center;
+}
+
+.main .main-section .tab-content .message-container .border00 {
+  margin-top: 18px;
+  width:100%;
+  text-align: center;
+}
+
+
+
+/* 
+                               #####  
+# #    # #####  ###### #    # #     # 
+# ##   # #    # #       #  #        # 
+# # #  # #    # #####    ##    #####  
+# #  # # #    # #        ##         # 
+# #   ## #    # #       #  #  #     # 
+# #    # #####  ###### #    #  #####  
+*/
+
+.main .main-section > .tab-container {
+  padding-left: 10px;
+  padding-right: 9px;
+}
+
+.tabs > .tab00 + .tab00 > .tail > .body {
+  padding-left: 9px;
+  padding-right: 10px;
+}
+
+.main .main-section .search-category {
+  margin-top: 4px;
+}
+
+.main .main-section .search-category::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.main .main-section .search-category > li {
+  background: #cbcbcb;
+  padding-left: 18px;
+  padding-top: 4px;
+  margin-left: 1px;
+  margin-top: 1px;
+  width: calc(50% - 2px);
+  height: 25px;
+  float: left;
+  box-sizing: border-box;
+}
+
+.main .main-section .search-category > li .title,
+.main .main-section .search-category > li .number{
+  color: #000000;
+  font-family: 'MalgunGothic', sans-serif;
+  font-size: 13px;
+}
+
+.main .main-section .result {
+  margin-top: 10px;
+}
+
+.section01 {
+  position: relative;
+}
+
+.section01 + .section01 {
+  margin-top: 11px;
+}
+
+.section01 > .header {
+  background: url('../images/section01_title-bar.png');
+  height: 35px;
+  width: 100%;
+  padding-top:9px;
+  padding-left: 11px;
+  box-sizing: border-box;
+}
+
+.section01 > .header::after {
+  content: '';
+  display: block;
+  background: url('../images/section01_title_line');
+  width: 100%;
+  height: 1px;
+}
+
+.section01 > .header .title,
+.section01 > .header .number{
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+.section01 > .header .title{
+  color:#ffffff;
+  font-size: 15px;
+}
+
+.section01 > .header .number{
+  color: #01346c;
+  font-size:11px;
+}
+
+.section01 > .body li {
+  position: relative;
+  padding-top: 9px;
+  padding-bottom: 7px;
+  box-sizing: border-box;
+  background: #eaeaea;
+}
+
+.section01 > .body li::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  background: url('../images/section01_body-bar_2nd.png');
+  width: 100%;
+  height: 2px;
+  z-index: 1;
+}
+
+.section01 > .body li a {
+  display: block;
+}
+
+.section01 > .body li .title{
+  color:#000000;
+  font-family: 'MalgunGothic', sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+  padding-left:10px;
+}
+
+.section01 > .body li .place{
+  color:#898888;
+  padding-top:3px;
+  padding-left:9px;
+  font-family: 'MalgunGothic', sans-serif;
+  font-size: 11px;
+  line-height: 19px;
+}
+
+.section01 .more00 {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+/* 
+                              #       
+# #    # #####  ###### #    # #    #  
+# ##   # #    # #       #  #  #    #  
+# # #  # #    # #####    ##   #    #  
+# #  # # #    # #        ##   ####### 
+# #   ## #    # #       #  #       #  
+# #    # #####  ###### #    #      #  
+*/
+
+.refine-tab_head,
+.refine-tab_head > .tail,
+.refine-tab_head > .tail > .body {
+  height: 42px;
+}
+
+.main .main-section .tab-container .refine-tab-container {
+  padding-left: 4px;
+  padding-right: 6px;
+  margin-top: 7px;
+}
+
+.refine-tab_head {
+  padding-left: 3px;
+  background: url('../images/refine-tab_head.png') left no-repeat;
+  cursor: pointer;
+}
+
+.refine-tab_head > .tail {
+  padding-right: 3px;
+  background: url('../images/refine-tab_tail.png') right no-repeat;
+}
+
+.refine-tab_head > .tail > .body {
+  background: url('../images/refine-tab_body.png') center repeat-x;
+}
+
+.main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  .refine-tab_head
+  > .tail
+  > .body
+  .header {
+  position: relative;
+  height: 42px;
+}
+
+.main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  .refine-tab_head
+  > .tail
+  > .body
+  .header
+  h2 {
+  padding-left: 5px;
+  padding-top: 9px;
+  color:#232323;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size:14px;
+}
+
+.main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  .refine-tab_head
+  > .tail
+  > .body
+  .header
+  .button03 {
+  position: absolute;
+  top: 8px;
+  right: 4px;
+}
+
+.main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  >.body {
+  padding-left: 10px;
+  padding-top: 8px;
+}
+
+.main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  > .body
+  li {
+    display: inline-block;
+}
+
+.main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  .header+.body::after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  .main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  .header+.body{
+    padding-top:7px;padding-left:10px;
+  }
+
+.main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  .header+.body>
+  li{
+    display: inline-block;
+    /* float: left; */
+    margin-right:95px;
+  }
+
+  .main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  .header+.body>
+  li+li{
+    /* margin-left:95px; */
+  }
+
+.main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  .header+.body
+  li::after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+  .main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  .header+.body
+  li>span{
+    color: #000000;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+    /* line-height: 36px; */
+    float: left;
+}
+
+/* .main
+.main-section
+.tab-container
+.refine-tab-container
+.header+.body
+li+li{
+  margin-left:95px;
+} */
+
+.main
+.main-section
+.tab-container
+.refine-tab-container
+.header+.body
+li>ul{
+    position: absolute;
+  }
+
+  .main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  .header+.body .place,
+  .main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  .header+.body li>ul>li .number{
+    color: #000000;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .main
+  .main-section
+  .tab-container
+  .refine-tab-container
+  > .body
+  li>ul>li{
+    display: block;
+  }
+
+.button03,
+.button03 > .tail,
+.button03 > .tail > .body {
+  display: inline-block;
+  height: 21px;
+  vertical-align: top;
+}
+
+.button03 {
+  background: url('../images/button03_head.png') left no-repeat;
+  padding-left: 3px;
+}
+
+.button03 > .tail {
+  background: url('../images/button03_tail.png') right no-repeat;
+  padding-right: 3px;
+}
+
+.button03 > .tail > .body {
+  background: url('../images/button03_body.png') center repeat-x;
+  padding-left: 3px;
+  padding-right: 4px;
+}
+/* 
+    ######  ####   ####  ##### ###### #####  
+    #      #    # #    #   #   #      #    # 
+    #####  #    # #    #   #   #####  #    # 
+### #      #    # #    #   #   #      #####  
+### #      #    # #    #   #   #      #   #  
+### #       ####   ####    #   ###### #    # 
+*/
+
+.footer {
+  font-size: 11px;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.footer .button-container {
+  padding-top: 9px;
+}
+
+.footer .button-container.index2 {
+  padding-top: 71px;
+}
+
+/* 
+                                              ###   ####### 
+    #####  #    # ##### #####  ####  #    #  #   #  #       
+    #    # #    #   #     #   #    # ##   # #     # #       
+    #####  #    #   #     #   #    # # #  # #     # ######  
+### #    # #    #   #     #   #    # #  # # #     #       # 
+### #    # #    #   #     #   #    # #   ##  #   #  #     # 
+### #####   ####    #     #    ####  #    #   ###    #####  
+*/
+
+.footer > .button-container > .button05 > .tail > .body {
+  padding-top: 7px;
+  color: #616161;
+}
+
+.footer > .button-container > .button05:first-of-type > .tail > .body {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.footer > .button-container > .button05 + .button05 > .tail > .body {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.footer > .button-container > .button05 + .button05 {
+  margin-left: 1px;
+}
+
+.footer .copyright {
+  padding-top: 3px;
+  padding-left: 5px;
+  line-height: 14px;
+  color: #787878;
+  font-size: 8px;
+  font-family: 'kroeger0556', sans-serif;
+  letter-spacing: -0.65px;
+}
+
+/* 
+      #    #  ####  #####  #    # #      ######  ####        
+      ##  ## #    # #    # #    # #      #      #            
+##### # ## # #    # #    # #    # #      #####   ####  ##### 
+      #    # #    # #    # #    # #      #           #       
+      #    # #    # #    # #    # #      #      #    #       
+      #    #  ####  #####   ####  ###### ######  ####        
+*/
+
+/* 
+#####  #    # ##### #####  ####  #    # 
+#    # #    #   #     #   #    # ##   # 
+#####  #    #   #     #   #    # # #  # 
+#    # #    #   #     #   #    # #  # # 
+#    # #    #   #     #   #    # #   ## 
+#####   ####    #     #    ####  #    # 
+*/
+
+/* 00 */
+.button00,
+.button00 > .tail,
+.button00 > .tail > .body {
+  display: inline-block;
+  height: 20px;
+  font-size: 11px;
+  font-family: 'dotum', sans-serif;
+  vertical-align: top;
+}
+
+.button00 {
+  padding-left: 2px;
+  background: url('../images/button00_head.png') left no-repeat;
+}
+
+.button00 > .tail {
+  padding-right: 2px;
+  background: url('../images/button00_tail.png') right no-repeat;
+}
+
+.button00 > .tail > .body {
+  background: url('../images/button00_body.png') center repeat-x;
+  box-sizing: border-box;
+}
+
+/* 01 */
+.button01,
+.button01 > .tail,
+.button01 > .tail > .body {
+  display: inline-block;
+  height: 28px;
+  font-size: 11px;
+  font-family: 'dotum', sans-serif;
+  vertical-align: top;
+}
+
+.button01 {
+  padding-left: 2px;
+  background: url('../images/button01_head.png') left no-repeat;
+}
+
+.button01 > .tail {
+  padding-right: 2px;
+  background: url('../images/button01_tail.png') right no-repeat;
+}
+
+.button01 > .tail > .body {
+  background: url('../images/button01_body.png') center repeat-x;
+  box-sizing: border-box;
+}
+
+/* 02 */
+.button02,
+.button02 > .tail,
+.button02 > .tail > .body {
+  display: inline-block;
+  vertical-align: top;
+  height: 28px;
+}
+
+.button02 {
+  padding-left: 5px;
+  background: url('../images/button02_head.png') left no-repeat;
+}
+
+.button02 > .tail {
+  padding-right: 5px;
+  background: url('../images/button02_tail.png') right no-repeat;
+}
+
+.button02 > .tail > .body {
+  background: url('../images/button02_body.png') center repeat-x;
+  color: #ffffff;
+  font-weight: bolder;
+  font-family: 'MalgunGothic', sans-serif;
+  letter-spacing: 3px;
+  box-sizing: border-box;
+}
+
+/* 04 */
+.button04,
+.button04 > .tail,
+.button04 > .tail > .body {
+  display: inline-block;
+  vertical-align: top;
+  height: 23px;
+}
+
+.button04 {
+  padding-left: 2px;
+  background: url('../images/button04_head.png') left no-repeat;
+}
+
+.button04 > .tail {
+  padding-right: 3px;
+  background: url('../images/button04_tail.png') right no-repeat;
+}
+
+.button04 > .tail > .body {
+  background: url('../images/button04_body.png') center repeat-x;
+  box-sizing: border-box;
+}
+
+/* 05 */
+.button05,
+.button05 > .tail,
+.button05 > .tail > .body {
+  display: inline-block;
+  vertical-align: top;
+  height: 24px;
+}
+
+.button05 {
+  padding-left: 2px;
+  background: url('../images/button05_head.png') left no-repeat;
+}
+
+.button05 > .tail {
+  padding-right: 2px;
+  background: url('../images/button05_tail.png') right no-repeat;
+}
+
+.button05 > .tail > .body {
+  background: url('../images/button05_body.png') center repeat-x;
+  box-sizing: border-box;
+}
+
+/* 
+#####   ##   #####   ####  
+  #    #  #  #    # #      
+  #   #    # #####   ####  
+  #   ###### #    #      # 
+  #   #    # #    # #    # 
+  #   #    # #####   ####  
+*/
+
+.tabs {
+  position: relative;
+  font-size: 0;
+}
+
+.tabs::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: url('../images/tab_line.png');
+  width: 100%;
+  height: 2px;
+}
+
+.tabs .tab00 + .tab00 {
+  margin-left: 1px;
+}
+
+.tab00,
+.tab00 > .tail,
+.tab00 > .tail > .body
+ {
+  display: inline-block;
+  vertical-align: top;
+  height: 30px;
+}
+
+.tab00 > .tail > .body{
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: bolder;
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.tab00.current {
+  padding-left: 3px;
+  background: url('../images/tab_current_left.png') left no-repeat;
+}
+
+.tab00.current::after{
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+background: url('../images/tab_line.png');
+width: 100%;
+height: 2px;
+}
+
+.tab00.noncurrent {
+  padding-left: 3px;
+  background: url('../images/tab_noncurrent_head.png') left no-repeat;
+}
+
+.tab00.current > .tail {
+  padding-right: 3px;
+  background: url('../images/tab_current_right.png') right no-repeat;
+}
+
+.tab00.noncurrent > .tail {
+  padding-right: 3px;
+
+  background: url('../images/tab_noncurrent_tail.png') right no-repeat;
+}
+
+.tab00.current > .tail > .body {
+  background: url('../images/tab_current_body.png');
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 9px;
+  color: white;
+}
+
+.tab00.noncurrent > .tail > .body {
+  background: url('../images/tab_noncurrent_body.png');
+  color: #454545;
+  letter-spacing: -0.37px;
+  box-sizing: border-box;
+}
+
+/* 
+#####    ##    ####  # #    #   ##   ##### #  ####  #    # 
+#    #  #  #  #    # # ##   #  #  #    #   # #    # ##   # 
+#    # #    # #      # # #  # #    #   #   # #    # # #  # 
+#####  ###### #  ### # #  # # ######   #   # #    # #  # # 
+#      #    # #    # # #   ## #    #   #   # #    # #   ## 
+#      #    #  ####  # #    # #    #   #   #  ####  #    # 
+*/
+
+.pagination00 {
+  text-align: center;
+}
+
+.pagination00 ul {
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  margin-left: 9px;
+  margin-right: 9px;
+}
+
+.pagination00 ul li {
+  float: left;
+  cursor: pointer;
+}
+
+.pagination00 ul li:not(:first-of-type) {
+  margin-left: 4px;
+}
+
+.pagination00 ul .current {
+  width: 9px;
+  height: 10px;
+  background: url('../images/bestseller_pagination_current.png');
+}
+
+.pagination00 ul .non-current {
+  width: 9px;
+  height: 10px;
+  background: url('../images/bestseller_pagination_noncurrent.png');
+}
+
+/* 
+# #    # #####  #    # ##### 
+# ##   # #    # #    #   #   
+# # #  # #    # #    #   #   
+# #  # # #####  #    #   #   
+# #   ## #      #    #   #   
+# #    # #       ####    #   
+*/
+
+.input00 {
+  height: 28px;
+  padding-left: 3px;
+  background: url('../images/search-input_head.png') left no-repeat;
+}
+
+.input00 > .tail {
+  display: inline-block;
+  width: 100%;
+  height: 28px;
+  padding-right: 3px;
+  background: url('../images/search-input_tail.png') right no-repeat;
+}
+
+.input00 > .tail > .body {
+  display: inline-block;
+  width: 100%;
+  height: 28px;
+  background: url('../images/search-input_body.png') center repeat-x;
+}
+
+.input01 {
+  height: 28px;
+  border: 1px solid #818181;
+  box-sizing: border-box;
+}
+
+/* 
+ ####  ###### #      ######  ####  ##### 
+#      #      #      #      #    #   #   
+ ####  #####  #      #####  #        #   
+     # #      #      #      #        #   
+#    # #      #      #      #    #   #   
+ ####  ###### ###### ######  ####    #   
+*/
+
+.select00 {
+  height: 28px;
+  border: 1px solid #818181;
+  box-sizing: border-box;
+}
+
+.select00.data-type {
+  width: 81px;
+}
+
+.select00.boolean {
+  width: 65px;
+}
+
+/* 
+ ####  ######  ####  ##### #  ####  #    # 
+#      #      #    #   #   # #    # ##   # 
+ ####  #####  #        #   # #    # # #  # 
+     # #      #        #   # #    # #  # # 
+#    # #      #    #   #   # #    # #   ## 
+ ####  ######  ####    #   #  ####  #    # 
+*/
+
+/* 
+    #    #  ####  #####  ###### 
+    ##  ## #    # #    # #      
+    # ## # #    # #    # #####  
+### #    # #    # #####  #      
+### #    # #    # #   #  #      
+### #    #  ####  #    # ###### 
+*/
+
+.more00 {
+  display: inline-block;
+  background: url('../images/more00_arrow-right.png') right no-repeat;
+  padding-right: 2px;
+  padding-bottom: 1px;
+}
+
+.more00 a {
+  font-family: 'dotum', sans-serif;
+  font-size: 11px;
+  line-height: 14px;
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.more00 a::after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 5px;
+}
+
+/* 
+#####   ####  #####  #####  ###### #####  
+#    # #    # #    # #    # #      #    # 
+#####  #    # #    # #    # #####  #    # 
+#    # #    # #####  #    # #      #####  
+#    # #    # #   #  #    # #      #   #  
+#####   ####  #    # #####  ###### #    # 
+*/
+
+.border00,
+.border00 > .tail,
+.border00 > .tail > .body {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.border00 {
+  padding-top: 15px;
+  padding-bottom: 18px;
+  padding-left: 16px;
+  padding-right: 31px;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+  box-shadow: 3px 3px 4px 0px #ababab;
+  color: #636363;
+  font-size: 12px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: bolder;
+  line-height: 19px;
+  box-sizing: border-box;
+  text-align: left;
+  letter-spacing: -0.2px;
+}
+
+/*
+########  ########  ######  ######## ########  ######   ######   ######  
+##     ## ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ##       ##       ##          ##    ##       ##       ##       
+########  ######    ######  ######      ##    ##        ######   ######  
+##   ##   ##             ## ##          ##    ##             ##       ## 
+##    ##  ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ########  ######  ########    ##     ######   ######   ######  
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@media only screen {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /* font: inherit; */
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    /* added personally */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  /* added personally from below */
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  button {
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  label,
+  input[type='radio'],
+  button {
+    cursor: pointer;
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    margin: 0;
+  }
+
+  input[type='text'] {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    background: transparent;
+  }
+
+  input[type='text']:focus{
+    outline: 0 none;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  select {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+  }
+
+  /* for customizing the 'browsing-file' functionality */
+  input[type='file'] {
+    position: absolute;
+    top: -200%;
+    left: -200%;
+    opacity: 0;
+    z-index: -100;
+  }
+
+  strong,
+  .bolder {
+    font-weight: bolder;
+  }
+}
+
+/* 
+#####  ###### #####   ####   ####  #    #   ##   #         #####  ######  ####  ###### #####  ####   ####   ####  
+#    # #      #    # #      #    # ##   #  #  #  #         #    # #      #      #        #   #    # #      #      
+#    # #####  #    #  ####  #    # # #  # #    # #         #    # #####   ####  #####    #   #       ####   ####  
+#####  #      #####       # #    # #  # # ###### #         #####  #           # #        #   #           #      # 
+#      #      #   #  #    # #    # #   ## #    # #         #   #  #      #    # #        #   #    # #    # #    # 
+#      ###### #    #  ####   ####  #    # #    # ######    #    # ######  ####  ######   #    ####   ####   ####  
+*/
+.whitespace-remover {
+  font-size: 0;
+}
+
+table td {
+  vertical-align: top;
+}
