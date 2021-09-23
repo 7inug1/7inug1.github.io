@@ -1,0 +1,501 @@
+/*
+########  ########  ######  ######## ########  ######   ######   ######  
+##     ## ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ##       ##       ##          ##    ##       ##       ##       
+########  ######    ######  ######      ##    ##        ######   ######  
+##   ##   ##             ## ##          ##    ##             ##       ## 
+##    ##  ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ########  ######  ########    ##     ######   ######   ######  
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@media only screen {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  button {
+    cursor: pointer;
+  }
+  input {
+    outline: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+}
+
+/* 
+ ####  ###### #    # ###### #####    ##   #      
+#    # #      ##   # #      #    #  #  #  #      
+#      #####  # #  # #####  #    # #    # #      
+#  ### #      #  # # #      #####  ###### #      
+#    # #      #   ## #      #   #  #    # #      
+ ####  ###### #    # ###### #    # #    # ###### 
+*/
+
+body {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+button {
+  padding: 0;
+  border: none;
+}
+
+input {
+  border: 0 none;
+  background: transparent;
+  width: 100%;
+}
+
+/* 
+#    # #####    ##   #####  #####  ###### #####  
+#    # #    #  #  #  #    # #    # #      #    # 
+#    # #    # #    # #    # #    # #####  #    # 
+# ## # #####  ###### #####  #####  #      #####  
+##  ## #   #  #    # #      #      #      #   #  
+#    # #    # #    # #      #      ###### #    # 
+*/
+.wrapper {
+  background: url('./images/background.png') no-repeat;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 285px;
+  width: 1024px;
+  height: 1253px;
+  text-align: center;
+}
+
+.wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1024px;
+  height: 1253px;
+  background: url('./images/popup-background.png') no-repeat;
+  z-index: 0;
+}
+
+/* 
+#####   ####  #####  #    # #####  
+#    # #    # #    # #    # #    # 
+#    # #    # #    # #    # #    # 
+#####  #    # #####  #    # #####  
+#      #    # #      #    # #      
+#       ####  #       ####  #  
+*/
+.popup_wrapper {
+  display: inline-block;
+  max-width: 872px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.popup_head {
+  display: inline-block;
+  position: relative;
+  padding-left: 6px;
+  height: 367px;
+  background: url('./images/popup-head.png') left no-repeat;
+  text-align: left;
+}
+
+.popup_head::after {
+  content: '';
+  position: absolute;
+  top: -19px;
+  right: -17px;
+  width: 50px;
+  height: 50px;
+  background: url('./images/popup_close-button.png');
+  cursor: pointer;
+}
+
+.popup_body {
+  display: inline-block;
+  min-width: 558px;
+  height: 367px;
+  background: url('./images/popup-body.png') center repeat-x;
+  vertical-align: top;
+}
+
+.popup_tail {
+  display: inline-block;
+  padding-right: 6px;
+  height: 367px;
+  background: url('./images/popup-tail.png') right no-repeat;
+  vertical-align: top;
+}
+
+/* 
+#####   ####  #####  #    # #####         ####   ####  #    # ##### ###### #    # ##### 
+#    # #    # #    # #    # #    #       #    # #    # ##   #   #   #      ##   #   #   
+#    # #    # #    # #    # #    # ##### #      #    # # #  #   #   #####  # #  #   #   
+#####  #    # #####  #    # #####        #      #    # #  # #   #   #      #  # #   #   
+#      #    # #      #    # #            #    # #    # #   ##   #   #      #   ##   #   
+#       ####  #       ####  #             ####   ####  #    #   #   ###### #    #   #   
+*/
+.popup-content-wrapper {
+  padding: 37px 20px 22px 19px;
+}
+
+/* 
+   #                                                                               
+  ##          #####   ####  #####  #    # #####        ##### # ##### #      ###### 
+ # #          #    # #    # #    # #    # #    #         #   #   #   #      #      
+   #          #    # #    # #    # #    # #    # #####   #   #   #   #      #####  
+   #   ###    #####  #    # #####  #    # #####          #   #   #   #      #      
+   #   ###    #      #    # #      #    # #              #   #   #   #      #      
+ ##### ###    #       ####  #       ####  #              #   #   #   ###### ###### 
+*/
+.popup-title_head::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 519px;
+  height: 48px;
+  background: url('./images/popup-title_background_left.png') left no-repeat;
+}
+
+.popup-title_head {
+  position: relative;
+  padding-left: 2px;
+  height: 48px;
+  background: url('./images/popup-title_head.png') left no-repeat;
+}
+.popup-title_tail {
+  padding-right: 2px;
+  height: 48px;
+  background: url('./images/popup-title_tail.png') right no-repeat;
+  vertical-align: top;
+}
+
+.popup-title_body::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 22px;
+  width: 6px;
+  height: 7px;
+  background: url('./images/popup-title_arrow.png');
+}
+
+.popup-title_body {
+  height: 48px;
+  background: url('./images/popup-title_body.png') center repeat-x;
+  vertical-align: top;
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  left: 21px;
+  top: 0px;
+  width: 49px;
+  height: 47px;
+  background: url('./images/popup-title_icon.png') no-repeat;
+}
+
+h1 {
+  padding-top: 16px;
+  padding-left: 81px;
+}
+
+/*
+ #####                                                                                                 
+#     #        #####   ####  #####  #    # #####         ####   ####  #    # ##### ###### #    # ##### 
+      #        #    # #    # #    # #    # #    #       #    # #    # ##   #   #   #      ##   #   #   
+ #####         #    # #    # #    # #    # #    # ##### #      #    # # #  #   #   #####  # #  #   #   
+#       ###    #####  #    # #####  #    # #####        #      #    # #  # #   #   #      #  # #   #   
+#       ###    #      #    # #      #    # #            #    # #    # #   ##   #   #      #   ##   #   
+####### ###    #       ####  #       ####  #             ####   ####  #    #   #   ###### #    #   #    
+ */
+.popup-content_head {
+  padding-left: 5px;
+  margin-top: 10px;
+  height: 207px;
+  background: url('./images/popup-content_head.png') left no-repeat;
+}
+
+.popup-content_tail {
+  padding-right: 5px;
+  height: 207px;
+  background: url('./images/popup-content_tail.png') right no-repeat;
+  vertical-align: top;
+}
+
+.popup-content_body {
+  height: 207px;
+  background: url('./images/popup-content_body.png') center repeat-x;
+  vertical-align: top;
+}
+
+.popup-content_body p::before {
+  content: '';
+  position: absolute;
+  top: 21px;
+  left: 9px;
+  width: 12px;
+  height: 12px;
+  background: url('./images/popup_bullet.png') no-repeat;
+}
+
+.popup-content_body p {
+  position: relative;
+  padding-top: 22px;
+  padding-left: 32px;
+  color: #40403e;
+  font-size: 12px;
+  font-family: 'Dotum', sans-serif;
+  letter-spacing: 0.43px;
+}
+
+.keyword-box_head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 29px;
+  padding-left: 4px;
+  background: url('./images/keyword-box_head.png') left no-repeat;
+}
+
+.keyword-box_tail {
+  display: inline-block;
+  height: 29px;
+  padding-right: 6px;
+  background: url('./images/keyword-box_tail.png') right no-repeat;
+}
+
+.keyword-box_body {
+  display: inline-block;
+  position: relative;
+  height: 29px;
+  min-width: 130px;
+  background: url('./images/keyword-box_body.png') center repeat-x;
+}
+
+.keyword-box_body h2::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 4px;
+  width: 19px;
+  height: 19px;
+  background: url('./images/keyword-box_arrow-icon.png');
+}
+
+.keyword-box_body h2 {
+  display: inline-block;
+  position: relative;
+}
+
+.keyword-box_body img {
+  padding-top: 7px;
+  padding-left: 30px;
+}
+
+input[type='text'] {
+  padding: 5px;
+  width: 335px;
+  height: 27px;
+  background: url('./images/inputbox.png') no-repeat;
+  border: none;
+  box-sizing: border-box;
+}
+
+.boxes-container_wrapper {
+  margin-top: 17px;
+  padding-left: 12px;
+}
+
+.boxes-container {
+  position: relative;
+  padding-left: 145px;
+}
+
+.boxes-container:nth-of-type(2),
+.boxes-container:nth-of-type(4) {
+  margin-top: 8px;
+}
+
+.boxes-container:nth-of-type(3) {
+  margin-top: 9px;
+}
+
+/* 
+ #####                                                                                          
+#     #        #####  #        ##    ####  #    #       #####  #    # ##### #####  ####  #    # 
+      #        #    # #       #  #  #    # #   #        #    # #    #   #     #   #    # ##   # 
+ #####         #####  #      #    # #      ####   ##### #####  #    #   #     #   #    # # #  # 
+      # ###    #    # #      ###### #      #  #         #    # #    #   #     #   #    # #  # # 
+#     # ###    #    # #      #    # #    # #   #        #    # #    #   #     #   #    # #   ## 
+ #####  ###    #####  ###### #    #  ####  #    #       #####   ####    #     #    ####  #    # 
+                                                                                                
+*/
+.black-button-container {
+  margin-top: 16px;
+  padding-left: 8px;
+  font-size: 0;
+  text-align: center;
+}
+
+.black-button-container button + button {
+  margin-left: 21px;
+}
+
+.black-button_head {
+  padding-left: 4px;
+  height: 27px;
+  background: url(./images/black-button_head.png) left no-repeat;
+}
+
+.black-button_tail {
+  display: inline-block;
+  padding-right: 4px;
+  height: 27px;
+  background: url(./images/black-button_tail.png) right no-repeat;
+  vertical-align: top;
+}
+
+.black-button_body {
+  display: inline-block;
+  min-width: 71px;
+  height: 27px;
+  background: url(./images/black-button_body.png) center repeat-x;
+  vertical-align: top;
+}
+
+.black-button_body span img {
+  padding-top: 7px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./desktop.css" />
+    <link rel="stylesheet" href="./mobile.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <script src="./capture.js" defer></script>
+    <script src="./canvas.js" defer></script>
+    <script src="onlineOfflineEvent.js" type="text/javascript" defer></script>
+    <title>HTML5: WebRTC and Canvas Technology</title>
+  </head>
+  <body>
+    <header>
+      <div class="siteTitle">
+        <div class="statusBar">
+          <span id="onlineOfflineStatus">status</span>
+        </div>
+        <br />
+        <h1 class="title">HTML5 Portfolio</h1>
+        <p class="subtitle">WebRTC and Canvas API</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="videoContainer">
+        <div class="titleContainer videoTitleContainer">Webcam</div>
+        <video id="video">Video stream not available.</video>
+
+        <div class="videoButtonsContainer">
+          <label class="switch">
+            <input id="toggleButton" type="checkbox" type="hidden" />
+            <span class="slider round"></span>
+          </label>
+          <button id="cameraCaptureButton"></button>
+        </div>
+      </div>
+
+      <div class="canvasContainer">
+        <div class="titleContainer canvasTitleContainer">Canvas</div>
+        <canvas id="canvas"></canvas>
+
+        <div class="canvasButtonsContainer">
+          <div class="canvasButtonPenContainer">
+            <button id="redButtonPen"></button>
+            <button id="blackButtonPen"></button>
+            <button id="yellowButtonPen"></button>
+          </div>
+          <button id="removeButton"><i class="fas fa-trash-alt"></i></button>
+          <button id="saveButton"><i class="fa fa-download"></i></button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>&copy; 2021 Jinwook Shin</p>
+    </footer>
+  </body>
+</html>

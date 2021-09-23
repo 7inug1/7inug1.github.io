@@ -1,0 +1,1211 @@
+/*
+########  ########  ######  ######## ########  ######   ######   ######  
+##     ## ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ##       ##       ##          ##    ##       ##       ##       
+########  ######    ######  ######      ##    ##        ######   ######  
+##   ##   ##             ## ##          ##    ##             ##       ## 
+##    ##  ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ########  ######  ########    ##     ######   ######   ######  
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@media only screen {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    /* added personally */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  /* added personally from below */
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  button {
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  label,
+  input[type='radio'],
+  button {
+    cursor: pointer;
+  }
+
+  input[type='text'] {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    background: transparent;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  select {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+  }
+
+  /* for customizing the 'browsing-file' functionality */
+  input[type='file'] {
+    position: absolute;
+    top: -200%;
+    left: -200%;
+    opacity: 0;
+    z-index: -100;
+  }
+
+  strong,
+  .bolder {
+    font-weight: bolder;
+  }
+}
+
+/* 
+#####  ###### #####   ####   ####  #    #   ##   #         #####  ######  ####  ###### #####  ####   ####   ####  
+#    # #      #    # #      #    # ##   #  #  #  #         #    # #      #      #        #   #    # #      #      
+#    # #####  #    #  ####  #    # # #  # #    # #         #    # #####   ####  #####    #   #       ####   ####  
+#####  #      #####       # #    # #  # # ###### #         #####  #           # #        #   #           #      # 
+#      #      #   #  #    # #    # #   ## #    # #         #   #  #      #    # #        #   #    # #    # #    # 
+#      ###### #    #  ####   ####  #    # #    # ######    #    # ######  ####  ######   #    ####   ####   ####  
+*/
+.whitespace-remover {
+  font-size: 0;
+}
+
+table td {
+  vertical-align: top;
+}
+
+/* 
+#####   ####  #####  #   # 
+#    # #    # #    #  # #  
+#####  #    # #    #   #   
+#    # #    # #    #   #   
+#    # #    # #    #   #   
+#####   ####  #####    #   
+*/
+
+body::before {
+  content: '';
+  display: inline-block;
+  background: url('./images/body_horizontal-line.png') repeat-x;
+  height: 3px;
+  min-width: 1280px;
+}
+
+body {
+  width: 1280px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.wrapper {
+  padding-left: 197px;
+  padding-right: 327px;
+  padding-top: 18px;
+}
+
+/* 
+###### ###### ###### #####  #####    ##    ####  #    # 
+#      #      #      #    # #    #  #  #  #    # #   #  
+#####  #####  #####  #    # #####  #    # #      ####   
+#      #      #      #    # #    # ###### #      #  #   
+#      #      #      #    # #    # #    # #    # #   #  
+#      ###### ###### #####  #####  #    #  ####  #    # 
+*/
+
+.feedback ul li:before {
+  content: '-';
+}
+
+/* 
+ ####   ####  #    # #    #  ####  #    # 
+#    # #    # ##  ## ##  ## #    # ##   # 
+#      #    # # ## # # ## # #    # # #  # 
+#      #    # #    # #    # #    # #  # # 
+#    # #    # #    # #    # #    # #   ## 
+ ####   ####  #    # #    #  ####  #    # 
+*/
+
+.tools .options li a,
+.patent-details .details > .title h2,
+.references ul li h2 a:hover,
+.content li .title a,
+.patent_related-resources .content-container .content li a {
+  color: #26669d;
+}
+
+.tools .options li,
+.patent-details .details > .title h2,
+.references ul li h2 a,
+.references ul li h2 a:hover,
+.content li .title a,
+.patent_related-resources .content-container .content li a {
+  font-family: 'dotum', sans-serif;
+}
+
+.tools .options li,
+.references ul li h2 a,
+.content li .title a,
+.patent_related-resources .content-container .content li a {
+  font-size: 12px;
+}
+
+.patent-details .details > .title h2,
+.tools .options li {
+  font-weight: bolder;
+}
+
+.patent-details .details > .title h2 {
+  font-size: 15px;
+}
+
+.patent_related-resources .content-container .content li a:hover {
+  text-decoration: underline;
+}
+
+.keyword_related-resources .content-container .tabs button.current,
+.patent_related-resources .content-container .tabs button.current {
+  font-family: 'dotum', sans-serif;
+  font-weight: bolder;
+  color: #004e9f;
+}
+
+.patent_related-resources .content-container .tabs button.current {
+  font-size: 12px;
+}
+
+.show-more {
+  margin-top: 3px;
+  padding-right: 26px;
+  text-align: right;
+}
+
+.show-more a {
+  color: #00a5f2;
+  font-family: 'dotum', sans-serif;
+  font-size: 12px;
+  text-decoration: underline;
+  text-align: right;
+}
+
+.patent-details .tools .input00 + span,
+.details .list-container .list-title li,
+.details .content-container .section .title h2,
+.details .content-container {
+  color: #807f7f;
+  font-family: 'dotum', sans-serif;
+}
+
+.patent-details .tools .input00 + span,
+.details .list-container .list-title li,
+.details .content-container .notice {
+  font-size: 12px;
+}
+
+.details .content-container .section .title h2 {
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.details .list-container .list-content li,
+.details .content-container .section p,
+.details .content-container .section ul li,
+.references ul li h2 a,
+.keyword_related-resources .content-container .content .details .years,
+.keyword_related-resources .content-container .content .details .association,
+.keyword_related-resources .content-container .tabs button,
+.patent_related-resources .content-container .tabs button {
+  font-family: 'dotum', sans-serif;
+  font-size: 12px;
+}
+
+.details .list-container .list-content li,
+.details .content-container .section p,
+.details .content-container .section ul li {
+  color: black;
+}
+
+.references ul li h2 a,
+.keyword_related-resources .content-container .content .details .years,
+.keyword_related-resources .content-container .content .details .association {
+  color: #454545;
+}
+
+.keyword_related-resources .content-container .tabs button,
+.patent_related-resources .content-container .tabs button {
+  color: #737373;
+}
+
+/* 
+    #####    ##   ##### ###### #    # #####       #####  ###### #####   ##   # #       ####  
+    #    #  #  #    #   #      ##   #   #         #    # #        #    #  #  # #      #      
+    #    # #    #   #   #####  # #  #   #   ##### #    # #####    #   #    # # #       ####  
+### #####  ######   #   #      #  # #   #         #    # #        #   ###### # #           # 
+### #      #    #   #   #      #   ##   #         #    # #        #   #    # # #      #    # 
+### #      #    #   #   ###### #    #   #         #####  ######   #   #    # # ######  ####  
+*/
+
+.patent-details > .title {
+  padding-left: 30px;
+}
+
+.patent-details > .title img {
+  cursor: pointer;
+}
+
+/* 
+#                                             
+#           #####  ####   ####  #       ####  
+#             #   #    # #    # #      #      
+#             #   #    # #    # #       ####  
+#       ###   #   #    # #    # #           # 
+#       ###   #   #    # #    # #      #    # 
+####### ###   #    ####   ####  ######  ####  
+*/
+
+.patent-details .tools::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 1px;
+  min-width: 757px;
+  background: url('./images/tools_horizontal-line.png') no-repeat;
+}
+
+.patent-details .tools {
+  position: relative;
+  margin-top: 7px;
+  padding-top: 8px;
+  padding-bottom: 7px;
+}
+
+.patent-details .tools::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.patent-details .tools .options {
+  float: left;
+  padding-left: 29px;
+}
+
+.patent-details .tools .options li {
+  display: inline-block;
+  position: relative;
+}
+
+.patent-details .tools .options li:first-of-type::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: -8px;
+  width: 5px;
+  height: 3px;
+  background: url('./images/tools_arrow.png') no-repeat;
+  cursor: pointer;
+}
+
+.patent-details .tools .options li:not(:first-of-type)::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: -11px;
+  width: 2px;
+  height: 9px;
+  background: url('./images/tools_bar.png') no-repeat;
+}
+
+.patent-details .tools .options li:not(:first-of-type) {
+  margin-left: 25px;
+}
+
+/* 
+#                                              
+#           #####    ##    ####  ######  ####  
+#           #    #  #  #  #    # #      #      
+#           #    # #    # #      #####   ####  
+#       ### #####  ###### #  ### #           # 
+#       ### #      #    # #    # #      #    # 
+####### ### #      #    #  ####  ######  ####  
+*/
+
+.patent-details .pages {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  text-align: right;
+}
+
+.patent-details .pages div {
+  display: inline-block;
+}
+
+.patent-details .pages .input-container {
+  right: 174px;
+  padding-top: 7px;
+}
+
+.patent-details .pages .input00 {
+  position: absolute;
+  top: 7px;
+  right: 220px;
+  padding-left: 6px;
+  vertical-align: top;
+}
+
+.patent-details .pages .input00 input {
+  color: #807f7f;
+  font-family: 'dotum', sans-serif;
+  font-size: 12px;
+}
+
+.patent-details .pages .input00 + span {
+  position: absolute;
+  top: 7px;
+  right: 180px;
+  margin-left: 8px;
+  padding-top: 4px;
+  vertical-align: top;
+}
+
+.patent-details .pages .button-container {
+  vertical-align: top;
+}
+
+.patent-details .pages .button-container:nth-of-type(2) {
+  margin-left: 4px;
+  padding-top: 9px;
+}
+
+.patent-details .pages .button-container + .button-container {
+  margin-left: 16px;
+  padding-top: 6px;
+}
+
+.patent-details .pages .button-container .button02 {
+  margin-left: 3px;
+}
+
+/* 
+#                                                      
+#           #####  ###### #####   ##   # #       ####  
+#           #    # #        #    #  #  # #      #      
+#           #    # #####    #   #    # # #       ####  
+#       ### #    # #        #   ###### # #           # 
+#       ### #    # #        #   #    # # #      #    # 
+####### ### #####  ######   #   #    # # ######  ####  
+*/
+
+.patent-details .details {
+  width: 756px;
+  padding-top: 20px;
+  padding-left: 22px;
+  padding-bottom: 29px;
+  border: 5px solid #edf3f7;
+  box-sizing: border-box;
+}
+
+.patent-details .details > .title {
+  position: relative;
+  padding-left: 2px;
+}
+
+.patent-details .details > .title h2 {
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+}
+
+.patent-details .details .mark-container {
+  padding-left: 179px;
+}
+
+.patent-details .details .thumbnail-container {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  padding-left: 7px;
+  padding-right: 6px;
+  padding-top: 59px;
+  padding-bottom: 56px;
+  border: 2px solid #c7c7c7;
+}
+
+.patent-details .details .list-container {
+  position: relative;
+  margin-top: 20px;
+  padding-left: 125px;
+}
+
+.patent-details .details .list-container .list-title {
+  position: absolute;
+}
+
+.patent-details .details .list-container .list-title li {
+  font-weight: bolder;
+}
+
+.patent-details .details .list-container .list-title li:not(:first-of-type) {
+  margin-top: 13px;
+}
+
+.patent-details .details .list-container .list-content {
+  padding-left: 104px;
+}
+
+.patent-details .details .list-container .list-content li:not(:first-of-type) {
+  margin-top: 13px;
+}
+
+.patent-details .details .content-container {
+  margin-top: 39px;
+}
+
+.patent-details .details .content-container .section {
+  padding-left: 3px;
+}
+
+.patent-details .details .content-container .section p,
+.patent-details .details .content-container .section ul {
+  margin-top: 19px;
+  padding-left: 1px;
+}
+.patent-details .details .content-container .section p,
+.patent-details .details .content-container .section ul li {
+  line-height: 16px;
+}
+
+.patent-details .details .content-container .section:not(:first-of-type) {
+  margin-top: 26px;
+}
+
+.patent-details .details .content-container .notice {
+  margin-top: 15px;
+}
+
+/* 
+    #####  ###### ###### ###### #####  ###### #    #  ####  ######  ####  
+    #    # #      #      #      #    # #      ##   # #    # #      #      
+    #    # #####  #####  #####  #    # #####  # #  # #      #####   ####  
+### #####  #      #      #      #####  #      #  # # #      #           # 
+### #   #  #      #      #      #   #  #      #   ## #    # #      #    # 
+### #    # ###### #      ###### #    # ###### #    #  ####  ######  ####  
+*/
+
+.references,
+.related-resources {
+  padding-left: 30px;
+}
+
+.references {
+  margin-top: 39px;
+  margin-bottom: 20px;
+}
+
+.references .title,
+.keyword_related-resources .title,
+.patent_related-resources .title {
+  position: relative;
+}
+
+.references .title h2,
+.keyword_related-resources .title h2,
+.patent_related-resources .title h2 {
+  position: absolute;
+  left: 0;
+}
+
+.references .title h2 {
+  top: 1px;
+}
+
+.references .title .button-container {
+  padding-left: 56px;
+}
+
+.references ul {
+  margin-top: 18px;
+}
+
+.references ul li {
+  position: relative;
+}
+
+.references ul li:not(:first-of-type) {
+  margin-top: 6px;
+}
+
+.references ul li .button06 {
+  position: absolute;
+  top: 3px;
+}
+
+.references ul li h2 {
+  padding-left: 15px;
+}
+
+.references ul li .button-container {
+  margin-top: 2px;
+  padding-left: 16px;
+  font-size: 0;
+}
+
+.references ul li .button-container button:not(:first-of-type) {
+  margin-left: 10px;
+}
+
+/* 
+    #####  ###### #        ##   ##### ###### #####        #####  ######  ####   ####  #    # #####   ####  ######  ####  
+    #    # #      #       #  #    #   #      #    #       #    # #      #      #    # #    # #    # #    # #      #      
+    #    # #####  #      #    #   #   #####  #    # ##### #    # #####   ####  #    # #    # #    # #      #####   ####  
+### #####  #      #      ######   #   #      #    #       #####  #           # #    # #    # #####  #      #           # 
+### #   #  #      #      #    #   #   #      #    #       #   #  #      #    # #    # #    # #   #  #    # #      #    # 
+### #    # ###### ###### #    #   #   ###### #####        #    # ######  ####   ####   ####  #    #  ####  ######  ####  
+*/
+
+.related-resources::before {
+  content: '';
+  display: block;
+  background: url('./images/related-resources_horizontal-line.png');
+  height: 1px;
+  width: 100%;
+}
+
+.keyword_related-resources .title h2 {
+  top: 3px;
+}
+
+.keyword_related-resources .title .button-container {
+  padding-left: 100px;
+}
+
+.keyword_related-resources .content,
+.patent_related-resources .content {
+  border-top: 1px solid #cdd2da;
+  border-bottom: 1px solid #cdd2da;
+  background: #fafafa;
+}
+
+.keyword_related-resources .content {
+  padding-top: 12px;
+  padding-bottom: 19px;
+}
+
+.keyword_related-resources .tab01 > .tail > .body {
+  min-width: 64px;
+}
+
+.keyword_related-resources .tab01.current > .tail > .body > span {
+  font-size: 11px;
+}
+
+.keyword_related-resources .content .title::before,
+.patent_related-resources .content .title::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: url('./images/keyword_bullet.png');
+  width: 2px;
+  height: 2px;
+}
+
+.keyword_related-resources .content .title,
+.patent_related-resources .content .title {
+  position: relative;
+  padding-left: 18px;
+}
+
+.keyword_related-resources .content li:not(:first-of-type),
+.patent_related-resources .content li:not(:first-of-type) {
+  margin-top: 4px;
+}
+
+.patent_related-resources .title h2 {
+  top: 3px;
+}
+
+.patent_related-resources .title .button-container {
+  padding-left: 87px;
+}
+
+.patent_related-resources .content {
+  padding-top: 11px;
+  padding-bottom: 17px;
+}
+
+.patent_related-resources .tab01.current > .tail > .body::before {
+  content: '';
+  background: url('./images/patent_tab-current-icon.png');
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: 6px;
+  height: 4px;
+}
+
+.patent_related-resources .tab01 > .tail > .body::before {
+  content: '';
+  background: url('./images/patent_tab-icon.png');
+  position: absolute;
+  top: 8px;
+  left: 11px;
+  width: 5px;
+  height: 4px;
+}
+
+.patent_related-resources .tab01 > .tail > .body {
+  padding-left: 20px;
+  padding-right: 7px;
+}
+
+.patent_related-resources .tab01.current > .tail > .body {
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+
+.tab01 {
+  display: inline-block;
+  padding-left: 2px;
+  background: url('./images/tab_head.png') left no-repeat;
+  height: 21px;
+}
+
+.tab01 > .tail {
+  display: inline-block;
+  padding-right: 2px;
+  background: url('./images/tab_tail.png') right no-repeat;
+  height: 21px;
+}
+
+.tab01 > .tail > .body {
+  display: inline-block;
+  position: relative;
+  height: 21px;
+  background: url('./images/tab_body.png') center repeat-x;
+  box-sizing: border-box;
+  padding-top: 4px;
+}
+
+.tab01.current {
+  background: url('./images/current-tab_head.png') left no-repeat;
+}
+
+.tab01.current > .tail {
+  position: relative;
+  background: url('./images/current-tab_tail.png') right no-repeat;
+  z-index: 1;
+}
+
+.tab01.current > .tail > .body {
+  background: url('./images/current-tab_body.png') center repeat-x;
+}
+
+/* 
+#                                                           
+#           #    # ###### #   # #    #  ####  #####  #####  
+#           #   #  #       # #  #    # #    # #    # #    # 
+#           ####   #####    #   #    # #    # #    # #    # 
+#       ### #  #   #        #   # ## # #    # #####  #    # 
+#       ### #   #  #        #   ##  ## #    # #   #  #    # 
+####### ### #    # ######   #   #    #  ####  #    # #####  
+*/
+
+.keyword_related-resources {
+  margin-top: 17px;
+}
+
+.keyword_related-resources .content-container,
+.patent_related-resources .content-container {
+  margin-top: 21px;
+}
+
+.keyword_related-resources .content li .title {
+  position: absolute;
+}
+
+.keyword_related-resources .content li .details {
+  padding-left: 342px;
+}
+
+.keyword_related-resources .content li .details .years {
+  padding-right: 10px;
+}
+
+.keyword_related-resources .content li .details .years,
+.keyword_related-resources .content li .association {
+  position: relative;
+}
+
+.keyword_related-resources .content li .details .years::before,
+.keyword_related-resources .content li .association::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  background: url('./images/keyword_vertical-line.png') no-repeat;
+  width: 1px;
+  height: 11px;
+}
+
+.keyword_related-resources .content li .details .years::before,
+.keyword_related-resources .content li .association::before {
+  left: -7px;
+}
+
+.patent_related-resources .tabs,
+.keyword_related-resources .tabs {
+  font-size: 0;
+}
+
+.keyword_related-resources .tabs button:not(:first-of-type) {
+  margin-left: -1px;
+}
+
+/* 
+#                                                   
+#           #####    ##   ##### ###### #    # ##### 
+#           #    #  #  #    #   #      ##   #   #   
+#           #    # #    #   #   #####  # #  #   #   
+#       ### #####  ######   #   #      #  # #   #   
+#       ### #      #    #   #   #      #   ##   #   
+####### ### #      #    #   #   ###### #    #   #   
+*/
+
+.patent_related-resources {
+  margin-top: 17px;
+}
+
+.patent_related-resources .tabs button:not(:first-of-type) {
+  margin-left: -1px;
+}
+
+/* 
+# #    # #####  #    # ##### 
+# ##   # #    # #    #   #   
+# # #  # #    # #    #   #   
+# #  # # #####  #    #   #   
+# #   ## #      #    #   #   
+# #    # #       ####    #   
+*/
+
+.input00 {
+  width: 33px;
+  height: 18px;
+  border: 1px solid #c0c0c0;
+  box-sizing: border-box;
+}
+
+/* 
+#####  #    # ##### #####  ####  #    # 
+#    # #    #   #     #   #    # ##   # 
+#####  #    #   #     #   #    # # #  # 
+#    # #    #   #     #   #    # #  # # 
+#    # #    #   #     #   #    # #   ## 
+#####   ####    #     #    ####  #    # 
+*/
+
+.button-container .button00 + .button00 {
+  margin-left: 2px;
+}
+
+.button00.left {
+  display: inline-block;
+  width: 12px;
+  height: 13px;
+  background: url(./images/button00_left.png);
+}
+
+.button00.right {
+  display: inline-block;
+  width: 12px;
+  height: 13px;
+  background: url(./images/button00_right.png);
+}
+
+.button01,
+.button01 > .tail,
+.button01 > .tail > .body,
+.button02,
+.button02 > .tail,
+.button02 > .tail > .body {
+  display: inline-block;
+  height: 20px;
+}
+
+.button01 {
+  background: url('./images/button01_head.png') left no-repeat;
+  padding-left: 2px;
+}
+
+.button01 > .tail {
+  background: url('./images/button01_tail.png') right no-repeat;
+  padding-right: 2px;
+  vertical-align: top;
+}
+
+.button01 > .tail > .body {
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 4px;
+  color: #f9fdff;
+  font-size: 11px;
+  font-family: 'gulim', sans-serif;
+  background: url('./images/button01_body.png') center repeat-x;
+  box-sizing: border-box;
+  vertical-align: top;
+  letter-spacing: -1px;
+}
+
+.button02 {
+  background: url('./images/button02_head.png') left no-repeat;
+  padding-left: 2px;
+}
+
+.button02 > .tail {
+  background: url('./images/button02_tail.png') right no-repeat;
+  padding-right: 2px;
+  vertical-align: top;
+}
+
+.button02 > .tail > .body::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  width: 7px;
+  height: 9px;
+  background: url('./images/button02_icon.png');
+}
+
+.button02 > .tail > .body {
+  position: relative;
+  padding-top: 5px;
+  padding-left: 13px;
+  padding-right: 5px;
+  color: #f9fdff;
+  font-size: 11px;
+  font-family: 'gulim', sans-serif;
+  background: url('./images/button02_body.png') center repeat-x;
+  box-sizing: border-box;
+  vertical-align: top;
+  letter-spacing: -1px;
+}
+
+.button03,
+.button03 > .tail,
+.button03 > .tail > .body {
+  display: inline-block;
+  height: 19px;
+}
+
+.button03 {
+  padding-left: 2px;
+  background: url('./images/button03_head.png') left no-repeat;
+}
+
+.button03 > .tail {
+  padding-right: 2px;
+  background: url('./images/button03_tail.png') right no-repeat;
+}
+
+.button03 > .tail > .body {
+  position: relative;
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 5px;
+  color: #42687f;
+  font-size: 10px;
+  font-family: 'gulim', sans-serif;
+  background: url('./images/button03_body.png') center repeat-x;
+  box-sizing: border-box;
+  vertical-align: top;
+  letter-spacing: -1px;
+}
+
+.button05 {
+  width: 14px;
+  height: 15px;
+  vertical-align: middle;
+  background: url('./images/button05.png');
+}
+
+.button06 {
+  width: 11px;
+  height: 11px;
+  vertical-align: middle;
+  background: url('./images/button06.png');
+}
+
+.button07,
+.button07 > .tail,
+.button07 > .tail > .body {
+  display: inline-block;
+  height: 18px;
+}
+
+.button07 {
+  padding-left: 3px;
+  background: url('./images/button07_head.png') left no-repeat;
+}
+.button07 > .tail {
+  padding-right: 3px;
+  background: url('./images/button07_tail.png') right no-repeat;
+}
+
+.button07 > .tail > .body::before {
+  content: '';
+  position: absolute;
+  left: 1px;
+  width: 21px;
+  height: 11px;
+  background: url('./images/button07_icon.png');
+}
+
+.button07 > .tail > .body.click {
+  position: relative;
+  padding-top: 4px;
+  padding-left: 26px;
+  padding-right: 1px;
+  color: #42687f;
+  font-size: 10px;
+  font-family: 'gulim', sans-serif;
+  background: url('./images/button07_body.png') center repeat-x;
+  box-sizing: border-box;
+  vertical-align: top;
+  letter-spacing: -1px;
+}
+
+.button07 > .tail > .body.koi {
+  position: relative;
+  padding-top: 4px;
+  padding-left: 32px;
+  padding-right: 8px;
+  color: #42687f;
+  font-size: 10px;
+  font-family: 'gulim', sans-serif;
+  background: url('./images/button07_body.png') center repeat-x;
+  box-sizing: border-box;
+  vertical-align: top;
+  letter-spacing: -1px;
+}
+
+.button07.crossref {
+  background: url('./images/button07_crossref.png');
+  width: 42px;
+  height: 15px;
+  vertical-align: bottom;
+}
+
+.button08 {
+  width: 22px;
+  height: 18px;
+}
+
+.button08.left-end {
+  background: url('./images/button08_left-end.png');
+}
+
+.button08.left {
+  background: url('./images/button08_left.png');
+}
+
+.button08.right {
+  background: url('./images/button08_right.png');
+}
+
+.button08.right-end {
+  background: url('./images/button08_right-end.png');
+}
+
+.pagination {
+  padding-right: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination .button08 {
+  vertical-align: top;
+}
+
+.pagination ul {
+  vertical-align: middle;
+}
+
+.pagination ul,
+.pagination ul li {
+  display: inline-block;
+}
+
+.pagination ul li {
+  padding-top: 2px;
+}
+
+.pagination ul li a {
+  color: #454545;
+  font-size: 13px;
+  font-family: 'Arial', sans-serif;
+  text-decoration: none;
+}
+
+.pagination ul li .current {
+  color: black;
+  font-weight: bolder;
+}
+
+.pagination ul li:first-of-type,
+.pagination ul li:not(:first-of-type) {
+  margin-left: 12px;
+}
+
+.pagination ul li:last-of-type {
+  margin-right: 12px;
+}
+
+.button08.left,
+.button08.right-end {
+  margin-left: 3px;
+}

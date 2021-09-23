@@ -1,0 +1,1116 @@
+/*
+########  ########  ######  ######## ########  ######   ######   ######  
+##     ## ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ##       ##       ##          ##    ##       ##       ##       
+########  ######    ######  ######      ##    ##        ######   ######  
+##   ##   ##             ## ##          ##    ##             ##       ## 
+##    ##  ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ########  ######  ########    ##     ######   ######   ######  
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*  
+ ######   ######## ##    ## ######## ########     ###    ##       
+##    ##  ##       ###   ## ##       ##     ##   ## ##   ##       
+##        ##       ####  ## ##       ##     ##  ##   ##  ##       
+##   #### ######   ## ## ## ######   ########  ##     ## ##       
+##    ##  ##       ##  #### ##       ##   ##   ######### ##       
+##    ##  ##       ##   ### ##       ##    ##  ##     ## ##       
+ ######   ######## ##    ## ######## ##     ## ##     ## ######## 
+*/
+
+@font-face {
+  font-family: 'ydiy330';
+  src: url('./font/ydiygo330/YDIYGO330.woff2') format('woff2'),
+    url('./font/ydiygo330/YDIYGO330.woff') format('woff');
+  font-family: 'ydiy340';
+  src: url('./font/ydiygo340/YDIYGO340.woff2') format('woff2'),
+    url('./font/ydiygo340/YDIYGO340.woff') format('woff');
+  font-family: 'FuturaBT';
+  src: url('./font/FuturaBT/futuraMediumBT.woff') format('woff');
+  font-family: 'YDIWebDotum';
+  src: url('./font/ydiywebdotum/YDIWebDotum.eot?#iefix')
+      format('embedded-opentype'),
+    url('./font/ydiywebdotum/YDIWebDotum.woff2') format('woff2'),
+    url('./font/ydiywebdotum/YDIWebDotum.woff') format('woff');
+}
+
+body {
+  margin: 150px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  background: url('./images/orange-circle.png') 0px 0.5px no-repeat;
+  height: 18px;
+}
+
+h1 > img {
+  padding-left: 26px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 790px;
+}
+
+.outerbox.head {
+  padding-top: 3px;
+  background: url('./images/outer_border_head.png') top no-repeat;
+}
+
+.outerbox.tail {
+  padding-bottom: 3px;
+  background: url('./images/outer_border_tail.png') bottom no-repeat;
+}
+
+.outerbox.body {
+  padding: 59px;
+  background: url('./images/outer_border_body.png') repeat-y;
+}
+
+.innerbox.head {
+  padding-top: 3px;
+}
+
+.innerbox.tail {
+  padding-bottom: 3px;
+}
+
+.innerbox.body {
+  border-top: 3px solid #efefef;
+  border-bottom: 3px solid #efefef;
+  border-left: 3px solid #efefef;
+  border-right: 3px solid #efefef;
+}
+
+.innerbox.body.hr {
+  padding: 30px 30px 30px 30px;
+}
+
+.innerbox.body.ethics {
+  border-top: none;
+}
+
+.location {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -5.5px;
+  font-size: 0;
+}
+
+.location-text a,
+.location-text.last {
+  font-size: 11px;
+  font-family: '돋움', Dotum;
+  text-decoration: none;
+  letter-spacing: -0.4px;
+}
+
+.location-text a {
+  color: #c8c8c8;
+}
+
+.location-text {
+  display: inline-block;
+}
+
+.location-text + .location-text {
+  margin-left: 15px;
+}
+
+.location-text.last {
+  color: #f7941e;
+}
+
+.location-text:not(.location-text.last)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -4.5px;
+  margin-left: 5px;
+  width: 5px;
+  height: 9px;
+  background: url('./images/location-arrow.png');
+}
+
+.h1-wrapper {
+  position: relative;
+  padding: 4px 0;
+  background: url('./images/heading-underline.png') bottom no-repeat;
+}
+
+/* 
+채용안내
+#### ##    ## ########  ######## ##     ##       ##   
+ ##  ###   ## ##     ## ##        ##   ##      ####   
+ ##  ####  ## ##     ## ##         ## ##         ##   
+ ##  ## ## ## ##     ## ######      ###          ##   
+ ##  ##  #### ##     ## ##         ## ##         ##   
+ ##  ##   ### ##     ## ##        ##   ##        ##   
+#### ##    ## ########  ######## ##     ##     ###### 
+채용안내
+*/
+
+strong.employment {
+  display: inline-block;
+  margin-top: 30px;
+}
+
+strong > img {
+  max-width: 100%;
+}
+
+div.innerbox.head.employment {
+  margin-top: 30px;
+}
+
+div.innerbox.body.employment {
+  padding-top: 35px;
+  padding-bottom: 33px;
+  font-size: 0;
+}
+
+div.introduction.employment {
+  display: inline-block;
+  min-height: 185px;
+  max-width: 276px;
+  padding-left: 48px;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+p.introduction.employment {
+  padding-top: 133px;
+  line-height: 20px;
+  color: #9b9b9b;
+  font-size: 15px;
+  background: url('./images/채용안내/haitai-logo.png') no-repeat;
+  letter-spacing: -2;
+}
+
+div.position.employment {
+  display: inline-block;
+  margin-left: 38px;
+  padding-left: 26px;
+  max-width: 280px;
+  background: url('./images/채용안내/vertical_line.png') repeat-y;
+}
+
+dt.employment {
+  color: #f7941e;
+  font-size: 15px;
+}
+
+dl.second.employment,
+dl.third.employment {
+  margin-top: 30px;
+}
+
+dd.employment {
+  margin-top: 8px;
+  line-height: 15px;
+  color: #9b9b9b;
+  font-size: 13px;
+  letter-spacing: -1.56px;
+}
+
+div.button-container.employment {
+  margin-top: 9px;
+}
+
+button.head.employment {
+  display: inline-block;
+  padding: 0 0 0 4px;
+  height: 22px;
+  border: none;
+  background: url('./images/채용안내/button_head.png') no-repeat;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+span.button.tail.employment {
+  display: inline-block;
+  padding-right: 4px;
+  height: 22px;
+  background: url('./images/채용안내/button_tail.png') right no-repeat;
+  vertical-align: top;
+}
+
+span.button.body.employment {
+  display: inline-block;
+  position: relative;
+  min-width: 67px;
+  height: 22px;
+  color: white;
+  background: url('./images/채용안내/button_body.png') repeat-x;
+}
+
+span.button.text.employment {
+  display: inline-block;
+  line-height: 10px;
+  font-size: 10px;
+}
+
+div.footer.employment {
+  padding-left: 29px;
+  margin-top: 35px;
+}
+
+div.process.employment {
+  margin-top: 12px;
+  padding-left: 28px;
+  padding-right: 25px;
+}
+
+h2.process.employment {
+  color: #f7941e;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: -3px;
+}
+
+div.list-container.employment {
+  margin-top: 12px;
+  padding: 14px 0 0 0;
+  background: url('./images/dotted-horizontal-line.png') repeat-x;
+}
+
+ul.process.employment {
+  font-size: 0;
+}
+
+li.process.employment {
+  display: inline-block;
+  position: relative;
+  padding: 0 2.5px;
+  width: 103px;
+  line-height: 2;
+  color: #9b9b9b;
+  font-size: 0;
+  border: 3px solid #dfdfdf;
+  letter-spacing: -2.2px;
+  text-align: center;
+  vertical-align: top;
+}
+
+li.process.first.employment::after,
+li.process.second.employment::after,
+li.process.third.employment::after,
+li.process.fourth.employment::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  right: -9px;
+  margin-top: -6px;
+  width: 9px;
+  height: 12px;
+  background: url('./images/채용안내/box-arrow.png') no-repeat;
+  vertical-align: top;
+}
+
+li.process.second.employment,
+li.process.third.employment,
+li.process.fourth.employment,
+li.process.fifth.employment {
+  margin-left: 10px;
+}
+
+span.process.number.employment {
+  margin-right: 4px;
+  font-size: 20px;
+  letter-spacing: -0.8px;
+  font-family: 'ydiy330', sans-serif;
+}
+
+span.process.text.employment {
+  font-size: 16px;
+}
+
+li.footer.employment::before {
+  display: inline-block;
+  content: '';
+  padding: 0px 5px 5px 0px;
+  width: 4px;
+  height: 2px;
+  background: url('./images/채용안내/dash.png') no-repeat;
+}
+
+li.footer.employment {
+  line-height: 18.58px;
+  color: #9b9b9b;
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: -0.8px;
+}
+
+/* 
+윤리규범
+#### ##    ## ########  ######## ##     ##     #######  
+ ##  ###   ## ##     ## ##        ##   ##     ##     ## 
+ ##  ####  ## ##     ## ##         ## ##             ## 
+ ##  ## ## ## ##     ## ######      ###        #######  
+ ##  ##  #### ##     ## ##         ## ##      ##        
+ ##  ##   ### ##     ## ##        ##   ##     ##        
+#### ##    ## ########  ######## ##     ##    ######### 
+윤리규범
+*/
+
+body.ethics {
+  min-height: 2000px;
+}
+
+div.innerbox.head.ethics {
+  min-width: 670px;
+  background: url('./images/윤리규범/orange-horizontal-line.png') repeat-x;
+}
+
+.innerbox.body.ethics {
+  padding: 21px;
+  border-left: 3px solid #ececec;
+  border-right: 3px solid #ececec;
+  border-bottom: 3px solid #ececec;
+  position: relative;
+  z-index: 100;
+}
+
+p.ethics {
+  display: inline-block;
+  margin-top: 34px;
+}
+
+p.ethics > img {
+  max-width: 100%;
+}
+
+div.body_ethics {
+  margin-top: 31px;
+  font-size: 0;
+}
+
+button.first.ethics,
+button.second.ethics {
+  padding: 6px 38px;
+  font-size: 15px;
+  border: none;
+  color: white;
+  background: #c1c1c1;
+  cursor: pointer;
+}
+
+button.active.ethics {
+  background: #ff9500 url('./images/윤리규범/white-bar.png') 0% 50% no-repeat;
+}
+
+button.second.ethics {
+  margin-left: 1px;
+}
+
+span.list.folded.heading.ethics {
+  line-height: 18.58px;
+  color: #9b9b9b;
+  font-size: 15px;
+  letter-spacing: -0.8px;
+}
+/* ----------------------------------------------------- */
+/* list folded general */
+h2.list.folded.ethics {
+  display: block;
+  padding-bottom: 8px;
+  background: url('./images/dotted-horizontal-line.png') 0px 23px repeat-x;
+}
+
+ul.list.folded.ethics {
+  display: block;
+  margin-top: 16px;
+  padding: 15px 0;
+  line-height: 16px;
+  font-size: 0;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+li.list.folded.ethics,
+a.list.folded.ethics {
+  display: inline-block;
+  height: 14px;
+}
+
+/* list folded first section */
+ul.list.folded.first.ethics {
+  height: 14px;
+}
+
+li.list.folded.first-section.second.ethics,
+li.list.folded.first-section.third.ethics,
+li.list.folded.first-section.fourth.ethics {
+  margin-left: 36px;
+}
+
+/* ---------------------------------------- */
+/* list folded second section */
+section.list.folded.second.ethics {
+  margin-top: 22px;
+}
+
+ul.list.folded.second.ethics {
+  height: 36px;
+}
+
+li.list.folded.second-section.second.ethics,
+li.list.folded.second-section.third.ethics,
+li.list.folded.second-section.fifth.ethics,
+li.list.folded.second-section.sixth.ethics {
+  margin-left: 65px;
+}
+
+a.list.folded.second-section.ethics {
+  width: 149px;
+}
+
+/* ------------------------------------------------------ */
+/* list unfolded */
+div.list.unfolded.ethics {
+  font-family: 'ydiywebdotum';
+  font-size: 11px;
+  line-height: 16px;
+  color: #949494;
+}
+
+div.list.unfolded.ethics {
+  margin-top: 22px;
+}
+
+h2#first-section {
+  font-weight: bolder;
+}
+
+h2#first-section_list-one,
+h2#first-section_list-two,
+h2#second-section_list-one,
+h2#second-section_list-two,
+h2#second-section_list-one_subheading {
+  margin-top: 22px;
+  font-weight: bolder;
+}
+
+section.list.unfolded.second.ethics {
+  margin-top: 22px;
+}
+
+h2#second-section_list-one,
+h2#second-section_list-two {
+  color: orange;
+}
+
+.indent.first.ethics,
+.indent.second.ethics {
+  padding-left: 9px;
+}
+
+/* 
+인사관리
+#### ##    ## ########  ######## ##     ##     #######  
+ ##  ###   ## ##     ## ##        ##   ##     ##     ## 
+ ##  ####  ## ##     ## ##         ## ##             ## 
+ ##  ## ## ## ##     ## ######      ###        #######  
+ ##  ##  #### ##     ## ##         ## ##             ## 
+ ##  ##   ### ##     ## ##        ##   ##     ##     ## 
+#### ##    ## ########  ######## ##     ##     #######  
+인사관리
+*/
+
+div.body_hr {
+  margin-top: 28px;
+}
+
+p.head.hr {
+  margin-top: 28px;
+}
+
+p.head.hr > img {
+  max-width: 100%;
+}
+
+section.hr {
+  font-size: 0;
+  position: relative;
+  min-height: 65px;
+}
+
+section.hr::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  background: url('./images/인사관리/dotted-horizontal-line.png');
+  width: 100%;
+  height: 1px;
+}
+
+section.hr:not(:first-of-type) {
+  margin-top: 60px;
+}
+
+h2.thumbnail.hr {
+  position: absolute;
+  height: 65px;
+  width: 65px;
+}
+
+h2.thumbnail.first.hr {
+  background: url('./images/인사관리/thumbnail_first.png') no-repeat;
+}
+h2.thumbnail.second.hr {
+  background: url('./images/인사관리/thumbnail_second.png') no-repeat;
+}
+h2.thumbnail.third.hr {
+  background: url('./images/인사관리/thumbnail_third.png') no-repeat;
+}
+h2.thumbnail.fourth.hr {
+  background: url('./images/인사관리/thumbnail_fourth.png') no-repeat;
+}
+
+.description-container.hr {
+  position: relative;
+  font-size: 11px;
+  font-family: 'dotum', sans-serif;
+  color: #9b9b9b;
+  letter-spacing: -0.4px;
+  margin-left: 87px;
+  line-height: 13px;
+}
+
+div.description-container.first.hr {
+  padding-top: 14px;
+}
+
+div.description-container.second.hr {
+  padding-top: 20px;
+}
+
+ul.description.fourth.hr {
+  margin-top: 24px;
+}
+
+h2.description.hr,
+p.description.hr {
+  display: inline-block;
+}
+
+h2.description.hr {
+  vertical-align: top;
+}
+
+.description li {
+  position: relative;
+  padding-left: 13px;
+}
+
+.description li::before,
+.description li::before,
+.description li::before,
+.description li::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  background: url('./images/인사관리/arrow-icon.png');
+  width: 7px;
+  height: 9px;
+}
+
+/* 
+회원가입
+#### ##    ## ########  ######## ##     ##    ##        
+ ##  ###   ## ##     ## ##        ##   ##     ##    ##  
+ ##  ####  ## ##     ## ##         ## ##      ##    ##  
+ ##  ## ## ## ##     ## ######      ###       ##    ##  
+ ##  ##  #### ##     ## ##         ## ##      ######### 
+ ##  ##   ### ##     ## ##        ##   ##           ##  
+#### ##    ## ########  ######## ##     ##          ##  
+회원가입
+*/
+
+div.h1-wrapper.signup {
+  padding: 10px 0;
+}
+
+p.head.bottom.signup {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+p.head.top.signup {
+  position: absolute;
+  top: 50%;
+  margin-top: -7.5px;
+  left: 117px;
+}
+
+p.head.bottom.signup > img,
+img.signup {
+  max-width: 100%;
+}
+
+div.body_signup {
+  margin-top: 36px;
+}
+
+form.signup {
+  margin-top: 43px;
+}
+
+h2.fieldset.title.signup {
+  color: #f7941e;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: -0.8px;
+}
+
+div.fieldset.content.signup {
+  padding-top: 20px;
+  margin-top: 8px;
+  background: url('./images/dotted-horizontal-line.png') repeat-x;
+  line-height: 13px;
+}
+
+div.fieldset.content.signup,
+span.label.signup {
+  max-height: 188px;
+  color: #949494;
+  font-size: 11px;
+  font-family: 'YDIWebDotum';
+  overflow-y: scroll;
+  letter-spacing: 0.8px;
+}
+
+.fieldset-wrapper {
+  padding: 30px 20px 12px 19px;
+}
+
+fieldset.button-container.signup {
+  margin-top: 29px;
+  font-size: 0;
+  text-align: center;
+}
+
+button.button.one.head.signup {
+  display: inline-block;
+  padding: 0 0 0 3px;
+  height: 36px;
+  background: url('./images/회원가입/orange-button_head.png') no-repeat;
+  border: none;
+  cursor: pointer;
+}
+span.button.one.tail.signup {
+  display: inline-block;
+  padding-right: 4px;
+  height: 36px;
+  background: url('./images/회원가입/orange-button_tail.png') right no-repeat;
+  vertical-align: top;
+}
+
+span.button.body.signup {
+  padding: 0px 4px;
+}
+
+span.button.one.body.signup {
+  display: inline-block;
+  position: relative;
+  min-width: 72px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 0px;
+  background: url('./images/회원가입/orange-button_body.png') repeat-x;
+  vertical-align: top;
+}
+
+span.button.one.icon.signup {
+  display: inline-block;
+  width: 15px;
+  height: 14px;
+  background: url('./images/회원가입/orange-button_icon.png') no-repeat;
+}
+
+span.button.one.text.signup {
+  color: white;
+  margin-left: 6px;
+  font-size: 15px;
+  letter-spacing: -2px;
+}
+
+button.button.two.head.signup {
+  display: inline-block;
+  margin-left: 13px;
+  padding: 0 0 0 3px;
+  height: 36px;
+  background: url('./images/회원가입/white-button_head.png') no-repeat;
+  border: none;
+  cursor: pointer;
+}
+span.button.two.tail.signup {
+  display: inline-block;
+  padding-right: 4px;
+  height: 36px;
+  background: url('./images/회원가입/white-button_tail.png') right no-repeat;
+  vertical-align: top;
+}
+span.button.two.body.signup {
+  display: inline-block;
+  position: relative;
+  min-width: 72px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 0px;
+  background: url('./images/회원가입/white-button_body.png') repeat-x;
+  vertical-align: top;
+}
+
+span.button.two.text.signup {
+  color: #a0a0a0;
+  font-size: 15px;
+  letter-spacing: -2px;
+}
+
+fieldset.first.signup,
+fieldset.second.signup,
+fieldset.third.signup {
+  border-top: 3px solid #ececec;
+  border-left: 3px solid #ececec;
+  border-right: 3px solid #ececec;
+}
+
+fieldset.second.signup,
+fieldset.third.signup {
+  margin-top: 23px;
+}
+
+div.label-container.signup {
+  min-height: 19px;
+  background: url('./images/채용안내/inner_box_headtail.png') repeat-y;
+  text-align: right;
+}
+
+div.label-container.signup label {
+  position: relative;
+}
+
+input.signup {
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  margin-top: -4.75px;
+}
+
+span.label.signup {
+  position: relative;
+  padding-right: 12px;
+}
+
+.margin.top.signup {
+  margin-top: 26px;
+}
+/* 
+인재상
+#### ##    ## ########  ######## ##     ##    ######## 
+ ##  ###   ## ##     ## ##        ##   ##     ##       
+ ##  ####  ## ##     ## ##         ## ##      ##       
+ ##  ## ## ## ##     ## ######      ###       #######  
+ ##  ##  #### ##     ## ##         ## ##            ## 
+ ##  ##   ### ##     ## ##        ##   ##     ##    ## 
+#### ##    ## ########  ######## ##     ##     ######  
+인재상
+*/
+
+strong.talent {
+  display: inline-block;
+  margin-top: 31px;
+}
+
+strong.talent > img {
+  max-width: 100%;
+}
+
+div.diagram-container.talent {
+  position: relative;
+  min-height: 455px;
+  background: url('./images/인재상/main-board.png') no-repeat;
+}
+
+.wrapper.talent .body {
+  margin-top: 34px;
+}
+
+dl.talent {
+  position: absolute;
+  text-align: center;
+}
+
+dl.first.talent {
+  left: 45px;
+  top: 31px;
+}
+
+dl.second.talent {
+  left: 493px;
+  top: 33px;
+}
+
+dl.third.talent {
+  left: 22px;
+  top: 281px;
+}
+
+dl.fourth.talent {
+  left: 483px;
+  top: 281px;
+}
+
+dt.talent {
+  line-height: 20px;
+  color: #ff8c25;
+  font-size: 17.5px;
+  font-weight: bold;
+  font-family: 'ydiy340';
+  letter-spacing: -2px;
+}
+
+dd.talent {
+  margin-top: 27px;
+  line-height: 15px;
+  color: #636363;
+  font-size: 12.93px;
+  font-family: 'YDIYGO330';
+  letter-spacing: -1.6px;
+}
+
+div.button-container.talent {
+  margin-top: 20px;
+  font-size: 0;
+
+  text-align: center;
+}
+
+button.button-one_head.talent {
+  display: inline-block;
+  padding: 0 0 0 3px;
+  height: 36px;
+  background: url('./images/인재상/orange-button-head.png') no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+span.button-one_tail.talent {
+  display: inline-block;
+  padding-right: 4px;
+  height: 36px;
+  background: url('./images/인재상/orange-button-tail.png') right no-repeat;
+  vertical-align: top;
+}
+
+span.button-one_body.talent {
+  display: inline-block;
+  position: relative;
+  min-width: 113px;
+  height: 36px;
+  line-height: 36px;
+  background: url('./images/인재상/orange-button-body.png') repeat-x;
+  vertical-align: top;
+}
+
+span.button-one_body.talent,
+span.button-two_body.talent {
+  display: inline-block;
+  padding: 0px 4px;
+  height: 36px;
+  font-size: 0;
+}
+
+span.button-one_icon.talent {
+  display: inline-block;
+  width: 15px;
+  height: 14px;
+  background: url('./images/인재상/orange-button-icon.png') no-repeat;
+}
+
+span.button-one_text.talent {
+  margin-left: 9px;
+  color: white;
+  font-size: 15px;
+}
+
+button.button-two_head.talent {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 0 0 3px;
+  height: 36px;
+  background: url('./images/인재상/white-button-head.png') no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+span.button-two_tail.talent {
+  display: inline-block;
+  padding-right: 4px;
+  height: 36px;
+  background: url('./images/인재상/white-button-tail.png') right no-repeat;
+  vertical-align: top;
+}
+
+span.button-two_body.talent {
+  display: inline-block;
+  position: relative;
+  min-width: 150px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 15px;
+  background: url('./images/인재상/white-button-body.png') repeat-x;
+  vertical-align: top;
+}
+
+span.button-two_icon.talent {
+  display: inline-block;
+  width: 15px;
+  height: 14px;
+  background: url('./images/인재상/white-button-icon.png') no-repeat;
+}
+
+span.button-two_text.talent {
+  margin-left: 4px;
+  color: #ff9600;
+  font-size: 15px;
+}

@@ -1,0 +1,964 @@
+/*
+########  ########  ######  ######## ########  ######   ######   ######  
+##     ## ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ##       ##       ##          ##    ##       ##       ##       
+########  ######    ######  ######      ##    ##        ######   ######  
+##   ##   ##             ## ##          ##    ##             ##       ## 
+##    ##  ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ########  ######  ########    ##     ######   ######   ######  
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@media only screen {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+}
+/*  
+http://www.network-science.de/ascii/
+font: banner3
+ ######   ######## ##    ## ######## ########     ###    ##       
+##    ##  ##       ###   ## ##       ##     ##   ## ##   ##       
+##        ##       ####  ## ##       ##     ##  ##   ##  ##       
+##   #### ######   ## ## ## ######   ########  ##     ## ##       
+##    ##  ##       ##  #### ##       ##   ##   ######### ##       
+##    ##  ##       ##   ### ##       ##    ##  ##     ## ##       
+ ######   ######## ##    ## ######## ##     ## ##     ## ######## 
+*/
+
+body {
+  min-width: 900px;
+  background: url('./images/background_body.png') repeat-x;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: white;
+  cursor: pointer;
+}
+
+label[for='file-upload-button'] {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+textarea {
+  width: 100%;
+  border: 0 none;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+textarea:focus {
+  outline: 0 none;
+}
+
+.textarea-wrapper {
+  position: relative;
+  padding-bottom: 12px;
+  border: 1px solid black;
+  background: white;
+}
+
+textarea + .length {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+}
+
+input {
+  vertical-align: middle;
+}
+
+input[type='file'] {
+  position: absolute;
+  top: -200%;
+  left: -200%;
+  opacity: 0;
+  z-index: -100;
+}
+
+caption {
+  display: none;
+}
+
+.left-aligned-text {
+  padding-left: 15px;
+  text-align: left;
+}
+
+.left-aligned-box {
+  position: relative;
+  font-size: 0;
+  text-align: left;
+}
+
+td.textarea {
+  padding: 0;
+}
+
+.left-aligned-box-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.search-file-button-container {
+  display: inline-block;
+  margin-left: 3px;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.blue-text {
+  color: #36699b;
+}
+
+/* 
+    #     # #######    #    ######  ####### ######  
+    #     # #         # #   #     # #       #     # 
+    #     # #        #   #  #     # #       #     # 
+    ####### #####   #     # #     # #####   ######  
+### #     # #       ####### #     # #       #   #   
+### #     # #       #     # #     # #       #    #  
+### #     # ####### #     # ######  ####### #     # 
+*/
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 45%; /*38.2*/
+  width: 80px;
+  height: 49px;
+  background: url('./images/header_background_body.png');
+}
+
+.header {
+  height: 49px;
+  position: relative;
+  background: url('./images/header_background_head.png') repeat-x;
+}
+
+.header > a {
+  display: inline-block;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 49px;
+  background: url('./images/header_background_tail.png') repeat-x;
+}
+
+.header-left {
+  display: inline-block;
+  padding-top: 15px;
+  padding-left: 14px;
+  font-size: 0;
+}
+
+.header-left img:nth-of-type(2) {
+  margin-left: 12px;
+}
+
+.header-title {
+  vertical-align: middle;
+}
+
+/* ----------------------------------------------------------- */
+
+.header-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 11px;
+  padding-right: 9px;
+  font-size: 0;
+  text-align: right;
+  z-index: 99;
+}
+
+/* ----------------------------------------------------------- */
+
+.login-info,
+.header-nav,
+.logout-button-container {
+  font-size: 0;
+  vertical-align: top;
+}
+
+.login-info,
+.header-nav {
+  display: inline-block;
+}
+
+.login-info {
+  padding-top: 6px;
+}
+
+.login-info > strong::before {
+  content: '';
+  display: inline-block;
+  padding-left: 6px;
+  background: url('./images/header_signin_yellow-bit.png') no-repeat;
+  width: 3px;
+  height: 3px;
+  vertical-align: 3px;
+}
+
+.login-info strong {
+  font-weight: bolder;
+}
+
+.login-info strong,
+.login-info span {
+  color: white;
+  font-family: 'dotum';
+  font-size: 12px;
+}
+
+/* ----------------------------------------------------------- */
+
+.header-nav {
+  margin-left: 26px;
+  padding-top: 6.5px;
+}
+
+.header-nav a {
+  display: inline-block;
+}
+
+.header-nav > span {
+  display: inline-block;
+  position: relative;
+}
+
+.header-nav > span:first-of-type {
+  padding-right: 9px;
+}
+
+.header-nav > span + span {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.header-nav > span + span::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -2.75px;
+  left: 0px;
+  width: 1px;
+  height: 7px;
+  background: url('./images/header_nav_vertical-bar.png') no-repeat;
+}
+
+/* ----------------------------------------------------------- */
+
+.logout-button-container {
+  display: inline-block;
+  margin-left: 13px;
+}
+
+.logout-button_head {
+  display: inline-block;
+  position: relative;
+  padding-left: 4px;
+  height: 26px;
+  background: url('./images/logout-button_head.png') left no-repeat;
+  vertical-align: top;
+}
+
+.logout-button_tail {
+  display: inline-block;
+  padding-right: 6px;
+  height: 26px;
+  background: url('./images/logout-button_tail.png') right no-repeat;
+  vertical-align: top;
+}
+
+.logout-button_body {
+  display: inline-block;
+  padding: 0 7px;
+  height: 26px;
+  line-height: 27px;
+  color: #ffffff;
+  background: url('./images/logout-button_body.png') center repeat-x;
+  vertical-align: top;
+}
+
+/* 
+    ##     ##    ###    #### ##    ## 
+    ###   ###   ## ##    ##  ###   ## 
+    #### ####  ##   ##   ##  ####  ## 
+    ## ### ## ##     ##  ##  ## ## ## 
+    ##     ## #########  ##  ##  #### 
+### ##     ## ##     ##  ##  ##   ### 
+### ##     ## ##     ## #### ##    ##
+*/
+
+.main {
+  padding: 15px 13px 55px 13px;
+}
+
+.main-wrapper {
+  position: relative;
+  padding-left: 226px;
+}
+
+/*
+    ##    ##    ###    ##     ## ####  ######      ###    ######## ####  #######  ##    ## 
+    ###   ##   ## ##   ##     ##  ##  ##    ##    ## ##      ##     ##  ##     ## ###   ## 
+    ####  ##  ##   ##  ##     ##  ##  ##         ##   ##     ##     ##  ##     ## ####  ## 
+    ## ## ## ##     ## ##     ##  ##  ##   #### ##     ##    ##     ##  ##     ## ## ## ## 
+    ##  #### #########  ##   ##   ##  ##    ##  #########    ##     ##  ##     ## ##  #### 
+### ##   ### ##     ##   ## ##    ##  ##    ##  ##     ##    ##     ##  ##     ## ##   ### 
+### ##    ## ##     ##    ###    ####  ######   ##     ##    ##    ####  #######  ##    ## 
+*/
+
+.non-current-tab::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 37px;
+  margin-top: -7px;
+  width: 4px;
+  height: 10px;
+  background: url('./images/nav_blue-bit.png') no-repeat;
+}
+
+.non-current-tab {
+  position: relative;
+}
+
+.current-tab::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 37px;
+  margin-top: -7px;
+  width: 4px;
+  height: 10px;
+  background: url('./images/nav_yellow-bit.png') no-repeat;
+}
+
+.current-tab {
+  position: relative;
+  background: url('./images/nav_current-tab_body.png') repeat-x;
+}
+
+/* ----------------------------------------------------------- */
+
+.navigation::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  bottom: 0;
+  right: 1px;
+  width: 207px;
+  height: 40px;
+  background: url('./images/nav_lid.png') no-repeat;
+}
+
+.navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 211px;
+  min-height: 100%;
+  border: 1px solid #f8f8f7;
+  outline: 1px solid #d7d7cc;
+  background: url('./images/nav_body.png') top repeat;
+  z-index: 1;
+}
+
+.navigation .navigation_blue-bold {
+  color: #366899;
+  font-weight: bolder;
+}
+
+.navigation ul {
+  padding-top: 16px;
+}
+
+.navigation a {
+  display: block;
+  color: black;
+}
+
+/* main navigations */
+.navigation > ul > li > div {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 9px;
+  padding-right: 9px;
+  background: url('./images/nav_solid-line.png') bottom repeat-x;
+}
+
+.navigation > ul > li h2 {
+  padding: 7px 0px;
+}
+
+.navigation > ul > li h2 a {
+  display: inline-block;
+  padding-left: 55px;
+}
+
+/* main navigations - end*/
+/* ----------------------------------------------------------- */
+
+/* sub navigations */
+.navigation > ul > li:nth-of-type(2) > ul {
+  margin-top: 6px;
+  padding: 0 9px;
+}
+
+.navigation > ul > li:nth-of-type(2) > ul li {
+  color: #414141;
+  padding: 6px 0 6px 55px;
+  font-family: 'dotum';
+  font-size: 12px;
+  background: url('./images/nav_dotted-line.png') bottom no-repeat;
+}
+
+.navigation > ul > li:nth-of-type(2) > ul li a {
+  display: inline-block;
+}
+/* sub navigations - end*/
+
+/*                                    
+    ##     ##    ###    #### ##    ##          ######  ########  ######  ######## ####  #######  ##    ## 
+    ###   ###   ## ##    ##  ###   ##         ##    ## ##       ##    ##    ##     ##  ##     ## ###   ## 
+    #### ####  ##   ##   ##  ####  ##         ##       ##       ##          ##     ##  ##     ## ####  ## 
+    ## ### ## ##     ##  ##  ## ## ## #######  ######  ######   ##          ##     ##  ##     ## ## ## ## 
+    ##     ## #########  ##  ##  ####               ## ##       ##          ##     ##  ##     ## ##  #### 
+### ##     ## ##     ##  ##  ##   ###         ##    ## ##       ##    ##    ##     ##  ##     ## ##   ### 
+### ##     ## ##     ## #### ##    ##          ######  ########  ######     ##    ####  #######  ##    ## 
+*/
+
+.blue-bar_head {
+  background: url('./images/main-page_background_header_head.png') 14px 0
+    no-repeat;
+  height: 36px;
+  padding-left: 15px;
+  padding-right: 1px;
+}
+
+.blue-bar_bodytail {
+  padding-left: 29px;
+  height: 36px;
+  background: url('./images/main-page_background_header_bodytail.png') repeat-x;
+}
+
+.blue-bar_bodytail h2 {
+  padding-top: 8.5px;
+}
+
+/* ----------------------------------------------------------- */
+
+.background {
+  padding: 14px 8px 17px 8px;
+  border: 1px solid #fafafa;
+  outline: 1px solid #d7d7cb;
+}
+
+/* ----------------------------------------------------------- */
+
+.main-section {
+  position: relative;
+}
+
+.main-section .background {
+  background: #ededed;
+}
+
+/* ----------------------------------------------------------- */
+
+.main-page_tab_head::before {
+  content: '';
+  position: absolute;
+  top: 30.6px;
+  right: 1px;
+  bottom: 0;
+  left: 0.7px;
+  height: 2px;
+  background: url('./images/main-page_tab/main-page_tab_white-horizontal-line.png')
+    repeat-x;
+  vertical-align: top;
+}
+
+.main-page_tab_head {
+  display: inline-block;
+  position: relative;
+  padding-left: 5px;
+  height: 31px;
+  background: url('./images/main-page_tab/main-page_tab_head.png') left
+    no-repeat;
+  vertical-align: top;
+}
+
+.main-page_tab_head::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 26px;
+  width: 6px;
+  height: 6px;
+  background: url('./images/main-page_tab/main-page_tab_white-bit.png');
+}
+
+.main-page_tab_tail {
+  display: inline-block;
+  padding-right: 33px;
+  height: 31px;
+  background: url('./images/main-page_tab/main-page_tab_tail.png') right
+    no-repeat;
+  vertical-align: top;
+}
+
+.main-page_tab_body {
+  display: inline-block;
+  padding-right: 9px;
+  padding-left: 30px;
+  height: 31px;
+  color: #fa6c03;
+  font-size: 16px;
+  background: url('./images/main-page_tab/main-page_tab_body.png') center
+    repeat-x;
+  letter-spacing: -0.8px;
+  vertical-align: top;
+}
+
+.main-page_tab_body h2 {
+  padding-top: 12px;
+}
+
+.main-page {
+  padding: 37px 25px 57px 11px;
+  min-height: 800px;
+  border: 1px solid #cdcdcd;
+  background: white;
+}
+
+.vertical-align_middle {
+  vertical-align: middle;
+}
+
+/* 
+########    ###    ########  ##       ######## 
+   ##      ## ##   ##     ## ##       ##       
+   ##     ##   ##  ##     ## ##       ##       
+   ##    ##     ## ########  ##       ######   
+   ##    ######### ##     ## ##       ##       
+   ##    ##     ## ##     ## ##       ##       
+   ##    ##     ## ########  ######## ######## 
+
+*/
+
+tr,
+th,
+td {
+  border: 1px solid #cccccc;
+}
+
+th,
+td {
+  padding: 6px 6px;
+  text-align: center;
+}
+
+th {
+  font-size: 12px;
+  font-weight: bolder;
+  font-family: 'dotum';
+}
+
+td {
+  color: #414141;
+  font-family: 'dotum';
+  font-size: 12px;
+  background: #f3f3f3;
+  vertical-align: middle;
+}
+
+/* 
+    ########    ###    ########  ##       ######## 
+       ##      ## ##   ##     ## ##       ##       
+       ##     ##   ##  ##     ## ##       ##       
+       ##    ##     ## ########  ##       ######   
+       ##    ######### ##     ## ##       ##       
+###    ##    ##     ## ##     ## ##       ##       
+###    ##    ##     ## ########  ######## ######## 
+*/
+
+/* bundle */
+.tabbed-table-container,
+.untabbed-table-container {
+  position: relative;
+  margin-top: 17px;
+}
+
+.tabbed-table-container.first,
+.untabbed-table-container.first {
+  margin-top: 0;
+}
+
+/* 
+    ########    ###    ########  ########  ######## ########          ########    ###    ########  ##       ######## 
+       ##      ## ##   ##     ## ##     ## ##       ##     ##            ##      ## ##   ##     ## ##       ##       
+       ##     ##   ##  ##     ## ##     ## ##       ##     ##            ##     ##   ##  ##     ## ##       ##       
+       ##    ##     ## ########  ########  ######   ##     ## #######    ##    ##     ## ########  ##       ######   
+       ##    ######### ##     ## ##     ## ##       ##     ##            ##    ######### ##     ## ##       ##       
+###    ##    ##     ## ##     ## ##     ## ##       ##     ##            ##    ##     ## ##     ## ##       ##       
+###    ##    ##     ## ########  ########  ######## ########             ##    ##     ## #####
+*/
+.tabbed-table {
+  width: 100%;
+  border-top: 2px solid #36699b;
+}
+
+.tabbed-table th {
+  color: #65839d;
+  font-weight: bolder;
+  background: #e7e9ed;
+}
+
+.tabbed-table th.small {
+  color: #414141;
+  font-size: 12px;
+  font-family: 'dotum';
+  font-weight: normal;
+  background: #e7e9ed;
+}
+
+.tabbed-table_tab_head {
+  display: inline-block;
+  position: relative;
+  background: url('./images/tabbed-table_tab_head.png') left no-repeat;
+  padding-left: 5px;
+  height: 21px;
+  vertical-align: top;
+}
+
+.tabbed-table_tab_tail {
+  display: inline-block;
+  background: url('./images/tabbed-table_tab_tail.png') right no-repeat;
+  padding-right: 5px;
+  height: 21px;
+  vertical-align: top;
+}
+
+.tabbed-table_tab_body::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 12px;
+  margin-top: -5.25px;
+  background: url('./images/tabbed-table_yellow-bit.png') no-repeat;
+  line-height: 21px;
+  width: 3px;
+  height: 11px;
+}
+
+.tabbed-table_tab_body {
+  display: inline-block;
+  padding-left: 18px;
+  min-width: 108px;
+  background: url('./images/tabbed-table_tab_body.png') center repeat-x;
+  height: 21px;
+  line-height: 21px;
+  color: white;
+  font-size: 12px;
+  font-family: 'dotum';
+  vertical-align: top;
+}
+
+.blue-bold {
+  color: #396c9e;
+  font-weight: bolder;
+}
+
+/* 
+    ##     ## ##    ## ########    ###    ########  ########  ######## ########          ########    ###    ########  ##       ######## 
+    ##     ## ###   ##    ##      ## ##   ##     ## ##     ## ##       ##     ##            ##      ## ##   ##     ## ##       ##       
+    ##     ## ####  ##    ##     ##   ##  ##     ## ##     ## ##       ##     ##            ##     ##   ##  ##     ## ##       ##       
+    ##     ## ## ## ##    ##    ##     ## ########  ########  ######   ##     ## #######    ##    ##     ## ########  ##       ######   
+    ##     ## ##  ####    ##    ######### ##     ## ##     ## ##       ##     ##            ##    ######### ##     ## ##       ##       
+### ##     ## ##   ###    ##    ##     ## ##     ## ##     ## ##       ##     ##            ##    ##     ## ##     ## ##       ##       
+###  #######  ##    ##    ##    ##     ## ########  ########  ######## ########             ##    ##     ## ########  ######## ######## 
+
+*/
+
+.untabbed-table {
+  width: 100%;
+}
+
+.untabbed-table thead {
+  color: #fefefe;
+  background: #36699b;
+}
+
+/* 
+########  ##     ## ######## ########  #######  ##    ##  ######  
+##     ## ##     ##    ##       ##    ##     ## ###   ## ##    ## 
+##     ## ##     ##    ##       ##    ##     ## ####  ## ##       
+########  ##     ##    ##       ##    ##     ## ## ## ##  ######  
+##     ## ##     ##    ##       ##    ##     ## ##  ####       ## 
+##     ## ##     ##    ##       ##    ##     ## ##   ### ##    ## 
+########   #######     ##       ##     #######  ##    ##  ######  
+*/
+
+.button-container {
+  font-size: 0;
+}
+
+/* 
+#####  #      #    # ######       #####  #    # ##### #####  ####  #    # 
+#    # #      #    # #            #    # #    #   #     #   #    # ##   # 
+#####  #      #    # #####  ##### #####  #    #   #     #   #    # # #  # 
+#    # #      #    # #            #    # #    #   #     #   #    # #  # # 
+#    # #      #    # #            #    # #    #   #     #   #    # #   ## 
+#####  ######  ####  ######       #####   ####    #     #    ####  #    # 
+*/
+
+.blue-button_head {
+  display: inline-block;
+  position: relative;
+  padding-left: 4px;
+  min-height: 23px;
+  background: url('./images/blue-button_head.png') left no-repeat;
+  vertical-align: top;
+}
+
+.blue-button_tail {
+  display: inline-block;
+  padding-right: 5px;
+  min-height: 23px;
+  background: url('./images/blue-button_tail.png') right no-repeat;
+  vertical-align: top;
+}
+
+.blue-button_body {
+  display: inline-block;
+  padding: 0px 5px;
+  line-height: 21px; /*?*/
+  color: #ffffff;
+  font-size: 12px;
+  background: url('./images/blue-button_body.png') center repeat-x;
+  min-height: 23px;
+  vertical-align: top;
+}
+
+.blue-button_body::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 48px;
+  height: 23px;
+  background: url('./images/blue-button_white-shadow.png') no-repeat;
+}
+
+.blue-button_body::after {
+  content: '';
+  display: inline-block;
+  margin-left: 2px;
+  padding-bottom: 2px;
+  width: 3px;
+  height: 5px;
+  background: url('./images/blue-button_arrow.png') no-repeat;
+}
+
+.blue-button-container_table {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  font-size: 0;
+}
+
+.blue-button-container_table > button + button {
+  margin-left: 4px;
+}
+
+.blue-button-container_end-of-page {
+  text-align: center;
+}
+
+/* 
+#    # #    # # ##### ######       #####  #    # ##### #####  ####  #    # 
+#    # #    # #   #   #            #    # #    #   #     #   #    # ##   # 
+#    # ###### #   #   #####  ##### #####  #    #   #     #   #    # # #  # 
+# ## # #    # #   #   #            #    # #    #   #     #   #    # #  # # 
+##  ## #    # #   #   #            #    # #    #   #     #   #    # #   ## 
+#    # #    # #   #   ######       #####   ####    #     #    ####  #    # 
+*/
+
+.white-button_head {
+  display: inline-block;
+  padding-left: 2px;
+  margin: 0px 1px;
+  min-height: 16px;
+  background: url('./images/white-button_head.png') left no-repeat;
+  vertical-align: middle;
+}
+
+.white-button_tail {
+  display: inline-block;
+  padding-right: 2px;
+  min-height: 16px;
+  background: url('./images/white-button_tail.png') right no-repeat;
+  vertical-align: top;
+}
+
+.white-button_body {
+  display: inline-block;
+  padding: 0px 6px;
+  min-height: 16px;
+  line-height: 16px;
+  color: #3e3e3e;
+  font-size: 11px;
+  font-family: 'dotum';
+  background: url('./images/white-button_body.png') center repeat-x;
+  vertical-align: top;
+}

@@ -1,0 +1,22 @@
+@media screen and (max-width: 592px), (orientation: portrait) {
+  .container {
+    display: block;
+  }
+
+  .videoContainer {
+    width: 100vw;
+  }
+
+  #video {
+    width: 100vw;
+  }
+
+  .canvasContainer {
+    width: 100vw;
+  }
+
+  #canvas {
+    width: 100vw;
+    height: auto;
+  }
+}

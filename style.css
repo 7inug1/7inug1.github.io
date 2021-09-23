@@ -35,15 +35,31 @@ body {
   font-weight: 300;
 }
 
-/* =================
-header
-================= */
+/* 
+#    # ######   ##   #####  ###### #####  
+#    # #       #  #  #    # #      #    # 
+###### #####  #    # #    # #####  #    # 
+#    # #      ###### #    # #      #####  
+#    # #      #    # #    # #      #   #  
+#    # ###### #    # #####  ###### #    # 
+*/
 
 header {
   background: #f8f8f8;
   padding: 2em 0;
   text-align: center;
   margin-bottom: 3em;
+}
+
+.container-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 @media screen and (max-width: 675px) {
@@ -114,14 +130,49 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* =================
-.container .container-nav 
-================= */
+/* 
+#####   ####  #####  ##### ######  ####  #      #  ####         ####   ####  #    # #####   ##   # #    # ###### #####  
+#    # #    # #    #   #   #      #    # #      # #    #       #    # #    # ##   #   #    #  #  # ##   # #      #    # 
+#    # #    # #    #   #   #####  #    # #      # #    # ##### #      #    # # #  #   #   #    # # # #  # #####  #    # 
+#####  #    # #####    #   #      #    # #      # #    #       #      #    # #  # #   #   ###### # #  # # #      #####  
+#      #    # #   #    #   #      #    # #      # #    #       #    # #    # #   ##   #   #    # # #   ## #      #   #  
+#       ####  #    #   #   #       ####  ###### #  ####         ####   ####  #    #   #   #    # # #    # ###### #    # 
+*/
 
-.container {
+.portfolio-container {
   width: 90%;
   margin: 0 auto;
   max-width: 900px;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+/* 모듈적으로 margin 주는 작업 하면 됨 */
+.portfolio-container > .contents .portfolio-container .contents > div > h2 {
+  /* text-align: center; */
+  /* font-size: 1.4rem; */
+}
+
+/* .portfolio {
+  margin-top: 1.875rem;
+} */
+
+.portfolio > dt {
+  font-size: 1.4rem;
+}
+
+.portfolio-details {
+  text-align: left;
+}
+
+.portfolio-image-container a {
+  box-shadow: 0px 1px 5px;
+  border: 1px solid gray;
+}
+
+.portfolio-image-container img {
+  /* background: red; */
+  object-fit: contain;
 }
 
 .container-nav {
@@ -145,28 +196,127 @@ nav a:hover {
 /* =================
 .contents
 ================= */
-.contents {
-  display: flex;
+.table-of-contents {
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
-.portfolio-section-title {
+.title {
   display: block;
   font-size: 2em;
-  margin-top: 0.67em;
-  margin-bottom: 0.67em;
+  /* margin-top: 0.67em;
+  margin-bottom: 0.67em; */
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
   text-align: center;
 }
 
-#child-directory {
+.table-of-contents {
+  /* text-align: center; */
+}
+
+.table-of-contents {
+  width: 60%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+.table-of-contents > .contents,
+.portfolio-container > .contents {
+  position: relative;
+  margin-top: 5rem;
   line-height: 1.5;
+  list-style: none;
+  text-align: center;
+}
+
+.table-of-contents .contents::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.portfolio-container > .contents > div:not(:first-of-type) {
+  margin-top: 1.875rem;
+}
+
+.portfolio-container > .contents > .html-css-portfolio-container ul {
+  margin-top: 1.875rem;
+}
+
+.portfolio-container
+  > .contents
+  > .html-css-portfolio-container
+  ul
+  li:not(:first-of-type)
+  h2 {
+  margin-top: 1.875rem;
+  font-size: 1.2rem;
+}
+
+/* .table-of-contents .contents >li{
+  float: left;
+} */
+
+/* .table-of-contents .contents >li+li{
+  margin-left:10vw;
+} */
+
+.table-of-contents .contents > li {
+  display: block;
+  position: relative;
+  text-align: right;
+  /* margin-top: 2.5rem; */
+}
+
+.table-of-contents > .contents > li:not(:last-of-type):after {
+  content: '';
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  width: 100%;
+}
+
+.portfolio-container > .contents .table-of-contents .contents > li > h2,
+.portfolio-container .contents > div > h2,
+.table-of-contents .contents li ul li h2 {
   font-size: 1.4rem;
-  margin-left: 2rem;
+}
+
+.portfolio-container .contents > div dl {
+  margin-top: 1.875rem;
+}
+
+.portfolio-container .contents > div > dl .portfolio:not(:first-of-type) {
+  margin-top: 1.875rem;
+}
+
+.table-of-contents .contents > li > h2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.table-of-contents .contents li ul {
+  /* padding-left:0.625rem; */
+  /* padding-top: 0.625rem; */
+}
+
+/* .table-of-contents .contents li ul li {
+  font-size: 1.4rem;
+} */
+
+/* .table-of-contents .contents li ul + ul {
+  margin-top: 0.5rem;
+} */
+
+.table-of-contents .contents li ul li h2 {
+  color: #000000;
+  /* font-size: 1.4rem; */
 }
 
 .file-individual {
@@ -205,32 +355,43 @@ nav a:hover {
   }
 }
 
-.portfolio-container {
-  margin-bottom: 3rem;
-}
-
 .portfolio-title {
   font-size: 1.8rem;
   display: inline;
 }
 
-.portfolio-image {
-  max-width: 100%;
-  margin-top: 2rem;
-  display: block;
-  box-shadow: 0px 1px 5px;
-  border: 1px solid gray;
+.portfolio-image-container {
+  /* display: inline-block; */
+  /* display: flex;
+  flex-direction: row; */
+}
+
+.portfolio-image-container a {
+  display: inline-block;
+}
+
+.portfolio-image-container a img {
+  /* display: inline-block; */
+  /* max-width: 100%; */
+  /* margin-top: 2rem; */
+  /* display: block; */
+  /* box-shadow: 0px 1px 5px;
+  border: 1px solid gray; */
+  object-fit: contain;
+}
+
+.portfolio-details {
+  margin-top: 1rem;
 }
 
 .portfolio-summary {
   cursor: pointer;
   background-color: rgba(128, 128, 128, 0.514);
   padding: 0.5rem 0;
-  margin-top: 0.5rem;
+
   padding-left: 0.5rem;
   border: 1px solid black;
   box-shadow: 0px 1px 5px;
-  margin-top: 1rem;
 }
 
 i .fab fa-html5 {
@@ -321,4 +482,103 @@ footer {
   height: 3.5vh;
   position: fixed;
   bottom: 0;
+}
+
+/* reset */
+h2 {
+  margin-bottom: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+@media only screen {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /* font: inherit; */
+    vertical-align: baseline;
+  }
 }

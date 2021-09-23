@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>교보문고 - 반품신청상세</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <h2 class="title">
+          <img src="./images/title.png" alt="반품신청상세" />
+        </h2>
+      </div>
+      <div class="main">
+        <div class="tabs">
+          <button class="order-cancel">주문취소</button>
+          <button class="return current">반품</button>
+          <button class="exchange">교환</button>
+        </div>
+        <!-- 세 탭 (주문취소, 반품, 교환)에 대한 페이지  -->
+        <div class="pages">
+          <!-- 주문취소 탭의 페이지 -->
+          <div class="order-cancel" hidden></div>
+          <!-- 반품 탭의 페이지 -->
+          <div class="return">
+            <ul class="order-history">
+              <li class="order-number">
+                <h2 class="title">주문번호 :</h2>
+                <span class="content">00000000000000</span>
+              </li>
+              <li class="order-date">
+                <h2 class="title">주문일시 :</h2>
+                <span class="content">2010년 6월 24일 (00:00)</span>
+              </li>
+            </ul>
+
+            <!-- 2. module01-->
+            <!-- 1번째 배송지 -->
+            <div class="module01 shipping-destination">
+              <div class="table01">
+                <h2 class="title">1번째 배송지</h2>
+                <table>
+                  <caption hidden>1번째 배송지 표</caption>
+                  <colgroup>
+                    <col style="width: 93px" />
+                    <col style="width: 427px" />
+                    <col style="width: 93px" />
+                    <col style="width: 167px" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>받으시는 분</th>
+                      <td>홍길동</td>
+                      <th>연락처</th>
+                      <td>02-000-0000</td>
+                    </tr>
+                    <tr>
+                      <th>배송지 주소</th>
+                      <td>
+                        [000-000] 서울 종로구 신문로1가 238 신문로빌딩 7층
+                      </td>
+                      <th>휴대전화번호</th>
+                      <td>02-000-0000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- (첫 번째) 회수지 주소 -->
+              <div class="table02">
+                <h2 class="title">회수지 주소</h2>
+                <table>
+                  <caption hidden>첫 번째 회수지 주소 표</caption>
+                  <colgroup>
+                    <col style="width: 93px" />
+                    <col style="width: 297px" />
+                    <col style="width: 93px" />
+                    <col style="width: 297px" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class="return-address">
+                        <label for="general-shipping1">회수지 주소</label>
+                      </th>
+                      <td colspan="3" class="return-address">
+                        <div class="radio-container">
+                          <label for="general-shipping1">
+                            <input
+                              type="radio"
+                              name="first-return-address"
+                              id="general-shipping1"
+                              value="[국내] 일반택배"
+                            />
+                            [국내] 일반택배
+                          </label>
+                          <label for="conveni-shipping1">
+                            <input
+                              type="radio"
+                              name="first-return-address"
+                              id="conveni-shipping1"
+                              value="[국내] 편의점 배송"
+                            />
+                            [국내] 편의점 배송
+                          </label>
+                        </div>
+                        <div class="input-container postal-code">
+                          <div class="input01">
+                            <input
+                              type="text"
+                              name="first postal code"
+                              id="postal-code_first"
+                            />
+                          </div>
+                          <div class="input01">
+                            <input
+                              type="text"
+                              name="second postal code"
+                              id="postal-code_second"
+                            />
+                          </div>
+                          <button class="button01">
+                            <span class="tail">
+                              <span class="body">검색</span>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="input-container detailed-address">
+                          <div class="input01">
+                            <input
+                              type="text"
+                              name="first detailed address"
+                              id="detailed-address_first"
+                            />
+                          </div>
+                          <div class="input01">
+                            <input
+                              type="text"
+                              name="second detailed address"
+                              id="detailed-address_second"
+                            />
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="phone-number">
+                        <label for="phone-number_first">전화번호</label>
+                      </th>
+                      <td class="phone-number">
+                        <div class="select01 number">
+                          <select
+                            name="phone-number_first"
+                            id="phone-number_first"
+                            title="전화번호 앞자리를 골라주세요."
+                          >
+                            <option value="02" selected>02</option>
+                            <option value="070">070</option>
+                          </select>
+                        </div>
+
+                        <div class="input01">
+                          <input
+                            type="text"
+                            name="phone-number_second"
+                            id="phone-number_second"
+                            value="123"
+                          />
+                        </div>
+                        <div class="input01">
+                          <input
+                            type="text"
+                            name="phone-number_third"
+                            id="phone-number_third"
+                            value="4567"
+                          />
+                        </div>
+                      </td>
+                      <th class="mobile-number">
+                        <label for="mobile-number_first">휴대전화번호</label>
+                      </th>
+                      <td class="mobile-number">
+                        <div class="select01 number">
+                          <select
+                            name="mobile-number_first"
+                            id="mobile-number_first"
+                            title="휴대전화번호 앞자리를 골라주세요."
+                          >
+                            <option value="010" selected>010</option>
+                            <option value="011">011</option>
+                          </select>
+                        </div>
+                        <div class="input01">
+                          <input
+                            type="text"
+                            name="mobile-number_second"
+                            id="mobile-number_second"
+                            value="123"
+                          />
+                        </div>
+                        <div class="input01">
+                          <input
+                            type="text"
+                            name="mobile-number_third"
+                            id="mobile-number_third"
+                            value="4567"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 3. module02 -->
+            <div class="module02">
+              <!-- 교보배송상품 -->
+              <h2 class="title">교보배송상품</h2>
+              <div class="table01">
+                <table>
+                  <caption hidden>교보배송상품 표</caption>
+                  <colgroup>
+                    <col style="width: 42px" />
+                    <col style="width: 247px" />
+                    <col style="width: 78px" />
+                    <col style="width: 76px" />
+                    <col style="width: 77px" />
+                    <col style="width: 93px" />
+                    <col style="width: 167px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="checkbox"></th>
+                      <th scope="col" class="product-name">상품명</th>
+                      <th scope="col" class="order-quantity">주문수량</th>
+                      <th scope="col" class="price">금액</th>
+                      <th scope="col" class="return-quantity">반품수량</th>
+                      <th scope="col" class="return-reason">반품사유</th>
+                      <th scope="col" class="memo">메모</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="kyobo_checkbox1"
+                          id="kyobo_checkbox1"
+                        />
+                      </td>
+                      <td class="product-name">
+                        <label for="kyobo_checkbox1">[도서] 운명이다</label>
+                      </td>
+                      <td class="order-quantity">
+                        <label for="kyobo_checkbox1">1</label>
+                      </td>
+                      <td class="price">
+                        <label for="kyobo_checkbox1">30,000원</label>
+                      </td>
+                      <td class="return-quantity">
+                        <label class="input-container01">
+                          <div class="input01 quantity">
+                            <input type="text" name="text1" />
+                          </div>
+                          <span>1</span>
+                        </label>
+                      </td>
+                      <td class="return-reason">
+                        <div class="select01 return-reason">
+                          <select
+                            name="return reason"
+                            id="return-reason"
+                            title="반품사유를 골라주세요."
+                          >
+                            <option value="이중주문" selected>이중주문</option>
+                            <option value="파본">파본</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td class="memo">
+                        <div class="input01">
+                          <input type="text" />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="kyobo_checkbox2"
+                          id="kyobo_checkbox2"
+                        />
+                      </td>
+                      <td class="product-name">
+                        <label for="kyobo_checkbox2">[도서] 운명이다</label>
+                      </td>
+                      <td class="order-quantity">
+                        <label for="kyobo_checkbox2">1</label>
+                      </td>
+                      <td class="price">
+                        <label for="kyobo_checkbox2">30,000원</label>
+                      </td>
+                      <td class="return-quantity">
+                        <label class="input-container01">
+                          <div class="input01 quantity">
+                            <input type="text" />
+                          </div>
+                          <span>1</span>
+                        </label>
+                      </td>
+                      <td class="return-reason">
+                        <div class="select01 return-reason">
+                          <select
+                            name="return reason"
+                            id="return-reason"
+                            title="반품사유를 골라주세요."
+                          >
+                            <option value="이중주문">이중주문</option>
+                            <option value="파본" selected>파본</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td class="memo">
+                        <div class="input01 memo">
+                          <input
+                            type="text"
+                            value="파본페이지번호를 적어주세요"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="table02">
+                <table>
+                  <caption hidden>교보배송상품 배송방법 표</caption>
+                  <colgroup>
+                    <col style="width: 211px" />
+                    <col style="width: 178px" />
+                    <col style="width: 178px" />
+                    <col style="width: 213px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="shipping-method">
+                        <label for="kyobo-shipping1">배송방법</label>
+                      </th>
+                      <th scope="col" class="return-fee">반품배송비</th>
+                      <th scope="col" class="charge-bearer">배송비 부담</th>
+                      <th scope="col" class="return-method">환불방법</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="shipping-method">
+                        <div class="radio-container">
+                          <label for="kyobo-shipping1">
+                            <input
+                              type="radio"
+                              name="kyobo_shipping-method"
+                              id="kyobo-shipping1"
+                              value="교보택배"
+                            />
+                            교보택배
+                          </label>
+                          <label for="personal-shipping1">
+                            <input
+                              type="radio"
+                              name="kyobo_shipping-method"
+                              id="personal-shipping1"
+                              value="개인배송"
+                            />
+                            개인배송
+                          </label>
+                        </div>
+                      </td>
+                      <td class="return-fee">1,000원</td>
+                      <td class="charge-bearer">고객부담</td>
+                      <td class="return-method">환불금액에서 차감</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="module02">
+              <!-- 업체배송상품 (업체명 : 수송사) -->
+              <h2 class="title">업체배송상품 (업체명 : 수송사)</h2>
+              <div class="table01">
+                <table>
+                  <caption hidden>업체배송상품 표</caption>
+                  <colgroup>
+                    <col style="width: 42px" />
+                    <col style="width: 247px" />
+                    <col style="width: 78px" />
+                    <col style="width: 76px" />
+                    <col style="width: 77px" />
+                    <col style="width: 93px" />
+                    <col style="width: 167px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="checkbox"></th>
+                      <th scope="col" class="product-name">상품명</th>
+                      <th scope="col" class="order-quantity">주문수량</th>
+                      <th scope="col" class="price">금액</th>
+                      <th scope="col" class="return-quantity">반품수량</th>
+                      <th scope="col" class="return-reason">반품사유</th>
+                      <th scope="col" class="memo">메모</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="courier_checkbox1"
+                          id="courier_checkbox1"
+                        />
+                      </td>
+                      <td class="product-name">
+                        <label for="courier_checkbox1">[중고] 운명이다</label>
+                      </td>
+                      <td class="order-quantity">
+                        <label for="courier_checkbox1">1</label>
+                      </td>
+                      <td class="price">
+                        <label for="courier_checkbox1">30,000원</label>
+                      </td>
+                      <td class="return-quantity">
+                        <label class="input-container01">
+                          <div class="input01 quantity">
+                            <input type="text" />
+                          </div>
+                          <span>1</span>
+                        </label>
+                      </td>
+                      <td class="return-reason">
+                        <div class="select01 return-reason">
+                          <select
+                            name="return reason"
+                            id="return-reason"
+                            title="반품사유를 골라주세요."
+                          >
+                            <option value="이중주문" selected>이중주문</option>
+                            <option value="파본">파본</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td class="memo">
+                        <div class="input01">
+                          <input type="text" />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="courier_checkbox2"
+                          id="courier_checkbox2"
+                        />
+                      </td>
+                      <td class="product-name">
+                        <label for="courier_checkbox2">[중고] 운명이다</label>
+                      </td>
+                      <td class="order-quantity">
+                        <label for="courier_checkbox2">1</label>
+                      </td>
+                      <td class="price">
+                        <label for="courier_checkbox2">30,000원</label>
+                      </td>
+                      <td class="return-quantity">
+                        <label class="input-container01">
+                          <div class="input01 quantity">
+                            <input type="text" />
+                          </div>
+                          <span>1</span>
+                        </label>
+                      </td>
+                      <td class="return-reason">
+                        <div class="select01 return-reason">
+                          <select
+                            name="return reason"
+                            id="return-reason"
+                            title="반품사유를 골라주세요."
+                          >
+                            <option value="이중주문">이중주문</option>
+                            <option value="파본" selected>파본</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td class="memo">
+                        <div class="input01 memo">
+                          <input
+                            type="text"
+                            value="파본페이지번호를 적어주세요"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table02">
+                <table>
+                  <caption hidden>업체배송상품 배송방법 표</caption>
+                  <colgroup>
+                    <col style="width: 211px" />
+                    <col style="width: 178px" />
+                    <col style="width: 178px" />
+                    <col style="width: 213px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="shipping-method">
+                        <label for="kyobo-shipping2">배송방법</label>
+                      </th>
+                      <th scope="col" class="return-fee">반품배송비</th>
+                      <th scope="col" class="charge-bearer">배송비 부담</th>
+                      <th scope="col" class="return-method">환불방법</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="shipping-method">
+                        <div class="radio-container">
+                          <label for="kyobo-shipping2">
+                            <input
+                              type="radio"
+                              name="courier_shipping-method"
+                              id="kyobo-shipping2"
+                              value="교보택배"
+                            />
+                            교보택배
+                          </label>
+                          <label for="personal-shipping2">
+                            <input
+                              type="radio"
+                              name="courier_shipping-method"
+                              id="personal-shipping2"
+                              value="개인배송"
+                            />
+                            개인배송
+                          </label>
+                        </div>
+                      </td>
+                      <td class="return-fee">1,000원</td>
+                      <td class="charge-bearer">판매자부담</td>
+                      <td class="return-method">환불금액에서 차감</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="module01 shipping-destination">
+              <!-- 2번째 배송지 -->
+              <div class="table01">
+                <h2 class="title">2번째 배송지</h2>
+                <table>
+                  <caption hidden>2번째 배송지 표</caption>
+                  <colgroup>
+                    <col style="width: 93px" />
+                    <col style="width: 427px" />
+                    <col style="width: 93px" />
+                    <col style="width: 167px" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th>받으시는 분</th>
+                      <td>홍길동</td>
+                      <th>연락처</th>
+                      <td>02-000-0000</td>
+                    </tr>
+                    <tr>
+                      <th>배송지 주소</th>
+                      <td>
+                        [000-000] 서울 종로구 신문로1가 238 신문로빌딩 7층
+                      </td>
+                      <th>휴대전화번호</th>
+                      <td>02-000-0000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- (두 번째) 회수지 주소 -->
+              <div class="table02">
+                <h2 class="title">회수지 주소</h2>
+                <table>
+                  <caption hidden>두 번째 회수지 주소 표</caption>
+                  <colgroup>
+                    <col style="width: 93px" />
+                    <col style="width: 297px" />
+                    <col style="width: 93px" />
+                    <col style="width: 297px" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class="return-address">회수지 주소</th>
+                      <td colspan="3" class="return-address">
+                        <div class="radio-container">
+                          <label for="general-shipping2">
+                            <input
+                              type="radio"
+                              name="second-return-address"
+                              id="general-shipping2"
+                              value="[국내] 일반택배"
+                            />
+                            [국내] 일반택배
+                          </label>
+                          <label for="conveni-shipping2">
+                            <input
+                              type="radio"
+                              name="second-return-address"
+                              id="conveni-shipping2"
+                              value="[국내] 편의점 배송"
+                            />
+                            [국내] 편의점 배송
+                          </label>
+                        </div>
+                        <div class="input-container postal-code">
+                          <div class="input01">
+                            <input
+                              type="text"
+                              name="first postal code"
+                              id="postal-code_first"
+                            />
+                          </div>
+                          <div class="input01">
+                            <input
+                              type="text"
+                              name="second postal code"
+                              id="postal-code_second"
+                            />
+                          </div>
+                          <button class="button01">
+                            <span class="tail">
+                              <span class="body">검색</span>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="input-container detailed-address">
+                          <div class="input01">
+                            <input
+                              type="text"
+                              name="first detailed address"
+                              id="detailed-address_first"
+                            />
+                          </div>
+                          <div class="input01">
+                            <input
+                              type="text"
+                              name="second detailed address"
+                              id="detailed-address_second"
+                            />
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="phone-number">전화번호</th>
+                      <td class="phone-number">
+                        <div class="select01 number">
+                          <select
+                            name="phone-number_first"
+                            id="phone-number_first"
+                            title="전화번호 앞자리를 골라주세요."
+                          >
+                            <option value="02" selected>02</option>
+                            <option value="070">070</option>
+                          </select>
+                        </div>
+
+                        <div class="input01">
+                          <input
+                            type="text"
+                            name="phone-number_second"
+                            id="phone-number_second"
+                            value="123"
+                          />
+                        </div>
+                        <div class="input01">
+                          <input
+                            type="text"
+                            name="phone-number_third"
+                            id="phone-number_third"
+                            value="4567"
+                          />
+                        </div>
+                      </td>
+                      <th class="mobile-number">휴대전화번호</th>
+                      <td class="mobile-number">
+                        <div class="select01 number">
+                          <select
+                            name="mobile-number_first"
+                            id="mobile-number_first"
+                            title="휴대전화번호 앞자리를 골라주세요."
+                          >
+                            <option value="010" selected>010</option>
+                            <option value="011">011</option>
+                          </select>
+                        </div>
+                        <div class="input01">
+                          <input
+                            type="text"
+                            name="mobile-number_second"
+                            id="mobile-number_second"
+                            value="123"
+                          />
+                        </div>
+                        <div class="input01">
+                          <input
+                            type="text"
+                            name="mobile-number_third"
+                            id="mobile-number_third"
+                            value="4567"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="module02">
+              <!-- 상품 쿠폰 -->
+              <h2 class="title">상품 쿠폰</h2>
+              <div class="table01">
+                <table>
+                  <caption hidden>상품쿠폰 표</caption>
+                  <colgroup>
+                    <col style="width: 42px" />
+                    <col style="width: 247px" />
+                    <col style="width: 78px" />
+                    <col style="width: 76px" />
+                    <col style="width: 77px" />
+                    <col style="width: 93px" />
+                    <col style="width: 167px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="checkbox"></th>
+                      <th scope="col" class="product-name">상품명</th>
+                      <th scope="col" class="order-quantity">주문수량</th>
+                      <th scope="col" class="price">금액</th>
+                      <th scope="col" class="return-quantity">반품수량</th>
+                      <th scope="col" class="return-reason">반품사유</th>
+                      <th scope="col" class="memo">메모</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="coupon_checkbox1"
+                          id="coupon_checkbox1"
+                        />
+                      </td>
+                      <td class="product-name">
+                        <label for="coupon_checkbox1">[도서] 운명이다</label>
+                      </td>
+                      <td class="order-quantity">
+                        <label for="coupon_checkbox1">1</label>
+                      </td>
+                      <td class="price">
+                        <label for="coupon_checkbox1">30,000원</label>
+                      </td>
+                      <td class="return-quantity">
+                        <label class="input-container01">
+                          <div class="input01 quantity">
+                            <input type="text" />
+                          </div>
+                          <span>1</span>
+                        </label>
+                      </td>
+                      <td class="return-reason">
+                        <div class="select01 return-reason">
+                          <select
+                            name="return reason"
+                            id="return-reason"
+                            title="반품사유를 골라주세요."
+                          >
+                            <option value="이중주문" selected>이중주문</option>
+                            <option value="파본">파본</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td class="memo">
+                        <div class="input01">
+                          <input type="text" />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="checkbox">
+                        <input
+                          type="checkbox"
+                          name="coupon_checkbox2"
+                          id="coupon_checkbox2"
+                        />
+                      </td>
+                      <td class="product-name">
+                        <label for="coupon_checkbox2">[도서] 운명이다</label>
+                      </td>
+                      <td class="order-quantity">
+                        <label for="coupon_checkbox2">1</label>
+                      </td>
+                      <td class="price">
+                        <label for="coupon_checkbox2">30,000원</label>
+                      </td>
+                      <td class="return-quantity">
+                        <label class="input-container01">
+                          <div class="input01 quantity">
+                            <input type="text" />
+                          </div>
+                          <span>1</span>
+                        </label>
+                      </td>
+                      <td class="return-reason">
+                        <div class="select01 return-reason">
+                          <select
+                            name="return reason"
+                            id="return-reason"
+                            title="반품사유를 골라주세요."
+                          >
+                            <option value="이중주문">이중주문</option>
+                            <option value="파본" selected>파본</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td class="memo">
+                        <div class="input01 memo">
+                          <input
+                            type="text"
+                            value="파본페이지번호를 적어주세요"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table02">
+                <table>
+                  <caption hidden>상품쿠폰 배송방법 표</caption>
+                  <colgroup>
+                    <col style="width: 211px" />
+                    <col style="width: 178px" />
+                    <col style="width: 178px" />
+                    <col style="width: 213px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="shipping-method">
+                        <label for="kyobo-shipping3">배송방법</label>
+                      </th>
+                      <th scope="col" class="return-fee">반품배송비</th>
+                      <th scope="col" class="charge-bearer">배송비 부담</th>
+                      <th scope="col" class="return-method">환불방법</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="shipping-method">
+                        <div class="radio-container">
+                          <label for="kyobo-shipping3">
+                            <input
+                              type="radio"
+                              name="coupon_shipping-method"
+                              id="kyobo-shipping3"
+                              value="교보택배"
+                            />
+                            교보택배
+                          </label>
+                          <label for="personal-shipping3">
+                            <input
+                              type="radio"
+                              name="coupon_shipping-method"
+                              id="personal-shipping3"
+                              value="개인배송"
+                            />
+                            개인배송
+                          </label>
+                        </div>
+                      </td>
+                      <td class="return-fee">1,000원</td>
+                      <td class="charge-bearer">고객부담</td>
+                      <td class="return-method">환불금액에서 차감</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="check-refund-amount">
+              <p>
+                버튼을 클릭하시면 주문취소 후 환불 받으실 금액을 확인하실 수
+                있습니다.
+              </p>
+              <button class="button02">
+                <span class="tail">
+                  <span class="body">
+                    <img
+                      src="./images/check-refund-amount_font.png"
+                      alt="환불예정금액 확인"
+                    />
+                  </span>
+                </span>
+              </button>
+            </div>
+
+            <div class="refund-amount">
+              <h2 class="title">환불 금액</h2>
+              <!-- 환불 금액 -->
+              <div class="table03">
+                <table>
+                  <caption hidden>환불 금액 표</caption>
+                  <colgroup>
+                    <col style="width: 157px" />
+                    <col style="width: 156px" />
+                    <col style="width: 156px" />
+                    <col style="width: 156px" />
+                    <col style="width: 155px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="payment-method">결제수단</th>
+                      <th scope="col" class="order-price">주문금액</th>
+                      <th scope="col" class="additional-payment-price">
+                        추가결제금액
+                      </th>
+                      <th scope="col" class="refund-amount">환불금액</th>
+                      <th scope="col" class="refund-method">환불방법</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="payment-method">할인쿠폰</td>
+                      <td class="order-price">1,000원</td>
+                      <td class="additional-payment-price"></td>
+                      <td class="refund-amount">1,000원</td>
+                      <td class="refund-method">할인쿠폰 환원</td>
+                    </tr>
+                    <tr>
+                      <td class="payment-method">마일리지</td>
+                      <td class="order-price">1,000원</td>
+                      <td class="additional-payment-price"></td>
+                      <td class="refund-amount">1,000원</td>
+                      <td class="refund-method">마일리지 환원</td>
+                    </tr>
+                    <tr>
+                      <td class="payment-method">교보캐시</td>
+                      <td class="order-price">1,000원</td>
+                      <td class="additional-payment-price"></td>
+                      <td class="refund-amount">1,000원</td>
+                      <td class="refund-method">교보캐시 환원</td>
+                    </tr>
+                    <tr>
+                      <td class="payment-method">상품권</td>
+                      <td class="order-price">1,000원</td>
+                      <td class="additional-payment-price"></td>
+                      <td class="refund-amount">1,000원</td>
+                      <td class="refund-method">상품권 환원</td>
+                    </tr>
+                    <tr>
+                      <td class="payment-method">예치금</td>
+                      <td class="order-price">1,000원</td>
+                      <td class="additional-payment-price"></td>
+                      <td class="refund-amount">1,000원</td>
+                      <td class="refund-method">예치금 환원</td>
+                    </tr>
+                    <tr>
+                      <td class="payment-method">신용카드</td>
+                      <td class="order-price">41,000원</td>
+                      <td class="additional-payment-price credit-card">
+                        <span>2,000원</span>
+                      </td>
+                      <td class="refund-amount">41,000원</td>
+                      <td class="refund-method">승인취소</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="button-container">
+              <button class="button03">
+                <span class="tail">
+                  <span class="body">
+                    <img src="./images/previous_font.png" alt="이전" />
+                  </span>
+                </span>
+              </button>
+              <button class="button02">
+                <span class="tail">
+                  <span class="body">
+                    <img
+                      src="./images/request-refund_font.png"
+                      alt="반품신청"
+                    />
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+          <!-- 교환 탭의 페이지 -->
+          <div class="exchange" hidden></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

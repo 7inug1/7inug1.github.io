@@ -1,0 +1,1628 @@
+/*
+########  ########  ######  ######## ########  ######   ######   ######  
+##     ## ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ##       ##       ##          ##    ##       ##       ##       
+########  ######    ######  ######      ##    ##        ######   ######  
+##   ##   ##             ## ##          ##    ##             ##       ## 
+##    ##  ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ########  ######  ########    ##     ######   ######   ######  
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@media only screen {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    /* added personally */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  /* added personally from below */
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  button {
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  label,
+  input[type='radio'],
+  button {
+    cursor: pointer;
+  }
+
+  input[type='text'] {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    background: transparent;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  select {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+  }
+
+  /* for customizing the 'browsing-file' functionality */
+  input[type='file'] {
+    position: absolute;
+    top: -200%;
+    left: -200%;
+    opacity: 0;
+    z-index: -100;
+  }
+
+  strong,
+  .bolder {
+    font-weight: bolder;
+  }
+}
+
+/* 
+#####  ###### #####   ####   ####  #    #   ##   #         #####  ######  ####  ###### #####  ####   ####   ####  
+#    # #      #    # #      #    # ##   #  #  #  #         #    # #      #      #        #   #    # #      #      
+#    # #####  #    #  ####  #    # # #  # #    # #         #    # #####   ####  #####    #   #       ####   ####  
+#####  #      #####       # #    # #  # # ###### #         #####  #           # #        #   #           #      # 
+#      #      #   #  #    # #    # #   ## #    # #         #   #  #      #    # #        #   #    # #    # #    # 
+#      ###### #    #  ####   ####  #    # #    # ######    #    # ######  ####  ######   #    ####   ####   ####  
+*/
+.whitespace-remover {
+  font-size: 0;
+}
+
+table td {
+  vertical-align: top;
+}
+
+/* 
+#####  #    # ##### #####  ####  #    #    #    #  ####  #####  #    # #      ######  ####  
+#    # #    #   #     #   #    # ##   #    ##  ## #    # #    # #    # #      #      #      
+#####  #    #   #     #   #    # # #  #    # ## # #    # #    # #    # #      #####   ####  
+#    # #    #   #     #   #    # #  # #    #    # #    # #    # #    # #      #           # 
+#    # #    #   #     #   #    # #   ##    #    # #    # #    # #    # #      #      #    # 
+#####   ####    #     #    ####  #    #    #    #  ####  #####   ####  ###### ######  ####  
+*/
+.button01,
+.button01 > .tail,
+.button01 > .tail > .body {
+  display: inline-block;
+  height: 18px;
+  vertical-align: top;
+}
+
+.button01 {
+  padding-left: 1px;
+  background: url('./images/button01_head.png') left no-repeat;
+}
+
+.button01 > .tail {
+  padding-right: 1px;
+  background: url('./images/button01_tail.png') right no-repeat;
+}
+
+.button01 > .tail > .body {
+  background: url('./images/button01_body.png') center repeat-x;
+  padding-top: 3px;
+  padding-left: 8px;
+  padding-right: 7px;
+  color: white;
+  font-size: 11px;
+  font-family: 'dotum', sans-serif;
+  box-sizing: border-box;
+}
+
+.button03 {
+  padding-left: 1px;
+  background: url('./images/button03_headtail.png') left no-repeat;
+}
+
+.button03 > .tail {
+  padding-right: 1px;
+  background: url('./images/button03_headtail.png') right no-repeat;
+}
+
+.button03 > .tail > .body {
+  background: url('./images/button03_body.png') center repeat-x;
+  padding-top: 2px;
+  padding-left: 6px;
+  padding-right: 4px;
+  color: #777777;
+  font-size: 11px;
+  font-family: 'dotum', sans-serif;
+  box-sizing: border-box;
+}
+
+.button03,
+.button03 > .tail,
+.button03 > .tail > .body {
+  display: inline-block;
+  height: 16px;
+  vertical-align: top;
+}
+
+.button04,
+.button04 > .tail,
+.button04 > .tail > .body {
+  display: inline-block;
+  height: 23px;
+  vertical-align: top;
+}
+
+.button04 {
+  padding-left: 1px;
+  background: url('./images/button04_headtail.png') left no-repeat;
+}
+
+.button04 > .tail {
+  padding-right: 1px;
+  background: url('./images/button04_headtail.png') right no-repeat;
+}
+
+.button04 > .tail > .body {
+  background: url('./images/button04_body.png') center repeat-x;
+  padding-top: 6px;
+  padding-left: 9px;
+  padding-right: 8px;
+  color: #818181;
+  font-size: 11px;
+  font-family: 'dotum', sans-serif;
+  box-sizing: border-box;
+}
+
+.button05,
+.button05 > .tail,
+.button05 > .tail > .body {
+  display: inline-block;
+  height: 21px;
+  vertical-align: top;
+}
+
+.button05 {
+  padding-left: 4px;
+  background: url('./images/button05_head.png') left no-repeat;
+}
+
+.button05 > .tail {
+  padding-right: 3px;
+  background: url('./images/button05_tail.png') right no-repeat;
+}
+
+.button05 > .tail > .body {
+  padding-top: 3px;
+  padding-left: 8px;
+  padding-right: 9px;
+  background: url('./images/button05_body.png') center repeat-x;
+  box-sizing: border-box;
+}
+
+.button06,
+.button06 > .tail,
+.button06 > .tail > .body {
+  display: inline-block;
+  height: 21px;
+  vertical-align: top;
+}
+
+.button06 {
+  padding-left: 4px;
+  background: url('./images/button06_head.png') left no-repeat;
+}
+
+.button06 > .tail {
+  padding-right: 3px;
+  background: url('./images/button06_tail.png') right no-repeat;
+}
+
+.button06 > .tail > .body {
+  padding-top: 3px;
+  padding-left: 21px;
+  padding-right: 23px;
+  background: url('./images/button06_body.png') center repeat-x;
+  box-sizing: border-box;
+}
+
+.button07,
+.button07 > .tail,
+.button07 > .tail > .body {
+  display: inline-block;
+  height: 21px;
+  vertical-align: top;
+}
+
+.button07 {
+  padding-left: 4px;
+  background: url('./images/button07_head.png') left no-repeat;
+}
+
+.button07 > .tail {
+  padding-right: 3px;
+  background: url('./images/button07_tail.png') right no-repeat;
+}
+
+.button07 > .tail > .body {
+  padding-top: 3px;
+  padding-left: 7px;
+  padding-right: 8px;
+  background: url('./images/button07_body.png') center repeat-x;
+  box-sizing: border-box;
+}
+
+.button08 {
+  padding-left: 4px;
+  background: url('./images/button08_head.png') left no-repeat;
+}
+
+.button08 > .tail {
+  padding-right: 3px;
+  background: url('./images/button08_tail.png') right no-repeat;
+}
+
+.button08 > .tail > .body {
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-right: 7px;
+  background: url('./images/button08_body.png') center repeat-x;
+  box-sizing: border-box;
+}
+
+.button08,
+.button08 > .tail,
+.button08 > .tail > .body {
+  display: inline-block;
+  height: 22px;
+  vertical-align: top;
+}
+
+.button09 {
+  padding-left: 4px;
+  background: url('./images/button09_head.png') left no-repeat;
+}
+
+.button09 > .tail {
+  padding-right: 3px;
+  background: url('./images/button09_tail.png') right no-repeat;
+}
+
+.button09 > .tail > .body::before {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 8px;
+  width: 2px;
+  height: 3px;
+  background: url('./images/button09_icon.png');
+}
+
+.button09 > .tail > .body {
+  position: relative;
+  padding-top: 1px;
+  padding-left: 9px;
+  padding-right: 7px;
+  background: url('./images/button09_body.png') center repeat-x;
+  box-sizing: border-box;
+}
+
+.button09,
+.button09 > .tail,
+.button09 > .tail > .body {
+  display: inline-block;
+  height: 20px;
+  vertical-align: top;
+}
+
+.button10 {
+  padding-left: 4px;
+  background: url('./images/button10_head.png') left no-repeat;
+}
+
+.button10 > .tail {
+  padding-right: 5px;
+  background: url('./images/button10_tail.png') right no-repeat;
+}
+
+.button10 > .tail > .body {
+  padding-top: 16px;
+  padding-left: 30px;
+  padding-right: 31px;
+  background: url('./images/button10_body.png') center repeat-x;
+  box-sizing: border-box;
+}
+
+.button10,
+.button10 > .tail,
+.button10 > .tail > .body {
+  display: inline-block;
+  height: 49px;
+  vertical-align: top;
+}
+
+.button11 {
+  padding-left: 4px;
+  background: url('./images/button11_head.png') left no-repeat;
+}
+
+.button11 > .tail {
+  padding-right: 5px;
+  background: url('./images/button11_tail.png') right no-repeat;
+}
+
+.button11 > .tail > .body {
+  padding-top: 15px;
+  padding-left: 29px;
+  padding-right: 31px;
+  background: url('./images/button11_body.png') center repeat-x;
+  box-sizing: border-box;
+}
+
+.button11,
+.button11 > .tail,
+.button11 > .tail > .body {
+  display: inline-block;
+  height: 48px;
+  vertical-align: bottom;
+}
+/* 
+#####   ####  #####  #   # 
+#    # #    # #    #  # #  
+#####  #    # #    #   #   
+#    # #    # #    #   #   
+#    # #    # #    #   #   
+#####   ####  #####    #   
+*/
+
+body {
+  width: 1570px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.wrapper {
+  padding-left: 310px;
+  padding-right: 310px;
+}
+
+/* 
+###### ###### ###### #####  #####    ##    ####  #    # 
+#      #      #      #    # #    #  #  #  #    # #   #  
+#####  #####  #####  #    # #####  #    # #      ####   
+#      #      #      #    # #    # ###### #      #  #   
+#      #      #      #    # #    # #    # #    # #   #  
+#      ###### ###### #####  #####  #    #  ####  #    # 
+*/
+
+.feedback ul li:before {
+  content: '-';
+}
+
+/* 
+    #    # ######   ##   #####  ###### #####  
+    #    # #       #  #  #    # #      #    # 
+    ###### #####  #    # #    # #####  #    # 
+### #    # #      ###### #    # #      #####  
+### #    # #      #    # #    # #      #   #  
+### #    # ###### #    # #####  ###### #    # 
+*/
+
+.header {
+  position: relative;
+}
+
+.header h2 {
+  position: absolute;
+  left: -2px;
+  top: 9px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.header .progress {
+  position: relative;
+}
+
+.header .progress::after {
+  content: '';
+  background: url('./images/progress_horizontal-line.png');
+  position: absolute;
+  left: -1px;
+  bottom: -4px;
+  width: 100%;
+  height: 4px;
+  z-index: 2;
+}
+
+.header .progress ul {
+  font-size: 0;
+  padding-right: 29px;
+  text-align: right;
+}
+
+.header .progress li::before {
+  content: '';
+  background: url('./images/progress01_left.png');
+  position: absolute;
+  left: -29px;
+  width: 29px;
+  height: 41px;
+  z-index: 1;
+}
+
+.header .progress li {
+  display: inline-block;
+  position: relative;
+  margin-left: 29px;
+  padding-left: 51px;
+  padding-right: 10px;
+  height: 41px;
+  background: url('./images/progress01_body.png');
+}
+
+.header .progress li::after {
+  content: '';
+  background: url('./images/progress01_right.png');
+  position: absolute;
+  right: -29px;
+  width: 29px;
+  height: 41px;
+}
+
+.header .progress li:first-of-type span::before {
+  content: '';
+  background: url('./images/progress_step1-number.png');
+  position: absolute;
+  left: -39px;
+  top: 5px;
+  width: 32px;
+  height: 9px;
+}
+
+.header .progress li:nth-of-type(2) span::before {
+  content: '';
+  background: url('./images/progress_step2-number.png');
+  position: absolute;
+  left: -41px;
+  top: 5px;
+  width: 34px;
+  height: 9px;
+}
+
+.header .progress li:nth-of-type(3) span::before {
+  content: '';
+  background: url('./images/progress_step3-number.png');
+  position: absolute;
+  left: -41px;
+  top: 5px;
+  width: 34px;
+  height: 9px;
+}
+
+.header .progress li span {
+  position: relative;
+  padding-top: 15px;
+  line-height: 58px;
+}
+
+.header .progress li.current::before {
+  content: '';
+  background: url('./images/progress02_left.png');
+  position: absolute;
+  left: -29px;
+  width: 29px;
+  height: 41px;
+  z-index: 1;
+}
+
+.header .progress li.current {
+  display: inline-block;
+  padding-right: 3px;
+  background: url('./images/progress02_body.png');
+  height: 41px;
+}
+
+.header .progress li.current::after {
+  content: '';
+  background: url('./images/progress02_right.png');
+  position: absolute;
+  right: -29px;
+  width: 29px;
+  height: 41px;
+}
+
+/* 
+    #    #   ##   # #    # 
+    ##  ##  #  #  # ##   # 
+    # ## # #    # # # #  # 
+### #    # ###### # #  # # 
+### #    # #    # # #   ## 
+### #    # #    # # #    # 
+*/
+.main {
+  margin-top: 24px;
+}
+
+.main .table-container:first-of-type {
+  margin-top: 0;
+}
+
+/* 
+#                                               ###     ###   
+#           #####   ##   #####  #      ######  #   #   #   #  
+#             #    #  #  #    # #      #      #     # #     # 
+#             #   #    # #####  #      #####  #     # #     # 
+#       ###   #   ###### #    # #      #      #     # #     # 
+#       ###   #   #    # #    # #      #       #   #   #   #  
+####### ###   #   #    # #####  ###### ######   ###     ###   
+*/
+
+.main .table00 {
+  margin-top: 0px;
+  margin-left: -1px;
+}
+
+.main .table00 table {
+  display: inline-block;
+  border-top: 1px solid #99bddd;
+  border-bottom: 1px solid #99bddd;
+}
+
+.main .table00 table th,
+.main .table00 table td {
+  font-family: 'dotum', sans-serif;
+}
+
+.main .table00 table th {
+  padding-left: 4px;
+  background: #f9f9f9;
+  color: #1770b5;
+  font-size: 11px;
+  font-weight: bolder;
+  letter-spacing: -0.25px;
+  vertical-align: middle;
+}
+
+.main .table00 table th:first-of-type {
+  padding-top: 26px;
+  padding-bottom: 22px;
+}
+
+.main .table00 table td {
+  background: #ffffff;
+  color: #777777;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.main .table00 table th:not(:last-of-type),
+.main .table00 table td:not(:last-of-type) {
+  border-right: 1px solid #99bddd;
+}
+
+/* 
+#                                               ###      #   
+#           #####   ##   #####  #      ######  #   #    ##   
+#             #    #  #  #    # #      #      #     #  # #   
+#             #   #    # #####  #      #####  #     #    #   
+#       ###   #   ###### #    # #      #      #     #    #   
+#       ###   #   #    # #    # #      #       #   #     #   
+####### ###   #   #    # #####  ###### ######   ###    ##### 
+*/
+
+.main .table-container {
+  margin-top: 23px;
+}
+
+.main .table-container .title::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 13px;
+  width: 9px;
+  height: 9px;
+  background: url('./images/green-circular-icon.png');
+}
+
+.main .table-container .title {
+  display: inline-block;
+  position: relative;
+  padding-left: 28px;
+  color: #222222;
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+.main .table01 {
+  margin-top: 14px;
+}
+
+.main .table01 table {
+  border-top: 2px solid #a6a6a6;
+  border-bottom: 1px solid #e9e9e9;
+  font-family: 'dotum', sans-serif;
+}
+
+.main .table01 table th:not(:first-of-type) {
+  border-left: 1px solid #e9e9e9;
+}
+
+.main .table01 table th {
+  padding-top: 8px;
+  padding-bottom: 5px;
+  color: #666666;
+  font-size: 11px;
+  letter-spacing: -0.5px;
+  background: #f9f9f9;
+  vertical-align: middle;
+}
+
+.main .table01 table th:last-of-type {
+  text-align: left;
+  padding-left: 6px;
+}
+
+.main .table01 table td .book-container {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
+
+.main .table01 table td:not(:first-of-type) {
+  border-left: 1px solid #e9e9e9;
+}
+
+.main .table01 table tbody td {
+  position: relative;
+  height: 95px;
+  border-top: 1px solid #e9e9e9;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.main .table01 table tbody td:first-of-type {
+  padding-bottom: 1px;
+  padding-right: 6px;
+  color: #222222;
+  font-size: 12px;
+  font-weight: bolder;
+  letter-spacing: -0.5px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.main .table01 table tbody td:nth-of-type(2) {
+  padding-left: 86px;
+  padding-top: 21px;
+  color: #666666;
+  font-size: 12px;
+  line-height: 17px;
+  vertical-align: top;
+}
+
+.main .table01 table tbody td:nth-of-type(2) strong {
+  color: #222222;
+  font-weight: bolder;
+}
+
+.main .table01 table tbody td:nth-of-type(2) .button-container {
+  margin-top: 4px;
+  padding-left: 1px;
+}
+
+.main .table01 table tbody td:nth-of-type(3) div:first-of-type,
+.main .table01 table tbody td:nth-of-type(5) div:first-of-type {
+  padding-left: 2px;
+}
+
+.main .table01 table tbody td:nth-of-type(3) div + div,
+.main .table01 table tbody td:nth-of-type(5) div + div {
+  margin-top: 7px;
+  padding-left: 14px;
+}
+
+.main .table01 table tbody td:nth-of-type(4) {
+  padding-right: 4px;
+  padding-top: 24px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.main .table01 table tbody td:nth-of-type(4) .input00 {
+  margin: 0 auto;
+}
+
+.main .table01 table tbody td:nth-of-type(4) .button04 {
+  margin-top: 5px;
+}
+
+.main .table01 table tbody td:nth-of-type(3),
+.main .table01 table tbody td:nth-of-type(5) {
+  padding-top: 32px;
+  padding-right: 5px;
+  font-size: 12px;
+  color: #777777;
+  letter-spacing: -0.5px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.main .table01 table tbody td:nth-of-type(3) ins,
+.main .table01 table tbody td:nth-of-type(5) ins {
+  color: #e54c29;
+  font-size: 14px;
+  font-weight: bolder;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.main .table01 table tbody td:nth-of-type(3) .percentage,
+.main .table01 table tbody td:nth-of-type(5) .percentage {
+  position: relative;
+  color: #0172c9;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+}
+
+.main .table01 table tbody td:nth-of-type(3) .percentage::after,
+.main .table01 table tbody td:nth-of-type(5) .percentage::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  background: url('./images/markdown-icon.png');
+  width: 6px;
+  height: 10px;
+}
+
+.main .table01 table tbody td .rewards {
+  position: relative;
+}
+
+.main .table01 table td:nth-of-type(3) .rewards::before,
+.main .table01 table tbody td:nth-of-type(5) .rewards::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -20px;
+  background: url('./images/rewards-icon.png');
+  width: 17px;
+  height: 16px;
+}
+
+.main .table01 table tbody td:nth-of-type(3) .rewards,
+.main .table01 table tbody td:nth-of-type(5) .rewards {
+  color: #349e00;
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+.main .table01 table tbody td:nth-of-type(6) {
+  vertical-align: top;
+  padding-top: 24px;
+}
+
+.main .table01 table tbody td:nth-of-type(6) #checkbox1 {
+  position: absolute;
+  left: 6px;
+  top: 39px;
+}
+
+.main .table01 table tbody td:nth-of-type(6) .button-container {
+  padding-left: 43px;
+}
+
+.main .table01 table tbody td:nth-of-type(6) .button-container .button06 {
+  margin-top: 5px;
+}
+
+.main .table01 table tfoot td {
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 4px;
+  padding-right: 6px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #e9e9e9;
+  text-align: right;
+  font-size: 0;
+}
+
+.main .table01 table tfoot td > span {
+  color: #222222;
+  font-size: 12px;
+  font-weight: bolder;
+  letter-spacing: -0.8px;
+  line-height: 22px;
+}
+
+.main .table01 table tfoot td .button05 {
+  margin-left: 12px;
+}
+
+.main .table01 table tfoot td .button05 .body {
+  padding-left: 7px;
+  padding-right: 12px;
+}
+
+.main .table01 table tfoot td .button06 {
+  margin-left: 4px;
+}
+
+.main .table01 table tfoot td .button06 .body {
+  padding-left: 12px;
+  padding-right: 13px;
+}
+
+.main .table01 table tfoot td .button07 {
+  margin-left: 4px;
+}
+
+/* 
+#                                        
+#           # #    # #####  #    # ##### 
+#           # ##   # #    # #    #   #   
+#           # # #  # #    # #    #   #   
+#       ### # #  # # #####  #    #   #   
+#       ### # #   ## #      #    #   #   
+####### ### # #    # #       ####    #   
+*/
+
+/* input00 */
+.input00 {
+  width: 41px;
+  height: 23px;
+  border: 1px solid #c6c6c6;
+  box-sizing: border-box;
+}
+
+.input00 input {
+  text-align: center;
+  font-family: 'dotum', sans-serif;
+  font-size: 12px;
+}
+
+/* 
+#                                                                                                                                             
+#           #    #  ####  ##### # ###### #  ####    ##   ##### #  ####  #    #        ####   ####  #    # #####   ##   # #    # ###### #####  
+#           ##   # #    #   #   # #      # #    #  #  #    #   # #    # ##   #       #    # #    # ##   #   #    #  #  # ##   # #      #    # 
+#           # #  # #    #   #   # #####  # #      #    #   #   # #    # # #  # ##### #      #    # # #  #   #   #    # # # #  # #####  #    # 
+#       ### #  # # #    #   #   # #      # #      ######   #   # #    # #  # #       #      #    # #  # #   #   ###### # #  # # #      #####  
+#       ### #   ## #    #   #   # #      # #    # #    #   #   # #    # #   ##       #    # #    # #   ##   #   #    # # #   ## #      #   #  
+####### ### #    #  ####    #   # #      #  ####  #    #   #   #  ####  #    #        ####   ####  #    #   #   #    # # #    # ###### #    # 
+*/
+
+.main > .notification-container {
+  margin-top: 8px;
+  margin-left: -1px;
+}
+
+.main > .notification-container .notification {
+  font-size: 11px;
+  border: 1px solid #dadada;
+}
+
+.main > .notification-container .notification:first-of-type {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.main > .notification-container .notification:first-of-type p {
+  padding-left: 1px;
+  font-family: 'dotum', sans-serif;
+  color: #777777;
+  text-align: center;
+}
+
+.main > .notification-container .notification:first-of-type .button-container {
+  margin-top: 5px;
+  padding-left: 16px;
+}
+
+.main > .notification-container .notification:nth-of-type(2) {
+  font-family: 'dotum', sans-serif;
+  margin-top: 7px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.main > .notification-container .notification:nth-of-type(2) strong {
+  padding-left: 2px;
+  font-size: 14px;
+  color: #e54c29;
+}
+
+.main > .notification-container .notification:nth-of-type(2) p {
+  padding-right: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #222222;
+}
+
+.main .basket {
+  position: relative;
+  margin-left: -1px;
+}
+
+.main .basket .message {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-family: 'dotum', sans-serif;
+  font-size: 11px;
+  color: #777777;
+}
+
+.main .basket .message span {
+  color: #e54c29;
+  font-weight: bolder;
+}
+
+.main .basket .filter {
+  position: absolute;
+  top: 64px;
+  right: 19px;
+  font-family: 'dotum', sans-serif;
+  font-size: 11px;
+  color: #777777;
+}
+
+.main .basket .filter .title {
+  font-weight: bolder;
+  color: #222222;
+}
+
+.main .basket .filter ul,
+.main .basket .filter ul li {
+  display: inline-block;
+}
+
+.main .basket .filter ul li:not(:first-of-type):before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  background: url('./images/filter_vertical-line.png');
+  width: 1px;
+  height: 10px;
+}
+
+.main .basket .filter ul li {
+  position: relative;
+  cursor: pointer;
+}
+
+.main .basket .filter ul li:not(:first-of-type) {
+  margin-left: 7px;
+}
+
+.main .basket .popup {
+  position: absolute;
+  top: 24px;
+  right: -5px;
+  padding-top: 8px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  background: url('./images/popup-panel.png') no-repeat;
+  width: 131px;
+  height: 81px;
+  z-index: 1;
+  letter-spacing: -0.5px;
+}
+
+.main .basket .popup .title,
+.main .basket .popup .content {
+  color: #777777;
+  font-size: 11px;
+  font-family: 'dotum', sans-serif;
+}
+
+.main .basket .popup .title {
+  font-weight: bolder;
+  line-height: 18px;
+}
+
+.main .basket .popup .content {
+  line-height: 14px;
+}
+
+.main .basket .popup .button12 {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+}
+
+/* 
+#                                                                                              
+#           #####   ##   #####         ####   ####  #    # #####   ##   # #    # ###### #####  
+#             #    #  #  #    #       #    # #    # ##   #   #    #  #  # ##   # #      #    # 
+#             #   #    # #####  ##### #      #    # # #  #   #   #    # # # #  # #####  #    # 
+#       ###   #   ###### #    #       #      #    # #  # #   #   ###### # #  # # #      #####  
+#       ###   #   #    # #    #       #    # #    # #   ##   #   #    # # #   ## #      #   #  
+####### ###   #   #    # #####         ####   ####  #    #   #   #    # # #    # ###### #    # 
+*/
+
+.main .tab-container {
+  margin-top: 14px;
+  font-size: 0;
+  border-bottom: 2px solid #295a9c;
+}
+
+.main .tab-container button {
+  padding-left: 12px;
+  padding-right: 11px;
+  color: #777777;
+  font-family: 'dotum', sans-serif;
+  font-size: 12px;
+  font-weight: bolder;
+  background: #f7f7f7;
+}
+
+.main .tab-container button.current {
+  padding-top: 8px;
+  padding-bottom: 7px;
+  color: white;
+  background: #295a9c;
+}
+
+.main .tab-container button:not(.current) {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-top: 1px solid #bebdbd;
+  border-right: 1px solid #bebdbd;
+  box-sizing: border-box;
+}
+
+/* 
+#                                                                                                                          
+#            ####  #    # #    # #    #   ##   #####  #   #        ####   ####  #    # #####   ##   # #    # ###### #####  
+#           #      #    # ##  ## ##  ##  #  #  #    #  # #        #    # #    # ##   #   #    #  #  # ##   # #      #    # 
+#            ####  #    # # ## # # ## # #    # #    #   #   ##### #      #    # # #  #   #   #    # # # #  # #####  #    # 
+#       ###      # #    # #    # #    # ###### #####    #         #      #    # #  # #   #   ###### # #  # # #      #####  
+#       ### #    # #    # #    # #    # #    # #   #    #         #    # #    # #   ##   #   #    # # #   ## #      #   #  
+####### ###  ####   ####  #    # #    # #    # #    #   #          ####   ####  #    #   #   #    # # #    # ###### #    # 
+*/
+
+.main .summary-container {
+  position: relative;
+  margin-top: 40px;
+  padding-left: 545px;
+}
+
+.main .summary-container .notification-container {
+  position: absolute;
+  left: 0;
+}
+
+.main .summary-container .notification {
+  position: relative;
+  border: 1px solid #dadada;
+  font-family: 'dotum', sans-serif;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 27px;
+  padding-right: 12px;
+}
+
+.main .summary-container .notification .button08 {
+  position: absolute;
+  top: 12px;
+  right: 58px;
+}
+
+.main .summary-container .notification .title {
+  color: #333333;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.main .summary-container .notification .date,
+.main .summary-container .notification .price {
+  color: #e54c29;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.main .summary-container .notification:first-of-type .content {
+  font-size: 14px;
+  color: #666666;
+}
+
+.main .summary-container .notification:nth-of-type(2) {
+  margin-top: 8px;
+}
+
+.main .summary-container .notification:nth-of-type(2) .content {
+  font-size: 12px;
+  color: #666666;
+}
+
+.main .summary-container + .button-container {
+  margin-top: 31px;
+  padding-right: 3px;
+  text-align: center;
+  font-size: 0px;
+}
+
+.main .summary-container + .button-container .button10,
+.main .summary-container + .button-container .button11 {
+  vertical-align: bottom;
+}
+
+.main .summary-container + .button-container .button11 {
+  margin-left: 12px;
+}
+
+/* 
+#                                                                                                            
+#           #####   ##   #####  #      ######        ####   ####  #    # #####   ##   # #    # ###### #####  
+#             #    #  #  #    # #      #            #    # #    # ##   #   #    #  #  # ##   # #      #    # 
+#             #   #    # #####  #      #####  ##### #      #    # # #  #   #   #    # # # #  # #####  #    # 
+#       ###   #   ###### #    # #      #            #      #    # #  # #   #   ###### # #  # # #      #####  
+#       ###   #   #    # #    # #      #            #    # #    # #   ##   #   #    # # #   ## #      #   #  
+####### ###   #   #    # #####  ###### ######        ####   ####  #    #   #   #    # # #    # ###### #    # 
+*/
+
+.main .summary-container .table-container .table03 table {
+  border: 1px solid #99bddd;
+  width: 405px;
+}
+
+.main .summary-container .table-container .table03 table td {
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 7px;
+  font-size: 14px;
+  font-family: 'dotum', sans-serif;
+  font-weight: bolder;
+}
+
+.main .summary-container .table-container .table03 table td span {
+}
+
+.main
+  .summary-container
+  .table-container
+  .table03
+  table
+  tr:not(:last-of-type)
+  td {
+  border-bottom: 1px solid #dadada;
+}
+
+.main
+  .summary-container
+  .table-container
+  .table03
+  table
+  tbody
+  tr:last-of-type
+  td {
+  border-bottom: 1px solid #99bddd;
+}
+
+.main
+  .summary-container
+  .table-container
+  .table03
+  table
+  tbody
+  tr:last-of-type
+  td
+  .tooltip {
+  position: absolute;
+  top: 8px;
+  left: 103px;
+}
+
+.main
+  .summary-container
+  .table-container
+  .table03
+  table
+  tfoot
+  tr:last-of-type
+  td
+  .tooltip {
+  position: absolute;
+  top: 8px;
+  left: 146px;
+}
+
+.main
+  .summary-container
+  .table-container
+  .table03
+  table
+  tfoot
+  tr:first-of-type
+  td {
+  border-top: 1px solid #99bddd;
+}
+
+.main
+  .summary-container
+  .table-container
+  .table03
+  table
+  tfoot
+  tr:first-of-type
+  td
+  .button09 {
+  position: absolute;
+  top: 5px;
+  left: 104px;
+}
+
+.main .summary-container .table-container .table03 table td:first-of-type {
+  padding-left: 9px;
+  border-right: 1px solid #dadada;
+}
+
+.main .summary-container .table-container .table03 table td:last-of-type {
+  text-align: right;
+  padding-right: 14px;
+}
+
+.main .summary-container .table-container .table03 table td {
+  color: #1770b5;
+}
+
+.main
+  .summary-container
+  .table-container
+  .table03
+  table
+  tfoot
+  tr:first-of-type
+  td {
+  color: #e54c29;
+}
+
+.main > .button-container {
+  text-align: center;
+  margin-top: 30px;
+  padding-right: 2px;
+  font-size: 0;
+}
+
+.main > .button-container .button11 {
+  margin-left: 12px;
+}
+
+/* 
+    ######  ####   ####  ##### ###### #####  
+    #      #    # #    #   #   #      #    # 
+    #####  #    # #    #   #   #####  #    # 
+### #      #    # #    #   #   #      #####  
+### #      #    # #    #   #   #      #   #  
+### #       ####   ####    #   ###### #    # 
+*/
+
+.footer::before {
+  content: '';
+  display: block;
+  padding-bottom: 10px;
+  background: url('./images/footer_horizontal-line.png') no-repeat;
+  height: 1px;
+  width: 949px;
+}
+
+.footer {
+  margin-top: 41px;
+  margin-left: -1px;
+}
+
+/* 
+#                                                                          
+#            ####    ##   #####  #####        ####  #    # # #####  ###### 
+#           #    #  #  #  #    #   #         #    # #    # # #    # #      
+#           #      #    # #    #   #   ##### #      #    # # #    # #####  
+#       ### #      ###### #####    #         #  ### #    # # #    # #      
+#       ### #    # #    # #   #    #         #    # #    # # #    # #      
+####### ###  ####  #    # #    #   #          ####   ####  # #####  ###### 
+*/
+
+.footer .cart-guide,
+.footer .credit-card-benefits {
+  border: 1px solid #dadada;
+  font-family: 'dotum', sans-serif;
+}
+
+.footer .cart-guide .title,
+.footer .credit-card-benefits .title {
+  padding: 8px 0 6px 10px;
+  color: #333333;
+  font-size: 14px;
+  font-weight: bolder;
+  letter-spacing: -0.2px;
+  border-bottom: 1px solid #dadada;
+}
+
+.footer .cart-guide .content ul {
+  padding-top: 8px;
+  padding-bottom: 10px;
+  padding-left: 33px;
+}
+
+.footer .cart-guide .content ul li {
+  position: relative;
+}
+
+.footer .cart-guide .content ul li > span::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -18px;
+  width: 9px;
+  height: 9px;
+  background: url('./images/green-circular-icon.png');
+}
+
+.footer .cart-guide .content ul li > span {
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  line-height: 14px;
+  color: #222222;
+}
+
+.footer .cart-guide .content ul li:first-of-type .button01 {
+  position: absolute;
+  top: 0px;
+  right: 203px;
+}
+
+.footer .cart-guide .content ul li:nth-of-type(2) {
+  margin-top: 4px;
+}
+
+.footer .credit-card-benefits {
+  margin-top: 9px;
+}
+
+/* 
+#                                                                                                                                         
+#            ####  #####  ###### #####  # #####        ####    ##   #####  #####        #####  ###### #    # ###### ###### # #####  ####  
+#           #    # #    # #      #    # #   #         #    #  #  #  #    # #    #       #    # #      ##   # #      #      #   #   #      
+#           #      #    # #####  #    # #   #   ##### #      #    # #    # #    # ##### #####  #####  # #  # #####  #####  #   #    ####  
+#       ### #      #####  #      #    # #   #         #      ###### #####  #    #       #    # #      #  # # #      #      #   #        # 
+#       ### #    # #   #  #      #    # #   #         #    # #    # #   #  #    #       #    # #      #   ## #      #      #   #   #    # 
+####### ###  ####  #    # ###### #####  #   #          ####  #    # #    # #####        #####  ###### #    # ###### #      #   #    ####  
+*/
+
+.footer .credit-card-benefits .content ul {
+  font-size: 0;
+}
+
+.footer .credit-card-benefits .content ul li {
+  display: inline-block;
+  position: relative;
+  padding-top: 56px;
+  padding-bottom: 24px;
+  color: #858585;
+  font-size: 10.5px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.footer .credit-card-benefits .content ul li:first-of-type {
+  margin-left: 0;
+  padding-left: 17px;
+  margin-right: 24px;
+}
+
+.footer .credit-card-benefits .content ul li {
+  margin-left: 13px;
+  margin-right: 20px;
+}
+
+.footer .credit-card-benefits .content ul li:last-of-type {
+  margin-left: 17px;
+  padding-right: 24px;
+  margin-right: 0;
+}
+
+.footer .credit-card-benefits .content ul li:first-of-type::before,
+.footer .credit-card-benefits .content ul li:nth-of-type(2)::before,
+.footer .credit-card-benefits .content ul li:nth-of-type(3)::before,
+.footer .credit-card-benefits .content ul li:nth-of-type(4)::before,
+.footer .credit-card-benefits .content ul li:nth-of-type(5)::before,
+.footer .credit-card-benefits .content ul li:nth-of-type(6)::before,
+.footer .credit-card-benefits .content ul li:nth-of-type(7)::before {
+  content: '';
+  position: absolute;
+}
+
+.footer .credit-card-benefits .content ul li:first-of-type::before {
+  background: url('./images/card1.png');
+  width: 58px;
+  height: 13px;
+  top: 27px;
+  left: 42px;
+}
+
+.footer .credit-card-benefits .content ul li:nth-of-type(2)::before {
+  background: url('./images/card2.png');
+  width: 70px;
+  height: 16px;
+  top: 27px;
+  left: 13px;
+}
+
+.footer .credit-card-benefits .content ul li:nth-of-type(3)::before {
+  background: url('./images/card3.png');
+  width: 59px;
+  height: 16px;
+  left: 20px;
+  top: 25px;
+}
+
+.footer .credit-card-benefits .content ul li:nth-of-type(4)::before {
+  background: url('./images/card4.png');
+  width: 56px;
+  height: 25px;
+  left: 27px;
+  top: 20px;
+}
+
+.footer .credit-card-benefits .content ul li:nth-of-type(5)::before {
+  background: url('./images/card5.png');
+  width: 81px;
+  height: 12px;
+  left: 8px;
+  top: 28px;
+}
+
+.footer .credit-card-benefits .content ul li:nth-of-type(6)::before {
+  background: url('./images/card6.png');
+  width: 20px;
+  height: 20px;
+  left: 38px;
+  top: 22px;
+}
+
+.footer .credit-card-benefits .content ul li:nth-of-type(7)::before {
+  background: url('./images/card7.png');
+  width: 82px;
+  height: 11px;
+  top: 27px;
+  left: 6px;
+}

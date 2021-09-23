@@ -1,0 +1,475 @@
+/*
+########  ########  ######  ######## ########  ######   ######   ######  
+##     ## ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ##       ##       ##          ##    ##       ##       ##       
+########  ######    ######  ######      ##    ##        ######   ######  
+##   ##   ##             ## ##          ##    ##             ##       ## 
+##    ##  ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ########  ######  ########    ##     ######   ######   ######  
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@media only screen {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    /* added personally */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  /* added personally from below */
+  button {
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  label,
+  input[type='radio'],
+  button {
+    cursor: pointer;
+  }
+
+  input[type='text'] {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    background: transparent;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  select {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+  }
+
+  /* for customizing the 'browsing-file' functionality */
+  input[type='file'] {
+    position: absolute;
+    top: -200%;
+    left: -200%;
+    opacity: 0;
+    z-index: -100;
+  }
+
+  strong,
+  .bolder {
+    font-weight: bolder;
+  }
+}
+
+/* 
+#####  ###### #####   ####   ####  #    #   ##   #         #####  ######  ####  ###### #####  ####   ####   ####  
+#    # #      #    # #      #    # ##   #  #  #  #         #    # #      #      #        #   #    # #      #      
+#    # #####  #    #  ####  #    # # #  # #    # #         #    # #####   ####  #####    #   #       ####   ####  
+#####  #      #####       # #    # #  # # ###### #         #####  #           # #        #   #           #      # 
+#      #      #   #  #    # #    # #   ## #    # #         #   #  #      #    # #        #   #    # #    # #    # 
+#      ###### #    #  ####   ####  #    # #    # ######    #    # ######  ####  ######   #    ####   ####   ####  
+*/
+.whitespace-remover {
+  font-size: 0;
+}
+
+table td {
+  vertical-align: top;
+}
+
+/* 
+#####  #    # ##### #####  ####  #    # 
+#    # #    #   #     #   #    # ##   # 
+#####  #    #   #     #   #    # # #  # 
+#    # #    #   #     #   #    # #  # # 
+#    # #    #   #     #   #    # #   ## 
+#####   ####    #     #    ####  #    # 
+*/
+
+.button-container .button00 + .button00 {
+  margin-left: 2px;
+}
+
+.button00.left {
+  display: inline-block;
+  width: 12px;
+  height: 13px;
+  background: url(./images/button00_left.png);
+}
+
+.button00.right {
+  display: inline-block;
+  width: 12px;
+  height: 13px;
+  background: url(./images/button00_right.png);
+}
+
+.button01,
+.button01 > .tail,
+.button01 > .tail > .body,
+.button02,
+.button02 > .tail,
+.button02 > .tail > .body {
+  display: inline-block;
+  height: 20px;
+}
+
+.button01 {
+  background: url('./images/button01_head.png') left no-repeat;
+  padding-left: 2px;
+}
+
+.button01 > .tail {
+  background: url('./images/button01_tail.png') right no-repeat;
+  padding-right: 2px;
+  vertical-align: top;
+}
+
+.button01 > .tail > .body {
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 4px;
+  color: #f9fdff;
+  font-size: 11px;
+  font-family: 'gulim', sans-serif;
+  background: url('./images/button01_body.png') center repeat-x;
+  box-sizing: border-box;
+  vertical-align: top;
+  letter-spacing: -1px;
+}
+
+.button02 {
+  background: url('./images/button02_head.png') left no-repeat;
+  padding-left: 2px;
+}
+
+.button02 > .tail {
+  background: url('./images/button02_tail.png') right no-repeat;
+  padding-right: 2px;
+  vertical-align: top;
+}
+
+.button02 > .tail > .body::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  width: 7px;
+  height: 9px;
+  background: url('./images/button02_icon.png');
+}
+
+.button02 > .tail > .body {
+  position: relative;
+  padding-top: 5px;
+  padding-left: 13px;
+  padding-right: 5px;
+  color: #f9fdff;
+  font-size: 11px;
+  font-family: 'gulim', sans-serif;
+  background: url('./images/button02_body.png') center repeat-x;
+  box-sizing: border-box;
+  vertical-align: top;
+  letter-spacing: -1px;
+}
+
+.button03,
+.button03 > .tail,
+.button03 > .tail > .body {
+  display: inline-block;
+  height: 19px;
+}
+
+.button03 {
+  padding-left: 2px;
+  background: url('./images/button03_head.png') left no-repeat;
+}
+.button03 > .tail {
+  padding-right: 2px;
+  background: url('./images/button03_tail.png') right no-repeat;
+}
+.button03 > .tail > .body {
+  position: relative;
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 5px;
+  color: #42687f;
+  font-size: 10px;
+  font-family: 'gulim', sans-serif;
+  background: url('./images/button03_body.png') center repeat-x;
+  box-sizing: border-box;
+  vertical-align: top;
+  letter-spacing: -1px;
+}
+
+.button05 {
+  width: 14px;
+  height: 15px;
+  vertical-align: middle;
+  background: url('./images/button05.png');
+}
+
+.button06 {
+  width: 11px;
+  height: 11px;
+  vertical-align: middle;
+  background: url('./images/button06.png');
+}
+
+.button07,
+.button07 > .tail,
+.button07 > .tail > .body {
+  display: inline-block;
+  height: 18px;
+}
+
+.button07 {
+  padding-left: 3px;
+  background: url('./images/button07_head.png') left no-repeat;
+}
+
+.button07 > .tail {
+  padding-right: 3px;
+  background: url('./images/button07_tail.png') right no-repeat;
+}
+
+.button07 > .tail > .body::before {
+  content: '';
+  position: absolute;
+  left: 1px;
+  width: 21px;
+  height: 11px;
+  background: url('./images/button07_icon.png');
+}
+
+.button07 > .tail > .body.click {
+  position: relative;
+  padding-top: 4px;
+  padding-left: 26px;
+  padding-right: 1px;
+  color: #42687f;
+  font-size: 10px;
+  font-family: 'gulim', sans-serif;
+  background: url('./images/button07_body.png') center repeat-x;
+  box-sizing: border-box;
+  vertical-align: top;
+  letter-spacing: -1px;
+}
+
+.button07 > .tail > .body.koi {
+  position: relative;
+  padding-top: 4px;
+  padding-left: 32px;
+  padding-right: 8px;
+  color: #42687f;
+  font-size: 10px;
+  font-family: 'gulim', sans-serif;
+  background: url('./images/button07_body.png') center repeat-x;
+  box-sizing: border-box;
+  vertical-align: top;
+  letter-spacing: -1px;
+}
+
+.button07.crossref {
+  background: url('./images/button07_crossref.png');
+  width: 42px;
+  height: 15px;
+}
+
+.button08 {
+  width: 22px;
+  height: 18px;
+}
+
+.button08.left-end {
+  background: url('./images/button08_left-end.png');
+}
+
+.button08.left {
+  background: url('./images/button08_left.png');
+}
+
+.button08.right {
+  background: url('./images/button08_right.png');
+}
+
+.button08.right-end {
+  background: url('./images/button08_right-end.png');
+}
+
+.pagination .button08 {
+  /* display: inline-block; */
+  vertical-align: top;
+}
+
+.pagination ul {
+  vertical-align: middle;
+}
+
+.pagination ul,
+.pagination ul li {
+  display: inline-block;
+}
+
+.pagination ul li {
+  padding-top: 2px;
+}
+
+.pagination ul li a {
+  color: black;
+  font-size: 13px;
+  font-family: 'Arial', sans-serif;
+  text-decoration: none;
+}
+
+.pagination ul li .current {
+  color: #464646;
+  font-weight: bolder;
+}
+
+.pagination ul li:first-of-type,
+.pagination ul li:not(:first-of-type) {
+  margin-left: 12px;
+}
+
+.pagination ul li:last-of-type {
+  margin-right: 12px;
+}
+
+.button08.left,
+.button08.right-end {
+  margin-left: 3px;
+}
