@@ -160,12 +160,34 @@ nav a:hover {
 #       ####  #    #   #   #       ####  ###### #  ####         ####   ####  #    #   #   #    # # #    # ###### #    # 
 */
 
-.portfolio-container {
+.portfolio-container,
+.links-container,
+.introduction-container {
   width: 90%;
   margin: 0 auto;
   max-width: 900px;
+}
+
+.portfolio-container,
+.introduction-container {
   margin-top: 5rem;
+}
+
+.portfolio-container {
   text-align: center;
+}
+
+.links-container .contents-container {
+  text-align: center;
+}
+
+.links-container .contents-container .contents {
+  display: inline-block;
+  text-align: left;
+}
+
+.introduction-container {
+  text-align: left;
 }
 
 /* 모듈적으로 margin 주는 작업 하면 됨 */
@@ -224,15 +246,18 @@ nav a:hover {
   justify-content: center; */
 }
 
-.title {
+.table-of-contents .title,
+.portfolio-container .title,
+.links-container .title,
+.introduction-container .title,
+.contact-container .title {
   display: block;
   font-size: 2em;
-  /* margin-top: 0.67em;
-  margin-bottom: 0.67em; */
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
   text-align: center;
+  color: #143774;
 }
 
 .table-of-contents {
@@ -245,11 +270,18 @@ nav a:hover {
   max-width: 900px;
 }
 .table-of-contents > .contents,
-.portfolio-container > .contents {
+.portfolio-container > .contents,
+.links-container .contents-container > .contents,
+.introduction-container > .contents,
+.contact-container > .contents {
   position: relative;
-  margin-top: 5rem;
   line-height: 1.5;
   list-style: none;
+  margin-top: 1rem;
+}
+
+.table-of-contents > .contents,
+.portfolio-container > .contents {
   text-align: center;
 }
 
@@ -379,8 +411,24 @@ nav a:hover {
   }
 }
 
-.about-me-heading {
+.introduction-container .contents h2 {
+  font-size: 2rem;
+}
+
+.introduction-container .contents .paragraph strong {
   font-size: 1.5rem;
+}
+
+.introduction-container .contents .paragraph,
+.introduction-container .contents .paragraph p + p {
+  margin-top: 2rem;
+}
+
+.introduction-container .contents .paragraph p:first-of-type {
+  margin-top: 1rem;
+}
+
+.about-me-heading {
 }
 
 @media screen and (max-width: 675px) {
@@ -454,9 +502,25 @@ i .fab fa-html5 {
 .contact-container 
 ================= */
 
-.contact-container {
+/* .contact-container {
   display: flex;
   justify-content: space-around;
+} */
+
+.contact-container .contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* background: red; */
+}
+
+.contact-container .contents div + div {
+  margin-left: 30%;
+}
+
+.contact-container .contents .phone-container,
+.contact-container .contents .email-container {
+  display: inline-block;
 }
 
 /* =================
@@ -466,7 +530,7 @@ built-in tags
 h1,
 h2,
 h3 {
-  color: #143774;
+  /* color: #143774; */
   margin-top: 0;
 }
 
