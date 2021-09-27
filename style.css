@@ -190,16 +190,6 @@ nav a:hover {
   text-align: left;
 }
 
-/* 모듈적으로 margin 주는 작업 하면 됨 */
-.portfolio-container > .contents .portfolio-container .contents > div > h2 {
-  /* text-align: center; */
-  /* font-size: 1.4rem; */
-}
-
-/* .portfolio {
-  margin-top: 1.875rem;
-} */
-
 .portfolio > dt {
   font-size: 1.4rem;
 }
@@ -218,7 +208,6 @@ nav a:hover {
 }
 
 .portfolio-image-container img {
-  /* background: red; */
   object-fit: contain;
 }
 
@@ -243,13 +232,6 @@ nav a:hover {
 /* =================
 .contents
 ================= */
-.table-of-contents {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-}
-
 .table-of-contents .title,
 .portfolio-container .title,
 .links-container .title,
@@ -262,10 +244,6 @@ nav a:hover {
   font-weight: bold;
   text-align: center;
   color: #143774;
-}
-
-.table-of-contents {
-  /* text-align: center; */
 }
 
 .table-of-contents {
@@ -313,14 +291,6 @@ nav a:hover {
   font-size: 1.2rem;
 }
 
-/* .table-of-contents .contents >li{
-  float: left;
-} */
-
-/* .table-of-contents .contents >li+li{
-  margin-left:10vw;
-} */
-
 .table-of-contents .contents > li {
   display: block;
   position: relative;
@@ -330,19 +300,10 @@ nav a:hover {
 
 .table-of-contents > .contents > li:not(:last-of-type):after {
   content: '';
-  /* position: absolute;
-  top: 0;
-  left: 0; */
   display: inline-block;
   border-bottom: 1px dotted black;
   width: 100%;
 }
-
-/* .portfolio-container > .contents .table-of-contents .contents > li > h2,
-.portfolio-container .contents > div > h2,
-.table-of-contents .contents li ul li h2 {
-  font-size: 1.4rem;
-} */
 
 .portfolio-container .contents > div dl {
   margin-top: 1.875rem;
@@ -360,21 +321,12 @@ nav a:hover {
 }
 
 .table-of-contents .contents .html-css-portfolio-container > ul {
-  /* padding-left:0.625rem; */
   padding-top: 1.875rem;
 }
 
 .table-of-contents .contents .html-css-portfolio-container > ul > li + li {
   margin-top: 1rem;
 }
-
-/* .table-of-contents .contents li ul li {
-  font-size: 1.4rem;
-} */
-
-/* .table-of-contents .contents li ul + ul {
-  margin-top: 0.5rem;
-} */
 
 .table-of-contents .contents li ul li {
   position: relative;
@@ -386,10 +338,6 @@ nav a:hover {
   left: 0;
   color: #000000;
 }
-
-/* .table-of-contents .contents li:not(:first-of-type) ul {
-  margin-top: 5rem;
-} */
 
 .file-individual {
   margin-bottom: 0.2rem;
@@ -446,7 +394,6 @@ nav a:hover {
 }
 
 .portfolio-image-container {
-  /* display: inline-block; */
   display: flex;
   flex-direction: row;
 }
@@ -461,12 +408,6 @@ nav a:hover {
 }
 
 .portfolio-image-container a img {
-  /* display: inline-block; */
-  /* max-width: 100%; */
-  /* margin-top: 2rem; */
-  /* display: block; */
-  /* box-shadow: 0px 1px 5px;
-  border: 1px solid gray; */
   object-fit: contain;
 }
 
@@ -505,16 +446,10 @@ i .fab fa-html5 {
 .contact-container 
 ================= */
 
-/* .contact-container {
-  display: flex;
-  justify-content: space-around;
-} */
-
 .contact-container .contents {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* background: red; */
 }
 
 .contact-container .contents div + div {
@@ -533,7 +468,6 @@ built-in tags
 h1,
 h2,
 h3 {
-  /* color: #143774; */
   margin-top: 0;
 }
 
