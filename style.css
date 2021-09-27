@@ -533,6 +533,10 @@ footer {
   .table-of-contents .contents li ul li h2 {
     position: relative;
   }
+
+  .table-of-contents .contents .html-css-portfolio-container > ul {
+    padding-top: 0.5rem;
+  }
 }
 
 /* reset */
