@@ -513,14 +513,16 @@ table td {
 */
 
 body {
-  width: 1570px;
+  /* width: 1570px; */
   padding-top: 50px;
   padding-bottom: 50px;
+  text-align: center;
 }
 
 .wrapper {
-  padding-left: 310px;
-  padding-right: 310px;
+  display: inline-block;
+  /* padding-left: 310px;
+  padding-right: 310px; */
 }
 
 /* 

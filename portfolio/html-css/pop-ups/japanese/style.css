@@ -1,0 +1,321 @@
+/*
+########  ########  ######  ######## ########  ######   ######   ######  
+##     ## ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ##       ##       ##          ##    ##       ##       ##       
+########  ######    ######  ######      ##    ##        ######   ######  
+##   ##   ##             ## ##          ##    ##             ##       ## 
+##    ##  ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ########  ######  ########    ##     ######   ######   ######  
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@media only screen {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  button {
+    cursor: pointer;
+  }
+  input {
+    outline: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+}
+
+/* 
+ ####  ###### #    # ###### #####    ##   #      
+#    # #      ##   # #      #    #  #  #  #      
+#      #####  # #  # #####  #    # #    # #      
+#  ### #      #  # # #      #####  ###### #      
+#    # #      #   ## #      #   #  #    # #      
+ ####  ###### #    # ###### #    # #    # ###### 
+*/
+
+body {
+  padding-top: 200px;
+  background: whitesmoke;
+}
+
+.wrapper {
+  width: 475px;
+  height: 307px;
+  margin: 0 auto;
+  padding-top: 6px;
+  background: white;
+  text-align: center;
+}
+
+.header_head {
+  display: inline-block;
+  padding-left: 9px;
+  height: 40px;
+  background: url('./images/header_head.png') left no-repeat;
+  text-align: center;
+  vertical-align: top;
+}
+.header_tail {
+  display: inline-block;
+  padding-right: 9px;
+  height: 40px;
+  background: url('./images/header_tail.png') right no-repeat;
+  vertical-align: top;
+}
+.header_body {
+  display: inline-block;
+  min-width: 446px;
+  height: 40px;
+  background: url('./images/header_body.png') center repeat-x;
+  vertical-align: top;
+}
+
+.header_body h1::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 5px;
+  width: 18px;
+  height: 15px;
+  background: url('./images/h1-icon.png') no-repeat;
+}
+
+.header_body h1 {
+  position: relative;
+  padding-top: 11px;
+  padding-left: 26px;
+  text-align: left;
+}
+
+p#warning {
+  padding-left: 10px;
+  margin-top: 19px;
+  font-size: 12px;
+  font-family: 'dotum', sans-serif;
+  letter-spacing: -0.55px;
+  text-align: left;
+}
+
+.body {
+  position: relative;
+  margin: 5px auto 0 auto;
+  padding-left: 1px;
+  width: 451px;
+  border: 1px solid #5e779e;
+  text-align: left;
+}
+
+.body h2 {
+  position: absolute;
+  top: 13px;
+  left: 16px;
+}
+
+.input-wrapper {
+  padding-top: 10px;
+  padding-left: 80px;
+}
+
+input#textbox1 {
+  width: 355px;
+  height: 18px;
+  border: 1px solid #9bb3d5;
+}
+
+.japanese-keyboard {
+  margin-top: 8px;
+  padding-left: 8px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.japanese-keyboard table {
+  height: 121px;
+}
+
+.japanese-keyboard td {
+  cursor: pointer;
+}
+
+table td {
+  position: relative;
+  font-size: 12px;
+  font-family: 'MS PGothic', sans-serif;
+  border: 1px solid #e6e6e6;
+}
+table {
+  width: 100%;
+  border: 1px solid #9bb3d5;
+}
+
+tbody td span {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+}
+
+button {
+  padding: 0;
+  border: none;
+}
+
+.blue-button-container {
+  margin-top: 17px;
+  padding-left: 171px;
+  font-size: 0;
+  text-align: left;
+}
+
+.blue-button-container button + button {
+  margin-left: 11px;
+}
+
+.blue-button_head {
+  padding-left: 1px;
+  height: 20px;
+  background: url('./images/blue-button_headtail.png') left no-repeat;
+}
+.blue-button_tail {
+  display: inline-block;
+  padding-right: 1px;
+  height: 20px;
+  background: url('./images/blue-button_headtail.png') right no-repeat;
+}
+.blue-button_body {
+  display: inline-block;
+  min-width: 58px;
+  height: 20px;
+  background: url('./images/blue-button_body.png') center repeat-x;
+}
+
+.blue-button_body img {
+  padding-top: 4px;
+  padding-left: 3px;
+}

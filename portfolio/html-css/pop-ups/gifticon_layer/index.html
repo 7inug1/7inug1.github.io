@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>캠페인 새로 만들기</title>
+  </head>
+  <body>
+    <div class="wrapper01 index1">
+      <div class="header">
+        <h1 class="title01">
+          <img src="./images/title01_index1.png" alt="캠페인 새로 만들기" />
+        </h1>
+      </div>
+
+      <div class="main01 index1">
+        <ul class="content03 index1">
+          <li>
+            <h2 class="content03 title">1. 캠페인 구분</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                <p class="content">
+                  캠페인은 고객님이 원하시는 발송 형태에 따라 3가지 중 선택할 수
+                  있습니다.
+                </p>
+                <ul class="dash-container">
+                  <li class="content03 subcontent">
+                    <h2 class="dash-title">대량발송 :</h2>
+                    <p class="dash-content first">
+                      기프티콘 Shop에서 상품 구입 후 고객에게 즉시 발송할 수
+                      있으며 기프티콘 상품을 일괄 발송하는 경우 선택하세요.
+                    </p>
+                  </li>
+                  <li class="content03 subcontent">
+                    <h2 class="dash-title">연동발송 :</h2>
+                    <p class="dash-content second">
+                      <span>
+                        고객의 이벤트 참여를 통해 기프티콘이 실시간 발송되는
+                        형태를 원하시는 경우 선택하세요.
+                      </span>
+                      <br />
+                      <span>
+                        연동 발송은 최소 2~3주전에 신청하시고 연동 API 규격에
+                        따라 자체 개발을 완료해야만 사용이 가능합니다.
+                      </span>
+                    </p>
+                  </li>
+                  <li class="content03 subcontent">
+                    <h2 class="dash-title">광고주 상품 :</h2>
+                    <p class="dash-content third">
+                      기프티콘 입점 상품이 아닌 기업고객의 자체 상품 샘플링이나
+                      홍보를 원하시는 경우 선택하세요.
+                    </p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="margin-top_19px">
+            <h2 class="content03 title">2. 캠페인 ID</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                <p class="content">
+                  캠페인 ID는 신청 시 자동으로 발급되며 캠페인 이력 관리를 위한
+                  기본 단위 입니다.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li class="margin-top_19px">
+            <h2 class="content03 title">3. 캠페인 개요</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                <p class="content">
+                  진행하시는 캠페인에 대한 소개를 간략히 작성해 주세요.
+                  <span class="padding-left_4px">
+                    (예: 00서비스 신규 호원 모집을 위한 경품 이벤트)
+                  </span>
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li class="margin-top_19px">
+            <h2 class="content03 title">4. 캠페인 URL</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                <p class="content">
+                  진행(예정)하시는 프로모션의 WEB 페이지 URL를 입력해 주세요.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li class="margin-top_19px">
+            <h2 class="content03 title">5. 캠페인 명</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                <p class="content">
+                  <strong class="font-weight-remover">
+                    주의 : 한글 20자 이내로 작성하실 수 있으며 입력하신 캠페인
+                    명은 수정이 불가합니다.
+                  </strong>
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li class="margin-top_19px">
+            <h2 class="content03 title">6. 캠페인 기간</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                <p class="content">프로모션 진행 기간을 입력해 주세요.</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="button-container index1">
+        <button class="button01 head orange">
+          <span class="button01 tail orange">
+            <span class="button01 body orange index1">
+              <img src="./images/button01_orange_confirm.png" alt="확인" />
+            </span>
+          </span>
+        </button>
+      </div>
+
+      <button class="close-button">
+        <img src="./images/close-button.png" alt="창 닫기 버튼" />
+      </button>
+    </div>
+    <div class="wrapper01 index3">
+      <div class="header">
+        <h1 class="title01">
+          <img src="./images/title01_index2&3.png" alt="상품발송하기 도움말" />
+        </h1>
+      </div>
+
+      <div class="main01 index3">
+        <ul class="content03">
+          <li>
+            <h2 class="content03 title">1. 발송 그룹 명</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                1개의 캠페인 내에 다수 회차 발송이 있을 경우 발송 차수를
+                구분하기 위한 정보를 입력합니다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">2. 회신번호 등록</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                고객 문의를 위한 회신 번호를 입력하며, 자주 사용하는 회신번호를
+                관리할 수 있습니다.
+                <br />
+                유의) 080으로 시작하는 번호는 통신사 blocking 정책으로 발송이
+                되지 않습니다.
+                <br />
+                기타 030, 050, 070, 1588, 1599, 1600 등의 국번에 대해 고객이
+                스팸 넘버로 등록한 경우에는 수신이 불가능 합니다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">3. 수신자 번호 등록</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                직접 입력이 가능하며 엑셀 업로드 시 1회에 1천개 수신번호 등록이
+                가능합니다.
+                <br />
+                (자주 사용하시는 수신번호는 주소록에 등록해 사용하시면 이용이
+                편리합니다.)
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">4. 발송유형 선택</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                기본형 : 1개의 이미지(뒷장) 꾸미기가 가능하며 기프티콘 상품
+                이미지(앞장)와 롤링되는 형태로 발송 됩니다.
+                <br />
+                고객이 WAP 접속 후 이미지를 다운받는 방식으로 핸드폰
+                대기화면으로 저장됩니다.
+                <br />
+                유의) 스마트폰의 경우는 WAP접속이 불가능하여 자동으로 MMS
+                전환되어 발송됩니다
+              </li>
+              <li class="content03 content margin-remover">
+                MMS 형 : 1개의 이미지 꾸미기가 가능하며 MMS 형태로 발송 됩니다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">5. SMS 문구 작성</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                고객이 문자 보관함에 받게 되는 일반 문자의 문구로 사용 됩니다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">6. 이미지 꾸미기</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                My꾸미기 이미지 메뉴에서 등록 후 승인된 이미지만 사용 가능
+                합니다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">7. 무선 페이지 꾸미기</h2>
+            <ul class="content03 content-container seventh">
+              <li class="content03 content">
+                <span>
+                  무선사이트 접속이 가능한 Callback URL SMS 수신 후 접속하는 첫
+                  페이지를 꾸밀 수 있습니다.
+                </span>
+                <br />
+                <span>
+                  (사용 안함 선택 시 기프티콘이 배경화면에 즉시 다운로드
+                  됩니다.)
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">8. 발송 시간 선택</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                즉시 발송 : 결제 후 즉시 발송 됩니다.
+              </li>
+              <li class="content03 content margin-remover">
+                예약 발송 : 발송 시간을 설정 할 수 있습니다.(최대 15일)
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="button-container index3">
+        <button class="button01 head orange">
+          <span class="button01 tail orange">
+            <span class="button01 body orange index3">
+              <img src="./images/button01_orange_confirm.png" alt="확인" />
+            </span>
+          </span>
+        </button>
+      </div>
+
+      <button class="close-button">
+        <img src="./images/close-button.png" alt="창 닫기 버튼" />
+      </button>
+    </div>
+    <div class="wrapper01 index3">
+      <div class="header">
+        <h1 class="title01">
+          <img src="./images/title01_index2&3.png" alt="상품발송하기 도움말" />
+        </h1>
+      </div>
+
+      <div class="main01 index3">
+        <ul class="content03">
+          <li>
+            <h2 class="content03 title">1. 발송 그룹 명</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                1개의 캠페인 내에 다수 회차 발송이 있을 경우 발송 차수를
+                구분하기 위한 정보를 입력합니다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">2. 회신번호 등록</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                고객 문의를 위한 회신 번호를 입력하며, 자주 사용하는 회신번호를
+                관리할 수 있습니다.
+                <br />
+                유의) 080으로 시작하는 번호는 통신사 blocking 정책으로 발송이
+                되지 않습니다.
+                <br />
+                기타 030, 050, 070, 1588, 1599, 1600 등의 국번에 대해 고객이
+                스팸 넘버로 등록한 경우에는 수신이 불가능 합니다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">3. 수신자 번호 등록</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                직접 입력이 가능하며 엑셀 업로드 시 1회에 1천개 수신번호 등록이
+                가능합니다.
+                <br />
+                (자주 사용하시는 수신번호는 주소록에 등록해 사용하시면 이용이
+                편리합니다.)
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">4. 발송유형 선택</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                기본형 : 1개의 이미지(뒷장) 꾸미기가 가능하며 기프티콘 상품
+                이미지(앞장)와 롤링되는 형태로 발송 됩니다.
+                <br />
+                고객이 WAP 접속 후 이미지를 다운받는 방식으로 핸드폰
+                대기화면으로 저장됩니다.
+                <br />
+                유의) 스마트폰의 경우는 WAP접속이 불가능하여 자동으로 MMS
+                전환되어 발송됩니다
+              </li>
+              <li class="content03 content margin-remover">
+                MMS 형 : 1개의 이미지 꾸미기가 가능하며 MMS 형태로 발송 됩니다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">5. SMS 문구 작성</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                고객이 문자 보관함에 받게 되는 일반 문자의 문구로 사용 됩니다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">6. 이미지 꾸미기</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                My꾸미기 이미지 메뉴에서 등록 후 승인된 이미지만 사용 가능
+                합니다.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">7. 무선 페이지 꾸미기</h2>
+            <ul class="content03 content-container seventh">
+              <li class="content03 content">
+                <span>
+                  무선사이트 접속이 가능한 Callback URL SMS 수신 후 접속하는 첫
+                  페이지를 꾸밀 수 있습니다.
+                </span>
+                <br />
+                <span>
+                  (사용 안함 선택 시 기프티콘이 배경화면에 즉시 다운로드
+                  됩니다.)
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">8. 발송 시간 선택</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                즉시 발송 : 결제 후 즉시 발송 됩니다.
+              </li>
+              <li class="content03 content margin-remover">
+                예약 발송 : 발송 시간을 설정 할 수 있습니다.(최대 15일)
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="button-container index3">
+        <button class="button01 head orange">
+          <span class="button01 tail orange">
+            <span class="button01 body orange index3">
+              <img src="./images/button01_orange_confirm.png" alt="확인" />
+            </span>
+          </span>
+        </button>
+      </div>
+
+      <button class="close-button">
+        <img src="./images/close-button.png" alt="창 닫기 버튼" />
+      </button>
+    </div>
+    <div class="wrapper01 index4">
+      <div class="header">
+        <h1 class="title01">
+          <img src="./images/title01_index4.png" alt="번호변경 재발송" />
+        </h1>
+      </div>
+
+      <div class="main01 index4">
+        <ul>
+          <li class="content02 v1 index4">
+            <p>
+              기프티콘 쿠폰 교환
+              <strong>유효기간 내에 1회 번호변경</strong>
+
+              재발송이
+              <br />
+              가능합니다.
+            </p>
+          </li>
+          <li class="content02 v1 index4">
+            <p class="line-height_20-3px">
+              한번 번호변경 재발송 후에는 다시 번호변경 재발송을
+              <br />
+              하실 수 없으니
+
+              <strong>변경할 번호를 꼭 다시 확인 하신 후에 재발송</strong>
+              <br />
+              해주세요!
+            </p>
+          </li>
+        </ul>
+        <div class="input-section index4">
+          <div class="input-container index4">
+            <div class="input04 before">
+              <input type="text" value="01052345894" readonly />
+            </div>
+            <div class="input04 after">
+              <input type="text" value="01057984651" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-container index4">
+        <button class="button01 head orange">
+          <span class="button01 tail orange">
+            <span class="button01 body orange index4">
+              <img src="./images/button01_orange_confirm.png" alt="확인" />
+            </span>
+          </span>
+        </button>
+      </div>
+
+      <button class="close-button">
+        <img src="./images/close-button.png" alt="창 닫기 버튼" />
+      </button>
+    </div>
+    <div class="wrapper01 index5">
+      <div class="header">
+        <h1 class="title01">
+          <img
+            src="./images/title01_index5.png"
+            alt="환불 받을 계좌 정보 확인"
+          />
+        </h1>
+      </div>
+
+      <div class="main01 index5">
+        <ul>
+          <li class="content02 v1 index4">
+            <p class="line-height_20-3px">
+              기프티콘 발송 취소한 금액에 대해선 회원가입 시 입력해 주신
+              <br />
+              계좌로 환불해 드립니다.
+            </p>
+          </li>
+          <li class="content02 v1 index4">
+            <p class="line-height_20-3px">
+              환불금은 고객님의 환불 신청 정보 확인 후
+              <strong>매월 15일과 말일</strong>
+              <br />
+              일괄적으로 환불 처리 됩니다.
+            </p>
+            <p class="whitespace-remover index5">
+              <span>환불 처리 결과는</span>
+              <strong>My기프티콘</strong>
+
+              <span>에서 확인 하실 수 있습니다.</span>
+            </p>
+            <p class="whitespace-remover index5">
+              <span>아래 환불금액 및 환불계좌번호를 확인 후</span>
+              <strong>환불요청 버튼을</strong>
+              <br />
+
+              <strong class="padding-remover">클릭</strong>
+              <span>해 주시면 발송취소 및 환불 신청이 완료 됩니다.</span>
+            </p>
+          </li>
+        </ul>
+        <p class="warning whitespace-remover index5">
+          <span>※ 환불계좌 수정은 My 기프티콘 ></span>
+          <strong class="orange-font font-weight-remover">회원가입정보</strong>
+          <span>에서 수정 가능 합니다.</span>
+        </p>
+        <div class="table-container index5">
+          <div class="table03 index5">
+            <table>
+              <caption hidden>환불 금액 표</caption>
+              <colgroup>
+                <col style="width: 31.5217%" />
+                <col style="width: 68.4782%" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">환불 금액</th>
+                  <td>8,300원</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table03 index5">
+            <table>
+              <caption hidden>환불계좌 표</caption>
+              <colgroup>
+                <col style="width: 25.2717%" />
+                <col style="width: 25.5434%" />
+                <col style="width: 48.913%" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="rowgroup" rowspan="3" class="th_rowgroup">
+                    환불계좌
+                  </th>
+                  <th scope="row" class="th_row">예금주</th>
+                  <td class="td_row">Ping 커뮤니케이션</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="th_row">은행 명</th>
+                  <td class="td_row">우리은행</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="th_row">계좌번호</th>
+                  <td class="td_row">12345678967</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-container index5">
+        <button class="button01 orange head">
+          <span class="button01 orange tail">
+            <span class="button01 orange body index5">
+              <img
+                src="./images/button01_orange_refund-request.png"
+                alt="환불요청"
+              />
+            </span>
+          </span>
+        </button>
+        <button class="button01 white head index5">
+          <span class="button01 white tail">
+            <span class="button01 white body index5">
+              <img src="./images/button01_white_cancel.png" alt="취소" />
+            </span>
+          </span>
+        </button>
+      </div>
+
+      <button class="close-button">
+        <img src="./images/close-button.png" alt="창 닫기 버튼" />
+      </button>
+    </div>
+    <div class="wrapper01 index6">
+      <div class="header">
+        <h1 class="title01">
+          <img
+            src="./images/title01_index6.png"
+            alt="재발송/번호변경 재발송/발송취소 도움말"
+          />
+        </h1>
+      </div>
+
+      <div class="main01 index6">
+        <ul class="content03">
+          <li>
+            <h2 class="content03 title">1. 재발송</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                <p class="whitespace-remover index6">
+                  <span>쿠폰을 삭제하셨거나 분실하신 분께</span>
+                  <strong>최대 3회</strong>
+                  <span>까지 재발송 가능합니다.</span>
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">2. 수신번호변경 재발송</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                <p>
+                  수신자 번호가 변경되셨거나, 번호를 잘못 입력하신 경우
+                  <strong>최대 1회</strong>
+                  재발송이 가능합니다.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="content03 title">3. 발송취소</h2>
+            <ul class="content03 content-container">
+              <li class="content03 content">
+                <p>발송 실패건에 한해 취소가 가능합니다.</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="button-container index6">
+        <button class="button01 head orange">
+          <span class="button01 tail orange">
+            <span class="button01 body orange index6">
+              <img src="./images/button01_orange_confirm.png" alt="확인" />
+            </span>
+          </span>
+        </button>
+      </div>
+
+      <button class="close-button">
+        <img src="./images/close-button.png" alt="창 닫기 버튼" />
+      </button>
+    </div>
+  </body>
+</html>

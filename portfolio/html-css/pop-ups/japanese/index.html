@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>일본어입력</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header_head">
+        <div class="header_tail">
+          <div class="header_body">
+            <h1><img src="./images/h1-text.png" alt="일본어입력" /></h1>
+          </div>
+        </div>
+      </div>
+      <p id="warning">※ 해당 문자를 클릭하면 '선택한 내용'에 입력됩니다.</p>
+      <div class="body">
+        <h2>
+          <img src="./images/chosen-content-text.png" alt="선택한 내용" />
+        </h2>
+        <div class="input-wrapper">
+          <input type="text" name="textbox" id="textbox1" />
+        </div>
+        <div class="japanese-keyboard">
+          <table>
+            <caption hidden>일본어 키보드 표</caption>
+            <colgroup></colgroup>
+            <tbody>
+              <tr>
+                <td><span>あ</span></td>
+                <td><span>ぁ</span></td>
+                <td><span>か</span></td>
+                <td><span>が</span></td>
+                <td><span>さ</span></td>
+                <td><span>ざ</span></td>
+                <td><span>た</span></td>
+                <td><span>だ</span></td>
+                <td><span>な</span></td>
+                <td><span>は</span></td>
+                <td><span>ば</span></td>
+                <td><span>ぱ</span></td>
+                <td><span>ま</span></td>
+                <td><span>や</span></td>
+                <td><span>ゃ</span></td>
+                <td><span>わ</span></td>
+                <td><span>ら</span></td>
+                <td><span>ん</span></td>
+              </tr>
+              <tr>
+                <td><span>い</span></td>
+                <td><span>ぃ</span></td>
+                <td><span>き</span></td>
+                <td><span>ぎ</span></td>
+                <td><span>し</span></td>
+                <td><span>じ</span></td>
+                <td><span>ち</span></td>
+                <td><span>ぢ</span></td>
+                <td><span>に</span></td>
+                <td><span>ひ</span></td>
+                <td><span>び</span></td>
+                <td><span>ぴ</span></td>
+                <td><span>み</span></td>
+                <td><span></span></td>
+                <td><span>り</span></td>
+                <td><span>ゎ</span></td>
+                <td><span>っ</span></td>
+                <td><span></span></td>
+              </tr>
+              <tr>
+                <td><span>う</span></td>
+                <td><span>ぅ</span></td>
+                <td><span>く</span></td>
+                <td><span>ぐ</span></td>
+                <td><span>す</span></td>
+                <td><span>ず</span></td>
+                <td><span>つ</span></td>
+                <td><span>づ</span></td>
+                <td><span>ぬ</span></td>
+                <td><span>ふ</span></td>
+                <td><span>ぶ</span></td>
+                <td><span>ぷ</span></td>
+                <td><span>む</span></td>
+                <td><span>ゆ</span></td>
+                <td><span>ゅ</span></td>
+                <td><span>る</span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+              </tr>
+              <tr>
+                <td><span>え</span></td>
+                <td><span>ぇ</span></td>
+                <td><span>け</span></td>
+                <td><span>げ</span></td>
+                <td><span>せ</span></td>
+                <td><span>ぜ</span></td>
+                <td><span>て</span></td>
+                <td><span>で</span></td>
+                <td><span>ね</span></td>
+                <td><span>へ</span></td>
+                <td><span>べ</span></td>
+                <td><span>ぺ</span></td>
+                <td><span>め</span></td>
+                <td><span></span></td>
+                <td><span>れ</span></td>
+                <td><span>ゑ</span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+              </tr>
+              <tr>
+                <td><span>お</span></td>
+                <td><span>ぉ</span></td>
+                <td><span>こ</span></td>
+                <td><span>ご</span></td>
+                <td><span>そ</span></td>
+                <td><span>ぞ</span></td>
+                <td><span>と</span></td>
+                <td><span>ど</span></td>
+                <td><span>の</span></td>
+                <td><span>ほ</span></td>
+                <td><span>ぼ</span></td>
+                <td><span>ぽ</span></td>
+                <td><span>も</span></td>
+                <td><span>よ</span></td>
+                <td><span>ょ</span></td>
+                <td><span>ろ</span></td>
+                <td><span>を</span></td>
+                <td><span></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="blue-button-container">
+        <button class="blue-button_head">
+          <span class="blue-button_tail">
+            <span class="blue-button_body">
+              <span><img src="./images/confirm-text.png" alt="확인" /></span>
+            </span>
+          </span>
+        </button>
+        <button class="blue-button_head">
+          <span class="blue-button_tail">
+            <span class="blue-button_body">
+              <span><img src="./images/close-text.png" alt="닫기" /></span>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

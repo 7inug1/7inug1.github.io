@@ -230,14 +230,17 @@ table td {
 */
 
 body {
-  width: 1410px;
+  /* width: 1410px; */
   padding-top: 50px;
   padding-bottom: 50px;
+  text-align: center;
 }
 
 .wrapper {
-  padding-left: 400px;
-  padding-right: 230px;
+  display: inline-block;
+  /* padding-left: 400px;
+  padding-right: 230px; */
+  text-align: left;
 }
 
 /* 

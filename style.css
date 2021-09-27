@@ -432,9 +432,6 @@ nav a:hover {
   margin-top: 1rem;
 }
 
-.about-me-heading {
-}
-
 @media screen and (max-width: 675px) {
   .links-container {
     display: flex;
@@ -452,6 +449,11 @@ nav a:hover {
   /* display: inline-block; */
   display: flex;
   flex-direction: row;
+}
+
+.portfolio.japanese .portfolio-image-container,
+.portfolio.calendar .portfolio-image-container {
+  display: block;
 }
 
 .portfolio-image-container a {
@@ -496,9 +498,6 @@ i .fab fa-html5 {
 @media screen and (max-width: 675px) {
   #profile-image {
     width: 60%;
-    /* margin: 0 auto;
-    border: 1px solid gray;
-    margin-bottom: 2rem; */
   }
 }
 
@@ -586,6 +585,20 @@ footer {
   height: 3.5vh;
   position: fixed;
   bottom: 0;
+}
+
+@media screen and (max-width: 565px) {
+  .table-of-contents .contents > li {
+    text-align: center;
+  }
+
+  .table-of-contents .contents > li > h2 {
+    position: relative;
+  }
+
+  .table-of-contents .contents li ul li h2 {
+    position: relative;
+  }
 }
 
 /* reset */

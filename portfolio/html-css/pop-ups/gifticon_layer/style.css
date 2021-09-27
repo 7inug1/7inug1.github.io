@@ -1,0 +1,1012 @@
+/*
+########  ########  ######  ######## ########  ######   ######   ######  
+##     ## ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ##       ##       ##          ##    ##       ##       ##       
+########  ######    ######  ######      ##    ##        ######   ######  
+##   ##   ##             ## ##          ##    ##             ##       ## 
+##    ##  ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ########  ######  ########    ##     ######   ######   ######  
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@media only screen {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    /* added personally */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  /* added personally from below */
+  button {
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  label,
+  input[type='radio'],
+  button {
+    cursor: pointer;
+  }
+
+  input[type='text'] {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    background: transparent;
+  }
+
+  input[type='text']:focus {
+    outline: none;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  select {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+  }
+
+  /* for customizing the 'browsing-file' functionality */
+  input[type='file'] {
+    position: absolute;
+    top: -200%;
+    left: -200%;
+    opacity: 0;
+    z-index: -100;
+  }
+
+  strong,
+  .bolder {
+    font-weight: bolder;
+  }
+}
+
+body {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  font-family: 'dotum', sans-serif;
+}
+
+/* 
+#    # #####    ##   #####  #####  ###### #####  
+#    # #    #  #  #  #    # #    # #      #    # 
+#    # #    # #    # #    # #    # #####  #    # 
+# ## # #####  ###### #####  #####  #      #####  
+##  ## #   #  #    # #      #      #      #   #  
+#    # #    # #    # #      #      ###### #    # 
+*/
+
+.wrapper01 {
+  position: relative;
+  border: 3px solid #c6c6c6;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.wrapper01:not(:first-of-type) {
+  margin-top: 20px;
+}
+
+.wrapper01.index1,
+.wrapper01.index2,
+.wrapper01.index3 {
+  width: 700px;
+}
+
+.wrapper01.index4 {
+  width: 404px;
+}
+
+.wrapper01.index5 {
+  width: 419px;
+}
+
+.wrapper01.index6 {
+  width: 492px;
+}
+
+/* 
+    #    # ######   ##   #####  ###### #####  
+    #    # #       #  #  #    # #      #    # 
+    ###### #####  #    # #    # #####  #    # 
+### #    # #      ###### #    # #      #####  
+### #    # #      #    # #    # #      #   #  
+### #    # ###### #    # #####  ###### #    # 
+*/
+
+/* 
+##### # ##### #      ###### 
+  #   #   #   #      #      
+  #   #   #   #      #####  
+  #   #   #   #      #      
+  #   #   #   #      #      
+  #   #   #   ###### ###### 
+*/
+
+.actual-title {
+  font-size: 24px;
+}
+
+.header .title01::before {
+  content: '';
+  display: inline-block;
+  margin-right: 5px;
+  width: 5px;
+  height: 16px;
+  background: url('./images/h1_icon.png');
+}
+
+.header .title01 {
+  padding: 15px 0px 15px 15px;
+  font-size: 0;
+}
+
+/* 
+    #    #   ##   # #    # 
+    ##  ##  #  #  # ##   # 
+    # ## # #    # # # #  # 
+### #    # ###### # #  # # 
+### #    # #    # # #   ## 
+### #    # #    # # #    # 
+*/
+
+.main01 {
+  position: relative;
+  border-top: 1px solid #cdcccb;
+  border-bottom: 1px solid #cdcccb;
+  padding: 20px 0px 17px 20px;
+}
+
+.main02 {
+  position: relative;
+  border-top: 1px solid #cdcccb;
+  padding: 20px 0px 17px 20px;
+}
+
+.main01.index1 {
+  padding-left: 19px;
+  padding-bottom: 16px;
+}
+
+.main01.index3 {
+  padding-left: 19px;
+  padding-bottom: 16px;
+}
+
+.main01.index4 {
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+
+.main01.index5 {
+  padding-top: 16px;
+  padding-left: 21px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+}
+
+.main01.index6 {
+  padding-bottom: 20px;
+  padding-left: 19px;
+}
+
+/* 
+#####  #    # ##### #####  ####  #    # 
+#    # #    #   #     #   #    # ##   # 
+#####  #    #   #     #   #    # # #  # 
+#    # #    #   #     #   #    # #  # # 
+#    # #    #   #     #   #    # #   ## 
+#####   ####    #     #    ####  #    # 
+*/
+.button-container {
+  font-size: 0;
+  text-align: center;
+}
+
+/* 공통 */
+
+.button01,
+.button02,
+.button03 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.button01.body,
+.button02.body,
+.button03.body {
+  box-sizing: border-box;
+}
+
+/* 1. .button01 */
+.button01 {
+  height: 25px;
+}
+
+.button01.head {
+  padding-left: 2px;
+}
+
+.button01.tail {
+  padding-right: 1px;
+}
+
+.button01.head.orange {
+  background: url('./images/button01_orange_head.png') left no-repeat;
+}
+
+.button01.tail.orange {
+  background: url('./images/button01_orange_tail.png') right no-repeat;
+}
+
+.button01.body.orange {
+  background: url('./images/button01_orange_body.png') center repeat-x;
+}
+
+.button01.head.white {
+  background: url('./images/button01_white_head.png') left no-repeat;
+}
+
+.button01.tail.white {
+  background: url('./images/button01_white_tail.png') right no-repeat;
+}
+
+.button01.body.white {
+  background: url('./images/button01_white_body.png') center repeat-x;
+}
+
+/* 2. .button02 */
+
+.button02 {
+  height: 22px;
+}
+
+.button02.head {
+  padding-left: 1px;
+}
+
+.button02.tail {
+  padding-right: 1px;
+}
+
+.button02.head.white {
+  background: url('./images/button02_white_head.png') left no-repeat;
+}
+
+.button02.tail.white {
+  background: url('./images/button02_white_tail.png') right no-repeat;
+}
+
+.button02.body.white {
+  background: url('./images/button02_white_body.png') center repeat-x;
+  color: #646464;
+  font-size: 11px;
+  letter-spacing: -0.9px;
+}
+
+.button03 {
+  height: 19px;
+}
+.button03.head {
+  padding-left: 2px;
+}
+
+.button03.tail {
+  padding-right: 2px;
+}
+
+.button03.head.white {
+  background: url('./images/button03_head.png') left no-repeat;
+}
+
+.button03.tail.white {
+  background: url('./images/button03_tail.png') right no-repeat;
+}
+
+.button03.body.white {
+  background: url('./images/button03_body.png') center repeat-x;
+}
+
+/* customize */
+
+.button-container.index1,
+.button-container.index2,
+.button-container.index3,
+.button-container.index4,
+/* .button-container.index5, */
+.button-container.index6 {
+  padding-top: 11px;
+  padding-bottom: 10px;
+  /* padding-right: 2px; */
+}
+
+.button-container.index5 {
+  padding-top: 10px;
+  padding-bottom: 11px;
+  padding-left: 10px;
+}
+
+/* .button-container.index3 {
+  padding-top: 10px;
+  padding-bottom: 11px;
+}
+
+.button-container.index6 {
+  padding-top: 9px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+} */
+
+.button01.body.orange.index1,
+.button01.body.orange.index2,
+.button01.body.orange.index3,
+.button01.body.orange.index4,
+.button01.body.orange.index6 {
+  padding-top: 5px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.button01.body.orange.index5 {
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 11px;
+}
+
+.button01.head.white.index5 {
+  margin-left: 5px;
+}
+
+.button01.body.white.index5 {
+  padding-top: 5px;
+  padding-left: 16px;
+  padding-right: 15px;
+}
+/* 
+# #    # #####  #    # ##### 
+# ##   # #    # #    #   #   
+# # #  # #    # #    #   #   
+# #  # # #####  #    #   #   
+# #   ## #      #    #   #   
+# #    # #       ####    #   
+*/
+
+.input04 {
+  box-sizing: border-box;
+}
+
+.input00 {
+  height: 20px;
+  border: 1px solid #d8d8d8;
+}
+
+.input01 {
+  height: 21px;
+  border: 1px solid #d8d8d8;
+}
+.input01.v1 {
+}
+.input01.v2 {
+  position: relative;
+}
+.input02 {
+  height: 20px;
+  border: 1px solid #e5e5e5;
+}
+.input03 {
+  height: 27px;
+  border: 1px solid #e5e5e5;
+  background: #f8f8f8;
+}
+.input04 {
+  height: 20px;
+}
+.input04.before {
+  width: calc(50% - 12px);
+  padding-left: 10px;
+  border: 1px solid #d5d5d5;
+  background: #eaeaea;
+  float: left;
+}
+.input04.after {
+  width: calc(50% - 13px);
+  padding-left: 12px;
+  border: 1px solid #eaeaea;
+  background: #ffffff;
+  float: right;
+}
+.input04 input {
+  font-size: 11px;
+  color: #646464;
+  vertical-align: top;
+}
+
+.input-section.index4 {
+  margin-top: -4px;
+  padding-right: 27px;
+}
+
+.input-section.index4::before {
+  content: '';
+  display: inline-block;
+  background: url('./images/horizontal-dotted-line.png');
+  width: 100%;
+  height: 1px;
+}
+
+.input-container.index4:first-of-type {
+  padding-top: 11px;
+}
+
+.input-container.index4 {
+  position: relative;
+  clear: both;
+}
+
+.input-container.index4::before {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  margin-left: -2px;
+  width: 8px;
+  height: 10px;
+  background: url('./images/input04_arrow-right.png');
+}
+
+.input-container.index4::after {
+  content: '';
+
+  display: block;
+
+  clear: both;
+}
+/* 
+##### ###### #    # #####   ##   #####  ######   ##   
+  #   #       #  #    #    #  #  #    # #       #  #  
+  #   #####    ##     #   #    # #    # #####  #    # 
+  #   #        ##     #   ###### #####  #      ###### 
+  #   #       #  #    #   #    # #   #  #      #    # 
+  #   ###### #    #   #   #    # #    # ###### #    #
+*/
+
+.textarea01 {
+  border: 1px solid #e5e5e5;
+  background: #f8f8f8;
+}
+
+.textarea01 textarea {
+  background: #f8f8f8;
+}
+
+.textarea02 {
+  border: 1px solid #d8d8d8;
+  background: white;
+}
+
+/* 
+    #####  #   # ##### ######       # #    #       #      ###### #    #  ####  ##### #    # 
+    #    #  # #    #   #            # ##   #       #      #      ##   # #    #   #   #    # 
+    #####    #     #   #####  ##### # # #  # ##### #      #####  # #  # #        #   ###### 
+### #    #   #     #   #            # #  # #       #      #      #  # # #  ###   #   #    # 
+### #    #   #     #   #            # #   ##       #      #      #   ## #    #   #   #    # 
+### #####    #     #   ######       # #    #       ###### ###### #    #  ####    #   #    # 
+*/
+.byte-in-length01 {
+  position: absolute;
+  top: 0; /*!*/
+  right: 0; /*!*/
+  color: #646464;
+  font-size: 12px;
+}
+
+/* 
+ ####  ###### #      ######  ####  ##### 
+#      #      #      #      #    #   #   
+ ####  #####  #      #####  #        #   
+     # #      #      #      #        #   
+#    # #      #      #      #    #   #   
+ ####  ###### ###### ######  ####    #   
+*/
+
+.select01 {
+  height: 20px;
+  border: 1px solid #e5e5e5;
+}
+
+.select02 {
+  height: 20px;
+  border: 1px solid #d8d8d8;
+}
+
+.select01 select,
+.select02 select {
+  font-size: 12px;
+  color: #646464;
+}
+
+/* 
+#####   ##   #####  #      ###### 
+  #    #  #  #    # #      #      
+  #   #    # #####  #      #####  
+  #   ###### #    # #      #      
+  #   #    # #    # #      #      
+  #   #    # #####  ###### ###### 
+*/
+
+.table01.head table {
+  border-top: 1px solid #d8b19b;
+  border-bottom: 1px solid #e6cec0;
+}
+
+.table01.head table th {
+  color: #969696;
+  font-size: 12px;
+  letter-spacing: -0.35px;
+  background: #f4e9e3;
+}
+
+.table01.head table th:first-of-type {
+  position: relative;
+}
+
+.table01.head table th:first-of-type::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 2px;
+  height: 12px;
+  background: url('./images/table01_vertical-bit.png');
+}
+
+.table01.body {
+  overflow-y: scroll;
+}
+
+.table01.body table {
+  border-bottom: 1px solid #ead6ca;
+}
+
+.table01.body table td {
+  color: #646464;
+  font-size: 12px;
+  border-bottom: 1px solid #ead6ca;
+}
+
+.table01.body tr:nth-of-type(2n) td {
+  background: #fcf9f8;
+}
+
+.table01.body tr td:first-of-type {
+  text-align: center;
+}
+
+.table02 table {
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.table02 table th {
+  color: #969696;
+  font-size: 12px;
+  background: #f5f5f5;
+}
+
+.table02 table td {
+  color: #646464;
+  font-size: 12px;
+}
+
+.table02 table tr:not(:first-of-type) td {
+  border-top: 1px solid #f0f0f0;
+}
+
+.table03::before {
+  content: '';
+  display: inline-block;
+  background: url('./images/horizontal-dotted-line.png') repeat-x;
+  width: 100%;
+  height: 1px;
+}
+
+.table03 table {
+  border-top: 1px solid #dedfde;
+  border-bottom: 1px solid #dedfde;
+}
+
+.table03 table th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table03 table td {
+  text-align: left;
+}
+
+.table03 table th {
+  color: #7e7e7e;
+  font-size: 12px;
+  background: #f6f6f6;
+}
+
+.table03 table tr:not(:first-of-type) th,
+.table03 table tr:not(:first-of-type) td {
+  border-top: 1px solid #f0f0f0;
+}
+
+.table03.index5 table {
+  margin-top: 13px;
+}
+
+.table03.index5:nth-of-type(2) {
+  margin-top: 3px;
+}
+
+.table03.index5 td {
+  color: #646464;
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+.table03.index5 th,
+.table03.index5 td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.table-container.index5 {
+  margin-top: 3px;
+}
+
+/* 
+ ####   ####  #    # ##### ###### #    # ##### 
+#    # #    # ##   #   #   #      ##   #   #   
+#      #    # # #  #   #   #####  # #  #   #   
+#      #    # #  # #   #   #      #  # #   #   
+#    # #    # #   ##   #   #      #   ##   #   
+ ####   ####  #    #   #   ###### #    #   #   
+*/
+
+.content01 {
+  font-size: 12px;
+}
+
+.content01.title {
+  color: #969696;
+}
+.content01.content,
+.content01.subcontent {
+  color: #646464;
+}
+.content01.subcontent::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: url('./images/content01_subcontent_icon.png');
+}
+
+.content02::before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: url('./images/content_dot.png');
+}
+
+.content02 {
+  position: relative;
+  font-size: 12px;
+}
+
+.content02.v1 {
+  color: #646464;
+}
+
+.content02.v1.index4 {
+  padding-left: 6px;
+  line-height: 20.3px;
+}
+
+.content02.v1.index4:nth-of-type(2) p:nth-of-type(2) {
+  margin-top: 5px;
+}
+
+.content02.v1.index4:nth-of-type(2) p:nth-of-type(3) {
+  margin-top: 2px;
+  line-height: 16.5px;
+}
+
+.content02.v1.index4:not(:first-of-type) {
+  margin-top: 4px;
+}
+
+.content02.v2 {
+  color: #686868;
+}
+
+.content03.title {
+  color: #464646;
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+.content03.content::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 7px;
+  width: 2px;
+  height: 2px;
+  background: url('./images/content_dot.png');
+}
+
+.content03.content,
+.content03.subcontent {
+  position: relative;
+  color: #646464;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.content03.subcontent::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  width: 5px;
+  height: 1px;
+  background: url('./images/content03_subcontent_icon.png');
+}
+
+.content03.subcontent {
+  padding-left: 10px;
+}
+
+.content03.subcontent h2 {
+  position: absolute;
+}
+
+/*  */
+.content03 > li:not(:first-of-type) {
+  margin-top: 16px;
+}
+
+.content03.content-container {
+  margin-top: 5px;
+}
+
+.content03.title + ul > li {
+  padding-left: 12px;
+}
+
+/* .content03.content p {
+  font-size: 0;
+} */
+
+/* .content03.content {
+  padding-left: 12px;
+} */
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 13px;
+}
+
+/*  */
+
+.whitespace-remover {
+  font-size: 0;
+}
+
+.whitespace-remover.index6 span,
+.whitespace-remover.index6 strong {
+  font-size: 11px;
+}
+
+.whitespace-remover.index6 strong {
+  padding-left: 4px;
+}
+
+.dash-content.first,
+.dash-content.second {
+  padding-left: 55px;
+}
+
+.dash-content.third {
+  padding-left: 70px;
+}
+
+.font-weight-remover {
+  font-weight: normal;
+}
+
+.dash-content.second span + br + span {
+  padding-left: 3px;
+}
+
+.content03 > li.margin-remover {
+  margin-top: 0;
+  /* margin-bottom: 2px; */
+}
+
+.content03.content-container.seventh span + br + span {
+  padding-left: 4px;
+}
+
+.warning {
+  color: #a9a9a9;
+  font-size: 11px;
+}
+
+.orange-font {
+  color: #ff5f28;
+}
+
+.whitespace-remover {
+  font-size: 0;
+}
+
+.whitespace-remover.index5 span,
+.whitespace-remover.index5 strong {
+  font-size: 12px;
+}
+
+.whitespace-remover.index5 strong {
+  padding-left: 4px;
+}
+
+.whitespace-remover.index5 .padding-remover {
+  padding-left: 0;
+}
+
+.warning.index5 {
+  margin-top: 7px;
+  padding-left: 5px;
+}
+
+.warning.whitespace-remover.index5 span,
+.warning.whitespace-remover.index5 strong {
+  font-size: 11px;
+}

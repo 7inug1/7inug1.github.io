@@ -1,0 +1,494 @@
+/*
+########  ########  ######  ######## ########  ######   ######   ######  
+##     ## ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ##       ##       ##          ##    ##       ##       ##       
+########  ######    ######  ######      ##    ##        ######   ######  
+##   ##   ##             ## ##          ##    ##             ##       ## 
+##    ##  ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ########  ######  ########    ##     ######   ######   ######  
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@media only screen {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+}
+
+/* 
+ ####  ###### #    # ###### #####    ##   #      
+#    # #      ##   # #      #    #  #  #  #      
+#      #####  # #  # #####  #    # #    # #      
+#  ### #      #  # # #      #####  ###### #      
+#    # #      #   ## #      #   #  #    # #      
+ ####  ###### #    # ###### #    # #    # ###### 
+*/
+
+body {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  font-family: 'dotum', sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  width: 460px;
+  height: 675px;
+  background: black;
+  padding-left: 30px;
+  padding-right: 24px;
+  padding-top: 34px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input {
+  border: 0 none;
+  background: transparent;
+  width: 100%;
+}
+
+/* 
+    #    # ######   ##   #####  ###### #####  
+    #    # #       #  #  #    # #      #    # 
+    ###### #####  #    # #    # #####  #    # 
+### #    # #      ###### #    # #      #####  
+### #    # #      #    # #    # #      #   #  
+### #    # ###### #    # #####  ###### #    # 
+*/
+
+h1 + p {
+  margin-top: 8px;
+  padding-left: 1px;
+}
+
+.button-container.close-button {
+  position: absolute;
+  top: 35px;
+  right: 22px;
+}
+
+/* 
+    #####   ####  #####  #   # 
+    #    # #    # #    #  # #  
+    #####  #    # #    #   #   
+### #    # #    # #    #   #   
+### #    # #    # #    #   #   
+### #####   ####  #####    #   
+*/
+
+.body {
+  margin-top: 18px;
+  padding-left: 1px;
+}
+
+/* 
+    #####   ##   #####         ####   ####  #    # #####   ##   # #    # ###### #####  
+      #    #  #  #    #       #    # #    # ##   #   #    #  #  # ##   # #      #    # 
+      #   #    # #####  ##### #      #    # # #  #   #   #    # # # #  # #####  #    # 
+###   #   ###### #    #       #      #    # #  # #   #   ###### # #  # # #      #####  
+###   #   #    # #    #       #    # #    # #   ##   #   #    # # #   ## #      #   #  
+###   #   #    # #####         ####   ####  #    #   #   #    # # #    # ###### #    # 
+*/
+
+.tab-container {
+  position: relative;
+  padding-left: 1px;
+  font-size: 0;
+}
+
+.tab-container.index1 button:first-of-type {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-left: 46px;
+  padding-right: 52px;
+}
+
+.tab-container.index1 button + button {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-left: 19px;
+  padding-right: 21px;
+}
+
+.tab-container.index2 button:first-of-type {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-left: 46px;
+  padding-right: 49px;
+}
+
+.tab-container.index2 button + button {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-left: 23px;
+  padding-right: 21px;
+}
+
+.tab-container.index1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid #ec1118;
+}
+.tab-container.index2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid #ec1118;
+}
+
+.tab-container button,
+.tab-container button + button {
+  position: relative;
+  border: 2px solid black;
+}
+
+.tab-container .tab.current-tab {
+  border: 2px solid #ec1118;
+}
+
+.tab-container .tab.current-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid black;
+  z-index: 1;
+}
+
+.tab1 {
+  position: relative;
+}
+
+.tab1 > h2 {
+  position: relative;
+  padding-left: 18px;
+}
+.tab2 h2 {
+  position: relative;
+  padding-left: 17px;
+}
+.tab1 > h2::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  width: 9px;
+  height: 9px;
+  background: url('./images/h2_icon.png') no-repeat;
+}
+
+.tab2 > h2::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  width: 9px;
+  height: 9px;
+  background: url('./images/h2_icon.png') no-repeat;
+}
+
+.tab1 > ul.steps_content {
+  padding-left: 118px;
+}
+
+.tab1 {
+  margin-top: 31px;
+}
+
+.tab2 {
+  margin-top: 31px;
+}
+
+.tab2 > ul {
+  padding-left: 30px;
+  margin-top: 43px;
+}
+
+.tab2 > ul li p {
+  line-height: 16px;
+  color: white;
+  font-size: 11px;
+}
+
+.tab2 > ul li:not(:first-of-type) {
+  margin-top: 9px;
+}
+
+.tab1 > ul.steps_title {
+  position: absolute;
+  color: white;
+  font-family: 'Verdana', sans-serif;
+  font-size: 9px;
+}
+
+.tab1 > ul.steps_title li:first-of-type {
+  position: absolute;
+  left: 36px;
+  top: 101px;
+}
+.tab1 > ul.steps_title li:nth-of-type(2) {
+  position: absolute;
+  left: 36px;
+  top: 213px;
+}
+.tab1 > ul.steps_title li:nth-of-type(3) {
+  position: absolute;
+  left: 36px;
+  top: 315px;
+}
+.tab1 > ul.steps_title li:nth-of-type(4) {
+  position: absolute;
+  left: 36px;
+  top: 435px;
+}
+
+.tab1 > ul.steps_content {
+  position: relative;
+  margin-top: 40px;
+}
+
+.tab1 > ul.steps_content > li:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 38px;
+  width: 37px;
+  height: 42px;
+  background: url('./images/step01_icon.png') no-repeat;
+}
+
+.tab1 > ul.steps_content > li:nth-of-type(2)::before {
+  content: '';
+  position: absolute;
+  top: 116px;
+  left: 28px;
+  width: 50px;
+  height: 51px;
+  background: url('./images/step02_icon.png') no-repeat;
+}
+
+.tab1 > ul.steps_content > li:nth-of-type(3)::before {
+  content: '';
+  position: absolute;
+  top: 221px;
+  left: 28px;
+  width: 50px;
+  height: 51px;
+  background: url('./images/step03_icon.png') no-repeat;
+}
+
+.tab1 > ul.steps_content > li:nth-of-type(4)::before {
+  content: '';
+  position: absolute;
+  top: 336px;
+  left: 30px;
+  width: 46px;
+  height: 50px;
+  background: url('./images/step04_icon.png') no-repeat;
+}
+
+.letter-spacing_010px li p {
+  letter-spacing: -0.1px;
+}
+
+.padding-left_1px {
+  padding-left: 1px;
+}
+
+.padding-left_12px {
+  padding-left: 12px;
+}
+
+.padding-left_18px {
+  padding-left: 18px;
+}
+
+.tab1 > ul.steps_content > li:nth-of-type(2) {
+  margin-top: 54px;
+}
+.tab1 > ul.steps_content > li:nth-of-type(3) {
+  margin-top: 50px;
+}
+.tab1 > ul.steps_content > li:nth-of-type(4) {
+  margin-top: 50px;
+}
+
+.tab1 ul.steps_content li h2 {
+  color: #ec1118;
+  font-family: 'dotum', sans-serif;
+  font-size: 12px;
+}
+
+.tab1 ul.steps_content li h2 + ul {
+  margin-top: 10px;
+}
+
+.tab1 ul.steps_content li h2 + ul li {
+  line-height: 16px;
+  color: white;
+  font-size: 11px;
+  font-family: 'dotum', sans-serif;
+}
+
+.tab2 ul.steps_content li {
+  color: white;
+  font-family: 'dotum', sans-serif;
+  font-size: 11px;
+}
+
+.step01_desc-icon {
+  position: relative;
+}
+
+.step01_desc-icon::before {
+  content: '';
+  display: inline-block;
+  padding-right: 11px;
+  width: 19px;
+  height: 13px;
+  background: url('./images/step01_desc-icon.png') no-repeat;
+  vertical-align: bottom;
+}
