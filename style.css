@@ -299,6 +299,10 @@ nav a:hover {
   /* margin-top: 2.5rem; */
 }
 
+.table-of-contents > .contents li h2 {
+  z-index: 1;
+}
+
 .table-of-contents > .contents > li:not(:last-of-type):after {
   content: '';
   display: inline-block;
@@ -414,6 +418,19 @@ nav a:hover {
 
 .portfolio-details {
   margin-top: 1rem;
+}
+
+.portfolio-details div {
+  margin-top: 0.5rem;
+}
+
+.portfolio-details div .portfolio-body {
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.portfolio-details div .portfolio-body li + li {
+  margin-top: 0.3rem;
 }
 
 .portfolio-summary {
