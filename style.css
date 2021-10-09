@@ -447,6 +447,26 @@ i .fab fa-html5 {
   display: inline-block;
 }
 
+/* 
+ ####   ####  #####   ####  #      #             ####   ####  #    # ##### #####   ####  #      #      ###### #####  
+#      #    # #    # #    # #      #            #    # #    # ##   #   #   #    # #    # #      #      #      #    # 
+ ####  #      #    # #    # #      #      ##### #      #    # # #  #   #   #    # #    # #      #      #####  #    # 
+     # #      #####  #    # #      #            #      #    # #  # #   #   #####  #    # #      #      #      #####  
+#    # #    # #   #  #    # #      #            #    # #    # #   ##   #   #   #  #    # #      #      #      #   #  
+ ####   ####  #    #  ####  ###### ######        ####   ####  #    #   #   #    #  ####  ###### ###### ###### #    # 
+*/
+
+.scroll-controller {
+  display: inline-block;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  text-align: center;
+  border: 1px solid black;
+  padding: 1.5rem;
+  border-radius: 5rem;
+}
+
 #profile-image {
   width: 40%;
   margin: 0 auto;

@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <link
+      href="https://fonts.googleapis.com/css?family=Orbitron"
+      rel="stylesheet"
+      type="text/css"
+    />
     <title>Momentum App</title>
   </head>
   <body>
@@ -21,43 +25,52 @@
           </span>
         </div>
         <div class="weather">
-          <p>
-            <div class="temperature">Location & temperature loading...</div>
-            <div class="location"></div>
-          </p>
+          <!-- <p> -->
+          <div class="temperature">Location & temperature loading...</div>
+          <div class="location"></div>
+          <!-- </p> -->
         </div>
-        <form class="login-form hidden">
+        <form class="login-form hidden" action="" method="">
           <div class="input-container name">
             <input
               type="text"
               placeholder="My name is ..."
-              required
               maxlength="15"
+              required
             />
           </div>
           <button type="submit" class="login-button">Log In</button>
         </form>
-        <h1 class="greeting hidden"></h1>
+        <div class="main-content-container hidden">
+          <h1 class="login"></h1>
 
-        <form class="todo-form">
-          <div class="input-container">
-            <input type="text" placeholder="Write a to-do" required />
+          <form class="todo-form">
+            <div class="input-container">
+              <input type="text" placeholder="Write a to-do" required />
+            </div>
+            <button type="submit" class="todo-button">Add ToDo</button>
+          </form>
+          <div class="sort-button-container">
+            <span>sort by:</span>
+            <button type="button" class="alphabetical-sort-button">
+              alphabetical
+            </button>
+            <button type="button" class="date-sort-button">created date</button>
           </div>
-          <button type="submit" class="todo-button">Add ToDo</button>
-        </form>
-        <ul class="todo-list"></ul>
-        <div class="quote-container">
-          <h1 class="title"></h1>
-          <div class="content">
-            <h2 class="author"></h2>
-            <span>once said,</span>
-            <p class="quote"></p>
-            <p class="admin-message">Hope this line made your day. 🙂</p>
+          <ul class="todo-list"></ul>
+          <div class="quote-container">
+            <h1 class="title"></h1>
+            <div class="content">
+              <h2 class="author"></h2>
+              <span>once said,</span>
+              <p class="quote"></p>
+              <p class="admin-message">Hope this line made your day. 🙂</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="./js/greetings.js"></script>
+    <script src="./js/login.js"></script>
     <script src="./js/clock.js"></script>
     <script src="./js/quotes.js"></script>
     <script src="./js/background.js"></script>
