@@ -1,0 +1,1094 @@
+/* inline-block */
+
+/*
+########  ########  ######  ######## ########  ######   ######   ######  
+##     ## ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ##       ##       ##          ##    ##       ##       ##       
+########  ######    ######  ######      ##    ##        ######   ######  
+##   ##   ##             ## ##          ##    ##             ##       ## 
+##    ##  ##       ##    ## ##          ##    ##    ## ##    ## ##    ## 
+##     ## ########  ######  ########    ##     ######   ######   ######  
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@media only screen {
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
+  table {
+    /* added personally */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  /* added personally from below */
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+
+  button {
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  label,
+  input[type="radio"],
+  button {
+    cursor: pointer;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin: 0;
+  }
+
+  input[type="text"] {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    background: transparent;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  select {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 0 none;
+    box-sizing: border-box;
+  }
+
+  /* for customizing the 'browsing-file' functionality */
+  input[type="file"] {
+    position: absolute;
+    top: -200%;
+    left: -200%;
+    opacity: 0;
+    z-index: -100;
+  }
+
+  strong,
+  .bolder {
+    font-weight: bolder;
+  }
+}
+
+/* 
+#####  ###### #####   ####   ####  #    #   ##   #         #####  ######  ####  ###### #####  ####   ####   ####  
+#    # #      #    # #      #    # ##   #  #  #  #         #    # #      #      #        #   #    # #      #      
+#    # #####  #    #  ####  #    # # #  # #    # #         #    # #####   ####  #####    #   #       ####   ####  
+#####  #      #####       # #    # #  # # ###### #         #####  #           # #        #   #           #      # 
+#      #      #   #  #    # #    # #   ## #    # #         #   #  #      #    # #        #   #    # #    # #    # 
+#      ###### #    #  ####   ####  #    # #    # ######    #    # ######  ####  ######   #    ####   ####   ####  
+*/
+.whitespace-remover {
+  font-size: 0;
+}
+
+table td {
+  vertical-align: top;
+}
+
+.transparent-text {
+  display: none;
+  overflow: hidden;
+  opacity: 0;
+  line-height: 999px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 
+#####   ####  #####  #   # 
+#    # #    # #    #  # #  
+#####  #    # #    #   #   
+#    # #    # #    #   #   
+#    # #    # #    #   #   
+#####   ####  #####    #   
+*/
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: url("../images/body/bg_bd.png");
+}
+
+/* 
+     ####   ####  #    # #####   ##   # #    # ###### #####  
+    #    # #    # ##   #   #    #  #  # ##   # #      #    # 
+    #      #    # # #  #   #   #    # # # #  # #####  #    # 
+### #      #    # #  # #   #   ###### # #  # # #      #####  
+### #    # #    # #   ##   #   #    # # #   ## #      #   #  
+###  ####   ####  #    #   #   #    # # #    # ###### #    # 
+*/
+.container {
+  position: relative;
+  min-width: 1152px;
+}
+
+/* 
+    #    # ######   ##   #####  ###### #####  
+    #    # #       #  #  #    # #      #    # 
+    ###### #####  #    # #    # #####  #    # 
+### #    # #      ###### #    # #      #####  
+### #    # #      #    # #    # #      #   #  
+### #    # ###### #    # #####  ###### #    # 
+*/
+
+.container > .header {
+  position: relative;
+  height: 56px;
+  background: url("../images/header/bg_hd.png") 0 0 repeat-x;
+}
+
+.container > .header .left {
+  position: absolute;
+  top: 5px;
+  left: 14px;
+}
+
+.container > .header .left .logo,
+.container > .header .left p {
+  display: inline-block;
+}
+
+.container > .header .left .logo a {
+  display: inline-block;
+  width: 118px;
+  height: 30px;
+  background: url("../images/sp_nwstd.png") 2px -82px no-repeat;
+}
+
+.container > .header .left p {
+  height: 30px;
+  width: 234px;
+  background: url("../images/sp_nwstd.png") -116px -82px no-repeat;
+}
+
+.container > .header .tabs {
+  position: absolute;
+  top: 5px;
+  left: calc(50% - 87px);
+  font-size: 0;
+}
+.container > .header .tabs a {
+  display: inline-block;
+  width: 87px;
+  height: 30px;
+}
+
+.container > .header .tabs .myNews {
+  background: url("../images/sp_nwstd.png") -1px -184px no-repeat;
+}
+
+.container > .header .tabs .myNews_pressed {
+  background: url("../images/sp_nwstd.png") -1px -150px no-repeat;
+}
+
+.container > .header .tabs .all-press {
+  background: url("../images/sp_nwstd.png") -87px -184px no-repeat;
+}
+
+.container > .header .tabs .all-press_pressed {
+  background: url("../images/sp_nwstd.png") -88px -150px no-repeat;
+}
+
+.container > .body {
+  position: relative;
+  height: 797px;
+}
+
+.container .main-container {
+  position: relative;
+  height: 705px;
+}
+
+/* 
+#                                        
+#           #####  #  ####  #    # ##### 
+#           #    # # #    # #    #   #   
+#           #    # # #      ######   #   
+#       ### #####  # #  ### #    #   #   
+#       ### #   #  # #    # #    #   #   
+####### ### #    # #  ####  #    #   #   
+*/
+.container > .header .right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -18px;
+  padding-right: 8px;
+}
+
+.container > .header .right li {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.container > .header .right li button {
+  vertical-align: top;
+}
+
+.container > .header .right li + li::before {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 20px;
+  background: url("../images/sp_nwstd.png") -244px -150px no-repeat;
+}
+
+.container > .header .right .my-account {
+  margin-right: 6px;
+  padding-top: 1px;
+}
+
+.container > .header .right .my-account div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.container > .header .right .my-account .logged-off,
+.container > .header .right .my-account .logged-in {
+  margin-right: 15px;
+}
+
+.container > .header .right .my-account .logged-off a {
+  padding: 3px;
+  color: #666;
+  font-size: 12px;
+  border: 1px solid #c1a580;
+  font-family: "dotum", sans-serif;
+}
+
+.container > .header .right .my-account .service-icon button {
+  width: 16px;
+  height: 16px;
+  background: url("../images/sp_gnb_v14.png") no-repeat -2px -130px;
+}
+
+.container > .header .right .refresh button {
+  width: 66px;
+  height: 21px;
+  background: url("../images/sp_nwstd.png") -252px -150px no-repeat;
+}
+
+.container > .header .right .setting button {
+  width: 46px;
+  height: 21px;
+  background: url("../images/sp_nwstd.png") -332px -150px no-repeat;
+}
+
+.container > .header .right .naver a {
+  display: inline-block;
+  width: 60px;
+  height: 21px;
+  background: url("../images/sp_nwstd.png") -536px -272px no-repeat;
+  vertical-align: top;
+}
+
+/* 
+    #####   ####  #####  #   # 
+    #    # #    # #    #  # #  
+    #####  #    # #    #   #   
+### #    # #    # #    #   #   
+### #    # #    # #    #   #   
+### #####   ####  #####    #   
+*/
+
+/* 
+    #                                                             
+    #        ####    ##   ##### ######  ####   ####  #####  #   # 
+    #       #    #  #  #    #   #      #    # #    # #    #  # #  
+    #       #      #    #   #   #####  #      #    # #    #   #   
+### #       #      ######   #   #      #  ### #    # #####    #   
+### #       #    # #    #   #   #      #    # #    # #   #    #   
+### #######  ####  #    #   #   ######  ####   ####  #    #   #   
+*/
+
+.category {
+  text-align: center;
+  font-size: 0;
+}
+
+.category li {
+  display: inline-block;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.category li a {
+  display: inline-block;
+  position: relative;
+  height: 24px;
+  background: url("../images/sp_nwstd.png");
+}
+
+.category .pressed a {
+  z-index: 1;
+}
+
+.category .major-press a {
+  width: 72px;
+  background-position: -93px -252px;
+}
+
+.category .major-press.pressed a {
+  background-position: -1px -252px;
+}
+
+.category .comprehensive_economy a {
+  width: 68px;
+  background: url("../images/sp_nwstd.png") -93px -278px;
+}
+
+.category .comprehensive_economy.pressed a {
+  background-position: -1px -278px;
+}
+.category .broadcasting_communication a {
+  width: 68px;
+  background: url("../images/sp_nwstd.png") -93px -304px;
+}
+
+.category .broadcasting_communication.pressed a {
+  background-position: -1px -304px;
+}
+.category .IT a {
+  width: 32px;
+  background: url("../images/sp_nwstd.png") -93px -382px;
+}
+
+.category .IT.pressed a {
+  background-position: -1px -382px;
+}
+.category .english-magazine a {
+  width: 52px;
+  background: url("../images/sp_nwstd.png") -93px -330px;
+}
+
+.category .english-magazine.pressed a {
+  background-position: -1px -330px;
+}
+.category .sports_entertainment a {
+  width: 79px;
+  background: url("../images/sp_nwstd.png") -93px -408px;
+}
+
+.category .sports_entertainment.pressed a {
+  background-position: -1px -408px;
+}
+.category .magazine_tech-journal a {
+  width: 89px;
+  background: url("../images/sp_nwstd.png") -93px -434px;
+}
+
+.category .magazine_tech-journal.pressed a {
+  background-position: -1px -434px;
+}
+.category .regional a {
+  width: 40px;
+  background: url("../images/sp_nwstd.png") -93px -460px;
+}
+
+.category .regional.pressed a {
+  background-position: -1px -460px;
+}
+
+/* 
+    #                                                                             
+    #       #    # ###### #    #  ####  #####    ##   #####  ###### #####   ####  
+    #       ##   # #      #    # #      #    #  #  #  #    # #      #    # #      
+    #       # #  # #####  #    #  ####  #    # #    # #    # #####  #    #  ####  
+### #       #  # # #      # ## #      # #####  ###### #####  #      #####       # 
+### #       #   ## #      ##  ## #    # #      #    # #      #      #   #  #    # 
+### ####### #    # ###### #    #  ####  #      #    # #      ###### #    #  ####  
+*/
+
+.newspapers {
+  margin-top: 7px;
+}
+
+.newspapers > div .header,
+.newspapers > div .body {
+  padding-top: 20px;
+  width: 840px;
+  text-align: left;
+}
+
+.newspapers > div .newspaper .header {
+  position: relative;
+  padding-bottom: 2px;
+  border-bottom: 3px solid #545454;
+}
+
+.newspapers > div .newspaper .body {
+  font-size: 0;
+}
+.newspapers > div .newspaper .header,
+.newspapers > div .newspaper .body {
+  margin: 0 auto;
+}
+
+/* 
+    #                                                
+    #        ####  ###### #    # ##### ###### #####  
+    #       #    # #      ##   #   #   #      #    # 
+    #       #      #####  # #  #   #   #####  #    # 
+### #       #      #      #  # #   #   #      #####  
+### #       #    # #      #   ##   #   #      #   #  
+### #######  ####  ###### #    #   #   ###### #    # 
+*/
+.newspapers > .center {
+  margin: 0 auto;
+  width: 936px;
+  height: 560px;
+  background: url("../images/body/bg_panel.png") no-repeat;
+}
+
+.newspaper .body .left,
+.newspaper .body .center,
+.newspaper .body .right {
+  display: inline-block;
+}
+
+.newspaper .body .center,
+.newspaper .body .right {
+  margin-left: 12px;
+  vertical-align: top;
+}
+
+.newspaper .body .left img,
+.newspaper .body .center img,
+.newspaper .body .right img {
+  width: 100%;
+}
+
+.newspapers .newspaper .utilities {
+  display: inline-block;
+  position: relative;
+  margin-top: 5px;
+}
+
+.newspapers .newspaper .utilities .buttons {
+  display: inline-block;
+}
+
+.newspapers .newspaper .utilities a {
+  display: inline-block;
+  height: 22px;
+}
+
+.newspapers .newspaper .utilities .date-edited {
+  display: inline-block;
+  padding-top: 5px;
+  line-height: 13px;
+  color: #4e4e4e;
+  font-family: "dotum", sans-serif;
+  font-size: 11px;
+  vertical-align: top;
+}
+
+.newspapers .newspaper .utilities .subscribe {
+  width: 66px;
+  background: url("../images/sp_nwstd.png") -187px -199px no-repeat;
+}
+
+.newspapers .newspaper .utilities .user-opinion {
+  padding-left: 72px;
+  background: url("../images/sp_nwstd.png") -293px -174px no-repeat;
+}
+
+.newspapers .newspaper .utilities .user-opinion_tail {
+  display: inline-block;
+  width: 2px;
+  height: 22px;
+  background: url("../images/sp_nwstd.png") -397px -174px no-repeat;
+}
+
+.newspapers .newspaper .utilities .share {
+  width: 28px;
+  background: url("../images/sp_nwstd.png") -500px -270px no-repeat;
+}
+
+.newspapers .newspaper .banner {
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
+.newspapers .newspaper.KBS .body .left {
+  width: 302px;
+}
+
+.newspapers .newspaper.KBS .body .left .sub {
+  margin-top: 17px;
+}
+
+.newspapers .newspaper.KBS .body .left .sub .title {
+  margin-top: 4px;
+}
+
+.newspapers .newspaper.KBS .body .left .sub ul li {
+  display: inline-block;
+  width: 148px;
+  vertical-align: top;
+}
+
+.newspapers .newspaper.KBS .body .left .sub ul li:nth-of-type(2n) {
+  margin-left: 6px;
+}
+
+.newspapers .newspaper.KBS .body .left .main .title {
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.newspapers .newspaper.KBS .body .left .sub .title {
+  font-size: 11px;
+}
+
+.newspapers .newspaper.KBS .body .left .title {
+  font-weight: bolder;
+}
+
+.newspapers .newspaper.KBS .body .center {
+  width: 178px;
+}
+
+.newspapers .newspaper.KBS .body .center .main {
+  position: relative;
+}
+
+.newspapers .newspaper.KBS .body .center .main .title {
+  color: #ffffff;
+  font-weight: bolder;
+  background: #464646;
+  padding: 6px;
+}
+
+.newspapers .newspaper.KBS .body .center .sub {
+  margin-top: 12px;
+}
+
+.newspapers .newspaper.KBS .body .center .sub li {
+  margin-bottom: 7px;
+}
+
+.newspapers .newspaper.KBS .body .center .sub li .title {
+  letter-spacing: -1px;
+  line-height: 1.3;
+  min-height: 31px;
+  height: 31px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.newspapers .newspaper.KBS .body .center .sub li:nth-of-type(2n) .title {
+  font-weight: bolder;
+}
+
+.newspapers .newspaper.KBS .body .center .sub li + li {
+  border-top: 1px solid #e9e9e9;
+  padding-top: 7px;
+}
+
+.newspapers .newspaper.KBS .body .center .title {
+  font-size: 12px;
+  letter-spacing: -1px;
+  line-height: 1.3;
+}
+
+.newspapers .newspaper.KBS .body .right {
+  width: 336px;
+}
+
+.newspapers .newspaper.KBS .body .right .title {
+  font-weight: bolder;
+}
+
+.newspapers .newspaper.KBS .body .right .grid-layout li {
+  display: inline-block;
+  position: relative;
+  width: 165px;
+  margin-bottom: 7px;
+}
+
+.newspapers .newspaper.KBS .body .right .grid-layout li:nth-of-type(2n) {
+  margin-left: 6px;
+}
+
+.newspapers .newspaper.KBS .body .right .grid-layout li img {
+  height: 110px;
+}
+
+.newspapers .newspaper.KBS .body .right .grid-layout .title {
+  position: absolute;
+  bottom: 0;
+  padding: 7px;
+
+  letter-spacing: -1px;
+  line-height: 1.42;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.newspapers .newspaper.KBS .body .right .list-layout .title {
+  width: 336px;
+  line-height: 2;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: -1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.main-container .arrow-buttons button {
+  width: 59px;
+  height: 82px;
+  background: url("../images/sp_nwstd.png") no-repeat;
+}
+
+.main-container .arrow-buttons .left {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -550px;
+  background-position: 0px 0;
+}
+
+.main-container .arrow-buttons .right {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  margin-top: -15px;
+  margin-right: -550px;
+  background-position: -64px 0;
+}
+
+/* 
+#                                                                                       
+#            ####   ####  #    # ##### #####   ####  #      #      ###### #####   ####  
+#           #    # #    # ##   #   #   #    # #    # #      #      #      #    # #      
+#           #      #    # # #  #   #   #    # #    # #      #      #####  #    #  ####  
+#       ### #      #    # #  # #   #   #####  #    # #      #      #      #####       # 
+#       ### #    # #    # #   ##   #   #   #  #    # #      #      #      #   #  #    # 
+####### ###  ####   ####  #    #   #   #    #  ####  ###### ###### ###### #    #  ####  
+*/
+
+.controllers .transition-controller {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -444px;
+  z-index: 1;
+}
+
+.controllers .transition-controller .title {
+  display: inline-block;
+  background: url("../images/sp_nwstd.png") no-repeat;
+  background-position: -525px -300px;
+  width: 42px;
+  height: 11px;
+}
+
+.controllers .transition-controller .select00 {
+  display: inline-block;
+  width: 90px;
+  height: 24px;
+  margin-left: 10px;
+}
+
+.controllers .pagination {
+  position: absolute;
+  bottom: 100px;
+  right: 50%;
+  margin-right: -450px;
+}
+
+/* 
+#                                                                      
+#           #####    ##    ####  # #    #   ##   ##### #  ####  #    # 
+#           #    #  #  #  #    # # ##   #  #  #    #   # #    # ##   # 
+#           #    # #    # #      # # #  # #    #   #   # #    # # #  # 
+#       ### #####  ###### #  ### # #  # # ######   #   # #    # #  # # 
+#       ### #      #    # #    # # #   ## #    #   #   # #    # #   ## 
+####### ### #      #    #  ####  # #    # #    #   #   #  ####  #    # 
+*/
+.pagination {
+  font-size: 0;
+}
+
+.pagination .number,
+.pagination .slash,
+.pagination button {
+  display: inline-block;
+  width: 10px;
+  height: 13px;
+  background: url("../images/sp_nwstd.png") no-repeat;
+}
+
+.pagination .out-of,
+.pagination .button-container {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.pagination .out-of {
+  padding-top: 5px;
+}
+
+.pagination .button-container {
+  margin-left: 10px;
+}
+
+.pagination .current,
+.pagination span {
+  display: inline-block;
+}
+.pagination .current .number.one {
+  background-position: -187px -116px;
+}
+.pagination .current .number.two {
+  background-position: -201px -116px;
+}
+.pagination .current .number.three {
+  background-position: -214px -116px;
+}
+.pagination .current .number.four {
+  background-position: -227px -116px;
+}
+.pagination .current .number.five {
+  background-position: -241px -116px;
+}
+.pagination .current .number.six {
+  background-position: -254px -116px;
+}
+.pagination .current .number.seven {
+  background-position: -268px -116px;
+}
+.pagination .current .number.eight {
+  background-position: -281px -116px;
+}
+.pagination .current .number.nine {
+  background-position: -295px -116px;
+}
+
+.pagination .slash {
+  display: inline-block;
+  width: 8px;
+  height: 13px;
+  background-position: -321px -132px;
+}
+
+.pagination .total .number.one {
+  background-position: -187px -132px;
+}
+.pagination .total .number.two {
+  background-position: -201px -132px;
+}
+.pagination .total .number.three {
+  background-position: -214px -132px;
+}
+.pagination .total .number.four {
+  background-position: -227px -132px;
+}
+.pagination .total .number.five {
+  background-position: -241px -132px;
+}
+.pagination .total .number.six {
+  background-position: -254px -132px;
+}
+.pagination .total .number.seven {
+  background-position: -268px -132px;
+}
+.pagination .total .number.eight {
+  background-position: -281px -132px;
+}
+.pagination .total .number.nine {
+  background-position: -295px -132px;
+}
+
+.pagination .button-container button {
+  width: 22px;
+  height: 23px;
+}
+
+.pagination .button-container .left {
+  background-position: -535px -585px;
+}
+
+.pagination .button-container .right {
+  background-position: -560px -585px;
+}
+
+/* 
+    #                                                                                                                                                                                                           
+    #       #    # ###### #    #  ####  #####    ##   #####  ###### #####        ##### #    # #    # #    # #####  #    #   ##   # #       ####         ####   ####  #    # #####   ##   # #    # ###### #####  
+    #       ##   # #      #    # #      #    #  #  #  #    # #      #    #         #   #    # #    # ##  ## #    # ##   #  #  #  # #      #            #    # #    # ##   #   #    #  #  # ##   # #      #    # 
+    #       # #  # #####  #    #  ####  #    # #    # #    # #####  #    # #####   #   ###### #    # # ## # #####  # #  # #    # # #       ####  ##### #      #    # # #  #   #   #    # # # #  # #####  #    # 
+### #       #  # # #      # ## #      # #####  ###### #####  #      #####          #   #    # #    # #    # #    # #  # # ###### # #           #       #      #    # #  # #   #   ###### # #  # # #      #####  
+### #       #   ## #      ##  ## #    # #      #    # #      #      #   #          #   #    # #    # #    # #    # #   ## #    # # #      #    #       #    # #    # #   ##   #   #    # # #   ## #      #   #  
+### ####### #    # ###### #    #  ####  #      #    # #      ###### #    #         #   #    #  ####  #    # #####  #    # #    # # ######  ####         ####   ####  #    #   #   #    # # #    # ###### #    #
+*/
+.newspaper-thumbnails-container {
+  position: relative;
+  background: url("../images/body/bg_nv.png") repeat-x;
+  height: 97px;
+}
+
+.newspaper-thumbnails {
+  display: inline-block;
+  padding-top: 12px;
+  padding-left: 27px;
+  font-size: 0;
+}
+
+.newspaper-thumbnails li {
+  display: inline-block;
+}
+
+.newspaper-thumbnails li a {
+  display: inline-block;
+  width: 88px;
+  height: 76px;
+  padding-top: 3px;
+  padding-left: 3px;
+  background: url("../images/sp_nwstd.png") -181px -489px no-repeat;
+}
+
+/* 
+    #                                                                                               
+    #         ##   #####  #####   ####  #    #       #####  #    # ##### #####  ####  #    #  ####  
+    #        #  #  #    # #    # #    # #    #       #    # #    #   #     #   #    # ##   # #      
+    #       #    # #    # #    # #    # #    # ##### #####  #    #   #     #   #    # # #  #  ####  
+### #       ###### #####  #####  #    # # ## #       #    # #    #   #     #   #    # #  # #      # 
+### #       #    # #   #  #   #  #    # ##  ##       #    # #    #   #     #   #    # #   ## #    # 
+### ####### #    # #    # #    #  ####  #    #       #####   ####    #     #    ####  #    #  ####  
+*/
+
+.newspaper-thumbnails-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.newspaper-thumbnails-container .arrow-buttons button {
+  width: 26px;
+  height: 83px;
+}
+
+.newspaper-thumbnails-container .arrow-buttons .left {
+  position: absolute;
+  top: 10.5px;
+  left: 0;
+  background: url("../images/sp_nwstd.png") -253px -236px no-repeat;
+}
+
+.newspaper-thumbnails-container .arrow-buttons .right {
+  position: absolute;
+  top: 10.5px;
+  right: 0;
+  background: url("../images/sp_nwstd.png") -273px -236px no-repeat;
+}
+
+/* 
+    ######  ####   ####  ##### ###### #####  
+    #      #    # #    #   #   #      #    # 
+    #####  #    # #    #   #   #####  #    # 
+### #      #    # #    #   #   #      #####  
+### #      #    # #    #   #   #      #   #  
+### #       ####   ####    #   ###### #    # 
+*/
+.footer {
+  width: 100%;
+  height: 81px;
+  background: url("../images/footer/bg_ft.png");
+  text-align: center;
+}
+
+.notice-container,
+.legal-statement {
+  font-size: 11px;
+  font-family: "dotum", sans-serif;
+}
+
+.legal-statement,
+.copyright {
+  line-height: 16px;
+}
+
+.notice-container {
+  padding-top: 14px;
+  line-height: 14px;
+}
+
+.notice-container > .title,
+.notice-container > ul {
+  display: inline-block;
+}
+
+.notice-container > .title {
+  color: #ddc196;
+}
+
+.notice-container > ul li a {
+  color: #e4e2e0;
+}
+
+.legal-statement {
+  color: #aca69f;
+  margin-top: 10px;
+}
+
+.copyright {
+  color: #ada7a1;
+  font-size: 9px;
+  font-family: Verdana, sans-serif;
+}
+
+.copyright a {
+  color: #c7c2bc;
+  font-weight: bolder;
+}

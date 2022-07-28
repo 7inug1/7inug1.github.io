@@ -193,10 +193,35 @@ nav a:hover {
 
 .portfolio > dt {
   font-size: 1.4rem;
+  font-weight: bolder;
 }
 
 .portfolio > dd {
   margin-top: 1.25rem;
+}
+
+.sinder .portfolio-image-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sinder .portfolio-image-container .image-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}
+
+.sinder .portfolio-image-container .gif-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  margin-top: 1.5rem;
+}
+
+.sinder .gif-wrapper, 
+.sinder .image-wrapper {
+  box-shadow: 0px 1px 5px;
+  border: 1px solid gray;
 }
 
 .portfolio-details {
@@ -296,7 +321,6 @@ nav a:hover {
   display: block;
   position: relative;
   text-align: right;
-  /* margin-top: 2.5rem; */
 }
 
 .table-of-contents > .contents li h2 {
@@ -323,14 +347,6 @@ nav a:hover {
   top: 0;
   left: 0;
   font-size: 1.2rem;
-}
-
-.table-of-contents .contents .html-css-portfolio-container > ul {
-  padding-top: 1.875rem;
-}
-
-.table-of-contents .contents .html-css-portfolio-container > ul > li + li {
-  margin-top: 1rem;
 }
 
 .table-of-contents .contents li ul li {
@@ -549,7 +565,6 @@ strong {
 }
 
 main {
-  /* margin-bottom: 2rem; */
   padding-bottom: 5rem;
 }
 
@@ -563,7 +578,6 @@ footer {
   color: white;
   width: 100%;
   height: 3.5vh;
-  /* position: fixed; */
   bottom: 0;
 }
 
@@ -578,10 +592,6 @@ footer {
 
   .table-of-contents .contents li ul li h2 {
     position: relative;
-  }
-
-  .table-of-contents .contents .html-css-portfolio-container > ul {
-    padding-top: 0.5rem;
   }
 }
 
