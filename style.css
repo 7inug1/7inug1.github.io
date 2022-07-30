@@ -205,13 +205,13 @@ nav a:hover {
   flex-direction: column;
 }
 
-.sinder .portfolio-image-container .image-container {
+.sinder .image-container {
   display: flex;
   flex-direction: row;
   gap: 5%;
 }
 
-.sinder .portfolio-image-container .gif-container {
+.sinder .gif-container {
   display: flex;
   flex-direction: row;
   gap: 3%;
@@ -229,7 +229,7 @@ nav a:hover {
 }
 
 .portfolio-image-container a {
-  box-shadow: 0px 1px 5px;
+  box-shadow: 0px 1px 10px;
   border: 1px solid gray;
 }
 
@@ -418,6 +418,7 @@ nav a:hover {
 .portfolio-image-container {
   display: flex;
   flex-direction: row;
+  gap: 3%;
 }
 
 .portfolio.japanese .portfolio-image-container,
